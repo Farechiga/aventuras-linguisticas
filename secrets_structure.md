@@ -10,6 +10,7 @@ The following secrets need to be added to your GitHub repository:
 |-------------|-------------|------------------------|
 | `SPEECH_API_KEY` | Azure Speech Service API key | Azure Portal > Speech Service > Keys and Endpoint > Key 1 or Key 2 |
 | `SPEECH_REGION` | Azure Speech Service region | Azure Portal > Speech Service > Keys and Endpoint > Location/Region |
+| `AVENTURASSPEECH_SUBSCRIPTION_ID` | Azure Subscription ID | Azure Portal > Subscriptions > Subscription ID |
 
 ## How to Obtain These Secrets
 
@@ -47,6 +48,11 @@ Secret: <your-api-key-from-azure>
 ```
 Name: SPEECH_REGION
 Secret: westus
+```
+
+```
+Name: AVENTURASSPEECH_SUBSCRIPTION_ID
+Secret: <your-azure-subscription-id>
 ```
 
 ## Using the Secrets Locally (Development)
@@ -103,7 +109,7 @@ You can change the default voice in the GitHub workflow file (`.github/workflows
 Your Azure Speech Service:
 - Name: AventurasSpeech
 - Location: WestUS
-- Subscription ID: Your subscription ID is not needed for the API connection, only the API key and region
+- Subscription ID: While not directly needed for the API connection, we store it as `AVENTURASSPEECH_SUBSCRIPTION_ID` for potential future usage with other Azure services or for billing/tracking purposes
 
 ## Troubleshooting
 
