@@ -622,9 +622,9 @@ body::after {
             "Aurora": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"35\" r=\"25\" fill=\"%23FFB6C1\"/><path d=\"M30 65 L50 40 L70 65 Z\" fill=\"%23FFCC99\"/><rect x=\"35\" y=\"65\" width=\"30\" height=\"20\" fill=\"%23DA70D6\"/></svg>",
             "default": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"40\" r=\"25\" fill=\"%23FFD700\"/><rect x=\"25\" y=\"70\" width=\"50\" height=\"20\" fill=\"%23A52A2A\"/></svg>"
         };
-
-   // Translation data
-   const translationData = [
+        
+    // Translation data
+    const translationData = [
       // Belle
       {
         character: "Belle",
@@ -12802,6 +12802,7 @@ function getRandomIncorrectOptions(characterData, currentIndex) {
     return sentencePool.slice(0, 2).map(sentence => sentence.spanish);
 }
 
+// Check if the selected answer is correct
 function checkAnswer(selectedOption, selectedElement) {
     if (selectedOption === currentCorrectOption) {
         selectedElement.classList.add('correct');
@@ -12811,14 +12812,8 @@ function checkAnswer(selectedOption, selectedElement) {
         // Show celebration animation
         showCelebration();
         
-        // IMPORTANT: Show the matching game modal 
-        // after a brief delay to allow celebration animation to be visible
-        setTimeout(() => {
-            showMatchingGame();
-        }, 1200);
-        
-        // Don't call loadQuestion() here - it should only be called 
-        // after completing the matching game
+        // Note: We don't load the next question here anymore
+        // It will be handled by the speech callback in the click event
     } else {
         // Incorrect answer
         selectedElement.classList.add('incorrect');
@@ -12942,25 +12937,23 @@ function getRandomColor() {
     const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
     return colors[Math.floor(Math.random() * colors.length)];
 }
+// Function to show the matching game modal
 function showMatchingGame() {
-    console.log("showMatchingGame() called");
-    
     const selectedCharacter = translationData[currentCharacterIndex];
     const sentenceData = selectedCharacter.sentences[currentSentenceIndex];
     
-    console.log("Character:", selectedCharacter.character);
-    console.log("Sentence:", sentenceData.english);
-    console.log("Has segments:", !!sentenceData.segments);
-    
     // Check if this sentence has segment data
     if (!sentenceData.segments) {
-        console.log("No segments found - loading next question");
         // If no segments, just proceed to next question
         setTimeout(() => {
             loadQuestion();
         }, 1500);
         return;
     }
+    
+    // Get segments
+    const spanishSegments = sentenceData.segments.spanish;
+    const englishSegments = sentenceData.segments.english;
     
     // Set original sentence
     document.getElementById('original-sentence').textContent = sentenceData.spanish;
@@ -12971,9 +12964,6 @@ function showMatchingGame() {
     document.getElementById('match-result-message').textContent = '';
     
     // Add English components and dropzones
-    const spanishSegments = sentenceData.segments.spanish;
-    const englishSegments = sentenceData.segments.english;
-    
     englishSegments.forEach((segment, index) => {
         const matchContainer = document.createElement('div');
         matchContainer.className = 'match-container';
@@ -13010,46 +13000,11 @@ function showMatchingGame() {
     initDragAndDrop();
     
     // Set up Check Matches button
-    const checkButton = document.getElementById('check-matches-btn');
-    if (checkButton) {
-        console.log("Found check button, adding click handler");
-        checkButton.onclick = checkMatches;
-    } else {
-        console.log("Check button not found!");
-    }
-    
-    console.log("Showing matching game modal");
-    document.getElementById('matching-modal-overlay').style.display = 'flex';
-}
-    
-    // Add Spanish draggable options
-    const shuffledSpanishSegments = [...spanishSegments];
-    shuffleArray(shuffledSpanishSegments);
-    
-    shuffledSpanishSegments.forEach(segment => {
-        const draggable = document.createElement('div');
-        draggable.className = 'draggable';
-        draggable.draggable = true;
-        draggable.textContent = segment;
-        draggable.onclick = () => speakSpanishSegment(segment);
-        
-        document.getElementById('spanish-options-matching').appendChild(draggable);
-    });
-    
-    // Initialize drag and drop
-    initDragAndDrop();
-    
-    // Set up Check Matches button
-    const checkButton = document.getElementById('check-matches-btn');
-    if (checkButton) {
-        console.log("Found check button, adding click handler");
-        checkButton.onclick = checkMatches;
-    } else {
-        console.log("Check button not found!");
-    }
+    document.getElementById('check-matches-btn').onclick = checkMatches;
     
     // Show the modal
     document.getElementById('matching-modal-overlay').style.display = 'flex';
+}
 
 // Function to speak Spanish segment
 function speakSpanishSegment(text) {
