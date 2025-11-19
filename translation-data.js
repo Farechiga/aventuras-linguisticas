@@ -1477,14 +1477,6 @@ sentences: [
   }
 },
 {
-  english: "The Grinch reluctantly related to Zacchaeus, another outcast who watched community from a distance before transformation.",
-  spanish: "El Grinch se relacionó a regañadientes con Zaqueo, otro marginado que observaba la comunidad desde la distancia antes de su transformación.",
-  segments: {
-    spanish: ["El Grinch se relacionó a regañadientes", "con Zaqueo", "otro marginado que observaba la comunidad desde la distancia", "antes de su transformación."],
-    english: ["The Grinch reluctantly related", "to Zacchaeus", "another outcast who watched community from a distance", "before transformation."]
-  }
-},
-{
   english: "The Grinch pondered Jesus's parable of the lost sheep, wondering if he too was worth leaving the ninety-nine for.",
   spanish: "El Grinch reflexionó sobre la parábola de Jesús de la oveja perdida, preguntándose si él también valía la pena dejar a las noventa y nueve por él.",
   segments: {
@@ -1533,35 +1525,11 @@ sentences: [
   }
 },
 {
-  english: "The Grinch resonated with Jonah's resistance to God's call to care about Nineveh, seeing his own reluctance to love the Whos.",
-  spanish: "El Grinch resonó con la resistencia de Jonás al llamado de Dios de preocuparse por Nínive, viendo su propia renuencia a amar a los Quién.",
-  segments: {
-    spanish: ["El Grinch resonó", "con la resistencia de Jonás", "al llamado de Dios de preocuparse por Nínive", "viendo su propia renuencia a amar a los Quién."],
-    english: ["The Grinch resonated", "with Jonah's resistance", "to God's call to care about Nineveh", "seeing his own reluctance to love the Whos."]
-  }
-},
-{
-  english: "The Grinch was convicted by the scripture 'perfect love drives out fear,' realizing his isolation was rooted in his deepest fears.",
-  spanish: "El Grinch fue convencido por la escritura 'el amor perfecto echa fuera el temor,' dándose cuenta de que su aislamiento estaba arraigado en sus miedos más profundos.",
-  segments: {
-    spanish: ["El Grinch fue convencido", "por la escritura 'el amor perfecto echa fuera el temor,'", "dándose cuenta de que su aislamiento", "estaba arraigado en sus miedos más profundos."],
-    english: ["The Grinch was convicted", "by the scripture 'perfect love drives out fear,'", "realizing his isolation", "was rooted in his deepest fears."]
-  }
-},
-{
   english: "The Grinch struggled with Jesus's teaching to forgive seventy times seven, knowing the Whos' forgiveness would require similar grace.",
   spanish: "El Grinch luchó con la enseñanza de Jesús de perdonar setenta veces siete, sabiendo que el perdón de los Quién requeriría una gracia similar.",
   segments: {
     spanish: ["El Grinch luchó", "con la enseñanza de Jesús", "de perdonar setenta veces siete", "sabiendo que el perdón de los Quién requeriría una gracia similar."],
     english: ["The Grinch struggled", "with Jesus's teaching", "to forgive seventy times seven", "knowing the Whos' forgiveness would require similar grace."]
-  }
-},
-{
-  english: "The Grinch meditated on Isaiah's vision of wolves dwelling with lambs, envisioning himself at peace with the Whos he once despised.",
-  spanish: "El Grinch meditó en la visión de Isaías de lobos morando con corderos, imaginándose a sí mismo en paz con los Quién que una vez despreció.",
-  segments: {
-    spanish: ["El Grinch meditó", "en la visión de Isaías", "de lobos morando con corderos", "imaginándose a sí mismo en paz con los Quién que una vez despreció."],
-    english: ["The Grinch meditated", "on Isaiah's vision", "of wolves dwelling with lambs", "envisioning himself at peace with the Whos he once despised."]
   }
 },
 {
@@ -1573,46 +1541,6 @@ sentences: [
   }
 },
 {
-  english: "The Grinch was moved by Christ's teachings on community, slowly accepting that his heart needed others to truly grow.",
-  spanish: "El Grinch fue conmovido por las enseñanzas de Cristo sobre la comunidad, aceptando lentamente que su corazón necesitaba a otros para crecer verdaderamente.",
-  segments: {
-    spanish: ["El Grinch fue conmovido", "por las enseñanzas de Cristo sobre la comunidad", "aceptando lentamente que su corazón", "necesitaba a otros para crecer verdaderamente."],
-    english: ["The Grinch was moved", "by Christ's teachings on community", "slowly accepting that his heart", "needed others to truly grow."]
-  }
-},
-{
-    english: "The Grinch scowled at Ecclesiastes' words about the emptiness of isolation, irritated by their uncomfortable resonance.",
-  spanish: "El Grinch frunció el ceño ante las palabras de Eclesiastés sobre el vacío del aislamiento, irritado por su incómoda resonancia.",
-  segments: {
-    spanish: ["El Grinch frunció el ceño", "ante las palabras de Eclesiastés", "sobre el vacío del aislamiento", "irritado por su incómoda resonancia."],
-    english: ["The Grinch scowled", "at Ecclesiastes' words", "about the emptiness of isolation", "irritated by their uncomfortable resonance."]
-  }
-},
-{
-  english: "The Grinch found himself pausing at the Psalms about communal joy, an unwelcome curiosity gnawing at his bitterness.",
-  spanish: "El Grinch se encontró haciendo pausa en los Salmos sobre el gozo comunitario, una curiosidad inoportuna royendo su amargura.",
-  segments: {
-    spanish: ["El Grinch se encontró haciendo pausa", "en los Salmos sobre el gozo comunitario", "una curiosidad inoportuna", "royendo su amargura."],
-    english: ["The Grinch found himself pausing", "at the Psalms about communal joy", "an unwelcome curiosity", "gnawing at his bitterness."]
-  }
-},
-{
-  english: "The Grinch grudgingly noticed similarities between his cave and Elijah's wilderness, both retreats from a world they couldn't bear.",
-  spanish: "El Grinch notó a regañadientes similitudes entre su cueva y el desierto de Elías, ambos retiros de un mundo que no podían soportar.",
-  segments: {
-    spanish: ["El Grinch notó a regañadientes", "similitudes entre su cueva y el desierto de Elías", "ambos retiros", "de un mundo que no podían soportar."],
-    english: ["The Grinch grudgingly noticed", "similarities between his cave and Elijah's wilderness", "both retreats", "from a world they couldn't bear."]
-  }
-},
-{
-  english: "The Grinch winced at Proverbs' assertion that 'hatred stirs up conflict, but love covers all wrongs,'.",
-  spanish: "El Grinch se estremeció ante la afirmación de Proverbios de que 'el odio suscita contiendas, pero el amor cubre todas las faltas,'.",
-  segments: {
-    spanish: ["El Grinch se estremeció", "ante la afirmación de Proverbios de que", "el odio suscita contiendas", "pero el amor cubre todas las faltas"],
-    english: ["The Grinch winced", "at Proverbs' assertion that", "hatred stirs up conflict", "but love covers all wrongs"]
-  }
-},
-{
   english: "The Grinch felt an annoying prick of conscience reading about the Good Samaritan, quickly shutting the Bible with a dismissive grunt.",
   spanish: "El Grinch sintió una molesta punzada de conciencia al leer sobre el Buen Samaritano, cerrando rápidamente la Biblia con un gruñido despectivo.",
   segments: {
@@ -1621,19 +1549,11 @@ sentences: [
   }
 },
 {
-  english: "The Grinch caught himself wondering if Jesus's words about abundant life might apply even to green creatures with hearts two sizes too small.",
-  spanish: "El Grinch se sorprendió preguntándose si las palabras de Jesús sobre la vida abundante podrían aplicarse incluso a criaturas verdes con corazones dos tallas demasiado pequeños.",
+  english: "The Grinch wondered if Jesus's salvation could save a heart two sizes too small.",
+  spanish: "El Grinch se preguntaba si la salvación de Jesús podría salvar un corazón dos tamaños más pequeño.",
   segments: {
-    spanish: ["El Grinch se sorprendió", "preguntándose si las palabras de Jesús", "sobre la vida abundante", "podrían aplicarse incluso a criaturas verdes con corazones dos tallas demasiado pequeños."],
-    english: ["The Grinch caught himself", "wondering if Jesus's words", "about abundant life", "might apply even to green creatures with hearts two sizes too small."]
-  }
-},
-{
-  english: "The Grinch was bothered by the persistent image of Jesus welcoming children, a memory that intruded when he heard Who-children singing.",
-  spanish: "El Grinch estaba molesto por la persistente imagen de Jesús dando la bienvenida a los niños, un recuerdo que se entrometía cuando escuchaba cantar a los niños Quién.",
-  segments: {
-    spanish: ["El Grinch estaba molesto", "por la persistente imagen", "de Jesús dando la bienvenida a los niños", "un recuerdo que se entrometía cuando escuchaba cantar a los niños Quién."],
-    english: ["The Grinch was bothered", "by the persistent image", "of Jesus welcoming children", "a memory that intruded when he heard Who-children singing."]
+    spanish: ["El Grinch se preguntaba", "si la salvación de Jesús", "podría salvar un corazón", "dos tamaños más pequeño"],
+    english: ["The Grinch wondered", "if Jesus's salvation", "could save a heart", "two sizes too small"]
   }
 },
 {
@@ -1645,68 +1565,12 @@ sentences: [
   }
 },
 {
-  english: "The Grinch tried ignoring Matthew's teaching that 'where your treasure is, there your heart will be also,' even as he monitored the Whos obsessively.",
-  spanish: "El Grinch intentó ignorar la enseñanza de Mateo de que 'donde esté tu tesoro, allí estará también tu corazón,' incluso mientras monitoreaba a los Quién obsesivamente.",
+  english: "The Grinch was unsettled by Jesus's question 'What good is it to gain the whole world yet forfeit your soul?'",
+  spanish: "El Grinch se inquietó con la pregunta de Jesús '¿De qué sirve ganar el mundo entero si se pierde el alma?'",
   segments: {
-    spanish: ["El Grinch intentó ignorar", "la enseñanza de Mateo", "de que 'donde esté tu tesoro, allí estará también tu corazón,'", "incluso mientras monitoreaba a los Quién obsesivamente."],
-    english: ["The Grinch tried ignoring", "Matthew's teaching", "that 'where your treasure is, there your heart will be also,'", "even as he monitored the Whos obsessively."]
+    spanish: ["El Grinch se inquietó", "con la pregunta de Jesús", "de qué sirve ganar el mundo", "entero si se pierde el alma"],
+    english: ["The Grinch was unsettled", "by Jesus's question", "what good is it to gain the whole world", "yet forfeit your soul"]
   }
-},
-{
-  english: "The Grinch was unsettled by Jesus's question 'What good is it to gain the whole world yet forfeit your soul?' while surveying his cavern of stolen goods.",
-  spanish: "El Grinch se inquietó con la pregunta de Jesús '¿De qué sirve ganar el mundo entero si se pierde el alma?' mientras contemplaba su caverna de bienes robados.",
-  segments: {
-    spanish: ["El Grinch se inquietó", "con la pregunta de Jesús", "'¿De qué sirve ganar el mundo entero si se pierde el alma?'", "mientras contemplaba su caverna de bienes robados."],
-    english: ["The Grinch was unsettled", "by Jesus's question", "'What good is it to gain the whole world yet forfeit your soul?'", "while surveying his cavern of stolen goods."]
-  }
-},
-{
-  english: "The Grinch bristled at the story of Moses removing his sandals on holy ground, suspecting uncomfortably that transformation required similar vulnerability.",
-  spanish: "El Grinch se erizó ante la historia de Moisés quitándose las sandalias en tierra santa, sospechando incómodamente que la transformación requería una vulnerabilidad similar.",
-  segments: {
-    spanish: ["El Grinch se erizó", "ante la historia de Moisés", "quitándose las sandalias en tierra santa", "sospechando incómodamente que la transformación requería una vulnerabilidad similar."],
-    english: ["The Grinch bristled", "at the story of Moses", "removing his sandals on holy ground", "suspecting uncomfortably that transformation required similar vulnerability."]
-  }
-},
-{
-  english: "The Grinch huffed at the parable of the lost coin, perturbed by the nagging question of whether anyone would search so diligently for him.",
-  spanish: "El Grinch resopló ante la parábola de la moneda perdida, perturbado por la persistente pregunta de si alguien lo buscaría con tanta diligencia.",
-  segments: {
-    spanish: ["El Grinch resopló", "ante la parábola de la moneda perdida", "perturbado por la persistente pregunta", "de si alguien lo buscaría con tanta diligencia."],
-    english: ["The Grinch huffed", "at the parable of the lost coin", "perturbed by the nagging question", "of whether anyone would search so diligently for him."]
-  }
-},
-{
-  english: "The Grinch frowned at the words 'Come to me all who are weary,' reluctantly admitting to himself how exhausting hatred had become.",
-  spanish: "El Grinch frunció el ceño ante las palabras 'Venid a mí todos los que estáis cansados,' admitiendo a regañadientes para sí mismo cuán agotador se había vuelto el odio.",
-  segments: {
-    spanish: ["El Grinch frunció el ceño", "ante las palabras 'Venid a mí todos los que estáis cansados,'", "admitiendo a regañadientes para sí mismo", "cuán agotador se había vuelto el odio."],
-    english: ["The Grinch frowned", "at the words 'Come to me all who are weary,'", "reluctantly admitting to himself", "how exhausting hatred had become."]
-  }
-},
-{
-  english: "The Grinch puzzled over Ruth's choice to embrace community rather than self-sufficiency, an idea that followed him like an unwanted shadow.",
-  spanish: "El Grinch meditó sobre la elección de Rut de abrazar la comunidad en lugar de la autosuficiencia, una idea que lo seguía como una sombra no deseada.",
-  segments: {
-    spanish: ["El Grinch meditó", "sobre la elección de Rut", "de abrazar la comunidad en lugar de la autosuficiencia", "una idea que lo seguía como una sombra no deseada."],
-    english: ["The Grinch puzzled", "over Ruth's choice", "to embrace community rather than self-sufficiency", "an idea that followed him like an unwanted shadow."]
-  }
-},
-{
-  english: "The Grinch couldn't shake the story of the stone being rolled away, symbolizing a rebirth he both feared and secretly yearned for.",
-  spanish: "El Grinch no podía sacudirse la historia de la piedra siendo removida, simbolizando un renacimiento que tanto temía como secretamente anhelaba.",
-  segments: {
-    spanish: ["El Grinch no podía sacudirse", "la historia de la piedra siendo removida", "simbolizando un renacimiento", "que tanto temía como secretamente anhelaba."],
-    english: ["The Grinch couldn't shake", "the story of the stone being rolled away", "symbolizing a rebirth", "he both feared and secretly yearned for."]
-}
-},
-{   
-  english: "The Grinch found hope in Peter's redemption story, believing that even his Grinchy heart might grow three sizes through grace.",
-  spanish: "El Grinch encontró esperanza en la historia de redención de Pedro, creyendo que incluso su corazón Grinchesco podría crecer tres tallas a través de la gracia.",
-  segments: {
-    spanish: ["El Grinch encontró esperanza", "en la historia de redención de Pedro", "creyendo que incluso su corazón Grinchesco", "podría crecer tres tallas a través de la gracia."],
-    english: ["The Grinch found hope", "in Peter's redemption story", "believing that even his Grinchy heart", "might grow three sizes through grace."]
-}
       }
     ]
   },
