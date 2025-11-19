@@ -1,4 +1,5 @@
 // translation-data.js
+
 const translationData = [
   // Belle
   {
