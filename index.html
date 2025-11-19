@@ -1120,27 +1120,37 @@ function checkMatches() {
         }
     });
     
-    // Update result message and button
+        // Update result message and button
     if (!allFilled) {
         resultMessage.textContent = "Please match all phrases before checking.";
         resultMessage.style.color = "blue";
     } else if (allCorrect) {
         resultMessage.textContent = "¡Excelente! All matches are correct!";
         resultMessage.style.color = "green";
-        checkButton.textContent = "Continue";
-        checkButton.onclick = () => {
-            // Close modal and load next question
-            document.getElementById('matching-modal-overlay').style.display = 'none';
-            loadQuestion();
-        };
-        
-        // Show celebration
+
+        // Prevent extra clicks while we advance
+        checkButton.disabled = true;
+
+        // Celebration animation / effect
         showCelebration();
+
+        // Auto-advance to the next question after a short pause
+        setTimeout(() => {
+            // Close the matching modal
+            document.getElementById('matching-modal-overlay').style.display = 'none';
+
+            // Re-enable button for the next round
+            checkButton.disabled = false;
+            checkButton.textContent = "Check matches";
+
+            // Load the next question
+            loadQuestion();
+        }, 800); // 0.8 seconds; tweak if you want a longer/shorter pause
     } else {
         resultMessage.textContent = "Try again! Some matches are incorrect.";
         resultMessage.style.color = "red";
     }
-}
+
 </script>
 </body>
 </html>
