@@ -6357,8 +6357,8 @@ sentences: [
         english: "Through experimentation, Aladdin discovered natural ways to preserve food.",
         spanish: "Mediante experimentación, Aladdin descubrió formas naturales de preservar alimentos.",
         segments: {
-          spanish: ["Mediante experimentación,", "Aladdin", "descubrió", "formas naturales de preservar alimentos."],
-          english: ["Through experimentation,", "Aladdin", "discovered", "natural ways to preserve food."]
+          spanish: ["Mediante experimentación,", "Aladdin", "descubrió formas naturales", "de preservar alimentos."],
+          english: ["Through experimentation,", "Aladdin", "discovered natural ways", "to preserve food."]
         }
       },
       {
