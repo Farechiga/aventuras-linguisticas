@@ -3419,326 +3419,326 @@ sentences: [
     ]
   },
   {      
-    character: "WALL-E",
+    character: "W A L L E",
     sentences: [
       {
-        english: "WALL-E collected useful objects to solve daily challenges.",
-        spanish: "WALL-E coleccionaba objetos útiles para resolver desafíos diarios.",
+        english: "W A L L E collected useful objects to solve daily challenges.",
+        spanish: "W A L L E coleccionaba objetos útiles para resolver desafíos diarios.",
         segments: {
-          spanish: ["WALL-E", "coleccionaba objetos útiles", "para resolver", "desafíos diarios."],
-          english: ["WALL-E", "collected useful objects", "to solve", "daily challenges."]
+          spanish: ["W A L L E", "coleccionaba objetos útiles", "para resolver", "desafíos diarios."],
+          english: ["W A L L E", "collected useful objects", "to solve", "daily challenges."]
         }
       },
       {
-        english: "With creativity, WALL-E repurposed trash into helpful tools.",
-        spanish: "Con creatividad, WALL-E transformó basura en herramientas útiles.",
+        english: "With creativity, W A L L E repurposed trash into helpful tools.",
+        spanish: "Con creatividad, W A L L E transformó basura en herramientas útiles.",
         segments: {
-          spanish: ["Con creatividad,", "WALL-E", "transformó basura", "en herramientas útiles."],
-          english: ["With creativity,", "WALL-E", "repurposed trash", "into helpful tools."]
+          spanish: ["Con creatividad,", "W A L L E", "transformó basura", "en herramientas útiles."],
+          english: ["With creativity,", "W A L L E", "repurposed trash", "into helpful tools."]
         }
       },
       {
-        english: "WALL-E built stairs from discarded items to reach high places.",
-        spanish: "WALL-E construyó escaleras con objetos descartados para alcanzar lugares altos.",
+        english: "W A L L E built stairs from discarded items to reach high places.",
+        spanish: "W A L L E construyó escaleras con objetos descartados para alcanzar lugares altos.",
         segments: {
-          spanish: ["WALL-E", "construyó escaleras", "con objetos descartados", "para alcanzar lugares altos."],
-          english: ["WALL-E", "built stairs", "from discarded items", "to reach high places."]
+          spanish: ["W A L L E", "construyó escaleras", "con objetos descartados", "para alcanzar lugares altos."],
+          english: ["W A L L E", "built stairs", "from discarded items", "to reach high places."]
         }
       },
       {
-        english: "WALL-E's kindness helped forge unexpected alliances and friendships.",
-        spanish: "La amabilidad de WALL-E ayudó a forjar alianzas y amistades inesperadas.",
+        english: "W A L L E's kindness helped forge unexpected alliances and friendships.",
+        spanish: "La amabilidad de W A L L E ayudó a forjar alianzas y amistades inesperadas.",
         segments: {
-          spanish: ["La amabilidad de WALL-E", "ayudó a forjar", "inesperadas", "alianzas y amistades."],
-          english: ["WALL-E's kindness", "helped forge", "unexpected", "alliances and friendships."]
+          spanish: ["La amabilidad de W A L L E", "ayudó a forjar", "inesperadas", "alianzas y amistades."],
+          english: ["W A L L E's kindness", "helped forge", "unexpected", "alliances and friendships."]
         }
       },
       {
-        english: "WALL-E created art from abandoned materials to express feelings.",
-        spanish: "WALL-E creó arte con materiales abandonados para expresar sentimientos.",
+        english: "W A L L E created art from abandoned materials to express feelings.",
+        spanish: "W A L L E creó arte con materiales abandonados para expresar sentimientos.",
         segments: {
-          spanish: ["WALL-E", "creó arte", "con materiales abandonados", "para expresar sentimientos."],
-          english: ["WALL-E", "created art", "from abandoned materials", "to express feelings."]
+          spanish: ["W A L L E", "creó arte", "con materiales abandonados", "para expresar sentimientos."],
+          english: ["W A L L E", "created art", "from abandoned materials", "to express feelings."]
         }
       },
       {
-        english: "Through courage, WALL-E ventured into unknown areas seeking solutions.",
-        spanish: "Con valentía, WALL-E se aventuró en áreas desconocidas buscando soluciones.",
+        english: "Through courage, W A L L E ventured into unknown areas seeking solutions.",
+        spanish: "Con valentía, W A L L E se aventuró en áreas desconocidas buscando soluciones.",
         segments: {
-          spanish: ["Con valentía,", "WALL-E", "se aventuró en áreas desconocidas", "buscando soluciones."],
-          english: ["Through courage,", "WALL-E", "ventured into unknown areas", "seeking solutions."]
+          spanish: ["Con valentía,", "W A L L E", "se aventuró en áreas desconocidas", "buscando soluciones."],
+          english: ["Through courage,", "W A L L E", "ventured into unknown areas", "seeking solutions."]
         }
       },
       {
-        english: "WALL-E designed intricate recycling systems from salvaged parts.",
-        spanish: "WALL-E diseñó complejos sistemas de reciclaje con piezas recuperadas.",
+        english: "W A L L E designed intricate recycling systems from salvaged parts.",
+        spanish: "W A L L E diseñó complejos sistemas de reciclaje con piezas recuperadas.",
         segments: {
-          spanish: ["WALL-E", "diseñó", "complejos sistemas de reciclaje", "con piezas recuperadas."],
-          english: ["WALL-E", "designed", "intricate recycling systems", "from salvaged parts."]
+          spanish: ["W A L L E", "diseñó", "complejos sistemas de reciclaje", "con piezas recuperadas."],
+          english: ["W A L L E", "designed", "intricate recycling systems", "from salvaged parts."]
         }
       },
       {
-        english: "With curiosity, WALL-E discovered new ways to clean polluted soil.",
-        spanish: "Con curiosidad, WALL-E descubrió nuevas formas de limpiar suelo contaminado.",
+        english: "With curiosity, W A L L E discovered new ways to clean polluted soil.",
+        spanish: "Con curiosidad, W A L L E descubrió nuevas formas de limpiar suelo contaminado.",
         segments: {
-          spanish: ["Con curiosidad,", "WALL-E", "descubrió nuevas formas", "de limpiar suelo contaminado."],
-          english: ["With curiosity,", "WALL-E", "discovered new ways", "to clean polluted soil."]
+          spanish: ["Con curiosidad,", "W A L L E", "descubrió nuevas formas", "de limpiar suelo contaminado."],
+          english: ["With curiosity,", "W A L L E", "discovered new ways", "to clean polluted soil."]
         }
       },
       {
-        english: "WALL-E's persistence helped find water sources during droughts.",
-        spanish: "La persistencia de WALL-E ayudó a encontrar fuentes de agua durante sequías.",
+        english: "W A L L E's persistence helped find water sources during droughts.",
+        spanish: "La persistencia de W A L L E ayudó a encontrar fuentes de agua durante sequías.",
         segments: {
-          spanish: ["La persistencia de WALL-E", "ayudó a encontrar", "fuentes de agua", "durante sequías."],
-          english: ["WALL-E's persistence", "helped find", "water sources", "during droughts."]
+          spanish: ["La persistencia de W A L L E", "ayudó a encontrar", "fuentes de agua", "durante sequías."],
+          english: ["W A L L E's persistence", "helped find", "water sources", "during droughts."]
         }
       },
       {
-        english: "Using teamwork, WALL-E and EVE restored damaged ecosystems.",
-        spanish: "Usando trabajo en equipo, WALL-E y EVE restauraron ecosistemas dañados.",
+        english: "Using teamwork, W A L L E and EVE restored damaged ecosystems.",
+        spanish: "Usando trabajo en equipo, W A L L E y EVE restauraron ecosistemas dañados.",
         segments: {
-          spanish: ["Usando trabajo en equipo,", "WALL-E y EVE", "restauraron", "ecosistemas dañados."],
-          english: ["Using teamwork,", "WALL-E and EVE", "restored", "damaged ecosystems."]
+          spanish: ["Usando trabajo en equipo,", "W A L L E y EVE", "restauraron", "ecosistemas dañados."],
+          english: ["Using teamwork,", "W A L L E and EVE", "restored", "damaged ecosystems."]
         }
       },
       {
-        english: "WALL-E taught other robots to appreciate Earth's beauty.",
-        spanish: "WALL-E enseñó a otros robots a apreciar la belleza de la Tierra.",
+        english: "W A L L E taught other robots to appreciate Earth's beauty.",
+        spanish: "W A L L E enseñó a otros robots a apreciar la belleza de la Tierra.",
         segments: {
-          spanish: ["WALL-E", "enseñó a otros robots", "a apreciar", "la belleza de la Tierra."],
-          english: ["WALL-E", "taught other robots", "to appreciate", "Earth's beauty."]
+          spanish: ["W A L L E", "enseñó a otros robots", "a apreciar", "la belleza de la Tierra."],
+          english: ["W A L L E", "taught other robots", "to appreciate", "Earth's beauty."]
         }
       },
       {
-        english: "With ingenuity, WALL-E created solar collectors from reflective trash.",
-        spanish: "Con ingenio, WALL-E creó colectores solares con basura reflectante.",
+        english: "With ingenuity, W A L L E created solar collectors from reflective trash.",
+        spanish: "Con ingenio, W A L L E creó colectores solares con basura reflectante.",
         segments: {
-          spanish: ["Con ingenio,", "WALL-E", "creó colectores solares", "con basura reflectante."],
-          english: ["With ingenuity,", "WALL-E", "created solar collectors", "from reflective trash."]
+          spanish: ["Con ingenio,", "W A L L E", "creó colectores solares", "con basura reflectante."],
+          english: ["With ingenuity,", "W A L L E", "created solar collectors", "from reflective trash."]
         }
       },
       {
-        english: "WALL-E built shelters for small creatures during storms.",
-        spanish: "WALL-E construyó refugios para pequeñas criaturas durante tormentas.",
+        english: "W A L L E built shelters for small creatures during storms.",
+        spanish: "W A L L E construyó refugios para pequeñas criaturas durante tormentas.",
         segments: {
-          spanish: ["WALL-E", "construyó refugios", "para pequeñas criaturas", "durante tormentas."],
-          english: ["WALL-E", "built shelters", "for small creatures", "during storms."]
+          spanish: ["W A L L E", "construyó refugios", "para pequeñas criaturas", "durante tormentas."],
+          english: ["W A L L E", "built shelters", "for small creatures", "during storms."]
         }
       },
       {
-        english: "WALL-E's thoughtfulness transformed neglected spaces into gardens.",
-        spanish: "La consideración de WALL-E transformó espacios abandonados en jardines.",
+        english: "W A L L E's thoughtfulness transformed neglected spaces into gardens.",
+        spanish: "La consideración de W A L L E transformó espacios abandonados en jardines.",
         segments: {
-          spanish: ["La consideración de WALL-E", "transformó", "espacios abandonados", "en jardines."],
-          english: ["WALL-E's thoughtfulness", "transformed", "neglected spaces", "into gardens."]
+          spanish: ["La consideración de W A L L E", "transformó", "espacios abandonados", "en jardines."],
+          english: ["W A L L E's thoughtfulness", "transformed", "neglected spaces", "into gardens."]
         }
       },
       {
-        english: "Through observation, WALL-E learned to predict dangerous weather patterns.",
-        spanish: "Mediante observación, WALL-E aprendió a predecir patrones climáticos peligrosos.",
+        english: "Through observation, W A L L E learned to predict dangerous weather patterns.",
+        spanish: "Mediante observación, W A L L E aprendió a predecir patrones climáticos peligrosos.",
         segments: {
-          spanish: ["Mediante observación,", "WALL-E", "aprendió a predecir", "patrones climáticos peligrosos."],
-          english: ["Through observation,", "WALL-E", "learned to predict", "dangerous weather patterns."]
+          spanish: ["Mediante observación,", "W A L L E", "aprendió a predecir", "patrones climáticos peligrosos."],
+          english: ["Through observation,", "W A L L E", "learned to predict", "dangerous weather patterns."]
         }
       },
       {
-        english: "WALL-E developed methods to filter polluted water effectively.",
-        spanish: "WALL-E desarrolló métodos para filtrar agua contaminada efectivamente.",
+        english: "W A L L E developed methods to filter polluted water effectively.",
+        spanish: "W A L L E desarrolló métodos para filtrar agua contaminada efectivamente.",
         segments: {
-          spanish: ["WALL-E", "desarrolló métodos", "para filtrar", "agua contaminada efectivamente."],
-          english: ["WALL-E", "developed methods", "to filter", "polluted water effectively."]
+          spanish: ["W A L L E", "desarrolló métodos", "para filtrar", "agua contaminada efectivamente."],
+          english: ["W A L L E", "developed methods", "to filter", "polluted water effectively."]
         }
       },
       {
-        english: "With determination, WALL-E cleared pathways through mountains of trash.",
-        spanish: "Con determinación, WALL-E despejó caminos a través de montañas de basura.",
+        english: "With determination, W A L L E cleared pathways through mountains of trash.",
+        spanish: "Con determinación, W A L L E despejó caminos a través de montañas de basura.",
         segments: {
-          spanish: ["Con determinación,", "WALL-E", "despejó caminos", "a través de montañas de basura."],
-          english: ["With determination,", "WALL-E", "cleared pathways", "through mountains of trash."]
+          spanish: ["Con determinación,", "W A L L E", "despejó caminos", "a través de montañas de basura."],
+          english: ["With determination,", "W A L L E", "cleared pathways", "through mountains of trash."]
         }
       },
       {
-        english: "WALL-E created communication systems using discarded electronics.",
-        spanish: "WALL-E creó sistemas de comunicación usando electrónicos descartados.",
+        english: "W A L L E created communication systems using discarded electronics.",
+        spanish: "W A L L E creó sistemas de comunicación usando electrónicos descartados.",
         segments: {
-          spanish: ["WALL-E", "creó", "sistemas de comunicación", "usando electrónicos descartados."],
-          english: ["WALL-E", "created", "communication systems", "using discarded electronics."]
+          spanish: ["W A L L E", "creó", "sistemas de comunicación", "usando electrónicos descartados."],
+          english: ["W A L L E", "created", "communication systems", "using discarded electronics."]
         }
       },
       {
-        english: "WALL-E's recycling innovations helped restore Earth's environment.",
-        spanish: "Las innovaciones de reciclaje de WALL-E ayudaron a restaurar el ambiente terrestre.",
+        english: "W A L L E's recycling innovations helped restore Earth's environment.",
+        spanish: "Las innovaciones de reciclaje de W A L L E ayudaron a restaurar el ambiente terrestre.",
         segments: {
-          spanish: ["Las innovaciones de reciclaje", "de WALL-E", "ayudaron a restaurar", "el ambiente terrestre."],
-          english: ["recycling innovations", "WALL-E's", "helped restore", "Earth's environment."]
+          spanish: ["Las innovaciones de reciclaje", "de W A L L E", "ayudaron a restaurar", "el ambiente terrestre."],
+          english: ["recycling innovations", "W A L L E's", "helped restore", "Earth's environment."]
         }
       },
       {
-        english: "Through collaboration, WALL-E and friends revitalized barren landscapes.",
-        spanish: "Mediante colaboración, WALL-E y amigos revitalizaron paisajes áridos.",
+        english: "Through collaboration, W A L L E and friends revitalized barren landscapes.",
+        spanish: "Mediante colaboración, W A L L E y amigos revitalizaron paisajes áridos.",
         segments: {
-          spanish: ["Mediante colaboración,", "WALL-E y amigos", "revitalizaron", "paisajes áridos."],
-          english: ["Through collaboration,", "WALL-E and friends", "revitalized", "barren landscapes."]
+          spanish: ["Mediante colaboración,", "W A L L E y amigos", "revitalizaron", "paisajes áridos."],
+          english: ["Through collaboration,", "W A L L E and friends", "revitalized", "barren landscapes."]
         }
       },
       {
-        english: "WALL-E organized robots to clean large contaminated areas.",
-        spanish: "WALL-E organizó robots para limpiar grandes áreas contaminadas.",
+        english: "W A L L E organized robots to clean large contaminated areas.",
+        spanish: "W A L L E organizó robots para limpiar grandes áreas contaminadas.",
         segments: {
-          spanish: ["WALL-E", "organizó robots", "para limpiar", "grandes áreas contaminadas."],
-          english: ["WALL-E", "organized robots", "to clean", "large contaminated areas."]
+          spanish: ["W A L L E", "organizó robots", "para limpiar", "grandes áreas contaminadas."],
+          english: ["W A L L E", "organized robots", "to clean", "large contaminated areas."]
         }
       },
       {
-        english: "With improvisation, WALL-E built bridges across dangerous chasms.",
-        spanish: "Con improvisación, WALL-E construyó puentes sobre peligrosos abismos.",
+        english: "With improvisation, W A L L E built bridges across dangerous chasms.",
+        spanish: "Con improvisación, W A L L E construyó puentes sobre peligrosos abismos.",
         segments: {
-          spanish: ["Con improvisación,", "WALL-E", "construyó puentes", "sobre peligrosos abismos."],
-          english: ["With improvisation,", "WALL-E", "built bridges", "across dangerous chasms."]
+          spanish: ["Con improvisación,", "W A L L E", "construyó puentes", "sobre peligrosos abismos."],
+          english: ["With improvisation,", "W A L L E", "built bridges", "across dangerous chasms."]
         }
       },
       {
-        english: "WALL-E created warning systems for approaching dust storms.",
-        spanish: "WALL-E creó sistemas de alerta para tormentas de polvo cercanas.",
+        english: "W A L L E created warning systems for approaching dust storms.",
+        spanish: "W A L L E creó sistemas de alerta para tormentas de polvo cercanas.",
         segments: {
-          spanish: ["WALL-E", "creó", "sistemas de alerta", "para tormentas de polvo cercanas."],
-          english: ["WALL-E", "created", "warning systems", "for approaching dust storms."]
+          spanish: ["W A L L E", "creó", "sistemas de alerta", "para tormentas de polvo cercanas."],
+          english: ["W A L L E", "created", "warning systems", "for approaching dust storms."]
         }
       },
       {
-        english: "Through patience, WALL-E restored forgotten technology to working condition.",
-        spanish: "Con paciencia, WALL-E restauró tecnología olvidada a condición funcional.",
+        english: "Through patience, W A L L E restored forgotten technology to working condition.",
+        spanish: "Con paciencia, W A L L E restauró tecnología olvidada a condición funcional.",
         segments: {
-          spanish: ["Con paciencia,", "WALL-E", "restauró tecnología olvidada", "a condición funcional."],
-          english: ["Through patience,", "WALL-E", "restored forgotten technology", "to working condition."]
+          spanish: ["Con paciencia,", "W A L L E", "restauró tecnología olvidada", "a condición funcional."],
+          english: ["Through patience,", "W A L L E", "restored forgotten technology", "to working condition."]
         }
       },
       {
-        english: "WALL-E designed maps of safe travel routes through dangers.",
-        spanish: "WALL-E diseñó mapas de rutas seguras a través de peligros.",
+        english: "W A L L E designed maps of safe travel routes through dangers.",
+        spanish: "W A L L E diseñó mapas de rutas seguras a través de peligros.",
         segments: {
-          spanish: ["WALL-E", "diseñó mapas", "de rutas seguras", "a través de peligros."],
-          english: ["WALL-E", "designed maps", "of safe travel routes", "through dangers."]
+          spanish: ["W A L L E", "diseñó mapas", "de rutas seguras", "a través de peligros."],
+          english: ["W A L L E", "designed maps", "of safe travel routes", "through dangers."]
         }
       },
       {
-        english: "With limited resources, WALL-E solved complex environmental challenges.",
-        spanish: "Con recursos limitados, WALL-E resolvió complejos desafíos ambientales.",
+        english: "With limited resources, W A L L E solved complex environmental challenges.",
+        spanish: "Con recursos limitados, W A L L E resolvió complejos desafíos ambientales.",
         segments: {
-          spanish: ["Con recursos limitados,", "WALL-E", "resolvió", "complejos desafíos ambientales."],
-          english: ["With limited resources,", "WALL-E", "solved", "complex environmental challenges."]
+          spanish: ["Con recursos limitados,", "W A L L E", "resolvió", "complejos desafíos ambientales."],
+          english: ["With limited resources,", "W A L L E", "solved", "complex environmental challenges."]
         }
       },
       {
-        english: "WALL-E taught humans the importance of protecting natural resources.",
-        spanish: "WALL-E enseñó a humanos la importancia de proteger recursos naturales.",
+        english: "W A L L E taught humans the importance of protecting natural resources.",
+        spanish: "W A L L E enseñó a humanos la importancia de proteger recursos naturales.",
         segments: {
-          spanish: ["WALL-E", "enseñó a humanos", "la importancia", "de proteger recursos naturales."],
-          english: ["WALL-E", "taught humans", "the importance", "of protecting natural resources."]
+          spanish: ["W A L L E", "enseñó a humanos", "la importancia", "de proteger recursos naturales."],
+          english: ["W A L L E", "taught humans", "the importance", "of protecting natural resources."]
         }
       },
       {
-        english: "WALL-E's compassion inspired others to help repair Earth.",
-        spanish: "La compasión de WALL-E inspiró a otros a ayudar a reparar la Tierra.",
+        english: "W A L L E's compassion inspired others to help repair Earth.",
+        spanish: "La compasión de W A L L E inspiró a otros a ayudar a reparar la Tierra.",
         segments: {
-          spanish: ["La compasión de WALL-E", "inspiró a otros", "a ayudar", "a reparar la Tierra."],
-          english: ["WALL-E's compassion", "inspired others", "to help", "repair Earth."]
+          spanish: ["La compasión de W A L L E", "inspiró a otros", "a ayudar", "a reparar la Tierra."],
+          english: ["W A L L E's compassion", "inspired others", "to help", "repair Earth."]
         }
       },
       {
-        english: "Through trial and error, WALL-E developed efficient sorting systems.",
-        spanish: "Mediante prueba y error, WALL-E desarrolló sistemas eficientes de clasificación.",
+        english: "Through trial and error, W A L L E developed efficient sorting systems.",
+        spanish: "Mediante prueba y error, W A L L E desarrolló sistemas eficientes de clasificación.",
         segments: {
-          spanish: ["Mediante prueba y error,", "WALL-E", "desarrolló", "sistemas eficientes de clasificación."],
-          english: ["Through trial and error,", "WALL-E", "developed", "efficient sorting systems."]
+          spanish: ["Mediante prueba y error,", "W A L L E", "desarrolló", "sistemas eficientes de clasificación."],
+          english: ["Through trial and error,", "W A L L E", "developed", "efficient sorting systems."]
         }
       },
       {
-        english: "WALL-E converted waste materials into valuable building resources.",
-        spanish: "WALL-E convirtió materiales de desecho en valiosos recursos de construcción.",
+        english: "W A L L E converted waste materials into valuable building resources.",
+        spanish: "W A L L E convirtió materiales de desecho en valiosos recursos de construcción.",
         segments: {
-          spanish: ["WALL-E convirtió", "materiales de desecho", "en", "valiosos recursos de construcción."],
-          english: ["WALL-E converted", "waste materials", "into", "valuable building resources."]
+          spanish: ["W A L L E convirtió", "materiales de desecho", "en", "valiosos recursos de construcción."],
+          english: ["W A L L E converted", "waste materials", "into", "valuable building resources."]
         }
       },
       {
-        english: "With careful analysis, WALL-E identified reusable components from debris.",
-        spanish: "Con análisis cuidadoso, WALL-E identificó componentes reutilizables entre escombros.",
+        english: "With careful analysis, W A L L E identified reusable components from debris.",
+        spanish: "Con análisis cuidadoso, W A L L E identificó componentes reutilizables entre escombros.",
         segments: {
-          spanish: ["Con análisis cuidadoso,", "WALL-E", "identificó componentes reutilizables", "entre escombros."],
-          english: ["With careful analysis,", "WALL-E", "identified reusable components", "from debris."]
+          spanish: ["Con análisis cuidadoso,", "W A L L E", "identificó componentes reutilizables", "entre escombros."],
+          english: ["With careful analysis,", "W A L L E", "identified reusable components", "from debris."]
         }
       },
       {
-        english: "WALL-E created alternative energy sources from abandoned machinery.",
-        spanish: "WALL-E creó fuentes alternativas de energía con maquinaria abandonada.",
+        english: "W A L L E created alternative energy sources from abandoned machinery.",
+        spanish: "W A L L E creó fuentes alternativas de energía con maquinaria abandonada.",
         segments: {
-          spanish: ["WALL-E", "creó", "fuentes alternativas de energía", "con maquinaria abandonada."],
-          english: ["WALL-E", "created", "alternative energy sources", "from abandoned machinery."]
+          spanish: ["W A L L E", "creó", "fuentes alternativas de energía", "con maquinaria abandonada."],
+          english: ["W A L L E", "created", "alternative energy sources", "from abandoned machinery."]
         }
       },
       {
-        english: "WALL-E's innovative thinking solved seemingly impossible waste problems.",
-        spanish: "El pensamiento innovador de WALL-E resolvió problemas aparentemente imposibles de residuos.",
+        english: "W A L L E's innovative thinking solved seemingly impossible waste problems.",
+        spanish: "El pensamiento innovador de W A L L E resolvió problemas aparentemente imposibles de residuos.",
         segments: {
-          spanish: ["El pensamiento innovador de WALL-E", "resolvió", "problemas aparentemente imposibles", "de residuos."],
-          english: ["WALL-E's innovative thinking", "solved", "seemingly impossible problems", "waste."]
+          spanish: ["El pensamiento innovador de W A L L E", "resolvió", "problemas aparentemente imposibles", "de residuos."],
+          english: ["W A L L E's innovative thinking", "solved", "seemingly impossible problems", "waste."]
         }
       },
       {
-        english: "Through empathy, WALL-E united different robot models toward goals.",
-        spanish: "Mediante empatía, WALL-E unió diferentes modelos de robots hacia objetivos.",
+        english: "Through empathy, W A L L E united different robot models toward goals.",
+        spanish: "Mediante empatía, W A L L E unió diferentes modelos de robots hacia objetivos.",
         segments: {
-          spanish: ["Mediante empatía,", "WALL-E", "unió diferentes modelos de robots", "hacia objetivos."],
-          english: ["Through empathy,", "WALL-E", "united different robot models", "toward goals."]
+          spanish: ["Mediante empatía,", "W A L L E", "unió diferentes modelos de robots", "hacia objetivos."],
+          english: ["Through empathy,", "W A L L E", "united different robot models", "toward goals."]
         }
       },
       {
-        english: "WALL-E established seed preservation systems for future regeneration.",
-        spanish: "WALL-E estableció sistemas de preservación de semillas para futura regeneración.",
+        english: "W A L L E established seed preservation systems for future regeneration.",
+        spanish: "W A L L E estableció sistemas de preservación de semillas para futura regeneración.",
         segments: {
-          spanish: ["WALL-E", "estableció", "sistemas de preservación de semillas", "para futura regeneración."],
-          english: ["WALL-E", "established", "seed preservation systems", "for future regeneration."]
+          spanish: ["W A L L E", "estableció", "sistemas de preservación de semillas", "para futura regeneración."],
+          english: ["W A L L E", "established", "seed preservation systems", "for future regeneration."]
         }
       },
       {
-        english: "With strategic planning, WALL-E coordinated large-scale cleanup operations.",
-        spanish: "Con planificación estratégica, WALL-E coordinó operaciones de limpieza a gran escala.",
+        english: "With strategic planning, W A L L E coordinated large-scale cleanup operations.",
+        spanish: "Con planificación estratégica, W A L L E coordinó operaciones de limpieza a gran escala.",
         segments: {
-          spanish: ["Con planificación estratégica,", "WALL-E", "coordinó", "operaciones de limpieza a gran escala."],
-          english: ["With strategic planning,", "WALL-E", "coordinated", "large-scale cleanup operations."]
+          spanish: ["Con planificación estratégica,", "W A L L E", "coordinó", "operaciones de limpieza a gran escala."],
+          english: ["With strategic planning,", "W A L L E", "coordinated", "large-scale cleanup operations."]
         }
       },
       {
-        english: "WALL-E adapted old technologies to serve new purposes.",
-        spanish: "WALL-E adaptó viejas tecnologías para servir nuevos propósitos.",
+        english: "W A L L E adapted old technologies to serve new purposes.",
+        spanish: "W A L L E adaptó viejas tecnologías para servir nuevos propósitos.",
         segments: {
-          spanish: ["WALL-E", "adaptó viejas tecnologías", "para servir", "nuevos propósitos."],
-          english: ["WALL-E", "adapted old technologies", "to serve", "new purposes."]
+          spanish: ["W A L L E", "adaptó viejas tecnologías", "para servir", "nuevos propósitos."],
+          english: ["W A L L E", "adapted old technologies", "to serve", "new purposes."]
         }
       },
       {
-        english: "WALL-E's resourcefulness turned scarcity into unexpected opportunities.",
-        spanish: "La ingeniosidad de WALL-E convirtió escasez en oportunidades inesperadas.",
+        english: "W A L L E's resourcefulness turned scarcity into unexpected opportunities.",
+        spanish: "La ingeniosidad de W A L L E convirtió escasez en oportunidades inesperadas.",
         segments: {
-          spanish: ["La ingeniosidad de WALL-E", "convirtió", "escasez", "en oportunidades inesperadas."],
-          english: ["WALL-E's resourcefulness", "turned", "scarcity", "into unexpected opportunities."]
+          spanish: ["La ingeniosidad de W A L L E", "convirtió", "escasez", "en oportunidades inesperadas."],
+          english: ["W A L L E's resourcefulness", "turned", "scarcity", "into unexpected opportunities."]
         }
       },
       {
-        english: "Through dedication, WALL-E revitalized contaminated soil for planting.",
-        spanish: "Con dedicación, WALL-E revitalizó suelo contaminado para plantación.",
+        english: "Through dedication, W A L L E revitalized contaminated soil for planting.",
+        spanish: "Con dedicación, W A L L E revitalizó suelo contaminado para plantación.",
         segments: {
-          spanish: ["Con dedicación,", "WALL-E", "revitalizó suelo contaminado", "para plantación."],
-          english: ["Through dedication,", "WALL-E", "revitalized contaminated soil", "for planting."]
+          spanish: ["Con dedicación,", "W A L L E", "revitalizó suelo contaminado", "para plantación."],
+          english: ["Through dedication,", "W A L L E", "revitalized contaminated soil", "for planting."]
         }
       },
       {
-        english: "WALL-E built rainwater collection systems from discarded containers.",
-        spanish: "WALL-E construyó sistemas de recolección de lluvia con contenedores descartados.",
+        english: "W A L L E built rainwater collection systems from discarded containers.",
+        spanish: "W A L L E construyó sistemas de recolección de lluvia con contenedores descartados.",
         segments: {
-          spanish: ["WALL-E", "construyó", "sistemas de recolección de lluvia", "con contenedores descartados."],
-          english: ["WALL-E", "built", "rainwater collection systems", "from discarded containers."]
+          spanish: ["W A L L E", "construyó", "sistemas de recolección de lluvia", "con contenedores descartados."],
+          english: ["W A L L E", "built", "rainwater collection systems", "from discarded containers."]
         }
       }
     ]
@@ -3771,11 +3771,11 @@ sentences: [
         }
       },
       {
-        english: "Through collaboration, EVE and Wall-E protected the plant specimen.",
-        spanish: "Mediante colaboración, EVE y Wall-E protegieron el espécimen vegetal.",
+        english: "Through collaboration, EVE and W A L L E protected the plant specimen.",
+        spanish: "Mediante colaboración, EVE y W A L L E protegieron el espécimen vegetal.",
         segments: {
-          spanish: ["Mediante colaboración,", "EVE y Wall-E", "protegieron", "el espécimen vegetal."],
-          english: ["Through collaboration,", "EVE and Wall-E", "protected", "the plant specimen."]
+          spanish: ["Mediante colaboración,", "EVE y W A L L E", "protegieron", "el espécimen vegetal."],
+          english: ["Through collaboration,", "EVE and W A L L E", "protected", "the plant specimen."]
         }
       },
       {
@@ -4003,259 +4003,259 @@ sentences: [
         }
       },
       {
-        english: "EVE and WALL-E restored ancient communication towers for settlers.",
-        spanish: "EVE y WALL-E restauraron antiguas torres de comunicación para colonos.",
+        english: "EVE and W A L L E restored ancient communication towers for settlers.",
+        spanish: "EVE y W A L L E restauraron antiguas torres de comunicación para colonos.",
         segments: {
-          spanish: ["EVE y WALL-E", "restauraron", "antiguas torres de comunicación", "para colonos."],
-          english: ["EVE and WALL-E", "restored", "ancient communication towers", "for settlers."]
+          spanish: ["EVE y W A L L E", "restauraron", "antiguas torres de comunicación", "para colonos."],
+          english: ["EVE and W A L L E", "restored", "ancient communication towers", "for settlers."]
         }
       },
       {
-        english: "With shared strengths, EVE and WALL-E purified contaminated water sources.",
-        spanish: "Con fortalezas compartidas, EVE y WALL-E purificaron fuentes de agua contaminadas.",
+        english: "With shared strengths, EVE and W A L L E purified contaminated water sources.",
+        spanish: "Con fortalezas compartidas, EVE y W A L L E purificaron fuentes de agua contaminadas.",
         segments: {
-          spanish: ["Con fortalezas compartidas,", "EVE y WALL-E", "purificaron", "fuentes de agua contaminadas."],
-          english: ["With shared strengths,", "EVE and WALL-E", "purified", "contaminated water sources."]
+          spanish: ["Con fortalezas compartidas,", "EVE y W A L L E", "purificaron", "fuentes de agua contaminadas."],
+          english: ["With shared strengths,", "EVE and W A L L E", "purified", "contaminated water sources."]
         }
       },
       {
-        english: "EVE and WALL-E designed sustainable habitats for returning humans.",
-        spanish: "EVE y WALL-E diseñaron hábitats sostenibles para humanos retornantes.",
+        english: "EVE and W A L L E designed sustainable habitats for returning humans.",
+        spanish: "EVE y W A L L E diseñaron hábitats sostenibles para humanos retornantes.",
         segments: {
-          spanish: ["EVE y WALL-E", "diseñaron", "hábitats sostenibles", "para humanos retornantes."],
-          english: ["EVE and WALL-E", "designed", "sustainable habitats", "for returning humans."]
+          spanish: ["EVE y W A L L E", "diseñaron", "hábitats sostenibles", "para humanos retornantes."],
+          english: ["EVE and W A L L E", "designed", "sustainable habitats", "for returning humans."]
         }
       },
       {
-        english: "Through mutual support, EVE and WALL-E navigated dangerous terrain.",
-        spanish: "Mediante apoyo mutuo, EVE y WALL-E navegaron terreno peligroso.",
+        english: "Through mutual support, EVE and W A L L E navigated dangerous terrain.",
+        spanish: "Mediante apoyo mutuo, EVE y W A L L E navegaron terreno peligroso.",
         segments: {
-          spanish: ["Mediante apoyo mutuo,", "EVE y WALL-E", "navegaron", "terreno peligroso."],
-          english: ["Through mutual support,", "EVE and WALL-E", "navigated", "dangerous terrain."]
+          spanish: ["Mediante apoyo mutuo,", "EVE y W A L L E", "navegaron", "terreno peligroso."],
+          english: ["Through mutual support,", "EVE and W A L L E", "navigated", "dangerous terrain."]
         }
       },
       {
-        english: "EVE and WALL-E established safe passage through toxic zones.",
-        spanish: "EVE y WALL-E establecieron paso seguro a través de zonas tóxicas.",
+        english: "EVE and W A L L E established safe passage through toxic zones.",
+        spanish: "EVE y W A L L E establecieron paso seguro a través de zonas tóxicas.",
         segments: {
-          spanish: ["EVE y WALL-E", "establecieron", "paso seguro", "a través de zonas tóxicas."],
-          english: ["EVE and WALL-E", "established", "safe passage", "through toxic zones."]
+          spanish: ["EVE y W A L L E", "establecieron", "paso seguro", "a través de zonas tóxicas."],
+          english: ["EVE and W A L L E", "established", "safe passage", "through toxic zones."]
         }
       },
       {
-        english: "With combined intelligence, EVE and WALL-E solved complex ecological puzzles.",
-        spanish: "Con inteligencia combinada, EVE y WALL-E resolvieron complejos enigmas ecológicos.",
+        english: "With combined intelligence, EVE and W A L L E solved complex ecological puzzles.",
+        spanish: "Con inteligencia combinada, EVE y W A L L E resolvieron complejos enigmas ecológicos.",
         segments: {
-          spanish: ["Con inteligencia combinada,", "EVE y WALL-E", "resolvieron", "complejos enigmas ecológicos."],
-          english: ["With combined intelligence,", "EVE and WALL-E", "solved", "complex ecological puzzles."]
+          spanish: ["Con inteligencia combinada,", "EVE y W A L L E", "resolvieron", "complejos enigmas ecológicos."],
+          english: ["With combined intelligence,", "EVE and W A L L E", "solved", "complex ecological puzzles."]
         }
       },
       {
-        english: "EVE and WALL-E created a seed bank for endangered plants.",
-        spanish: "EVE y WALL-E crearon un banco de semillas para plantas en peligro.",
+        english: "EVE and W A L L E created a seed bank for endangered plants.",
+        spanish: "EVE y W A L L E crearon un banco de semillas para plantas en peligro.",
         segments: {
-          spanish: ["EVE y WALL-E", "crearon", "un banco de semillas", "para plantas en peligro."],
-          english: ["EVE and WALL-E", "created", "a seed bank", "for endangered plants."]
+          spanish: ["EVE y W A L L E", "crearon", "un banco de semillas", "para plantas en peligro."],
+          english: ["EVE and W A L L E", "created", "a seed bank", "for endangered plants."]
         }
       },
       {
-        english: "Through persistent efforts, EVE and WALL-E cleared debris fields.",
-        spanish: "Mediante esfuerzos persistentes, EVE y WALL-E despejaron campos de escombros.",
+        english: "Through persistent efforts, EVE and W A L L E cleared debris fields.",
+        spanish: "Mediante esfuerzos persistentes, EVE y W A L L E despejaron campos de escombros.",
         segments: {
-          spanish: ["Mediante esfuerzos persistentes,", "EVE y WALL-E", "despejaron", "campos de escombros."],
-          english: ["Through persistent efforts,", "EVE and WALL-E", "cleared", "debris fields."]
+          spanish: ["Mediante esfuerzos persistentes,", "EVE y W A L L E", "despejaron", "campos de escombros."],
+          english: ["Through persistent efforts,", "EVE and W A L L E", "cleared", "debris fields."]
         }
       },
       {
-        english: "EVE and WALL-E mapped underground resources for future generations.",
-        spanish: "EVE y WALL-E mapearon recursos subterráneos para futuras generaciones.",
+        english: "EVE and W A L L E mapped underground resources for future generations.",
+        spanish: "EVE y W A L L E mapearon recursos subterráneos para futuras generaciones.",
         segments: {
-          spanish: ["EVE y WALL-E", "mapearon", "recursos subterráneos", "para futuras generaciones."],
-          english: ["EVE and WALL-E", "mapped", "underground resources", "for future generations."]
+          spanish: ["EVE y W A L L E", "mapearon", "recursos subterráneos", "para futuras generaciones."],
+          english: ["EVE and W A L L E", "mapped", "underground resources", "for future generations."]
         }
       },
       {
-        english: "With resourcefulness, EVE and WALL-E converted waste into building materials.",
-        spanish: "Con ingenio, EVE y WALL-E convirtieron desechos en materiales de construcción.",
+        english: "With resourcefulness, EVE and W A L L E converted waste into building materials.",
+        spanish: "Con ingenio, EVE y W A L L E convirtieron desechos en materiales de construcción.",
         segments: {
-          spanish: ["Con ingenio,", "EVE y WALL-E", "convirtieron desechos", "en materiales de construcción."],
-          english: ["With resourcefulness,", "EVE and WALL-E", "converted waste", "into building materials."]
+          spanish: ["Con ingenio,", "EVE y W A L L E", "convirtieron desechos", "en materiales de construcción."],
+          english: ["With resourcefulness,", "EVE and W A L L E", "converted waste", "into building materials."]
         }
       },
       {
-        english: "EVE and WALL-E taught environmental stewardship to awakened humans.",
-        spanish: "EVE y WALL-E enseñaron administración ambiental a humanos despertados.",
+        english: "EVE and W A L L E taught environmental stewardship to awakened humans.",
+        spanish: "EVE y W A L L E enseñaron administración ambiental a humanos despertados.",
         segments: {
-          spanish: ["EVE y WALL-E", "enseñaron", "administración ambiental", "a humanos despertados."],
-          english: ["EVE and WALL-E", "taught", "environmental stewardship", "to awakened humans."]
+          spanish: ["EVE y W A L L E", "enseñaron", "administración ambiental", "a humanos despertados."],
+          english: ["EVE and W A L L E", "taught", "environmental stewardship", "to awakened humans."]
         }
       },
       {
-        english: "Through careful coordination, EVE and WALL-E rescued trapped explorers.",
-        spanish: "Mediante coordinación cuidadosa, EVE y WALL-E rescataron exploradores atrapados.",
+        english: "Through careful coordination, EVE and W A L L E rescued trapped explorers.",
+        spanish: "Mediante coordinación cuidadosa, EVE y W A L L E rescataron exploradores atrapados.",
         segments: {
-          spanish: ["Mediante coordinación cuidadosa,", "EVE y WALL-E", "rescataron", "exploradores atrapados."],
-          english: ["Through careful coordination,", "EVE and WALL-E", "rescued", "trapped explorers."]
+          spanish: ["Mediante coordinación cuidadosa,", "EVE y W A L L E", "rescataron", "exploradores atrapados."],
+          english: ["Through careful coordination,", "EVE and W A L L E", "rescued", "trapped explorers."]
         }
       },
       {
-        english: "EVE and WALL-E organized robot teams for efficient cleanup operations.",
-        spanish: "EVE y WALL-E organizaron equipos robóticos para operaciones eficientes de limpieza.",
+        english: "EVE and W A L L E organized robot teams for efficient cleanup operations.",
+        spanish: "EVE y W A L L E organizaron equipos robóticos para operaciones eficientes de limpieza.",
         segments: {
-          spanish: ["EVE y WALL-E", "organizaron", "equipos robóticos", "para operaciones eficientes de limpieza."],
-          english: ["EVE and WALL-E", "organized", "robot teams", "for efficient cleanup operations."]
+          spanish: ["EVE y W A L L E", "organizaron", "equipos robóticos", "para operaciones eficientes de limpieza."],
+          english: ["EVE and W A L L E", "organized", "robot teams", "for efficient cleanup operations."]
         }
       },
       {
-        english: "EVE and WALL-E established communication networks between distant settlements.",
-        spanish: "EVE y WALL-E establecieron redes de comunicación entre asentamientos distantes.",
+        english: "EVE and W A L L E established communication networks between distant settlements.",
+        spanish: "EVE y W A L L E establecieron redes de comunicación entre asentamientos distantes.",
         segments: {
-          spanish: ["EVE y WALL-E", "establecieron", "redes de comunicación", "entre asentamientos distantes."],
-          english: ["EVE and WALL-E", "established", "communication networks", "between distant settlements."]
+          spanish: ["EVE y W A L L E", "establecieron", "redes de comunicación", "entre asentamientos distantes."],
+          english: ["EVE and W A L L E", "established", "communication networks", "between distant settlements."]
         }
       },
       {
-        english: "With complementary skills, EVE and WALL-E rebuilt collapsed structures.",
-        spanish: "Con habilidades complementarias, EVE y WALL-E reconstruyeron estructuras colapsadas.",
+        english: "With complementary skills, EVE and W A L L E rebuilt collapsed structures.",
+        spanish: "Con habilidades complementarias, EVE y W A L L E reconstruyeron estructuras colapsadas.",
         segments: {
-          spanish: ["Con habilidades complementarias,", "EVE y WALL-E", "reconstruyeron", "estructuras colapsadas."],
-          english: ["With complementary skills,", "EVE and WALL-E", "rebuilt", "collapsed structures."]
+          spanish: ["Con habilidades complementarias,", "EVE y W A L L E", "reconstruyeron", "estructuras colapsadas."],
+          english: ["With complementary skills,", "EVE and W A L L E", "rebuilt", "collapsed structures."]
         }
       },
       {
-        english: "EVE and WALL-E purified contaminated soil using innovative methods.",
-        spanish: "EVE y WALL-E purificaron suelo contaminado usando métodos innovadores.",
+        english: "EVE and W A L L E purified contaminated soil using innovative methods.",
+        spanish: "EVE y W A L L E purificaron suelo contaminado usando métodos innovadores.",
         segments: {
-          spanish: ["EVE y WALL-E", "purificaron", "suelo contaminado", "usando métodos innovadores."],
-          english: ["EVE and WALL-E", "purified", "contaminated soil", "using innovative methods."]
+          spanish: ["EVE y W A L L E", "purificaron", "suelo contaminado", "usando métodos innovadores."],
+          english: ["EVE and W A L L E", "purified", "contaminated soil", "using innovative methods."]
         }
       },
       {
-        english: "Through methodical research, EVE and WALL-E identified extinct plant candidates.",
-        spanish: "Mediante investigación metódica, EVE y WALL-E identificaron candidatos de plantas extintas.",
+        english: "Through methodical research, EVE and W A L L E identified extinct plant candidates.",
+        spanish: "Mediante investigación metódica, EVE y W A L L E identificaron candidatos de plantas extintas.",
         segments: {
-          spanish: ["Mediante investigación metódica,", "EVE y WALL-E", "identificaron", "candidatos de plantas extintas."],
-          english: ["Through methodical research,", "EVE and WALL-E", "identified", "extinct plant candidates."]
+          spanish: ["Mediante investigación metódica,", "EVE y W A L L E", "identificaron", "candidatos de plantas extintas."],
+          english: ["Through methodical research,", "EVE and W A L L E", "identified", "extinct plant candidates."]
         }
       },
       {
-        english: "EVE and WALL-E created a database of Earth's recovering species.",
-        spanish: "EVE y WALL-E crearon una base de datos de especies recuperándose terrestres.",
+        english: "EVE and W A L L E created a database of Earth's recovering species.",
+        spanish: "EVE y W A L L E crearon una base de datos de especies recuperándose terrestres.",
         segments: {
-          spanish: ["EVE y WALL-E", "crearon", "una base de datos", "de especies recuperándose terrestres."],
-          english: ["EVE and WALL-E", "created", "a database", "of Earth's recovering species."]
+          spanish: ["EVE y W A L L E", "crearon", "una base de datos", "de especies recuperándose terrestres."],
+          english: ["EVE and W A L L E", "created", "a database", "of Earth's recovering species."]
         }
       },
       {
-        english: "With patience, EVE and WALL-E nurtured delicate seedlings to maturity.",
-        spanish: "Con paciencia, EVE y WALL-E nutrieron delicadas plántulas hasta madurez.",
+        english: "With patience, EVE and W A L L E nurtured delicate seedlings to maturity.",
+        spanish: "Con paciencia, EVE y W A L L E nutrieron delicadas plántulas hasta madurez.",
         segments: {
-          spanish: ["Con paciencia,", "EVE y WALL-E", "nutrieron delicadas plántulas", "hasta madurez."],
-          english: ["With patience,", "EVE and WALL-E", "nurtured delicate seedlings", "to maturity."]
+          spanish: ["Con paciencia,", "EVE y W A L L E", "nutrieron delicadas plántulas", "hasta madurez."],
+          english: ["With patience,", "EVE and W A L L E", "nurtured delicate seedlings", "to maturity."]
         }
       },
       {
-        english: "EVE and WALL-E established protective zones around fragile habitats.",
-        spanish: "EVE y WALL-E establecieron zonas protectoras alrededor de hábitats frágiles.",
+        english: "EVE and W A L L E established protective zones around fragile habitats.",
+        spanish: "EVE y W A L L E establecieron zonas protectoras alrededor de hábitats frágiles.",
         segments: {
-          spanish: ["EVE y WALL-E", "establecieron", "zonas protectoras", "alrededor de hábitats frágiles."],
-          english: ["EVE and WALL-E", "established", "protective zones", "around fragile habitats."]
+          spanish: ["EVE y W A L L E", "establecieron", "zonas protectoras", "alrededor de hábitats frágiles."],
+          english: ["EVE and W A L L E", "established", "protective zones", "around fragile habitats."]
         }
       },
       {
-        english: "Through creative engineering, EVE and WALL-E restored ocean cleaning systems.",
-        spanish: "Mediante ingeniería creativa, EVE y WALL-E restauraron sistemas de limpieza oceánica.",
+        english: "Through creative engineering, EVE and W A L L E restored ocean cleaning systems.",
+        spanish: "Mediante ingeniería creativa, EVE y W A L L E restauraron sistemas de limpieza oceánica.",
         segments: {
-          spanish: ["Mediante ingeniería creativa,", "EVE y WALL-E", "restauraron", "sistemas de limpieza oceánica."],
-          english: ["Through creative engineering,", "EVE and WALL-E", "restored", "ocean cleaning systems."]
+          spanish: ["Mediante ingeniería creativa,", "EVE y W A L L E", "restauraron", "sistemas de limpieza oceánica."],
+          english: ["Through creative engineering,", "EVE and W A L L E", "restored", "ocean cleaning systems."]
         }
       },
       {
-        english: "EVE and WALL-E developed early warning systems for environmental dangers.",
-        spanish: "EVE y WALL-E desarrollaron sistemas de alerta temprana para peligros ambientales.",
+        english: "EVE and W A L L E developed early warning systems for environmental dangers.",
+        spanish: "EVE y W A L L E desarrollaron sistemas de alerta temprana para peligros ambientales.",
         segments: {
-          spanish: ["EVE y WALL-E", "desarrollaron", "sistemas de alerta temprana", "para peligros ambientales."],
-          english: ["EVE and WALL-E", "developed", "early warning systems", "for environmental dangers."]
+          spanish: ["EVE y W A L L E", "desarrollaron", "sistemas de alerta temprana", "para peligros ambientales."],
+          english: ["EVE and W A L L E", "developed", "early warning systems", "for environmental dangers."]
         }
       },
       {
-        english: "With determination, EVE and WALL-E decontaminated radioactive areas safely.",
-        spanish: "Con determinación, EVE y WALL-E descontaminaron áreas radioactivas con seguridad.",
+        english: "With determination, EVE and W A L L E decontaminated radioactive areas safely.",
+        spanish: "Con determinación, EVE y W A L L E descontaminaron áreas radioactivas con seguridad.",
         segments: {
-          spanish: ["Con determinación,", "EVE y WALL-E", "descontaminaron", "áreas radioactivas con seguridad."],
-          english: ["With determination,", "EVE and WALL-E", "decontaminated", "radioactive areas safely."]
+          spanish: ["Con determinación,", "EVE y W A L L E", "descontaminaron", "áreas radioactivas con seguridad."],
+          english: ["With determination,", "EVE and W A L L E", "decontaminated", "radioactive areas safely."]
         }
       },
       {
-        english: "EVE and WALL-E trained other robots in environmental restoration techniques.",
-        spanish: "EVE y WALL-E entrenaron a otros robots en técnicas de restauración ambiental.",
+        english: "EVE and W A L L E trained other robots in environmental restoration techniques.",
+        spanish: "EVE y W A L L E entrenaron a otros robots en técnicas de restauración ambiental.",
         segments: {
-          spanish: ["EVE y WALL-E", "entrenaron", "a otros robots", "en técnicas de restauración ambiental."],
-          english: ["EVE and WALL-E", "trained", "other robots", "in environmental restoration techniques."]
+          spanish: ["EVE y W A L L E", "entrenaron", "a otros robots", "en técnicas de restauración ambiental."],
+          english: ["EVE and W A L L E", "trained", "other robots", "in environmental restoration techniques."]
         }
       },
       {
-        english: "Through systematic planning, EVE and WALL-E prioritized critical recovery zones.",
-        spanish: "Mediante planificación sistemática, EVE y WALL-E priorizaron zonas críticas de recuperación.",
+        english: "Through systematic planning, EVE and W A L L E prioritized critical recovery zones.",
+        spanish: "Mediante planificación sistemática, EVE y W A L L E priorizaron zonas críticas de recuperación.",
         segments: {
-          spanish: ["Mediante planificación sistemática,", "EVE y WALL-E", "priorizaron", "zonas críticas de recuperación."],
-          english: ["Through systematic planning,", "EVE and WALL-E", "prioritized", "critical recovery zones."]
+          spanish: ["Mediante planificación sistemática,", "EVE y W A L L E", "priorizaron", "zonas críticas de recuperación."],
+          english: ["Through systematic planning,", "EVE and W A L L E", "prioritized", "critical recovery zones."]
         }
       },
       {
-        english: "EVE and WALL-E discovered ancient technology with environmental applications.",
-        spanish: "EVE y WALL-E descubrieron tecnología antigua con aplicaciones ambientales.",
+        english: "EVE and W A L L E discovered ancient technology with environmental applications.",
+        spanish: "EVE y W A L L E descubrieron tecnología antigua con aplicaciones ambientales.",
         segments: {
-          spanish: ["EVE y WALL-E", "descubrieron", "tecnología antigua", "con aplicaciones ambientales."],
-          english: ["EVE and WALL-E", "discovered", "ancient technology", "with environmental applications."]
+          spanish: ["EVE y W A L L E", "descubrieron", "tecnología antigua", "con aplicaciones ambientales."],
+          english: ["EVE and W A L L E", "discovered", "ancient technology", "with environmental applications."]
         }
       },
       {
-        english: "With precision, EVE and WALL-E transplanted rare flora to safer locations.",
-        spanish: "Con precisión, EVE y WALL-E trasplantaron flora rara a ubicaciones más seguras.",
+        english: "With precision, EVE and W A L L E transplanted rare flora to safer locations.",
+        spanish: "Con precisión, EVE y W A L L E trasplantaron flora rara a ubicaciones más seguras.",
         segments: {
-          spanish: ["Con precisión,", "EVE y WALL-E", "trasplantaron flora rara", "a ubicaciones más seguras."],
-          english: ["With precision,", "EVE and WALL-E", "transplanted rare flora", "to safer locations."]
+          spanish: ["Con precisión,", "EVE y W A L L E", "trasplantaron flora rara", "a ubicaciones más seguras."],
+          english: ["With precision,", "EVE and W A L L E", "transplanted rare flora", "to safer locations."]
         }
       },
       {
-        english: "EVE and WALL-E monitored atmospheric composition for toxic elements.",
-        spanish: "EVE y WALL-E monitorearon composición atmosférica para elementos tóxicos.",
+        english: "EVE and W A L L E monitored atmospheric composition for toxic elements.",
+        spanish: "EVE y W A L L E monitorearon composición atmosférica para elementos tóxicos.",
         segments: {
-          spanish: ["EVE y WALL-E", "monitorearon", "composición atmosférica", "para elementos tóxicos."],
-          english: ["EVE and WALL-E", "monitored", "atmospheric composition", "for toxic elements."]
+          spanish: ["EVE y W A L L E", "monitorearon", "composición atmosférica", "para elementos tóxicos."],
+          english: ["EVE and W A L L E", "monitored", "atmospheric composition", "for toxic elements."]
         }
       },
       {
-        english: "Through collaboration, EVE and WALL-E reactivated dormant water filtration systems.",
-        spanish: "Mediante colaboración, EVE y WALL-E reactivaron sistemas inactivos de filtración acuática.",
+        english: "Through collaboration, EVE and W A L L E reactivated dormant water filtration systems.",
+        spanish: "Mediante colaboración, EVE y W A L L E reactivaron sistemas inactivos de filtración acuática.",
         segments: {
-          spanish: ["Mediante colaboración,", "EVE y WALL-E", "reactivaron", "sistemas inactivos de filtración acuática."],
-          english: ["Through collaboration,", "EVE and WALL-E", "reactivated", "dormant water filtration systems."]
+          spanish: ["Mediante colaboración,", "EVE y W A L L E", "reactivaron", "sistemas inactivos de filtración acuática."],
+          english: ["Through collaboration,", "EVE and W A L L E", "reactivated", "dormant water filtration systems."]
         }
       },
       {
-        english: "EVE and WALL-E initiated controlled burns to promote forest regeneration.",
-        spanish: "EVE y WALL-E iniciaron quemas controladas para promover regeneración forestal.",
+        english: "EVE and W A L L E initiated controlled burns to promote forest regeneration.",
+        spanish: "EVE y W A L L E iniciaron quemas controladas para promover regeneración forestal.",
         segments: {
-          spanish: ["EVE y WALL-E", "iniciaron", "quemas controladas", "para promover regeneración forestal."],
-          english: ["EVE and WALL-E", "initiated", "controlled burns", "to promote forest regeneration."]
+          spanish: ["EVE y W A L L E", "iniciaron", "quemas controladas", "para promover regeneración forestal."],
+          english: ["EVE and W A L L E", "initiated", "controlled burns", "to promote forest regeneration."]
         }
       },
       {
-        english: "With ingenuity, EVE and WALL-E converted scrap metal into medical equipment.",
-        spanish: "Con ingenio, EVE y WALL-E convirtieron chatarra metálica en equipo médico.",
+        english: "With ingenuity, EVE and W A L L E converted scrap metal into medical equipment.",
+        spanish: "Con ingenio, EVE y W A L L E convirtieron chatarra metálica en equipo médico.",
         segments: {
-          spanish: ["Con ingenio,", "EVE y WALL-E", "convirtieron chatarra metálica", "en equipo médico."],
-          english: ["With ingenuity,", "EVE and WALL-E", "converted scrap metal", "into medical equipment."]
+          spanish: ["Con ingenio,", "EVE y W A L L E", "convirtieron chatarra metálica", "en equipo médico."],
+          english: ["With ingenuity,", "EVE and W A L L E", "converted scrap metal", "into medical equipment."]
         }
       },
       {
-        english: "With persistence, EVE and WALL-E revived dormant agricultural systems.",
-        spanish: "Con persistencia, EVE y WALL-E reactivaron sistemas agrícolas dormantes.",
+        english: "With persistence, EVE and W A L L E revived dormant agricultural systems.",
+        spanish: "Con persistencia, EVE y W A L L E reactivaron sistemas agrícolas dormantes.",
         segments: {
-          spanish: ["Con persistencia,", "EVE y WALL-E", "reactivaron", "sistemas agrícolas dormantes."],
-          english: ["With persistence,", "EVE and WALL-E", "revived", "dormant agricultural systems."]
+          spanish: ["Con persistencia,", "EVE y W A L L E", "reactivaron", "sistemas agrícolas dormantes."],
+          english: ["With persistence,", "EVE and W A L L E", "revived", "dormant agricultural systems."]
         }
       }
     ]
