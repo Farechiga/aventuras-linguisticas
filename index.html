@@ -805,39 +805,7 @@ if ("speechSynthesis" in window) {
     window.speechSynthesis.getVoices();
   };
 }
-
-// ----------------------------------------------------
-// Shared preferred Spanish voice (used everywhere)
-// ----------------------------------------------------
-let PREFERRED_SPANISH_VOICE = null;
-
-function getPreferredSpanishVoice() {
-  const voices = window.speechSynthesis.getVoices();
-  if (!voices || voices.length === 0) return null;
-
-  // Try to match the same style that sounds good in segment playback
-  const femaleSpanish =
-    voices.find(v => v.lang && v.lang.startsWith("es") && /female/i.test(v.name)) ||
-    voices.find(v => v.lang === "es-ES" && /female/i.test(v.name)) ||
-    null;
-
-  // Fallback: any solid Spanish voice
-  const anySpanish =
-    voices.find(v => v.lang === "es-ES") ||
-    voices.find(v => v.lang && v.lang.startsWith("es")) ||
-    null;
-
-  return femaleSpanish || anySpanish;
-}
-
-// Update cached voice when voices load asynchronously
-if ("speechSynthesis" in window) {
-  window.speechSynthesis.onvoiceschanged = function () {
-    window.speechSynthesis.getVoices();
-    PREFERRED_SPANISH_VOICE = getPreferredSpanishVoice();
-  };
-}
-     
+    
 function narrateSentence(sentence, callback) {
   speakSpanishText(sentence, callback);
 }
@@ -845,25 +813,28 @@ function narrateSentence(sentence, callback) {
 
 // Function to speak Spanish text and allow callback when complete
 function speakSpanishText(text, callback) {
+  // Guard: browser support
   if (!("speechSynthesis" in window)) {
     console.warn("Speech synthesis not supported.");
-    if (typeof showSpeechNotAvailable === "function") showSpeechNotAvailable();
+    showSpeechNotAvailable(); // optional if you have this UI function
     return;
   }
 
-  // Ensure we have the preferred voice (voices may load late)
-  if (!PREFERRED_SPANISH_VOICE) {
-    PREFERRED_SPANISH_VOICE = getPreferredSpanishVoice();
-  }
+  // Make sure voices are loaded (important: async in modern browsers)
+  const voices = window.speechSynthesis.getVoices();
+
+  // Pick a Spanish voice if available (do NOT rely on "Female" name)
+  const spanishVoice =
+    voices.find(v => v.lang === "es-ES") ||
+    voices.find(v => v.lang && v.lang.startsWith("es")) ||
+    null;
 
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "es-ES";
 
-  if (PREFERRED_SPANISH_VOICE) {
-    utterance.voice = PREFERRED_SPANISH_VOICE;
-  }
+  // Only assign voice if one exists
+  if (spanishVoice) utterance.voice = spanishVoice;
 
-  // Keep these natural and consistent with your segment audio
   utterance.rate = 1.0;
   utterance.pitch = 1.0;
   utterance.volume = 1.0;
@@ -872,9 +843,11 @@ function speakSpanishText(text, callback) {
     if (callback) callback();
   };
 
+  // Clear any stuck utterances before speaking
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(utterance);
 }
+
 
 // Show celebration animation
 function showCelebration() {
