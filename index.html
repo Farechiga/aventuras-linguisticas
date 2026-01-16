@@ -623,6 +623,7 @@ body::after {
                     speechSynthesis.onvoiceschanged = function() {
                         // Voices are now loaded
                         console.log("Voices loaded:", window.speechSynthesis.getVoices().length);
+                        console.log(window.speechSynthesis.getVoices().map(v => `${v.name} | ${v.lang}`));
                     };
                 }
             }
