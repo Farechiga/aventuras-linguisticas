@@ -799,55 +799,55 @@ function checkAnswer(selectedOption, selectedElement) {
     }
 }
 
-// Function to narrate a Spanish sentence and wait for completion
+// Ensure voices are loaded (voices may load asynchronously)
+if ("speechSynthesis" in window) {
+  window.speechSynthesis.onvoiceschanged = function () {
+    window.speechSynthesis.getVoices();
+  };
+}
+    
 function narrateSentence(sentence, callback) {
-    const utterance = new SpeechSynthesisUtterance(sentence);
-    
-    // Set Spanish as the narration language
-    utterance.lang = 'es-ES';
-    
-    // Optional: Adjust narration settings
-    utterance.rate = 1.0; // Normal speed
-    utterance.pitch = 7.9; // Normal pitch
-    utterance.volume = 1.0; // Full volume
-
-    // Ensure the next step happens only after narration finishes
-    utterance.onend = function() {
-        if (callback) callback();
-    };
-
-    // Speak the sentence
-    speechSynthesis.speak(utterance);
+  speakSpanishText(sentence, callback);
 }
 
-// Function to speak Spanish text with a female voice and allow callback when complete
+
+// Function to speak Spanish text and allow callback when complete
 function speakSpanishText(text, callback) {
-    // Create a new utterance
-    const utterance = new SpeechSynthesisUtterance(text);
-    
-    // Set language to Spanish
-    utterance.lang = 'es-ES';
-    
-    // Get available voices
-    const voices = window.speechSynthesis.getVoices();
-    
-    // Try to find a female Spanish voice
-    const spanishFemaleVoice = voices.find(voice => 
-        voice.lang.includes('es') && voice.name.includes('Female'));
-    
-    // Use the Spanish female voice if found, otherwise just use the language setting
-    if (spanishFemaleVoice) {
-        utterance.voice = spanishFemaleVoice;
-    }
-    
-    // Add the callback for when speech is complete
-    if (callback) {
-        utterance.onend = callback;
-    }
-    
-    // Speak the text
-    window.speechSynthesis.speak(utterance);
+  // Guard: browser support
+  if (!("speechSynthesis" in window)) {
+    console.warn("Speech synthesis not supported.");
+    showSpeechNotAvailable(); // optional if you have this UI function
+    return;
+  }
+
+  // Make sure voices are loaded (important: async in modern browsers)
+  const voices = window.speechSynthesis.getVoices();
+
+  // Pick a Spanish voice if available (do NOT rely on "Female" name)
+  const spanishVoice =
+    voices.find(v => v.lang === "es-ES") ||
+    voices.find(v => v.lang && v.lang.startsWith("es")) ||
+    null;
+
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "es-ES";
+
+  // Only assign voice if one exists
+  if (spanishVoice) utterance.voice = spanishVoice;
+
+  utterance.rate = 1.0;
+  utterance.pitch = 1.0;
+  utterance.volume = 1.0;
+
+  utterance.onend = function () {
+    if (callback) callback();
+  };
+
+  // Clear any stuck utterances before speaking
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(utterance);
 }
+
 
 // Show celebration animation
 function showCelebration() {
