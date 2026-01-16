@@ -813,27 +813,27 @@ function narrateSentence(sentence, callback) {
 
 // Function to speak Spanish text and allow callback when complete
 function speakSpanishText(text, callback) {
-  // Guard: browser support
   if (!("speechSynthesis" in window)) {
     console.warn("Speech synthesis not supported.");
-    showSpeechNotAvailable(); // optional if you have this UI function
+    if (typeof showSpeechNotAvailable === "function") showSpeechNotAvailable();
     return;
   }
 
-  // Make sure voices are loaded (important: async in modern browsers)
   const voices = window.speechSynthesis.getVoices();
 
-  // Pick a Spanish voice if available (do NOT rely on "Female" name)
-  const spanishVoice =
-    voices.find(v => v.lang === "es-ES") ||
-    voices.find(v => v.lang && v.lang.startsWith("es")) ||
-    null;
+  // Prefer a high-quality *female* Spanish voice if we can identify one.
+  // IMPORTANT: If we can't confidently identify one, DO NOT force a voice.
+  // Let the browser choose its default (often the best / most natural).
+  const preferred = pickPreferredSpanishVoice(voices);
 
   const utterance = new SpeechSynthesisUtterance(text);
+
+  // Keep language Spanish, but avoid "pinning" to a bad es-ES voice.
   utterance.lang = "es-ES";
 
-  // Only assign voice if one exists
-  if (spanishVoice) utterance.voice = spanishVoice;
+  if (preferred) {
+    utterance.voice = preferred;
+  }
 
   utterance.rate = 1.0;
   utterance.pitch = 1.0;
@@ -843,11 +843,35 @@ function speakSpanishText(text, callback) {
     if (callback) callback();
   };
 
-  // Clear any stuck utterances before speaking
   window.speechSynthesis.cancel();
   window.speechSynthesis.speak(utterance);
 }
 
+// Heuristic: try hard to find a female Spanish voice, but don't guess poorly.
+function pickPreferredSpanishVoice(voices) {
+  if (!voices || !voices.length) return null;
+
+  // 1) Any voice explicitly marked "Female" in name (some platforms do this)
+  let v =
+    voices.find(x => x.lang && x.lang.startsWith("es") && /female/i.test(x.name)) ||
+    null;
+  if (v) return v;
+
+  // 2) Common female Spanish voice names across Apple / Microsoft / Google ecosystems
+  // (If none exist on your system, we return null and let the browser pick.)
+  const preferredNameHints = [
+    "Monica", "Paulina", "Helena", "Sabina", "Laura", "Elena",
+    "Conchita", "Penelope", "Luciana", "Catalina"
+  ];
+
+  v =
+    voices.find(x =>
+      x.lang && x.lang.startsWith("es") &&
+      preferredNameHints.some(h => x.name && x.name.toLowerCase().includes(h.toLowerCase()))
+    ) || null;
+
+  return v;
+}
 
 // Show celebration animation
 function showCelebration() {
