@@ -102,7 +102,23 @@ body::after {
             z-index: 100;
             font-size: 1.2rem;
             font-weight: bold;
+            text-align: center;
         }
+        .score-stickers-link {
+            display: block;
+            margin-top: 4px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #2A2D4E;
+            text-decoration: underline;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            font-family: inherit;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .score-stickers-link:hover { color: #9F0709; }
         
         .correct-count {
             color: green;
@@ -872,6 +888,7 @@ body::after {
 
         <div class="score-container">
             Score: <span class="correct-count">0</span>
+            <button type="button" class="score-stickers-link" id="sg-score-link">🌟 sticker collection</button>
         </div>
 
         <!-- Sticker Reward Game: HUD badge -->
@@ -1836,8 +1853,59 @@ function checkMatches() {
             setTimeout(() => openNextPendingPack(), 1100);
         }
     }
-    // Expose for the quiz flow
-    window.stickerGame = { awardPoint };
+    // ------------- dev helpers (call from browser console) -------------
+    // Examples:
+    //   stickerGame.devFillCollection()     // give her 10 random stickers + unlock placement
+    //   stickerGame.devAddPoints(9)         // simulate 9 correct answers
+    //   stickerGame.devOpenScene()          // jump straight to placement scene
+    //   stickerGame.devReset()              // wipe state and reload (full reset)
+    function devFillCollection(n) {
+        const goal = typeof n === "number" ? n : COLLECTION_GOAL;
+        if (!stickerPool.length) {
+            console.warn("[stickerGame] sticker pool not loaded yet — try again in a moment");
+            return;
+        }
+        const owned = new Set(state.collection);
+        const unowned = stickerPool.filter(s => !owned.has(s));
+        const need = Math.max(0, goal - state.collection.length);
+        shuffle(unowned).slice(0, need).forEach(id => state.collection.push(id));
+        state.points = Math.max(state.points, state.collection.length * STICKER_EVERY);
+        state.pendingPacks = 0;
+        if (state.collection.length >= COLLECTION_GOAL) state.placementUnlocked = true;
+        saveState(state);
+        refreshBadge();
+        refreshCollection();
+        console.log("[stickerGame] collection size now", state.collection.length);
+    }
+    function devAddPoints(n) {
+        const count = typeof n === "number" ? n : 3;
+        for (let i = 0; i < count; i++) awardPoint("dev:" + Date.now() + ":" + i);
+    }
+    function devOpenScene() {
+        if (state.collection.length < COLLECTION_GOAL) devFillCollection();
+        setOpen("sg-collection-overlay", false);
+        openScene();
+    }
+    function devReset() {
+        try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+        memoryState = null;
+        awardedThisSession.clear();
+        state = emptyState();
+        refreshBadge();
+        refreshCollection();
+        // Close any open modals
+        document.querySelectorAll(".sg-modal-overlay").forEach(o => o.classList.remove("sg-open"));
+        console.log("[stickerGame] state reset");
+    }
+
+    // Expose for the quiz flow + dev console
+    window.stickerGame = {
+        awardPoint,
+        devFillCollection,
+        devAddPoints,
+        devOpenScene,
+        devReset,
+    };
 
     // ------------- pack picker -------------
     function openNextPendingPack() {
@@ -2109,6 +2177,15 @@ function checkMatches() {
                     refreshCollection();
                     setOpen("sg-collection-overlay", true);
                 }
+            });
+        }
+
+        // "🌟 sticker collection" link under the Score chip
+        const scoreLink = $("sg-score-link");
+        if (scoreLink) {
+            scoreLink.addEventListener("click", () => {
+                refreshCollection();
+                setOpen("sg-collection-overlay", true);
             });
         }
 
