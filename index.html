@@ -637,6 +637,55 @@
     box-shadow: 0 8px 24px rgba(159,7,9,0.25);
 }
 
+/* Background-picker grid */
+.sg-bg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+}
+.sg-bg-tile {
+    aspect-ratio: 4 / 3;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000 center/cover no-repeat;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
+.sg-bg-tile:active { transform: scale(0.97); }
+.sg-bg-tile.sg-active-bg {
+    border-color: var(--sg-accent);
+    box-shadow: 0 4px 14px rgba(159, 7, 9, 0.35);
+}
+.sg-bg-tile.sg-active-bg::after {
+    content: "✓";
+    position: absolute;
+    top: 6px; right: 8px;
+    background: var(--sg-accent);
+    color: white;
+    width: 24px; height: 24px;
+    border-radius: 999px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Backdrop-change icon button inside the scene header */
+.sg-bg-change-btn {
+    background: rgba(255,255,255,0.12);
+    border: none;
+    color: white;
+    font-size: 1.05rem;
+    padding: 4px 9px;
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.sg-bg-change-btn:active { background: rgba(255,255,255,0.25); }
+
 /* Collection grid */
 .sg-collection-grid {
     display: grid;
@@ -1827,11 +1876,21 @@ function checkMatches() {
     </div>
 </div>
 
+<div class="sg-modal-overlay" id="sg-bgpick-overlay" role="dialog" aria-label="Pick a backdrop">
+    <div class="sg-modal">
+        <button class="sg-close-btn" type="button" data-sg-close="sg-bgpick-overlay" aria-label="Close">×</button>
+        <h2 class="sg-modal-title">🖼️ Pick your backdrop!</h2>
+        <div class="sg-modal-sub">Tap one — your stickers will be placed on top.</div>
+        <div class="sg-bg-grid" id="sg-bg-grid"></div>
+    </div>
+</div>
+
 <div class="sg-modal-overlay" id="sg-scene-overlay" role="dialog" aria-label="Place your stickers" style="padding:0;">
     <div class="sg-modal sg-scene-modal">
         <div class="sg-scene-header">
             <button class="sg-close-btn" type="button" data-sg-close="sg-scene-overlay" aria-label="Close" style="position:static;color:white;">×</button>
             <h3>Place your stickers 🎨</h3>
+            <button type="button" class="sg-bg-change-btn" id="sg-bg-change-btn" title="Change backdrop">🖼️</button>
             <div class="sg-size-selector" role="radiogroup" aria-label="Sticker size">
                 <button type="button" class="sg-size-btn" data-size="8" aria-label="Small">S</button>
                 <button type="button" class="sg-size-btn" data-size="12" aria-label="Medium">M</button>
@@ -1865,7 +1924,7 @@ function checkMatches() {
     const COLLECTION_GOAL = 10;
     const STICKER_DIR = "assets/stickers/";
     const BACKGROUND_DIR = "assets/stickerbackgrounds/";
-    const BACKGROUNDS = ["School.webp"]; // extend as more are added
+    const DEFAULT_BACKGROUND = "School.webp";  // used until the pool loads / as ultimate fallback
 
     // ------------- state + persistence -------------
     const SIZE_DEFAULT = 18; // L: matches the original default scalePct
@@ -1888,10 +1947,15 @@ function checkMatches() {
         currentPlacementSize: SIZE_DEFAULT,
         // Saved scenes (collages). Each: {id, background, placements, savedAt}
         savedCollages: [],
+        // Filename of the chosen placement-scene backdrop (must exist in
+        // backgroundPool). null = not yet chosen — first scene open will
+        // show the backdrop picker before opening the scene itself.
+        selectedBackground: null,
     });
 
     let memoryState = null; // fallback if localStorage unavailable
     let stickerPool = [];   // filenames loaded from index.json
+    let backgroundPool = [];// filenames loaded from stickerbackgrounds/index.json
     let awardedThisSession = new Set(); // questionIds awarded in this session
     let lastOfferedStickers = [];       // last pack's 3 choices, for deprio bookkeeping
 
@@ -2042,6 +2106,7 @@ function checkMatches() {
         awardPoint,
         saveCurrentToBook,
         openStickerBook,
+        openBackgroundPicker,
         devFillCollection,
         devAddPoints,
         devOpenScene,
@@ -2140,10 +2205,71 @@ function checkMatches() {
     }
 
     // ------------- placement scene -------------
+    // Resolve the backdrop currently in effect. Prefer the kid's chosen one;
+    // fall back to first pool entry, then the hardcoded DEFAULT_BACKGROUND.
+    function getCurrentBackground() {
+        if (state.selectedBackground &&
+            (backgroundPool.length === 0 || backgroundPool.includes(state.selectedBackground))) {
+            return state.selectedBackground;
+        }
+        if (backgroundPool.length > 0) return backgroundPool[0];
+        return DEFAULT_BACKGROUND;
+    }
+
+    // Render thumbnails into the picker grid. Highlights current selection.
+    function renderBackgroundPicker() {
+        const grid = $("sg-bg-grid");
+        if (!grid) return;
+        grid.innerHTML = "";
+        const current = getCurrentBackground();
+        const list = backgroundPool.length > 0 ? backgroundPool : [DEFAULT_BACKGROUND];
+        for (const filename of list) {
+            const tile = document.createElement("button");
+            tile.type = "button";
+            tile.className = "sg-bg-tile";
+            if (filename === current) tile.classList.add("sg-active-bg");
+            tile.style.backgroundImage = "url('" + BACKGROUND_DIR + filename + "')";
+            tile.setAttribute("aria-label", filename);
+            tile.addEventListener("click", () => chooseBackground(filename));
+            grid.appendChild(tile);
+        }
+    }
+
+    // Open the backdrop picker. After a pick, the scene re-renders.
+    function openBackgroundPicker() {
+        renderBackgroundPicker();
+        setOpen("sg-bgpick-overlay", true);
+    }
+
+    function chooseBackground(filename) {
+        state.selectedBackground = filename;
+        saveState(state);
+        setOpen("sg-bgpick-overlay", false);
+        // Refresh the visible scene canvas (if scene is already open) and
+        // re-render placed stickers on top of the new background.
+        const canvas = $("sg-scene-canvas");
+        if (canvas) canvas.style.backgroundImage = "url('" + BACKGROUND_DIR + filename + "')";
+        renderPlacedStickers();
+        flashCheer("🖼️ Backdrop chosen!");
+    }
+
     function openScene() {
+        // First-time scene entry with no chosen backdrop AND a pool to choose
+        // from: route through the picker. The picker's chooseBackground()
+        // doesn't re-open the scene; instead we open the scene first (so the
+        // chooser sits visually above it) and let the user dismiss the picker
+        // when they're done. Simpler: pick first, scene follows.
+        if (!state.selectedBackground && backgroundPool.length > 1) {
+            // Show picker; on close (via choose), the user can tap a stored
+            // re-entry path. For first-time UX, open the scene now too so
+            // dismissing the picker shows the chosen backdrop immediately.
+            renderBackgroundPicker();
+            setOpen("sg-bgpick-overlay", true);
+        }
         const canvas = $("sg-scene-canvas");
         if (canvas) {
-            canvas.style.backgroundImage = "url('" + BACKGROUND_DIR + BACKGROUNDS[0] + "')";
+            canvas.style.backgroundImage =
+                "url('" + BACKGROUND_DIR + getCurrentBackground() + "')";
         }
         const toggle = $("sg-confirm-toggle");
         if (toggle) toggle.checked = !!state.confirmPlacement;
@@ -2227,7 +2353,7 @@ function checkMatches() {
         if (!state.placements.length) return;
         const collage = {
             id: "c" + Date.now(),
-            background: BACKGROUNDS[0],
+            background: getCurrentBackground(),
             placements: state.placements.slice(),
             savedAt: new Date().toISOString(),
         };
@@ -2277,7 +2403,7 @@ function checkMatches() {
 
             const canvas = document.createElement("div");
             canvas.className = "sg-book-tile-canvas";
-            canvas.style.backgroundImage = "url('" + BACKGROUND_DIR + (collage.background || BACKGROUNDS[0]) + "')";
+            canvas.style.backgroundImage = "url('" + BACKGROUND_DIR + (collage.background || DEFAULT_BACKGROUND) + "')";
             tile.appendChild(canvas);
 
             // Render miniature stickers using the same percentages
@@ -2308,7 +2434,7 @@ function checkMatches() {
         const title = $("sg-book-viewer-title");
         if (!canvas) return;
         canvas.innerHTML = "";
-        canvas.style.backgroundImage = "url('" + BACKGROUND_DIR + (collage.background || BACKGROUNDS[0]) + "')";
+        canvas.style.backgroundImage = "url('" + BACKGROUND_DIR + (collage.background || DEFAULT_BACKGROUND) + "')";
         collage.placements.forEach(p => {
             const img = document.createElement("img");
             img.src = STICKER_DIR + p.stickerId;
@@ -2485,7 +2611,8 @@ function checkMatches() {
             // Pack overlay shouldn't be dismissable by background tap — kid must choose
             if (overlay.id === "sg-pack-overlay") return;
             overlay.addEventListener("click", (e) => {
-                if (e.target === overlay) overlay.classList.remove("sg-open");
+                // Route through setOpen so syncBodyScrollLock fires too
+                if (e.target === overlay) setOpen(overlay.id, false);
             });
         });
 
@@ -2530,6 +2657,12 @@ function checkMatches() {
             });
         }
 
+        // "Change backdrop" button in the placement-scene header
+        const bgChangeBtn = $("sg-bg-change-btn");
+        if (bgChangeBtn) {
+            bgChangeBtn.addEventListener("click", openBackgroundPicker);
+        }
+
         // Fetch sticker pool
         fetch(STICKER_DIR + "index.json", { cache: "no-cache" })
             .then(r => r.ok ? r.json() : [])
@@ -2541,6 +2674,14 @@ function checkMatches() {
                 }
             })
             .catch(() => { stickerPool = []; });
+
+        // Fetch background pool (for the placement-scene backdrop picker).
+        // The picker only opens after she's reached the placement gate, so
+        // this load can race the rest of startup harmlessly.
+        fetch(BACKGROUND_DIR + "index.json", { cache: "no-cache" })
+            .then(r => r.ok ? r.json() : [])
+            .then(list => { backgroundPool = Array.isArray(list) ? list : []; })
+            .catch(() => { backgroundPool = []; });
 
         refreshBadge();
     }
