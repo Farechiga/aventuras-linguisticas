@@ -379,38 +379,58 @@ body::after {
 }
 
 .draggable {
-    cursor: grab;
+    cursor: pointer;
     background-color: #3e3364;
     color: white;
     border: 2px solid #2a234a;
     border-radius: 10px;
-    padding: 10px;
+    padding: 12px 14px;
     margin: 5px;
-    transition: all 0.3s;
+    transition: background-color 0.15s, border-color 0.15s, transform 0.1s;
     -webkit-user-select: none;
     user-select: none;
     -webkit-touch-callout: none;
-    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 1.05rem;
+    line-height: 1.2;
 }
 
 .draggable:hover {
     background-color: #4e4174;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .draggable:active {
-    cursor: grabbing;
+    transform: scale(0.97);
 }
 
-.draggable.dragging {
-    opacity: 0.5;
-    transition: none;
+.draggable.selected {
+    background-color: #604c8d;
+    border-color: #ffd54a;
+    box-shadow: 0 0 0 3px rgba(255, 213, 74, 0.45);
 }
 
 .draggable.speaking {
     background-color: #604c8d;
 }
+
+/* Empty slots gently invite a tap when a token is selected */
+.spanish-dropzone {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.spanish-dropzone.tap-target {
+    background-color: #c4a0be;
+    border-style: solid;
+    animation: tap-target-pulse 1.2s ease-in-out infinite;
+}
+@keyframes tap-target-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(133, 41, 106, 0); }
+    50%      { box-shadow: 0 0 0 6px rgba(133, 41, 106, 0.18); }
+}
+
+/* Defensive: keep decorative layers from intercepting taps */
+.svg-overlay, .svg-overlay * { pointer-events: none; }
+body::before, body::after { pointer-events: none; }
 
 .check-matches-btn {
     background-color: #85296a;
@@ -1443,118 +1463,177 @@ function getRandomColor() {
     return colors[Math.floor(Math.random() * colors.length)];
 }
 // Show the segment-matching game
+// ===== Tap-to-match matching exercise =====
+// Single source of truth: every Spanish phrase has exactly ONE location at any
+// time ('tray' or a specific slot id), so a token can never appear in both the
+// tray and a slot. The DOM is rebuilt from this state on every change.
+let matchState = {
+    tokens: [],          // [{ id, text, correctSlotId, location: 'tray' | slotId }]
+    slots: [],           // [{ id, english }]
+    selectedTokenId: null,
+};
+
 function showMatchingGame() {
-  console.log("showMatchingGame() called");
+    const selectedCharacter = translationData[currentCharacterIndex];
+    const sentenceData = selectedCharacter.sentences[currentSentenceIndex];
 
-  const selectedCharacter = translationData[currentCharacterIndex];
-  const sentenceData = selectedCharacter.sentences[currentSentenceIndex];
-
-  console.log("Character:", selectedCharacter.character);
-  console.log("Sentence:", sentenceData.english);
-  console.log("Has segments:", !!sentenceData.segments);
-
-  // If this sentence has no segment data, just move on
-  if (!sentenceData.segments) {
-    console.log("No segments found - loading next question");
-    setTimeout(() => {
-      loadQuestion();
-    }, 1500);
-    return;
-  }
-
-  // Set original Spanish sentence at the top
-  document.getElementById('original-sentence').textContent =
-    sentenceData.spanish;
-
-  // Clear any previous content
-  const englishComponentsEl = document.getElementById('english-components');
-  const spanishOptionsEl    = document.getElementById('spanish-options-matching');
-  const resultMsgEl         = document.getElementById('match-result-message');
-
-  englishComponentsEl.innerHTML = '';
-  spanishOptionsEl.innerHTML    = '';
-  resultMsgEl.textContent       = '';
-
-  // Segment arrays
-  const spanishSegments = sentenceData.segments.spanish;
-  const englishSegments = sentenceData.segments.english;
-
-  // Build English “slots” + dropzones
-  englishSegments.forEach((segment, index) => {
-    const matchContainer = document.createElement('div');
-    matchContainer.className = 'match-container';
-
-    const englishComponent = document.createElement('div');
-    englishComponent.className = 'english-component';
-    englishComponent.textContent = segment;
-
-    const spanishDropzone = document.createElement('div');
-    spanishDropzone.className = 'spanish-dropzone';
-    spanishDropzone.dataset.correct = spanishSegments[index];
-
-    matchContainer.appendChild(englishComponent);
-    matchContainer.appendChild(spanishDropzone);
-    englishComponentsEl.appendChild(matchContainer);
-  });
-
-  // Add Spanish draggable options (shuffled)
-  const shuffledSpanishSegments = [...spanishSegments];
-  shuffleArray(shuffledSpanishSegments);
-
-  shuffledSpanishSegments.forEach(segment => {
-    const draggable = document.createElement('div');
-    draggable.className = 'draggable';
-    draggable.draggable = true;
-    draggable.textContent = segment;
-    draggable.onclick = () => speakSpanishSegment(segment);
-
-    spanishOptionsEl.appendChild(draggable);
-  });
-
-  // Initialize drag and drop
-  initDragAndDrop();
-
-  // Wire up the “Check Matches” button
-  const checkButton = document.getElementById('check-matches-btn');
-  if (checkButton) {
-    console.log("Found check button, adding click handler");
-    checkButton.onclick = checkMatches;
-  } else {
-    console.log("Check button not found!");
-  }
-
-  console.log("Showing matching game modal");
-  document.getElementById('matching-modal-overlay').style.display = 'flex';
-}
-    
-    // Add Spanish draggable options
-    const shuffledSpanishSegments = [...spanishSegments];
-    shuffleArray(shuffledSpanishSegments);
-    
-    shuffledSpanishSegments.forEach(segment => {
-        const draggable = document.createElement('div');
-        draggable.className = 'draggable';
-        draggable.draggable = false;
-        draggable.textContent = segment;
-        draggable.onclick = () => speakSpanishSegment(segment);
-        
-        document.getElementById('spanish-options-matching').appendChild(draggable);
-    });
-    
-    // Initialize drag and drop
-    initDragAndDrop();
-    
-    // Set up Check Matches button
-    const checkButton = document.getElementById('check-matches-btn');
-    if (checkButton) {
-        console.log("Found check button, adding click handler");
-        checkButton.onclick = checkMatches;
-    } else {
-        console.log("Check button not found!");
+    // If this sentence has no segment data, just move on
+    if (!sentenceData.segments) {
+        setTimeout(loadQuestion, 1500);
+        return;
     }
-    
-    // Show the modal
-    document.getElementById('matching-modal-overlay').style.display = 'flex';
+
+    document.getElementById('original-sentence').textContent = sentenceData.spanish;
+
+    const englishComponentsEl = document.getElementById('english-components');
+    const spanishOptionsEl    = document.getElementById('spanish-options-matching');
+    const resultMsgEl         = document.getElementById('match-result-message');
+
+    englishComponentsEl.innerHTML = '';
+    spanishOptionsEl.innerHTML    = '';
+    resultMsgEl.textContent       = '';
+
+    const spanishSegments = sentenceData.segments.spanish;
+    const englishSegments = sentenceData.segments.english;
+
+    // Build state: slots in original order; tokens bound to the correct slot id
+    // but shuffled for display in the tray.
+    matchState.slots = englishSegments.map((eng, i) => ({
+        id: 's-' + i,
+        english: eng,
+    }));
+    matchState.tokens = spanishSegments.map((sp, i) => ({
+        id: 't-' + i,
+        text: sp,
+        correctSlotId: 's-' + i,
+        location: 'tray',
+    }));
+    shuffleArray(matchState.tokens);
+    matchState.selectedTokenId = null;
+
+    // Slot DOM scaffolding (their contents come from renderMatchState)
+    matchState.slots.forEach(slot => {
+        const matchContainer = document.createElement('div');
+        matchContainer.className = 'match-container';
+
+        const englishComponent = document.createElement('div');
+        englishComponent.className = 'english-component';
+        englishComponent.textContent = slot.english;
+
+        const spanishDropzone = document.createElement('div');
+        spanishDropzone.className = 'spanish-dropzone';
+        spanishDropzone.dataset.slotId = slot.id;
+
+        matchContainer.appendChild(englishComponent);
+        matchContainer.appendChild(spanishDropzone);
+        englishComponentsEl.appendChild(matchContainer);
+    });
+
+    // Delegated tap handler on the modal — works for mouse + touch identically.
+    // Replace any prior handler so reopening the modal doesn't stack listeners.
+    const modalEl = document.getElementById('matching-modal-overlay');
+    if (modalEl._matchClickHandler) {
+        modalEl.removeEventListener('click', modalEl._matchClickHandler);
+    }
+    modalEl._matchClickHandler = handleMatchingTap;
+    modalEl.addEventListener('click', handleMatchingTap);
+
+    renderMatchState();
+
+    const checkButton = document.getElementById('check-matches-btn');
+    if (checkButton) checkButton.onclick = checkMatches;
+
+    modalEl.style.display = 'flex';
+}
+
+// Pure render: rebuilds tray + slot DOM from matchState. Because each token
+// lives in exactly one location in state, it can only appear in one place.
+function renderMatchState() {
+    // Slots
+    document.querySelectorAll('.spanish-dropzone').forEach(slotEl => {
+        const slotId = slotEl.dataset.slotId;
+        slotEl.innerHTML = '';
+        slotEl.classList.remove('correct-match', 'incorrect-match');
+        const token = matchState.tokens.find(t => t.location === slotId);
+        if (token) slotEl.appendChild(createTokenEl(token));
+        slotEl.classList.toggle('tap-target', !token && !!matchState.selectedTokenId);
+    });
+    // Tray (uses the shuffled order baked into matchState.tokens)
+    const tray = document.getElementById('spanish-options-matching');
+    tray.innerHTML = '';
+    matchState.tokens.forEach(token => {
+        if (token.location === 'tray') tray.appendChild(createTokenEl(token));
+    });
+}
+
+function createTokenEl(token) {
+    const el = document.createElement('div');
+    el.className = 'draggable';
+    if (token.id === matchState.selectedTokenId) el.classList.add('selected');
+    el.dataset.tokenId = token.id;
+    el.textContent = token.text;
+    return el;
+}
+
+function handleMatchingTap(e) {
+    const tokenEl = e.target.closest('[data-token-id]');
+    if (tokenEl) {
+        onTokenTap(tokenEl.dataset.tokenId);
+        return;
+    }
+    const slotEl = e.target.closest('[data-slot-id]');
+    if (!slotEl) return;
+    const slotId = slotEl.dataset.slotId;
+    // Tapping the padding around a filled slot still acts like tapping its token
+    const tokenInSlot = matchState.tokens.find(t => t.location === slotId);
+    if (tokenInSlot) onTokenTap(tokenInSlot.id);
+    else onSlotTap(slotId);
+}
+
+function onTokenTap(tokenId) {
+    const token = matchState.tokens.find(t => t.id === tokenId);
+    if (!token) return;
+
+    if (token.location === 'tray') {
+        // Toggle selection
+        matchState.selectedTokenId =
+            matchState.selectedTokenId === tokenId ? null : tokenId;
+        speakSpanishSegment(token.text);
+        renderMatchState();
+        return;
+    }
+
+    // Token is in a slot
+    const selectedId = matchState.selectedTokenId;
+    if (selectedId && selectedId !== tokenId) {
+        const incoming = matchState.tokens.find(t => t.id === selectedId);
+        if (incoming) {
+            // Swap: incoming takes this slot, this token goes back to tray
+            const targetSlot = token.location;
+            token.location = 'tray';
+            incoming.location = targetSlot;
+            matchState.selectedTokenId = null;
+            speakSpanishSegment(incoming.text);
+            renderMatchState();
+            return;
+        }
+    }
+    // Return this token to the tray
+    token.location = 'tray';
+    matchState.selectedTokenId = null;
+    speakSpanishSegment(token.text);
+    renderMatchState();
+}
+
+function onSlotTap(slotId) {
+    if (!matchState.selectedTokenId) return; // tapping an empty slot with nothing held is a no-op
+    const token = matchState.tokens.find(t => t.id === matchState.selectedTokenId);
+    if (!token) return;
+    token.location = slotId;
+    matchState.selectedTokenId = null;
+    speakSpanishSegment(token.text);
+    renderMatchState();
+}
 
 // Function to speak Spanish segment
 function speakSpanishSegment(text) {
@@ -1595,250 +1674,42 @@ function speakSpanishSegment(text) {
     }
 }
 
-// Initialize drag and drop. Uses Pointer Events (mouse + touch + stylus)
-// instead of HTML5 native drag — works reliably on iOS/Android where
-// HTML5 dragstart doesn't fire on touchscreens.
-function initDragAndDrop() {
-    const draggables = document.querySelectorAll('.draggable');
+// (Matching exercise drag-and-drop was replaced with tap-to-match — see
+// matchState + handleMatchingTap above. The placement scene in the sticker
+// game still uses its own drag handler.)
 
-    function performDrop(dropzone, draggedEl) {
-        if (!dropzone || !draggedEl) return;
-        if (dropzone.children.length > 0 && dropzone.children[0] !== draggedEl) {
-            const existing = dropzone.children[0];
-            document.querySelector('#spanish-options-matching').appendChild(existing);
-        }
-        dropzone.appendChild(draggedEl);
-        speakSpanishSegment(draggedEl.textContent);
-    }
-
-    draggables.forEach(draggable => attachPointerDrag(draggable, performDrop));
-}
-
-// Drag implementation using Pointer Events. On pointerdown we capture the
-// pointer and attach move/up listeners to `document` so events keep firing
-// even when the pointer leaves the element. The dragged element gets
-// pointer-events:none so elementFromPoint() can see the dropzone underneath.
-// Small movements (<6px) stay as taps so onclick still fires speakSpanishSegment.
-// Find the best dropzone for a release point. Preference order:
-//   1. The dropzone directly under the pointer
-//   2. The most recently hovered dropzone (sticky — survives a final
-//      jitter move that took the finger off the target)
-//   3. The closest dropzone within DROP_TOLERANCE pixels
-// Returns null if nothing qualifies.
-const DROP_TOLERANCE = 50;
-function findBestDropzone(x, y, stickyDropzone) {
-    const under = document.elementFromPoint(x, y);
-    const direct = under ? under.closest('.spanish-dropzone') : null;
-    if (direct) return direct;
-    if (stickyDropzone && document.body.contains(stickyDropzone)) {
-        // Only honour the sticky one if release is within tolerance of it
-        const r = stickyDropzone.getBoundingClientRect();
-        const cx = Math.max(r.left, Math.min(x, r.right));
-        const cy = Math.max(r.top, Math.min(y, r.bottom));
-        const d = Math.hypot(x - cx, y - cy);
-        if (d <= DROP_TOLERANCE) return stickyDropzone;
-    }
-    let best = null, bestDist = Infinity;
-    document.querySelectorAll('.spanish-dropzone').forEach(dz => {
-        const r = dz.getBoundingClientRect();
-        const cx = Math.max(r.left, Math.min(x, r.right));
-        const cy = Math.max(r.top, Math.min(y, r.bottom));
-        const d = Math.hypot(x - cx, y - cy);
-        if (d < bestDist && d <= DROP_TOLERANCE) { best = dz; bestDist = d; }
-    });
-    return best;
-}
-
-// Cancel any currently-playing TTS audio. Called on new drag activity so
-// gameplay never has to wait for a previous segment to finish narrating.
-function cancelCurrentTts() {
-    if (typeof _currentTtsAudio !== "undefined" && _currentTtsAudio) {
-        try { _currentTtsAudio.pause(); } catch (e) {}
-        _currentTtsAudio = null;
-    }
-    if ("speechSynthesis" in window) {
-        try { window.speechSynthesis.cancel(); } catch (e) {}
-    }
-}
-
-function attachPointerDrag(draggable, performDrop) {
-    let startX = 0, startY = 0;
-    let offsetX = 0, offsetY = 0;
-    let dragging = false;
-    let activeDropzone = null;     // currently-hovered (drives live highlight)
-    let lastHoveredDropzone = null; // sticky — survives a final off-target move
-    let originalStyles = null;
-    let activePointerId = null;
-    let suppressClick = false;
-    let moveHandler = null, upHandler = null, cancelHandler = null;
-
-    // showMatchingGame sets draggable.onclick BEFORE this runs, which means
-    // the synthesized click after a drag would re-fire speakSpanishSegment
-    // (causing audio to restart and feel "in the way"). Hoist the original
-    // onclick into our own listener so suppressClick actually wins.
-    const originalOnClick = draggable.onclick;
-    draggable.onclick = null;
-    draggable.addEventListener("click", (e) => {
-        if (suppressClick) {
-            suppressClick = false;
-            e.stopPropagation();
-            e.preventDefault();
-            return;
-        }
-        if (originalOnClick) originalOnClick.call(draggable, e);
-    });
-
-    function lift() {
-        const rect = draggable.getBoundingClientRect();
-        originalStyles = {
-            position: draggable.style.position,
-            left: draggable.style.left,
-            top: draggable.style.top,
-            width: draggable.style.width,
-            zIndex: draggable.style.zIndex,
-            pointerEvents: draggable.style.pointerEvents,
-        };
-        draggable.style.position = 'fixed';
-        draggable.style.left = rect.left + 'px';
-        draggable.style.top = rect.top + 'px';
-        draggable.style.width = rect.width + 'px';
-        draggable.style.zIndex = '10000';
-        draggable.style.pointerEvents = 'none';
-        draggable.classList.add('dragging');
-        dragging = true;
-    }
-
-    function restore() {
-        if (!originalStyles) return;
-        draggable.style.position = originalStyles.position;
-        draggable.style.left = originalStyles.left;
-        draggable.style.top = originalStyles.top;
-        draggable.style.width = originalStyles.width;
-        draggable.style.zIndex = originalStyles.zIndex;
-        draggable.style.pointerEvents = originalStyles.pointerEvents;
-        originalStyles = null;
-    }
-
-    function cleanup() {
-        if (activeDropzone) {
-            activeDropzone.classList.remove('highlight');
-            activeDropzone = null;
-        }
-        lastHoveredDropzone = null;
-        draggable.classList.remove('dragging');
-        dragging = false;
-        if (moveHandler) {
-            document.removeEventListener('pointermove', moveHandler);
-            document.removeEventListener('pointerup', upHandler);
-            document.removeEventListener('pointercancel', cancelHandler);
-            moveHandler = upHandler = cancelHandler = null;
-        }
-        activePointerId = null;
-    }
-
-    draggable.addEventListener('pointerdown', (e) => {
-        if (activePointerId !== null) return;
-        if (e.button !== undefined && e.button !== 0) return; // ignore right-click
-        // Kill any in-flight narration so a fresh interaction is instant —
-        // don't make the kid wait for the previous segment to finish speaking.
-        cancelCurrentTts();
-        activePointerId = e.pointerId;
-        startX = e.clientX;
-        startY = e.clientY;
-        const rect = draggable.getBoundingClientRect();
-        offsetX = e.clientX - rect.left;
-        offsetY = e.clientY - rect.top;
-
-        moveHandler = (ev) => {
-            if (ev.pointerId !== activePointerId) return;
-            if (!dragging) {
-                const dx = Math.abs(ev.clientX - startX);
-                const dy = Math.abs(ev.clientY - startY);
-                if (dx < 6 && dy < 6) return;
-                lift();
-                suppressClick = true;
-            }
-            ev.preventDefault();
-            draggable.style.left = (ev.clientX - offsetX) + 'px';
-            draggable.style.top = (ev.clientY - offsetY) + 'px';
-            const under = document.elementFromPoint(ev.clientX, ev.clientY);
-            const newDz = under ? under.closest('.spanish-dropzone') : null;
-            if (newDz !== activeDropzone) {
-                if (activeDropzone) activeDropzone.classList.remove('highlight');
-                activeDropzone = newDz;
-                if (activeDropzone) activeDropzone.classList.add('highlight');
-            }
-            // Sticky hover: only remember dropzones we've actually entered, so
-            // a final off-target jitter doesn't lose the drop.
-            if (newDz) lastHoveredDropzone = newDz;
-        };
-
-        upHandler = (ev) => {
-            if (ev.pointerId !== activePointerId) return;
-            if (dragging) {
-                restore();
-                // Tolerant pick: direct hit, then sticky last-hovered, then
-                // closest dropzone within DROP_TOLERANCE of release point.
-                const target = findBestDropzone(ev.clientX, ev.clientY, lastHoveredDropzone);
-                if (activeDropzone) activeDropzone.classList.remove('highlight');
-                if (target) {
-                    target.classList.remove('highlight');
-                    performDrop(target, draggable);
-                }
-            }
-            cleanup();
-        };
-
-        cancelHandler = (ev) => {
-            if (ev.pointerId !== activePointerId) return;
-            if (dragging) restore();
-            cleanup();
-        };
-
-        document.addEventListener('pointermove', moveHandler, { passive: false });
-        document.addEventListener('pointerup', upHandler);
-        document.addEventListener('pointercancel', cancelHandler);
-    });
-
-}
-
-// Check if the matching is correct
+// Check if the matching is correct (state-driven, not DOM-driven)
 function checkMatches() {
-    const dropzones = document.querySelectorAll('.spanish-dropzone');
     let allCorrect = true;
     let allFilled = true;
+    let playedErrorSound = false;
     const resultMessage = document.getElementById('match-result-message');
     const checkButton = document.getElementById('check-matches-btn');
-    
-    dropzones.forEach(dropzone => {
-        // Remove previous validation classes
-        dropzone.classList.remove('correct-match', 'incorrect-match');
-        
-        const correctText = dropzone.dataset.correct;
-        
-        // Check if there's a match in the dropzone
-        if (dropzone.children.length > 0) {
-            const droppedText = dropzone.children[0].textContent;
-            
-            if (droppedText === correctText) {
-                // Correct match
-                dropzone.classList.add('correct-match');
-            } else {
-                // Incorrect match
-                dropzone.classList.add('incorrect-match');
-                allCorrect = false;
+
+    document.querySelectorAll('.spanish-dropzone').forEach(slotEl => {
+        slotEl.classList.remove('correct-match', 'incorrect-match');
+        const slotId = slotEl.dataset.slotId;
+        const token = matchState.tokens.find(t => t.location === slotId);
+        if (!token) {
+            allFilled = false;
+            return;
+        }
+        if (token.correctSlotId === slotId) {
+            slotEl.classList.add('correct-match');
+        } else {
+            slotEl.classList.add('incorrect-match');
+            allCorrect = false;
+            if (!playedErrorSound) {
+                playedErrorSound = true;
                 
                 // Play error sound
                 const errorSound = new Audio('data:audio/wav;base64,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qJrx4KOQjahZxWbcZgztj2c49nKmkId44S71j0c8eV9yDK6uPRzx5X18eDvjvQ6yKo9ZSS6l//8elePK/Lf//IInrOF/FvDoADYAGBMGb7FtErm5MXMlmPAJQVgWta7Zx2go+8xJ0UiCb8LHHdftWyLJE0QIAIsI+UbXu67dZMjmgDGCGl1H+vpF4NSDckSIkk7Vd+sxEhBQMRU8j/12UIRhzSaUdQ+rQU5kGeFxm+hb1oh6pWWmv3uvmReDl0UnvtapVaIzo1jZbf/pD6ElLqSX+rUmOQNpJFa/r+sa4e/pBlAABoAAAAA3CUgShLdGIxsY7AUABPRrgCABdDuQ5GC7DqPQCgbbJUAoRSUj+NIEig0YfyWUho1VBBBA//uQZB4ABZx5zfMakeAAAAmwAAAAF5F3P0w9GtAAACfAAAAAwLhMDmAYWMgVEG1U0FIGCBgXBXAtfMH10000EEEEEECUBYln03TTTdNBDZopopYvrTTdNa325mImNg3TTPV9q3pmY0xoO6bv3r00y+IDGid/9aaaZTGMuj9mpu9Mpio1dXrr5HERTZSmqU36A3CumzN/9Robv/Xx4v9ijkSRSNLQhAWumap82WRSBUqXStV/YcS+XVLnSS+WLDroqArFkMEsAS+eWmrUzrO0oEmE40RlMZ5+ODIkAyKAGUwZ3mVKmcamcJnMW26MRPgUw6j+LkhyHGVGYjSUUKNpuJUQoOIAyDvEyG8S5yfK6dhZc0Tx1KI/gviKL6qvvFs1+bWtaz58uUNnryq6kt5RzOCkPWlVqVX2a/EEBUdU1KrXLf40GoiiFXK///qpoiDXrOgqDR38JB0bw7SoL+ZB9o1RCkQjQ2CBYZKd/+VJxZRRZlqSkKiws0WFxUyCwsKiMy7hUVFhIaCrNQsKkTIsLivwKKigsj8XYlwt/WKi2N4d//uQRCSAAjURNIHpMZBGYiaQPSYyAAABLAAAAAAAACWAAAAApUF/Mg+0aohSIRobBAsMlO//Kk4soosy1JSFRYWaLC4qZBYWFRGZdwqKiwkNBVmoWFSJkWFxX4FFRQWR+LsS4W/rFRb/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////VEFHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU291bmRib3kuZGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjAwNGh0dHA6Ly93d3cuc291bmRib3kuZGUAAAAAAAAAACU=');
                 errorSound.play();
             }
-        } else {
-            // No match provided
-            allFilled = false;
         }
     });
-    
-        // Update result message and button
+
+    // Update result message and button
     if (!allFilled) {
         resultMessage.textContent = "Please match all phrases before checking.";
         resultMessage.style.color = "blue";
