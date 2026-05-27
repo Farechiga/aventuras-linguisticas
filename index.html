@@ -129,7 +129,7 @@ body::after {
             width: 90%;
             max-width: 600px;
             margin: 20px auto;
-            background-color: #80797C;
+            background-color: #BDB4A6;
             padding: 25px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
             position: relative;
@@ -291,9 +291,9 @@ body::after {
     max-height: 90vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    background-color: #80797C;
+    background-color: #BDB4A6;
     border-radius: 20px;
-    padding: 25px;
+    padding: 20px 20px 16px;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
     position: relative;
     box-sizing: border-box;
@@ -321,29 +321,31 @@ body::after {
 .matching-area {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 14px;
 }
 
 .component-title {
     font-weight: bold;
-    color: #ffffff;
+    color: #2A2D4E;
     margin-bottom: 8px;
     font-size: 1rem;
 }
 
 .match-container {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .match-container .english-component {
     flex: 1;
-    margin-right: 15px;
+    margin-right: 10px;
     background-color: #85296a;
     color: white;
     border: 2px solid #6a2055;
     border-radius: 10px;
-    padding: 12px;
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    line-height: 1.25;
 }
 
 .match-container .spanish-dropzone {
@@ -357,10 +359,23 @@ body::after {
 }
 
 @media (max-width: 768px) {
-    .match-container .spanish-dropzone {
-        min-height: 70px;
-        padding: 16px 12px;
+    .matching-modal { padding: 14px 12px 12px; }
+    .matching-area { gap: 10px; }
+    .match-container { margin-bottom: 6px; }
+    .match-container .english-component {
+        padding: 6px 8px;
+        margin-right: 8px;
+        font-size: 0.9rem;
+        line-height: 1.2;
     }
+    .match-container .spanish-dropzone {
+        min-height: 56px;
+        padding: 10px 8px;
+    }
+    .component-title { font-size: 0.92rem; }
+    .spanish-options-matching { padding: 8px; gap: 6px; }
+    .draggable { padding: 9px 11px; font-size: 1rem; }
+    .controls { margin-top: 4px; }
 }
 
 .spanish-dropzone.highlight {
@@ -371,10 +386,10 @@ body::after {
 .spanish-options-matching {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.6);
+    gap: 8px;
+    margin-top: 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.55);
     border-radius: 10px;
     justify-content: center;
 }
@@ -467,6 +482,12 @@ body::after {
 .svg-overlay, .svg-overlay * { pointer-events: none; }
 body::before, body::after { pointer-events: none; }
 
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 6px;
+}
+
 .check-matches-btn {
     background-color: #85296a;
     color: white;
@@ -475,11 +496,10 @@ body::before, body::after { pointer-events: none; }
     padding: 12px 25px;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: all 0.3s;
-    margin-top: 20px;
+    transition: background-color 0.2s, transform 0.15s, box-shadow 0.2s;
+    margin-top: 0;
     width: 100%;
-    max-width: 200px;
-    align-self: center;
+    max-width: 220px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -1103,7 +1123,7 @@ body::before, body::after { pointer-events: none; }
     <div class="matching-modal">
         <div class="matching-area">
             <div>
-                <div class="component-title">Tap a Spanish phrase, then tap its English match.</div>
+                <div class="component-title">Tap Spanish phrase and English match</div>
                 <div class="english-components" id="english-components">
                     <!-- English slots are inserted here from matchState -->
                 </div>
