@@ -8572,16 +8572,16 @@ const translationData = [
         "spanish": "La consideración de EVE ayudó a establecer armonía entre diferentes robots.",
         "segments": {
           "spanish": [
-            "la consideración",
-            "de EVE",
-            "ayudó a establecer armonía",
-            "entre diferentes robots"
+            "la consideración de EVE",
+            "ayudó a establecer",
+            "armonía entre",
+            "diferentes robots"
           ],
           "english": [
             "EVE's thoughtfulness",
-            "helped",
-            "establish harmony",
-            "between different robots"
+            "helped establish",
+            "harmony between",
+            "different robots"
           ]
         }
       },
@@ -18149,10 +18149,10 @@ const translationData = [
         "spanish": "Usando trabajo en equipo, rescataron a marineros atrapados durante la tormenta.",
         "segments": {
           "spanish": [
-            "usando trabajo",
-            "en equipo",
-            "rescataron a marineros",
-            "atrapados durante la tormenta"
+            "usando trabajo en equipo",
+            "rescataron",
+            "a marineros atrapados",
+            "durante la tormenta"
           ],
           "english": [
             "using teamwork",
