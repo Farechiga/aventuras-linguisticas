@@ -1,0 +1,12 @@
+{
+  "name": "aventuras-linguisticas-tts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TTS generation tooling for Aventuras Linguisticas (not part of the served site).",
+  "scripts": {
+    "gen-tts": "node gen-tts.js"
+  },
+  "dependencies": {
+    "openai": "^4.77.0"
+  }
+}

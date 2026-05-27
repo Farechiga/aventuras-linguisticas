@@ -360,6 +360,10 @@ body::after {
     padding: 10px;
     margin: 5px;
     transition: all 0.3s;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    touch-action: none;
 }
 
 .draggable:hover {
@@ -584,6 +588,9 @@ body::after {
 
 <!-- Load large translation data first -->
 <script src="translation-data.js"></script>
+
+<!-- Pre-generated OpenAI TTS manifest (optional; falls back to browser voice if absent) -->
+<script src="audio-manifest.js" onerror="window.AUDIO_MANIFEST = {};"></script>
 
 <!-- Main game logic -->
 <script>
@@ -812,8 +819,46 @@ function narrateSentence(sentence, callback) {
 }
 
 
+// Try to play a pre-generated OpenAI TTS file for `text`.
+// Returns true if playback started, false if no file is available.
+let _currentTtsAudio = null;
+function playPregeneratedAudio(text, callback) {
+  const manifest = window.AUDIO_MANIFEST || {};
+  const key = (text || "").trim();
+  const filename = manifest[key];
+  if (!filename) return false;
+
+  if (_currentTtsAudio) {
+    try { _currentTtsAudio.pause(); } catch (e) {}
+    _currentTtsAudio = null;
+  }
+  if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+
+  const audio = new Audio("audio/" + filename);
+  _currentTtsAudio = audio;
+  audio.onended = function () {
+    if (_currentTtsAudio === audio) _currentTtsAudio = null;
+    if (callback) callback();
+  };
+  audio.onerror = function () {
+    if (_currentTtsAudio === audio) _currentTtsAudio = null;
+    // File listed in manifest but missing/broken — fall back to browser voice.
+    fallbackSpeakSpanishText(text, callback);
+  };
+  audio.play().catch(function () {
+    if (_currentTtsAudio === audio) _currentTtsAudio = null;
+    fallbackSpeakSpanishText(text, callback);
+  });
+  return true;
+}
+
 // Function to speak Spanish text and allow callback when complete
 function speakSpanishText(text, callback) {
+  if (playPregeneratedAudio(text, callback)) return;
+  fallbackSpeakSpanishText(text, callback);
+}
+
+function fallbackSpeakSpanishText(text, callback) {
   if (!("speechSynthesis" in window)) {
     console.warn("Speech synthesis not supported.");
     if (typeof showSpeechNotAvailable === "function") showSpeechNotAvailable();
@@ -1024,35 +1069,38 @@ function showMatchingGame() {
 
 // Function to speak Spanish segment
 function speakSpanishSegment(text) {
+    // Visual feedback (works for both pre-generated and fallback paths)
+    const element = document.querySelector('.draggable:hover, .draggable:active');
+    if (element) {
+        element.classList.add('speaking');
+        setTimeout(() => element.classList.remove('speaking'), 500);
+    }
+
+    // Prefer the pre-generated OpenAI TTS file
+    if (playPregeneratedAudio(text)) return;
+
     if ('speechSynthesis' in window) {
         // Cancel any ongoing speech
         window.speechSynthesis.cancel();
-        
+
         // Create a new utterance
         const utterance = new SpeechSynthesisUtterance(text);
-        
+
         // Set language to Spanish
         utterance.lang = 'es-ES';
-        
+
         // Get available voices
         const voices = window.speechSynthesis.getVoices();
-        
+
         // Try to find a female Spanish voice
-        const spanishFemaleVoice = voices.find(voice => 
+        const spanishFemaleVoice = voices.find(voice =>
             voice.lang.includes('es') && voice.name.includes('Female'));
-        
+
         // Use the Spanish female voice if found
         if (spanishFemaleVoice) {
             utterance.voice = spanishFemaleVoice;
         }
-        
-        // Visual feedback
-        const element = document.querySelector('.draggable:hover, .draggable:active');
-        if (element) {
-            element.classList.add('speaking');
-            setTimeout(() => element.classList.remove('speaking'), 500);
-        }
-        
+
         // Speak the text
         window.speechSynthesis.speak(utterance);
     }
@@ -1062,50 +1110,151 @@ function speakSpanishSegment(text) {
 function initDragAndDrop() {
     const draggables = document.querySelectorAll('.draggable');
     const dropzones = document.querySelectorAll('.spanish-dropzone');
-    
+
     let draggedElement = null;
-    
-    // Add event listeners to draggable elements
+
+    // Shared "drop into dropzone" logic (mouse + touch both call this)
+    function performDrop(dropzone, draggedEl) {
+        if (!dropzone || !draggedEl) return;
+        // If dropzone already has content, return that content to options
+        if (dropzone.children.length > 0 && dropzone.children[0] !== draggedEl) {
+            const existing = dropzone.children[0];
+            document.querySelector('#spanish-options-matching').appendChild(existing);
+        }
+        dropzone.appendChild(draggedEl);
+        speakSpanishSegment(draggedEl.textContent);
+    }
+
+    // Mouse / pointer drag (HTML5 drag-and-drop)
     draggables.forEach(draggable => {
         draggable.addEventListener('dragstart', () => {
             draggable.classList.add('dragging');
             draggedElement = draggable;
         });
-        
+
         draggable.addEventListener('dragend', () => {
             draggable.classList.remove('dragging');
         });
+
+        // Touch (mobile) — HTML5 dragstart doesn't fire on touchscreens
+        attachTouchDrag(draggable, performDrop);
     });
-    
-    // Add event listeners to dropzones
+
+    // Dropzones (mouse)
     dropzones.forEach(dropzone => {
         dropzone.addEventListener('dragover', e => {
             e.preventDefault();
             dropzone.classList.add('highlight');
         });
-        
+
         dropzone.addEventListener('dragleave', () => {
             dropzone.classList.remove('highlight');
         });
-        
+
         dropzone.addEventListener('drop', e => {
             e.preventDefault();
             dropzone.classList.remove('highlight');
-            
-            // If dropzone already has content, return that content to options
-            if (dropzone.children.length > 0) {
-                const existingDraggable = dropzone.children[0];
-                document.querySelector('#spanish-options-matching').appendChild(existingDraggable);
-            }
-            
-            // Add the dragged element to the dropzone
-            if (draggedElement) {
-                dropzone.appendChild(draggedElement);
-                
-                // Pronounce the Spanish phrase when dropped
-                speakSpanishSegment(draggedElement.textContent);
-            }
+            performDrop(dropzone, draggedElement);
         });
+    });
+}
+
+// Touch-based drag for mobile. Lifts the element with position:fixed and
+// follows the finger; on release, drops into whichever .spanish-dropzone
+// is under the finger (uses elementFromPoint). Short presses without
+// movement still fire the element's onclick (speakSpanishSegment).
+function attachTouchDrag(draggable, performDrop) {
+    let startX = 0, startY = 0;
+    let offsetX = 0, offsetY = 0;
+    let dragging = false;
+    let activeDropzone = null;
+    let originalStyles = null;
+
+    function lift(touch) {
+        const rect = draggable.getBoundingClientRect();
+        originalStyles = {
+            position: draggable.style.position,
+            left: draggable.style.left,
+            top: draggable.style.top,
+            width: draggable.style.width,
+            zIndex: draggable.style.zIndex,
+            pointerEvents: draggable.style.pointerEvents,
+        };
+        draggable.style.position = 'fixed';
+        draggable.style.left = rect.left + 'px';
+        draggable.style.top = rect.top + 'px';
+        draggable.style.width = rect.width + 'px';
+        draggable.style.zIndex = '10000';
+        draggable.style.pointerEvents = 'none';
+        draggable.classList.add('dragging');
+        dragging = true;
+    }
+
+    function restore() {
+        if (!originalStyles) return;
+        draggable.style.position = originalStyles.position;
+        draggable.style.left = originalStyles.left;
+        draggable.style.top = originalStyles.top;
+        draggable.style.width = originalStyles.width;
+        draggable.style.zIndex = originalStyles.zIndex;
+        draggable.style.pointerEvents = originalStyles.pointerEvents;
+        originalStyles = null;
+    }
+
+    draggable.addEventListener('touchstart', (e) => {
+        if (e.touches.length !== 1) return;
+        const touch = e.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+        const rect = draggable.getBoundingClientRect();
+        offsetX = touch.clientX - rect.left;
+        offsetY = touch.clientY - rect.top;
+    }, { passive: true });
+
+    draggable.addEventListener('touchmove', (e) => {
+        if (e.touches.length !== 1) return;
+        const touch = e.touches[0];
+
+        if (!dragging) {
+            // Only lift after the finger moves past a small threshold; short
+            // touches stay as taps so the click handler can fire.
+            const dx = Math.abs(touch.clientX - startX);
+            const dy = Math.abs(touch.clientY - startY);
+            if (dx < 6 && dy < 6) return;
+            lift(touch);
+        }
+
+        e.preventDefault(); // block page scroll while dragging
+        draggable.style.left = (touch.clientX - offsetX) + 'px';
+        draggable.style.top = (touch.clientY - offsetY) + 'px';
+
+        const under = document.elementFromPoint(touch.clientX, touch.clientY);
+        const newDz = under ? under.closest('.spanish-dropzone') : null;
+        if (newDz !== activeDropzone) {
+            if (activeDropzone) activeDropzone.classList.remove('highlight');
+            activeDropzone = newDz;
+            if (activeDropzone) activeDropzone.classList.add('highlight');
+        }
+    }, { passive: false });
+
+    draggable.addEventListener('touchend', () => {
+        if (!dragging) return; // it was a tap — let onclick handle it
+        restore();
+        draggable.classList.remove('dragging');
+        if (activeDropzone) {
+            activeDropzone.classList.remove('highlight');
+            performDrop(activeDropzone, draggable);
+        }
+        dragging = false;
+        activeDropzone = null;
+    });
+
+    draggable.addEventListener('touchcancel', () => {
+        if (dragging) restore();
+        draggable.classList.remove('dragging');
+        if (activeDropzone) activeDropzone.classList.remove('highlight');
+        dragging = false;
+        activeDropzone = null;
     });
 }
 
