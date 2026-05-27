@@ -272,11 +272,15 @@ body::after {
 .matching-modal {
     width: 90%;
     max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     background-color: rgba(255, 251, 240, 0.95);
     border-radius: 20px;
     padding: 25px;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
     position: relative;
+    box-sizing: border-box;
 }
 
 .modal-title {
@@ -378,6 +382,7 @@ body::after {
 
 .draggable.dragging {
     opacity: 0.5;
+    transition: none;
 }
 
 .draggable.speaking {
@@ -526,10 +531,6 @@ body::after {
             </g>
             <path class="st3" d="M463.11,2264.56s3.81,1.27,4.08,3.52c.39,3.27-4.19,1.26-6.42-.5s.05-3.28,2.34-3.02h0Z"/>
           </g>
-          <polygon class="st1" points="5334.16 2955.13 5254.51 2846.83 5126.9 2889.12 5205.28 2779.9 5125.62 2671.61 5253.72 2712.4 5332.1 2603.18 5332.89 2737.61 5460.99 2778.4 5333.38 2820.69 5334.16 2955.13"/>
-          <polygon class="st1" points="5469.55 2382.32 5365.92 2349.31 5302.51 2437.68 5301.87 2328.92 5198.23 2295.92 5301.47 2261.7 5300.84 2152.94 5365.28 2240.56 5468.52 2206.34 5405.11 2294.7 5469.55 2382.32"/>
-          <polygon class="st1" points="5297.75 722.32 5254.16 671.15 5192.02 696.8 5227.22 639.53 5183.63 588.36 5248.97 604.14 5284.16 546.87 5289.35 613.88 5354.69 629.66 5292.56 655.3 5297.75 722.32"/>
-
         </svg>
         </div>
         
