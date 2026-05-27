@@ -2087,7 +2087,8 @@ function checkMatches() {
     function devOpenScene() {
         if (state.collection.length < COLLECTION_GOAL) devFillCollection();
         setOpen("sg-collection-overlay", false);
-        openScene();
+        // Same routing as the real CTA: picker first if no backdrop chosen.
+        requestSceneOpen();
     }
     function devReset() {
         try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
@@ -2261,27 +2262,40 @@ function checkMatches() {
         state.selectedBackground = filename;
         saveState(state);
         setOpen("sg-bgpick-overlay", false);
-        // Refresh the visible scene canvas (if scene is already open) and
-        // re-render placed stickers on top of the new background.
-        const canvas = $("sg-scene-canvas");
-        if (canvas) canvas.style.backgroundImage = "url('" + BACKGROUND_DIR + filename + "')";
-        renderPlacedStickers();
-        flashCheer("🖼️ Backdrop chosen!");
+
+        const sceneEl = $("sg-scene-overlay");
+        const sceneAlreadyOpen = sceneEl && sceneEl.classList.contains("sg-open");
+        if (sceneAlreadyOpen) {
+            // Mid-scene backdrop swap: just refresh the canvas underneath
+            // the placed stickers.
+            const canvas = $("sg-scene-canvas");
+            if (canvas) {
+                canvas.style.backgroundImage =
+                    "url('" + BACKGROUND_DIR + filename + "')";
+            }
+            renderPlacedStickers();
+            flashCheer("🖼️ Backdrop changed!");
+        } else {
+            // Pre-scene pick (routed from the "Place your stickers!" CTA):
+            // now open the actual placement scene with this backdrop.
+            flashCheer("🖼️ Backdrop chosen!");
+            openScene();
+        }
+    }
+
+    // Entry point used by the "Place your stickers!" CTA. If no backdrop
+    // is chosen yet, route through the picker first; chooseBackground()
+    // then opens the scene. If a backdrop is already chosen, jump straight
+    // into the scene.
+    function requestSceneOpen() {
+        if (!state.selectedBackground && backgroundPool.length > 0) {
+            openBackgroundPicker();
+            return;
+        }
+        openScene();
     }
 
     function openScene() {
-        // First-time scene entry with no chosen backdrop AND a pool to choose
-        // from: route through the picker. The picker's chooseBackground()
-        // doesn't re-open the scene; instead we open the scene first (so the
-        // chooser sits visually above it) and let the user dismiss the picker
-        // when they're done. Simpler: pick first, scene follows.
-        if (!state.selectedBackground && backgroundPool.length > 1) {
-            // Show picker; on close (via choose), the user can tap a stored
-            // re-entry path. For first-time UX, open the scene now too so
-            // dismissing the picker shows the chosen backdrop immediately.
-            renderBackgroundPicker();
-            setOpen("sg-bgpick-overlay", true);
-        }
         const canvas = $("sg-scene-canvas");
         if (canvas) {
             canvas.style.backgroundImage =
@@ -2632,13 +2646,13 @@ function checkMatches() {
             });
         });
 
-        // Goal CTA
+        // Goal CTA — routes through the picker first if no backdrop chosen yet
         const cta = $("sg-goal-cta");
         if (cta) {
             cta.addEventListener("click", () => {
                 if (state.collection.length < COLLECTION_GOAL) return;
                 setOpen("sg-collection-overlay", false);
-                openScene();
+                requestSceneOpen();
             });
         }
 
