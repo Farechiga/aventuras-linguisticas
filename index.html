@@ -13,83 +13,53 @@
         font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', cursive, sans-serif;
     }
     
+    html, body {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
     body {
-        background-color: #80797C;
+        background-color: #80797C; /* fallback if gradient root fails to paint */
         overflow-x: hidden;
     }
- 
-/* Gradient darkening left and right edges */
-body::before,
-body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    width: 15vw; /* Adjusts gradient width */
-    height: 100vh;
-    pointer-events: none;
-    z-index: 1; /* Ensure it overlays correctly */
-}
 
-body::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(0, 9, 33, 0.3), rgba(0, 9, 33, 0));
-}
+    /* Lock body scroll while any modal is open so only the modal scrolls.
+       The modal element itself is the single scroll container. */
+    body.modal-open {
+        overflow: hidden;
+    }
 
-body::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(0, 9, 33, 0.3), rgba(0, 9, 33, 0));
-}
-
-    /* Game Page Styles */
+    /* Single gradient root. Non-fixed so it scrolls with content on iOS
+       (background-attachment: fixed is the desync culprit). min-height:
+       100dvh makes the gradient cover the viewport when content is short
+       and grows with the page when content is long. */
     .game-container {
-        width: 100vw;
+        width: 100%;
         min-height: 100vh;
-        padding: 20px;
+        min-height: 100dvh;
+        padding: 16px 20px;
         background: linear-gradient(45deg, #7ABFFF, #8CA9F2, #9B93E7, #B07BDC, #C462D0, #DA47C3);
         background-size: 400% 400%;
+        background-attachment: scroll;
         animation: gradient 15s ease infinite;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        position: relative;
     }
-    
+
     @keyframes gradient {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
     }
 
-    /* Improved SVG overlay positioning */
-    .svg-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 0;
-        opacity: 0.15; /* Kept your original opacity setting */
-    }
-
-.svg-overlay svg {
-    width: 100vw;
-    height: 100vh;
-}
-
-    /* Make sure other content is positioned above the SVG */
+    /* z-index nudge for the fixed score chip + sticker badge so they sit
+       above gradient (still NON-fixed for layout; just stacking helper). */
     .score-container, .home-button, .manuscript {
         position: relative;
         z-index: 1;
     }
-
-        /* Make sure other content is positioned above the SVG */
-        .score-container, .home-button, .manuscript {
-            position: relative;
-            z-index: 1;
-        }
         
         .score-container {
             position: fixed;
@@ -125,29 +95,17 @@ body::after {
             font-weight: bold;
         }
         
+        /* No floating card — content sits directly on the gradient.
+           The game-container's own padding provides page-level spacing. */
         .manuscript {
-            width: 90%;
+            width: 100%;
             max-width: 600px;
-            margin: 20px auto;
-            background-color: #BDB4A6;
-            padding: 25px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+            margin: 16px auto;
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+            border-radius: 0;
             position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-        }
-        
-        .manuscript::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 0.08;
-            z-index: -1;
-            background-image: url('/api/placeholder/400/400');
-            background-size: cover;
         }
         
 .instruction-text {
@@ -171,14 +129,14 @@ body::after {
         
         .english-sentence {
             font-size: 1.4rem;
-            color: #333;
+            color: #2A2D4E;
             text-align: center;
-            margin-bottom: 25px;
-            padding: 15px;
+            margin-bottom: 20px;
+            padding: 14px;
             border-radius: 15px;
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.85);
+            border: 2px solid #DBE3FF;
             font-weight: 500;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             line-height: 1.4;
         }
         
@@ -191,13 +149,13 @@ body::after {
         
         .spanish-option {
             font-size: 1.2rem;
-            padding: 15px;
-            background-color: white;
-            border: 3px solid #8a64ba;
+            padding: 14px 16px;
+            background-color: #ffffff;
+            color: #2A2D4E;
+            border: 2px solid #DBE3FF;
             border-radius: 15px;
             cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s, transform 0.15s;
         }
         
         .spanish-option:hover {
@@ -286,15 +244,19 @@ body::after {
 }
 
 .matching-modal {
-    width: 90%;
-    max-width: 600px;
-    max-height: 90vh;
+    width: 100%;
+    max-width: 640px;
+    max-height: 100vh;
+    max-height: 100dvh;
+    /* Single scroll container while modal is open. overscroll-behavior:
+       contain stops the page underneath from scrolling at modal edges. */
     overflow-y: auto;
+    overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
-    background-color: #BDB4A6;
-    border-radius: 20px;
-    padding: 20px 20px 16px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 20px;
     position: relative;
     box-sizing: border-box;
 }
@@ -326,8 +288,9 @@ body::after {
 
 .component-title {
     font-weight: bold;
-    color: #2A2D4E;
-    margin-bottom: 8px;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    margin-bottom: 10px;
     font-size: 1rem;
 }
 
@@ -341,7 +304,7 @@ body::after {
     margin-right: 10px;
     background-color: #85296a;
     color: white;
-    border: 2px solid #6a2055;
+    border: 2px solid #DBE3FF;
     border-radius: 10px;
     padding: 8px 10px;
     font-size: 0.95rem;
@@ -351,7 +314,7 @@ body::after {
 .match-container .spanish-dropzone {
     flex: 1;
     background-color: #d9c7d6;
-    border: 2px dashed #85296a;
+    border: 2px dashed #DBE3FF;
     border-radius: 10px;
     padding: 12px;
     min-height: 50px;
@@ -398,7 +361,7 @@ body::after {
     cursor: pointer;
     background-color: #3e3364;
     color: white;
-    border: 2px solid #2a234a;
+    border: 2px solid #DBE3FF;
     border-radius: 10px;
     padding: 12px 14px;
     margin: 5px;
@@ -478,10 +441,6 @@ body::after {
     transform: translateY(0);
 }
 
-/* Defensive: keep decorative layers from intercepting taps */
-.svg-overlay, .svg-overlay * { pointer-events: none; }
-body::before, body::after { pointer-events: none; }
-
 .controls {
     display: flex;
     justify-content: center;
@@ -491,7 +450,7 @@ body::before, body::after { pointer-events: none; }
 .check-matches-btn {
     background-color: #85296a;
     color: white;
-    border: none;
+    border: 2px solid #DBE3FF;
     border-radius: 20px;
     padding: 12px 25px;
     font-size: 1.1rem;
@@ -981,6 +940,26 @@ body::before, body::after { pointer-events: none; }
     .sg-pack-option { width: 130px; height: 160px; }
     .sg-modal-title { font-size: 1.25rem; }
 }
+
+/* Logo centered above the question/answer area */
+.logo-left {
+    display: flex;
+    justify-content: center;
+    margin: 16px auto 4px;
+    position: relative;
+    z-index: 5;
+}
+.logo-left img {
+    width: 240px;
+    max-width: 60vw;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+}
+@media (max-width: 768px) {
+    .logo-left { margin: 8px auto 2px; }
+    .logo-left img { width: 140px; max-width: 45vw; }
+}
     </style>
 </head>
 <body>
@@ -990,109 +969,6 @@ body::before, body::after { pointer-events: none; }
                  alt="¡Aventuras lingüísticas! logo">
           </div>
                 
-<div class="svg-overlay">
-  <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 5600 3400">
-    <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
-    <defs>
-      <style>
-        .st0 {
-          fill: url(#linear-gradient1);
-        }
-
-        .st1 {
-          fill: #eae8dc;
-        }
-
-        .st2 {
-          fill: url(#linear-gradient);
-        }
-
-        .st3 {
-          fill: #c6c2b3;
-        }
-
-        .st4 {
-          fill: #eae8bc;
-        }
-
-        /* Logo centered above the question/answer card */
-
-.logo-left {
-  display: flex;
-  justify-content: center;
-  margin: 20px auto 10px;
-  z-index: 5;
-  position: relative;
-}
-
-.logo-left img {
-  width: 240px;
-  max-width: 60vw;
-  height: auto;
-  pointer-events: none;
-  user-select: none;
-}
-
-@media (max-width: 768px) {
-  /* Hide the layered/parallax background pieces on mobile. Fixed-position
-     overlays desync from the scrolling content on iOS Safari; use a flat
-     solid fill on body instead. */
-  .logo, .logo svg, .svg-overlay,
-  body::before, body::after {
-    display: none !important;
-  }
-  body { background-color: #80797C; }
-
-  /* Smaller logo + tighter gap before the content card on phones */
-  .logo-left { margin: 8px auto 4px; }
-  .logo-left img { width: 140px; max-width: 45vw; }
-  .manuscript { margin-top: 6px; }
-}
-      </style>
-<linearGradient id="edge-gradient" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="rgba(0, 9, 33, 0.3)"/>
-    <stop offset="1" stop-color="rgba(0, 9, 33, 0)"/>
-</linearGradient>
-    </defs>
-          <g>
-            <g>
-              <g>
-                <g>
-                  <path class="st4" d="M1345.06,2283.85c-1.19-1.48-5.01-3.91-8.38-5.27-3.42-1.38-5.08-5.27-3.7-8.69.96-2.4,3.18-3.86,5.59-4.09-28.46-3.14-66.76-16.83-99.28-30.42,34.32,21.8,70.2,40.49,103.34,50.56.67-.24,1.8-.81,2.44-2.09h0Z"/>
-                  <path class="st4" d="M1115,1822.57c2.87.11,5.75.3,8.63.56,1.25-4.4,3.31-8.9,6.5-13.3,1.81-2.5,4.45-4.45,7.64-5.95-6.75-1.33-14.75-.9-21.73,2.36-2.77,1.29-3.51,2.83-3.83,3.87-1.29,4.2,1.66,10.56,2.79,12.45h0s0,.01,0,.01Z"/>
-                  <path class="st4" d="M1341.66,2266.1v-.03c-.35-.03-.72-.06-1.09-.09.36.08.72.06,1.07.2,0-.02,0-.05.01-.07h.01Z"/>
-                  <g>
-                    <path class="st4" d="M1358.19,2286.81c-.3,1.07-.69,2.05-1.14,2.96.91.21,1.83.46,2.73.65l33.53-88.41-10.74-4.88-28.44,73.78c-.29.77-.74,1.42-1.25,2,4.27,3.81,6.85,8.54,5.31,13.91h0Z"/>
-                    <path class="st4" d="M1296.83,2449.02l10.94,2.99,4.87-13.52c-4,.63-8.09,1.22-12.28,1.72l-3.53,8.81h0Z"/>
-                  </g>
-                  <path class="st4" d="M1215.5,2013.53c5.69,0,12.3-5.51,20.81-17.33,6.34-8.82,5.68-14.57,4-17.83-1.87-3.65-5.82-5.75-10.84-5.75-5.28,0-11.05,2.35-15.82,6.44-11.96,10.26-9.26,23.5-6.18,29.03,2.42,4.5,5.7,5.45,8.03,5.45h0Z"/>
-                  <path class="st4" d="M1562.78,2238.51l-152.3-62.39c-1.66-.68-3.54-.66-5.19.05-1.66.72-2.95,2.07-3.59,3.76l-3.63,9.56-16.42-7.46c-1.67-.76-3.59-.8-5.29-.1-1.7.7-3.04,2.07-3.71,3.78l-25.94,67.29c-54.22-2.16-165.57-59.11-166.71-59.69-.36-.19-.74-.2-1.12-.32-14.75-11.3-28.51-22.52-40.84-33.08,6.72-10.13,25.64-28.26,49.45-23.07,65.86,14.28,99.77-25.6,116.59-50.37,6.45-4.06,14.18-13.98,16.77-19.6,3.2-6.95,3.79-13.12,1.74-18.34-3.12-7.93-11.59-12.34-20.29-15.91l-1.64-.68c-4.75-5.08-9.93-10.84-14.82-18.43-10.69-16.58-12.13-32.27-13.8-50.44-1.74-18.81-3.7-40.14-17.08-64.83-10.19-18.82-24.55-34.5-42.63-46.75.8-3.14,1.51-6.61,2.06-10.57,2.04-14.7-7.48-27.43-26.12-34.91-8.79-3.53-19.19-5.61-28.88-5.83-10.64-10.83-32.48-13.78-49.02-6.06-5.57,2.6-9.37,6.8-10.98,12.14-1.76,5.83-.56,11.8,1,16.27-91.03,3.5-177.26,72.01-235.73,132.03-102.26,104.97-154.52,205.2-179.63,267.78-37.97,97.11-57.8,313.62-30.23,465.81,16.85,41.22,45.28,108.25,114.16,154.54,73.45,49.36,156.68,51.67,207.6,51.67,55.84,0,111.48-7.36,161.3-15.85,51.54-8.77,116.17-6.25,168.13-4.22,45.34,1.77,69.49,2.49,79.53-2.09,69.94-31.79,79.83-118.56,75.51-146.57-1.63-10.6-8.37-18.06-18.97-21.01-15.19-4.24-34.32,1.62-43.23,9.98-2.6-.29-7.42-2.76-13.32-6.3,5.23-4.8,12.26-12.11,18.36-21.64,12.66-19.78,20.04-46.13,6.33-57.22-11.16-9.04-26.53-5.23-33.9-2.56-15.64-13.48-84.13-69.28-144.86-68-7.57-49.37-28.56-86.39-36.77-99.28-5.44-8.55-8.86-14.38-11.09-18.38,19.39,1.45,38.59,2.25,57.07,2.25,15.51,0,30.51-.56,44.68-1.73l-3.71,9.28c-.71,1.77-.63,3.76.22,5.47.85,1.7,2.38,2.97,4.22,3.47l17.15,4.68-4.25,11.8c-.67,1.86-.48,3.92.51,5.62.99,1.7,2.68,2.88,4.63,3.22l166.6,29.06c.39.07.77.1,1.15.1,2.75,0,5.27-1.7,6.25-4.35l93.55-250.71c2.14-5.88,1.06-10.31-.23-12.99-2.7-5.63-8.02-7.67-8.67-7.87h.03,0ZM1354.13,2270.91l28.44-73.78,10.74,4.88-33.53,88.41c-.9-.19-1.83-.44-2.73-.65.45-.91.83-1.89,1.14-2.96,1.54-5.37-1.04-10.09-5.31-13.91.51-.58.96-1.23,1.25-2h0ZM1341.67,2266.07v.03s-.02.05-.02.07c-.35-.14-.72-.12-1.07-.2.37.03.73.06,1.1.09h-.01ZM1338.58,2265.8c-2.41.23-4.63,1.69-5.59,4.09-1.38,3.42.28,7.31,3.7,8.69,3.37,1.36,7.19,3.8,8.38,5.27-.63,1.28-1.76,1.85-2.44,2.09-33.13-10.07-69.02-28.76-103.34-50.56,32.53,13.59,70.82,27.28,99.28,30.42h0ZM1112.2,1810.1c.32-1.04,1.06-2.57,3.83-3.87,6.98-3.26,14.98-3.69,21.73-2.36-3.19,1.5-5.83,3.45-7.64,5.95-3.19,4.4-5.25,8.9-6.5,13.3-2.88-.25-5.75-.44-8.63-.56h0c-1.14-1.9-4.08-8.26-2.79-12.46h0ZM1232.83,2619.17c1.82-16.41,1.71-32.12.28-46.92h0c62-.15,136.64,66.63,137.42,67.33,2.03,1.84,4.98,2.25,7.43,1.04,4.01-1.97,16.99-6.34,23.84-.81,5.68,4.6,1.39,23.12-9.18,39.63-6.49,10.14-14.32,17.55-18.81,21.37-5.73-3.81-11.78-7.98-17.61-12M684.96,2281.79c26.39-90.71,69.12-176.82,172.74-298.38,120.23-141.04,206.67-129.13,269.35-147.06.41,13.12,6.14,23.24,6.54,23.91,1.86,3.18,5.92,4.25,9.11,2.41s4.28-5.92,2.46-9.12c-.45-.8-11-19.66.79-35.94,3.52-4.86,24.33-6.5,42.34.74,7.33,2.95,19.4,9.55,17.86,20.68-2.73,19.75-9.58,25.12-9.55,25.12-3.15,1.92-4.15,6.03-2.23,9.19,1.26,2.07,3.46,3.21,5.71,3.21,1.19,0,2.38-.32,3.47-.98,1.18-.72,5.21-3.63,9.05-11.18,15,10.74,26.97,24.21,35.61,40.15,12.07,22.28,13.82,41.3,15.51,59.69,1.76,19.09,3.42,37.12,15.88,56.46,4.6,7.13,9.44,12.86,13.82,17.66v.37c0,3.79.74,7.91,1.53,12.27,1.27,7.03,2.7,14.99,1.41,23.62-.5,3.36-.8,5.99-.95,8.1-16.6,23.53-45.13,52.93-100.09,41.01-29.1-6.31-52.46,13.28-62.44,27.3-4.86-4.3-9.47-8.46-13.73-12.41-55.53-51.56-106.99-52.15-109.15-52.15-3.68,0-6.66,2.98-6.67,6.66-.01,3.68,2.97,6.68,6.65,6.7.48,0,48.65.82,100.08,48.58,61.45,57.06,189.26,154.6,278.95,158.67,12.24,2.01,21.59,13.59,23.88,29.62,3.22,22.59-8.25,55.99-51.19,75.82-84.2,38.86-319.93,6.11-395-34.68l.02.06h0c-3.24-1.76-7.3-.56-9.06,2.68s-.56,7.3,2.68,9.06c40.99,22.27,127.15,42.37,212.57,50.28,1.38,3.13,5.21,10.71,15.5,26.86,10.59,16.65,43.75,75.71,36.32,148.99-59.95-13.23-110.06,6.78-112.65,7.84-3.41,1.4-5.04,5.29-3.64,8.71s5.31,5.05,8.71,3.65c.73-.3,73.73-29.32,145.52,7.51,36.21,18.57,66.55,39.52,90.93,56.34,7.99,5.52,14.84,10.21,20.77,14.11.66.65,1.43,1.14,2.26,1.46,16.76,10.82,25.9,14.67,33.12,11.57.97-.41,1.83-1.05,2.5-1.86,4.35-5.22,20.1-10.71,31.22-7.62,5.54,1.54,8.51,4.77,9.34,10.16,3.9,25.34-4.93,103.78-67.83,132.37-7.64,3.47-39.62,2.24-73.49.9-52.55-2.04-117.96-4.6-170.89,4.4-112.59,19.17-255.19,32.63-359.46-33.92-16.35-10.43-54.2-34.73-81.98-82.23-19.61-33.52-26.56-65.44-29.34-86-8.5-43.47-16.02-101.38-14.37-169.58,2.42-99.88,19.13-176.12,29.5-211.77ZM1307.78,2452.01l-10.94-2.99,3.53-8.81c4.2-.51,8.28-1.09,12.28-1.72l-4.87,13.52h0ZM1559.14,2254.75l-91.59,245.46-153.29-26.74,13.61-37.82c12.98-2.81,24.62-6.42,34.45-10.96,49.62-22.9,62.7-62.71,58.83-89.84-3.16-22.15-17.08-38.25-35.45-41-.24-.04-.47-.06-.71-.07-3.84-.16-7.78-.57-11.76-1.09l38.54-101.61,146.34,59.93s.99.51,1.3,1.15c.24.51.14,1.47-.26,2.59h-.01Z"/>
-                </g>
-                <path class="st4" d="M1307.21,2047.19s-1.94,2.91,0,5.81,6.78,5.81,6.78.97-4.36-10.65-6.78-6.78Z"/>
-              </g>
-              <g>
-                <polygon class="st4" points="1440.7 2280.81 1488.05 2296.85 1495.41 2275.38 1448.79 2257.8 1440.7 2280.81"/>
-                <path class="st4" d="M1506.19,2265.16l-59.08-22.28c-1.68-.63-3.55-.56-5.18.2s-2.89,2.15-3.48,3.84l-12.59,35.84c-.59,1.69-.49,3.54.3,5.14.78,1.61,2.17,2.83,3.86,3.41l60.05,20.34c.71.24,1.44.35,2.15.35,2.78,0,5.37-1.75,6.32-4.52l11.62-33.9c1.17-3.42-.58-7.15-3.96-8.42h-.01ZM1488.05,2296.85l-47.34-16.04,8.08-23.01,46.62,17.58-7.36,21.47h0Z"/>
-              </g>
-            </g>
-            <path class="st4" d="M1215.5,2013.53c5.69,0,12.3-5.51,20.81-17.33,6.34-8.82,5.68-14.57,4-17.83-1.87-3.65-5.82-5.75-10.84-5.75-5.28,0-11.05,2.35-15.82,6.44-11.96,10.26-9.26,23.5-6.18,29.03,2.42,4.5,5.7,5.45,8.03,5.45h0Z"/>
-          </g>
-          <g>
-            <g>
-              <path class="st3" d="M642.86,2277.32c-2.42-2.84-5.42-5.73-7.83-6.8-.77,1.24-1.61,3.78-2.09,6.21,1.83,1.6,3.61,3.3,5.37,5.05,1.4-1.51,2.92-3.03,4.55-4.47h0Z"/>
-              <polygon class="st3" points="343.7 2254.19 325.18 2243.43 322.68 2247.17 340.54 2259.07 343.7 2254.19"/>
-<path class="st3" d="M664.75,2270.31c-3.46-1.3-6.96-1.09-10.34-.02-3.41-4.35-9.78-11.24-17.05-13.06-3.31-.82-6.66-.24-9.44,1.68-3.12,2.14-5.12,5.66-6.4,9.05-38.45-25.87-85.61-23.92-102.29-11.39-13.74,10.33-25.72,9.62-37.26,8.44-2.13-2.44-5.5-4.18-9.04-5.68-3.43-1.45-6.71-2.19-9.74-2.19-13.21,0-17.83,12.99-19.57,17.88-3.15,8.87-1.51,16.73-.7,19.59-.85,3.35-1.68,6.89-2.55,10.61l-1.53,6.53c-4.68,19.72,2.69,39.84,11.36,55.19-17.1-11.42-40.28-30.06-61.65-57.54l33.02-47.86c1.84-2.68,1.5-6.29-.83-8.57l-3.66-3.58,2.22-3.01c1.15-1.56,1.57-3.54,1.14-5.43-.42-1.89-1.64-3.5-3.35-4.42l-90.76-49c-1.94-1.25-5.03-2.26-8.47-1.71-2.74.44-6.76,2.05-10.39,7.24-5.68,8.11-84.46,121.92-89.82,129.66-3.55,3.97-4.9,10.43-.73,15.65,4.99,6.25,63.68,57.68,75.4,67.93,1.23,1.07,2.79,1.65,4.4,1.65.24,0,.48-.01.72-.04,1.86-.2,3.55-1.17,4.66-2.68l4.46-6.04,4.47,3.48c1.18.92,2.62,1.41,4.1,1.41.3,0,.6-.02.89-.06,1.76-.24,3.34-1.17,4.41-2.58,10.75,28.89,29.68,61,46.01,82.78,14.29,19.06,32.06,35.14,47.3,47.12-3.49,13.5-17.58,44.93-37.55,79.17-2.4,4.12-4.5,8.12-6.39,12.01-10.56-1.7-39.09-3.04-76.5,21.36-16.58,10.91-23.98,15.35-27.12,17.12-1.72-.62-3.97-1.29-6.43-1.66-8.3-1.26-14.93,1.75-18.15,8.19-6.81,13.62,12.17,46.2,24.64,57.97,1.96,1.85,4,3.08,6.04,3.89-5.82,5.66-10.31,10.4-13.02,13.38-6.09-1.57-17.19-3.23-27.02,1.68-5.49,2.74-8.83,8.01-9.4,14.82-1.95,22.99,28.33,66.63,47.67,80.81,7.55,5.53,14.58,7.53,21.72,7.53,8.06,0,16.25-2.55,25.46-5.41,10.64-3.31,23.88-7.42,41.84-9.6,20.6-2.5,34.79.39,51.23,3.72,21.03,4.26,44.87,9.09,88.37,4.98,168.18-23.7,187.32-219.83,173.76-380.2-.52-6.12-.93-10.96-.93-12.88,0-7.2.52-17.7,1.08-28.81,1.42-28.52,3.04-60.84-1.27-75.92-1.06-4.38-2.34-8.6-3.73-12.73,7.74-2.02,15.24-5.88,18.36-13.25,2.91-6.87,2.32-15.78-1.66-25.08-4.52-10.56-19.99-22.12-19.99-22.12h0ZM635.03,2270.52c2.42,1.06,5.42,3.95,7.83,6.8-1.64,1.44-3.16,2.96-4.55,4.47-1.76-1.75-3.54-3.45-5.37-5.05.47-2.43,1.32-4.97,2.09-6.21h0ZM467.62,2392.57h.01c-.08,3.22-.43,7.67-1.38,11.62-18.19-8.8-50.65-30.77-83.47-70.62-2.62-3.19-5.34-5.91-8.09-8.34-.04-.22-.1-.43-.14-.65,2.54,2.33,6.43,2.32,9-.01M313.06,2352.06c-1.31,4.87-1.46,10.66-.84,16.97l-16.54,22.41c-25.27-22.16-60.83-53.7-67.44-60.51.05-.07.1-.14.15-.21.84-1.21,84.23-121.68,90.05-130,.58-.83,1.06-1.3,1.36-1.54l84.19,45.45-51.43,69.71c-3.1-.35-6.19-.26-9.23.4-13.86,3-24.61,16.25-30.28,37.31h.01ZM364.22,2635.33c-7.55,19.52-8.95,34.22-9.21,39.2-24.35,7.89-47.59,24.13-65.41,39.18-.09.03-.19.02-.28.06-.64.27-1.39.62-2.22,1.02-5.75,2.72-8.97,3.59-11.69,1.02-12.41-11.72-23.73-36.96-21.86-42.27l.02-.03c1.23-2.49,8.11-.08,9.92.81M674.11,2312.3c-2.29,5.4-17.16,7.62-27.05,7.15-3.65-.2-6.82,2.66-7,6.35s2.66,6.82,6.34,7c.79.04,2.05.09,3.64.09,1.31,0,2.85-.04,4.54-.13,1.59,4.48,3.06,9.13,4.29,14.16,3.77,13.21,2.08,47.09.84,71.84-.59,11.77-1.1,21.94-1.1,29.48,0,2.48.39,7.06.98,14,13.08,154.62-4.47,343.59-162,365.8-41.2,3.88-64.03-.74-84.16-4.81-16.84-3.42-32.76-6.63-55.49-3.89-19.17,2.32-33.05,6.63-44.2,10.1-16.94,5.26-24.68,7.66-35.31-.14-17.47-12.81-43.63-52.69-42.26-68.9.26-3.1,1.44-3.68,2.07-4,8.72-4.35,20.58.19,20.68.23,2.65,1.07,5.68.32,7.54-1.83.62-.72,62.63-71.78,116.98-71.78s84.96,16.36,85.32,16.56c3.2,1.81,7.27.7,9.1-2.5,1.83-3.2.72-7.29-2.49-9.11-1.31-.75-32.73-18.32-91.94-18.32-4.88,0-9.79.49-14.68,1.37,1.09-9.28,4.98-29.75,19-53.79,14.82-25.39,31.01-57.74,37.4-77.32,12.15,8.75,20.95,13.89,21.78,14.37,1.05.6,2.2.89,3.33.89,2.31,0,4.56-1.2,5.79-3.35,1.84-3.2.74-7.29-2.45-9.13-.23-.14-11.82-6.89-27.01-18.41-.71-1-1.7-1.73-2.86-2.22-14.93-11.57-32.69-27.36-46.57-45.88-29.74-39.65-57.4-97.59-51.2-120.65,4.24-15.76,11.61-25.86,20.2-27.72,2.32-.5,4.77-.36,7.29.27.23.07.45.15.69.19,5.91,1.7,12.2,6.34,18.33,13.79,48.21,58.54,91.07,75.78,95.79,77.56,10.29,3.86,21.18,5.8,30.8,7.51,10.61,1.89,21.58,3.84,24.23,7.55,2.15,3.01,6.33,3.7,9.32,1.56,3.01-2.15,3.7-6.32,1.56-9.32-5.81-8.14-18.3-10.36-32.75-12.94-7.18-1.28-15.1-2.73-22.64-4.97,2.58-9.08,2.27-19.11,2.21-20.45-.07-1.6-.73-3.13-1.83-4.29-.35-.37-34.92-37.2-27.28-69.42l1.54-6.58c.69-2.98,1.34-5.67,1.95-8.17,3.47-1.48,6.05-4.86,8.73-8.39,2.95-3.87,6.29-8.26,10.77-10.59l1.18-.59c1.17-.57,2.63-1.29,3.99-2.26,12.46,1.3,29.17,2.59,47.23-10.99,13.96-10.49,67.57-11.12,102.85,25.24-1.5,2.97-.7,6.63,2.13,8.53,3.06,2.05,7.21,1.24,9.27-1.83,6.19-9.24,15.52-17.5,18.5-16.38,3.51,1.33,9.06,6.99,12.43,14.88,2.46,5.76,3.08,11.22,1.65,14.61v-.03h0Z"/>
-              <path class="st3" d="M546.92,2290.53c-3.24,0-6.11,1.39-7.86,3.81-3.1,4.28-5.2,8.83-6.08,10.9-2.54,3.3-3.21,7.15-1.74,10.51,1.53,3.53,5.11,5.73,9.34,5.73,6.17,0,12.5-4.39,17.35-12.05,2.46-3.88,2.68-8.28.6-12.07-2.25-4.09-6.91-6.83-11.62-6.83h.01Z"/>
-              <path class="st3" d="M342.47,2275.08c.45,0,.91-.05,1.36-.14,1.75-.36,3.28-1.41,4.25-2.91l10.65-16.46c.99-1.54,1.32-3.41.89-5.19-.43-1.78-1.56-3.3-3.14-4.22l-30.02-17.43c-3.06-1.77-6.96-.86-8.92,2.07l-9.68,14.53c-2.05,3.07-1.22,7.22,1.86,9.27l29.06,19.37c1.11.74,2.4,1.12,3.71,1.12h-.02,0ZM325.18,2243.43l18.53,10.76-3.16,4.89-17.86-11.9,2.49-3.74h0Z"/>
-            </g>
-            <path class="st3" d="M463.11,2264.56s3.81,1.27,4.08,3.52c.39,3.27-4.19,1.26-6.42-.5s.05-3.28,2.34-3.02h0Z"/>
-          </g>
-          <polygon class="st1" points="5334.16 2955.13 5254.51 2846.83 5126.9 2889.12 5205.28 2779.9 5125.62 2671.61 5253.72 2712.4 5332.1 2603.18 5332.89 2737.61 5460.99 2778.4 5333.38 2820.69 5334.16 2955.13"/>
-          <polygon class="st1" points="5469.55 2382.32 5365.92 2349.31 5302.51 2437.68 5301.87 2328.92 5198.23 2295.92 5301.47 2261.7 5300.84 2152.94 5365.28 2240.56 5468.52 2206.34 5405.11 2294.7 5469.55 2382.32"/>
-          <polygon class="st1" points="5297.75 722.32 5254.16 671.15 5192.02 696.8 5227.22 639.53 5183.63 588.36 5248.97 604.14 5284.16 546.87 5289.35 613.88 5354.69 629.66 5292.56 655.3 5297.75 722.32"/>
-
-        </svg>
-        </div>
 
         <div class="score-container">
             Score: <span class="correct-count">0</span>
@@ -1508,6 +1384,17 @@ function showCelebration() {
 }
 
 // Helper functions
+// Lock body scroll while any modal is open. The modal itself becomes the
+// single scroll container, with overscroll-behavior: contain stopping the
+// page underneath from scrolling at modal edges.
+function syncBodyScrollLock() {
+    const matchOpen =
+        document.getElementById('matching-modal-overlay') &&
+        document.getElementById('matching-modal-overlay').style.display === 'flex';
+    const stickerOpen = !!document.querySelector('.sg-modal-overlay.sg-open');
+    document.body.classList.toggle('modal-open', !!(matchOpen || stickerOpen));
+}
+
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -1608,6 +1495,7 @@ function showMatchingGame() {
     if (checkButton) checkButton.onclick = checkMatches;
 
     modalEl.style.display = 'flex';
+    syncBodyScrollLock();
 }
 
 // Pure render: rebuilds tray + slot DOM from matchState. Because each token
@@ -1814,10 +1702,10 @@ function checkMatches() {
     // Update result message and button
     if (!allFilled) {
         resultMessage.textContent = "Please match all phrases before checking.";
-        resultMessage.style.color = "blue";
+        resultMessage.style.color = "#DBE3FF";
     } else if (allCorrect) {
         resultMessage.textContent = "¡Excelente! All matches are correct!";
-        resultMessage.style.color = "green";
+        resultMessage.style.color = "#a8f0a8";
 
         // Prevent extra clicks while we advance
         checkButton.disabled = true;
@@ -1829,6 +1717,7 @@ function checkMatches() {
         setTimeout(() => {
             // Close the matching modal
             document.getElementById('matching-modal-overlay').style.display = 'none';
+            syncBodyScrollLock();
 
             // Re-enable button for the next round
             checkButton.disabled = false;
@@ -1839,7 +1728,7 @@ function checkMatches() {
         }, 800); // 0.8 seconds; tweak if you want a longer/shorter pause
     } else {
         resultMessage.textContent = "Try again! Some matches are incorrect.";
-        resultMessage.style.color = "red";
+        resultMessage.style.color = "#ff9b9b";
     }
 }
 
@@ -1987,6 +1876,7 @@ function checkMatches() {
         const el = $(overlayId);
         if (!el) return;
         el.classList.toggle("sg-open", !!open);
+        syncBodyScrollLock();
     }
     function nextStickerProgress() {
         // returns { earnedToward, target } where target is STICKER_EVERY
