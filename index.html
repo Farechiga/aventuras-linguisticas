@@ -1579,19 +1579,22 @@ function onTokenTap(tokenId) {
     if (selectedId && selectedId !== tokenId) {
         const incoming = matchState.tokens.find(t => t.id === selectedId);
         if (incoming) {
-            // Swap: incoming takes this slot, this token goes back to tray
+            // Swap (placement action): incoming token's audio already played
+            // when she tapped it in the tray. Do NOT restart it here — the
+            // placement should be silent so the original narration plays
+            // through uninterrupted.
             const targetSlot = token.location;
             token.location = 'tray';
             incoming.location = targetSlot;
             matchState.selectedTokenId = null;
             matchState.placementMade = true;
             clearFirstTimeTooltip();
-            speakSpanishSegment(incoming.text);
             renderMatchState();
             return;
         }
     }
-    // Return this token to the tray
+    // Return this token to the tray — kid tapped the placed segment directly,
+    // so narrate it.
     token.location = 'tray';
     matchState.selectedTokenId = null;
     speakSpanishSegment(token.text);
@@ -1602,11 +1605,13 @@ function onSlotTap(slotId) {
     if (!matchState.selectedTokenId) return; // tapping an empty slot with nothing held is a no-op
     const token = matchState.tokens.find(t => t.id === matchState.selectedTokenId);
     if (!token) return;
+    // Placement action — no narration. The segment's audio already started
+    // when she tapped it in the tray, and we don't want to interrupt that
+    // mid-word when she taps the slot to place it.
     token.location = slotId;
     matchState.selectedTokenId = null;
     matchState.placementMade = true;
     clearFirstTimeTooltip();
-    speakSpanishSegment(token.text);
     renderMatchState();
 }
 
