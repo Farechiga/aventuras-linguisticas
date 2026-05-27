@@ -437,6 +437,336 @@ body::after {
     border-color: red !important;
     animation: shake 0.5s;
 }
+
+/* ================ STICKER REWARD GAME ================ */
+:root {
+    --sg-bg: #2A2D4E;
+    --sg-text: #FFFFFF;
+    --sg-neutral: #595959;
+    --sg-accent: #9F0709;
+    --sg-card: #ffffff;
+}
+
+.sg-badge {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    background: var(--sg-bg);
+    color: var(--sg-text);
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+}
+.sg-badge:active { transform: scale(0.96); }
+.sg-badge .sg-badge-star { font-size: 1.2rem; }
+.sg-badge.sg-pending {
+    background: var(--sg-accent);
+    animation: sg-pulse 1.4s infinite;
+}
+@keyframes sg-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    50% { transform: scale(1.08); box-shadow: 0 4px 18px rgba(159,7,9,0.45); }
+}
+
+.sg-progress-track {
+    width: 60px;
+    height: 6px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 3px;
+    overflow: hidden;
+}
+.sg-progress-fill {
+    height: 100%;
+    background: #ffd54a;
+    transition: width 0.4s;
+}
+
+/* Generic modal overlay used by the game */
+.sg-modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.72);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.sg-modal-overlay.sg-open { display: flex; }
+
+.sg-modal {
+    background: var(--sg-card);
+    color: #222;
+    border-radius: 24px;
+    padding: 24px;
+    max-width: 720px;
+    width: 100%;
+    max-height: 92vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.sg-modal-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--sg-bg);
+    text-align: center;
+    margin-bottom: 8px;
+}
+.sg-modal-sub {
+    text-align: center;
+    color: var(--sg-neutral);
+    margin-bottom: 18px;
+    font-size: 1rem;
+}
+
+.sg-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--sg-neutral);
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Pack picker */
+.sg-pack-options {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.sg-pack-option {
+    width: 160px;
+    height: 200px;
+    background: #f4f6fa;
+    border: 3px solid transparent;
+    border-radius: 18px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+    -webkit-tap-highlight-color: transparent;
+}
+.sg-pack-option img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+.sg-pack-option:active,
+.sg-pack-option.sg-chosen {
+    transform: scale(1.06);
+    border-color: var(--sg-accent);
+    box-shadow: 0 8px 24px rgba(159,7,9,0.25);
+}
+
+/* Collection grid */
+.sg-collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 14px;
+    margin-top: 8px;
+}
+.sg-collection-item {
+    aspect-ratio: 1;
+    background: #f4f6fa;
+    border-radius: 14px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sg-collection-item img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.sg-collection-item.sg-empty {
+    background: #ececec;
+    color: #bbb;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Placement scene */
+.sg-scene-modal {
+    background: var(--sg-bg);
+    color: var(--sg-text);
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.sg-scene-header {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: rgba(0,0,0,0.25);
+}
+.sg-scene-header h3 { margin: 0; font-size: 1.1rem; }
+.sg-scene-header label {
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.85);
+}
+.sg-scene-body {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+.sg-scene-canvas {
+    position: absolute; inset: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
+}
+.sg-placed {
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
+    width: var(--sg-placed-w, 18%);
+    height: auto;
+    pointer-events: none;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+.sg-scene-tray {
+    padding: 12px;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.sg-tray-item {
+    flex: 0 0 80px;
+    height: 80px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.sg-tray-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+.sg-tray-item.sg-tray-empty {
+    opacity: 0.3;
+    cursor: default;
+}
+.sg-drag-ghost {
+    position: fixed;
+    pointer-events: none;
+    z-index: 3000;
+    width: var(--sg-ghost-w, 100px);
+    height: var(--sg-ghost-w, 100px);
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+}
+.sg-drag-ghost img { width: 100%; height: 100%; object-fit: contain; }
+
+/* Confirm tooltip for placement */
+.sg-confirm-tip {
+    position: fixed;
+    transform: translate(-50%, calc(-100% - 12px));
+    background: var(--sg-accent);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    z-index: 3100;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.sg-confirm-tip small {
+    display: block;
+    font-weight: 400;
+    font-size: 0.75rem;
+    opacity: 0.85;
+    margin-top: 2px;
+}
+
+/* Goal CTA in collection view */
+.sg-goal-cta {
+    margin: 18px auto 4px;
+    display: block;
+    background: var(--sg-accent);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 28px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(159,7,9,0.4);
+}
+.sg-goal-cta:disabled {
+    background: #c9c9c9;
+    color: #777;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* Small celebration */
+.sg-cheer {
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 2500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sg-cheer .sg-cheer-text {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #ffd54a;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.6);
+    animation: sg-cheer-anim 1.2s ease forwards;
+}
+@keyframes sg-cheer-anim {
+    0%   { transform: scale(0.4); opacity: 0; }
+    30%  { transform: scale(1.2); opacity: 1; }
+    80%  { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0; }
+}
+
+@media (max-width: 480px) {
+    .sg-badge { top: 12px; left: 12px; padding: 8px 12px; font-size: 0.95rem; }
+    .sg-pack-option { width: 130px; height: 160px; }
+    .sg-modal-title { font-size: 1.25rem; }
+}
     </style>
 </head>
 <body>
@@ -543,6 +873,15 @@ body::after {
         <div class="score-container">
             Score: <span class="correct-count">0</span>
         </div>
+
+        <!-- Sticker Reward Game: HUD badge -->
+        <button class="sg-badge" id="sg-badge" type="button" aria-label="Stickers">
+            <span class="sg-badge-star">⭐</span>
+            <span id="sg-badge-progress">0/3</span>
+            <span class="sg-progress-track">
+                <span class="sg-progress-fill" id="sg-badge-fill" style="width: 0%"></span>
+            </span>
+        </button>
         
         <div class="manuscript">
             <div class="english-sentence" id="english-text">
@@ -761,6 +1100,11 @@ function checkAnswer(selectedOption, selectedElement) {
         selectedElement.classList.add('correct');
         correctCount++;
         correctCountDisplay.textContent = correctCount;
+
+        // Sticker Reward Game: +1 point (capped at one per question per session)
+        if (window.stickerGame && typeof window.stickerGame.awardPoint === "function") {
+            window.stickerGame.awardPoint(currentCharacterIndex + ":" + currentSentenceIndex);
+        }
 
         // Show celebration animation
         showCelebration();
@@ -1325,6 +1669,504 @@ function checkMatches() {
     }
 }
 
+</script>
+
+<!-- ============ STICKER REWARD GAME ============ -->
+<div class="sg-modal-overlay" id="sg-collection-overlay" role="dialog" aria-label="My Stickers">
+    <div class="sg-modal">
+        <button class="sg-close-btn" type="button" data-sg-close="sg-collection-overlay" aria-label="Close">×</button>
+        <h2 class="sg-modal-title">🌟 My Stickers</h2>
+        <div class="sg-modal-sub" id="sg-collection-counter">0 / 10</div>
+        <div class="sg-collection-grid" id="sg-collection-grid"></div>
+        <button class="sg-goal-cta" id="sg-goal-cta" type="button" disabled>Place your stickers!</button>
+    </div>
+</div>
+
+<div class="sg-modal-overlay" id="sg-pack-overlay" role="dialog" aria-label="Choose a sticker">
+    <div class="sg-modal">
+        <h2 class="sg-modal-title">🎁 Choose a sticker!</h2>
+        <div class="sg-modal-sub">Tap the one you want.</div>
+        <div class="sg-pack-options" id="sg-pack-options"></div>
+    </div>
+</div>
+
+<div class="sg-modal-overlay" id="sg-scene-overlay" role="dialog" aria-label="Place your stickers" style="padding:0;">
+    <div class="sg-modal sg-scene-modal">
+        <div class="sg-scene-header">
+            <button class="sg-close-btn" type="button" data-sg-close="sg-scene-overlay" aria-label="Close" style="position:static;color:white;">×</button>
+            <h3>Place your stickers 🎨</h3>
+            <label>
+                <input type="checkbox" id="sg-confirm-toggle" checked>
+                Confirm before placing
+            </label>
+        </div>
+        <div class="sg-scene-body" id="sg-scene-body">
+            <div class="sg-scene-canvas" id="sg-scene-canvas"></div>
+        </div>
+        <div class="sg-scene-tray" id="sg-scene-tray"></div>
+    </div>
+</div>
+
+<script>
+/* ============================================================
+   Sticker Reward Game
+   - Persists state under localStorage["sticker_game_v1"]
+   - Listens for awardPoint() calls from the existing quiz flow
+   - Self-contained; namespaced helpers / IDs to avoid collisions
+   ============================================================ */
+(function () {
+    "use strict";
+
+    const STORAGE_KEY = "sticker_game_v1";
+    const POINTS_PER_CORRECT = 1;
+    const STICKER_EVERY = 3;
+    const COLLECTION_GOAL = 10;
+    const STICKER_DIR = "assets/stickers/";
+    const BACKGROUND_DIR = "assets/stickerbackgrounds/";
+    const BACKGROUNDS = ["School.webp"]; // extend as more are added
+
+    // ------------- state + persistence -------------
+    const emptyState = () => ({
+        points: 0,
+        collection: [],
+        pendingPacks: 0,
+        placements: [],
+        placementUnlocked: false,
+        completed: false,
+        confirmPlacement: true,
+    });
+
+    let memoryState = null; // fallback if localStorage unavailable
+    let stickerPool = [];   // filenames loaded from index.json
+    let awardedThisSession = new Set(); // questionIds awarded in this session
+
+    function loadState() {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return emptyState();
+            const parsed = JSON.parse(raw);
+            return Object.assign(emptyState(), parsed);
+        } catch (e) {
+            // localStorage unavailable or corrupted — fall back to memory
+            if (memoryState) return memoryState;
+            memoryState = emptyState();
+            return memoryState;
+        }
+    }
+
+    function saveState(state) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        } catch (e) {
+            memoryState = state;
+        }
+    }
+
+    let state = loadState();
+
+    // ------------- helpers -------------
+    function $(id) { return document.getElementById(id); }
+    function setOpen(overlayId, open) {
+        const el = $(overlayId);
+        if (!el) return;
+        el.classList.toggle("sg-open", !!open);
+    }
+    function nextStickerProgress() {
+        // returns { earnedToward, target } where target is STICKER_EVERY
+        const earned = state.collection.length + state.pendingPacks;
+        const pointsForNext = (earned + 1) * STICKER_EVERY;
+        const remaining = pointsForNext - state.points;
+        const earnedToward = STICKER_EVERY - Math.max(0, Math.min(STICKER_EVERY, remaining));
+        return { earnedToward, target: STICKER_EVERY };
+    }
+    function shuffle(arr) {
+        const a = arr.slice();
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+    function flashCheer(text) {
+        const div = document.createElement("div");
+        div.className = "sg-cheer";
+        div.innerHTML = '<div class="sg-cheer-text">' + text + '</div>';
+        document.body.appendChild(div);
+        setTimeout(() => div.remove(), 1300);
+    }
+
+    // ------------- badge / HUD -------------
+    function refreshBadge() {
+        const badge = $("sg-badge");
+        const progressEl = $("sg-badge-progress");
+        const fillEl = $("sg-badge-fill");
+        if (!badge || !progressEl || !fillEl) return;
+
+        if (state.pendingPacks > 0) {
+            badge.classList.add("sg-pending");
+            progressEl.textContent = "🎁 " + state.pendingPacks + " to open";
+            fillEl.style.width = "100%";
+        } else {
+            badge.classList.remove("sg-pending");
+            const { earnedToward, target } = nextStickerProgress();
+            progressEl.textContent = earnedToward + "/" + target;
+            fillEl.style.width = ((earnedToward / target) * 100).toFixed(0) + "%";
+        }
+    }
+
+    // ------------- award points -------------
+    function awardPoint(questionId) {
+        if (questionId != null && awardedThisSession.has(questionId)) return;
+        if (questionId != null) awardedThisSession.add(questionId);
+
+        const before = state.points;
+        state.points += POINTS_PER_CORRECT;
+        // Check if we crossed a sticker boundary
+        const totalEarnedNow = Math.floor(state.points / STICKER_EVERY);
+        const totalEarnedBefore = Math.floor(before / STICKER_EVERY);
+        const newPacks = totalEarnedNow - totalEarnedBefore;
+        if (newPacks > 0) state.pendingPacks += newPacks;
+
+        saveState(state);
+        refreshBadge();
+
+        if (newPacks > 0) {
+            flashCheer("🎁 Sticker pack!");
+            // Auto-open the first pending pack after a short delay
+            setTimeout(() => openNextPendingPack(), 1100);
+        }
+    }
+    // Expose for the quiz flow
+    window.stickerGame = { awardPoint };
+
+    // ------------- pack picker -------------
+    function openNextPendingPack() {
+        if (state.pendingPacks <= 0) return;
+        const owned = new Set(state.collection);
+        const unowned = stickerPool.filter(s => !owned.has(s));
+        if (unowned.length === 0) {
+            // Nothing left to give — silently consume the pack so the badge clears
+            state.pendingPacks = Math.max(0, state.pendingPacks - 1);
+            saveState(state);
+            refreshBadge();
+            return;
+        }
+        const choices = shuffle(unowned).slice(0, Math.min(3, unowned.length));
+        renderPack(choices);
+    }
+    function renderPack(choices) {
+        const container = $("sg-pack-options");
+        if (!container) return;
+        container.innerHTML = "";
+        choices.forEach((filename) => {
+            const opt = document.createElement("button");
+            opt.type = "button";
+            opt.className = "sg-pack-option";
+            opt.innerHTML = '<img src="' + STICKER_DIR + filename + '" alt="">';
+            opt.addEventListener("click", () => choosePack(filename, opt));
+            container.appendChild(opt);
+        });
+        setOpen("sg-pack-overlay", true);
+    }
+    function choosePack(filename, btnEl) {
+        // Lock the row visually
+        const container = $("sg-pack-options");
+        if (container) {
+            [...container.children].forEach(c => c.style.pointerEvents = "none");
+            if (btnEl) btnEl.classList.add("sg-chosen");
+        }
+        state.collection.push(filename);
+        state.pendingPacks = Math.max(0, state.pendingPacks - 1);
+        if (state.collection.length >= COLLECTION_GOAL) state.placementUnlocked = true;
+        saveState(state);
+
+        setTimeout(() => {
+            setOpen("sg-pack-overlay", false);
+            flashCheer("✨ Yay!");
+            refreshBadge();
+            refreshCollection();
+            // If there are more pending packs, queue the next one
+            if (state.pendingPacks > 0) {
+                setTimeout(openNextPendingPack, 900);
+            }
+        }, 600);
+    }
+
+    // ------------- collection view -------------
+    function refreshCollection() {
+        const counter = $("sg-collection-counter");
+        const grid = $("sg-collection-grid");
+        const cta = $("sg-goal-cta");
+        if (counter) counter.textContent = state.collection.length + " / " + COLLECTION_GOAL;
+        if (grid) {
+            grid.innerHTML = "";
+            const owned = state.collection.slice();
+            const slots = Math.max(COLLECTION_GOAL, owned.length);
+            for (let i = 0; i < slots; i++) {
+                const slot = document.createElement("div");
+                if (i < owned.length) {
+                    slot.className = "sg-collection-item";
+                    slot.innerHTML = '<img src="' + STICKER_DIR + owned[i] + '" alt="">';
+                } else {
+                    slot.className = "sg-collection-item sg-empty";
+                    slot.textContent = "?";
+                }
+                grid.appendChild(slot);
+            }
+        }
+        if (cta) {
+            const unlocked = state.collection.length >= COLLECTION_GOAL;
+            cta.disabled = !unlocked;
+            cta.textContent = state.completed
+                ? "View your collage 🎨"
+                : (unlocked ? "Place your stickers! 🎨" : "Earn " + (COLLECTION_GOAL - state.collection.length) + " more to unlock!");
+        }
+    }
+
+    // ------------- placement scene -------------
+    function openScene() {
+        const canvas = $("sg-scene-canvas");
+        if (canvas) {
+            canvas.style.backgroundImage = "url('" + BACKGROUND_DIR + BACKGROUNDS[0] + "')";
+        }
+        const toggle = $("sg-confirm-toggle");
+        if (toggle) toggle.checked = !!state.confirmPlacement;
+        renderPlacedStickers();
+        renderTray();
+        setOpen("sg-scene-overlay", true);
+    }
+    function renderPlacedStickers() {
+        const canvas = $("sg-scene-canvas");
+        if (!canvas) return;
+        // Remove old placed nodes
+        [...canvas.querySelectorAll(".sg-placed")].forEach(n => n.remove());
+        state.placements.forEach(p => {
+            const img = document.createElement("img");
+            img.src = STICKER_DIR + p.stickerId;
+            img.className = "sg-placed";
+            img.style.left = p.xPct + "%";
+            img.style.top = p.yPct + "%";
+            img.style.setProperty("--rot", (p.rotationDeg || 0) + "deg");
+            img.style.setProperty("--sg-placed-w", (p.scalePct || 18) + "%");
+            canvas.appendChild(img);
+        });
+    }
+    function renderTray() {
+        const tray = $("sg-scene-tray");
+        if (!tray) return;
+        tray.innerHTML = "";
+        const placedIds = new Set(state.placements.map(p => p.stickerId));
+        const unplaced = state.collection.filter(id => !placedIds.has(id));
+        if (unplaced.length === 0) {
+            const msg = document.createElement("div");
+            msg.style.color = "white";
+            msg.style.padding = "20px";
+            msg.style.fontWeight = "700";
+            msg.textContent = "🎉 All placed! Tap the × to close.";
+            tray.appendChild(msg);
+            if (!state.completed) {
+                state.completed = true;
+                saveState(state);
+                flashCheer("🌈 You did it!");
+            }
+            return;
+        }
+        unplaced.forEach(id => {
+            const item = document.createElement("div");
+            item.className = "sg-tray-item";
+            item.dataset.stickerId = id;
+            item.innerHTML = '<img src="' + STICKER_DIR + id + '" alt="">';
+            attachTrayDrag(item);
+            tray.appendChild(item);
+        });
+    }
+
+    // Drag from tray onto scene-canvas using Pointer Events
+    function attachTrayDrag(item) {
+        let activePointerId = null;
+        let ghost = null;
+        let stickerId = item.dataset.stickerId;
+        let moveH = null, upH = null, cancelH = null;
+        const DEFAULT_SCALE_PCT = 18; // % of scene width
+
+        function cleanup() {
+            if (ghost) { ghost.remove(); ghost = null; }
+            if (moveH) {
+                document.removeEventListener("pointermove", moveH);
+                document.removeEventListener("pointerup", upH);
+                document.removeEventListener("pointercancel", cancelH);
+                moveH = upH = cancelH = null;
+            }
+            activePointerId = null;
+        }
+
+        item.addEventListener("pointerdown", (e) => {
+            if (activePointerId !== null) return;
+            if (e.button !== undefined && e.button !== 0) return;
+            activePointerId = e.pointerId;
+
+            // Create a floating ghost that follows the pointer
+            ghost = document.createElement("div");
+            ghost.className = "sg-drag-ghost";
+            const canvasRect = $("sg-scene-canvas").getBoundingClientRect();
+            const ghostW = (canvasRect.width * DEFAULT_SCALE_PCT) / 100;
+            ghost.style.setProperty("--sg-ghost-w", ghostW + "px");
+            ghost.innerHTML = '<img src="' + STICKER_DIR + stickerId + '" alt="">';
+            ghost.style.left = e.clientX + "px";
+            ghost.style.top = e.clientY + "px";
+            document.body.appendChild(ghost);
+
+            moveH = (ev) => {
+                if (ev.pointerId !== activePointerId) return;
+                ev.preventDefault();
+                ghost.style.left = ev.clientX + "px";
+                ghost.style.top = ev.clientY + "px";
+            };
+            upH = (ev) => {
+                if (ev.pointerId !== activePointerId) return;
+                const canvas = $("sg-scene-canvas");
+                const rect = canvas.getBoundingClientRect();
+                const within =
+                    ev.clientX >= rect.left && ev.clientX <= rect.right &&
+                    ev.clientY >= rect.top  && ev.clientY <= rect.bottom;
+                if (within) {
+                    const xPct = ((ev.clientX - rect.left) / rect.width) * 100;
+                    const yPct = ((ev.clientY - rect.top) / rect.height) * 100;
+                    finalizePlacement(stickerId, xPct, yPct, ev.clientX, ev.clientY);
+                }
+                cleanup();
+            };
+            cancelH = (ev) => {
+                if (ev.pointerId !== activePointerId) return;
+                cleanup();
+            };
+            document.addEventListener("pointermove", moveH, { passive: false });
+            document.addEventListener("pointerup", upH);
+            document.addEventListener("pointercancel", cancelH);
+        });
+    }
+
+    function finalizePlacement(stickerId, xPct, yPct, clientX, clientY) {
+        const place = () => {
+            state.placements.push({
+                stickerId,
+                xPct: +xPct.toFixed(2),
+                yPct: +yPct.toFixed(2),
+                scalePct: 18,
+                rotationDeg: 0,
+            });
+            saveState(state);
+            renderPlacedStickers();
+            renderTray();
+            flashCheer("✨ Locked!");
+        };
+
+        if (!state.confirmPlacement) {
+            place();
+            return;
+        }
+        // Show tap-to-confirm tooltip near the drop point
+        const tip = document.createElement("div");
+        tip.className = "sg-confirm-tip";
+        tip.style.left = clientX + "px";
+        tip.style.top = clientY + "px";
+        tip.innerHTML = "Place here?<small>You can't move it!</small>";
+        document.body.appendChild(tip);
+
+        let dismissed = false;
+        const dismiss = (commit) => {
+            if (dismissed) return;
+            dismissed = true;
+            tip.remove();
+            document.removeEventListener("pointerdown", outside, true);
+            if (commit) place();
+        };
+        function outside(ev) {
+            if (ev.target === tip || tip.contains(ev.target)) {
+                dismiss(true);
+            } else {
+                dismiss(false);
+            }
+        }
+        tip.addEventListener("click", () => dismiss(true));
+        // Slight delay so the same pointerup that placed it doesn't immediately close it
+        setTimeout(() => {
+            document.addEventListener("pointerdown", outside, true);
+        }, 50);
+        // Auto-dismiss after 4s if ignored
+        setTimeout(() => dismiss(false), 4000);
+    }
+
+    // ------------- wire UI -------------
+    function init() {
+        // Badge tap → open collection (or trigger next pending pack)
+        const badge = $("sg-badge");
+        if (badge) {
+            badge.addEventListener("click", () => {
+                if (state.pendingPacks > 0) {
+                    openNextPendingPack();
+                } else {
+                    refreshCollection();
+                    setOpen("sg-collection-overlay", true);
+                }
+            });
+        }
+
+        // Close buttons + click-outside dismiss
+        document.querySelectorAll("[data-sg-close]").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                const id = btn.getAttribute("data-sg-close");
+                setOpen(id, false);
+            });
+        });
+        document.querySelectorAll(".sg-modal-overlay").forEach((overlay) => {
+            // Pack overlay shouldn't be dismissable by background tap — kid must choose
+            if (overlay.id === "sg-pack-overlay") return;
+            overlay.addEventListener("click", (e) => {
+                if (e.target === overlay) overlay.classList.remove("sg-open");
+            });
+        });
+
+        // Goal CTA
+        const cta = $("sg-goal-cta");
+        if (cta) {
+            cta.addEventListener("click", () => {
+                if (state.collection.length < COLLECTION_GOAL) return;
+                setOpen("sg-collection-overlay", false);
+                openScene();
+            });
+        }
+
+        // Confirm toggle in placement scene
+        const toggle = $("sg-confirm-toggle");
+        if (toggle) {
+            toggle.addEventListener("change", () => {
+                state.confirmPlacement = !!toggle.checked;
+                saveState(state);
+            });
+        }
+
+        // Fetch sticker pool
+        fetch(STICKER_DIR + "index.json", { cache: "no-cache" })
+            .then(r => r.ok ? r.json() : [])
+            .then(list => {
+                stickerPool = Array.isArray(list) ? list : [];
+                // If there are pending packs from a prior session, auto-open
+                if (state.pendingPacks > 0 && stickerPool.length > 0) {
+                    setTimeout(openNextPendingPack, 400);
+                }
+            })
+            .catch(() => { stickerPool = []; });
+
+        refreshBadge();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+    } else {
+        init();
+    }
+})();
 </script>
 </body>
 </html>

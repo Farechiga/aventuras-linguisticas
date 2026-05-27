@@ -3,3 +3,6 @@ node_modules/
 .env.*
 *.log
 .DS_Store
+
+# Source photos — not needed in the repo (only used locally to generate stickers)
+assets/animaloriginals/
