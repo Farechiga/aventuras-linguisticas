@@ -655,6 +655,122 @@ body::after {
     gap: 6px;
     color: rgba(255,255,255,0.85);
 }
+.sg-size-selector {
+    display: inline-flex;
+    gap: 2px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 3px;
+}
+.sg-size-btn {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    min-width: 32px;
+}
+.sg-size-btn.sg-active {
+    background: rgba(255,255,255,0.95);
+    color: #2A2D4E;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+.sg-save-btn {
+    background: var(--sg-accent);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 22px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(159,7,9,0.4);
+    -webkit-tap-highlight-color: transparent;
+}
+.sg-save-btn:active { transform: scale(0.97); }
+
+/* Historic sticker book */
+.sg-book-link {
+    display: inline-block;
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: #2A2D4E;
+    text-decoration: underline;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px 8px;
+    -webkit-tap-highlight-color: transparent;
+}
+.sg-book-link:hover { color: #9F0709; }
+.sg-book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+    margin-top: 8px;
+}
+.sg-book-tile {
+    aspect-ratio: 4/3;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.sg-book-tile-canvas {
+    position: absolute;
+    inset: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
+}
+.sg-book-tile-date {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    text-align: center;
+}
+.sg-book-empty {
+    text-align: center;
+    color: var(--sg-neutral);
+    padding: 30px 10px;
+    font-style: italic;
+}
+.sg-book-viewer {
+    background: #000;
+    color: white;
+    padding: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.sg-book-viewer-header {
+    padding: 12px 16px;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sg-book-viewer-body {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
 .sg-scene-body {
     flex: 1;
     position: relative;
@@ -1742,6 +1858,31 @@ function checkMatches() {
         <div class="sg-modal-sub" id="sg-collection-counter">0 / 10</div>
         <div class="sg-collection-grid" id="sg-collection-grid"></div>
         <button class="sg-goal-cta" id="sg-goal-cta" type="button" disabled>Place your stickers!</button>
+        <div style="text-align:center;">
+            <button class="sg-book-link" id="sg-book-link" type="button">📖 My Sticker Book</button>
+        </div>
+    </div>
+</div>
+
+<div class="sg-modal-overlay" id="sg-book-overlay" role="dialog" aria-label="My Sticker Book">
+    <div class="sg-modal">
+        <button class="sg-close-btn" type="button" data-sg-close="sg-book-overlay" aria-label="Close">×</button>
+        <h2 class="sg-modal-title">📖 My Sticker Book</h2>
+        <div class="sg-modal-sub" id="sg-book-counter">0 collages</div>
+        <div class="sg-book-grid" id="sg-book-grid"></div>
+    </div>
+</div>
+
+<div class="sg-modal-overlay" id="sg-book-viewer-overlay" role="dialog" aria-label="View collage" style="padding:0;">
+    <div class="sg-modal sg-book-viewer">
+        <div class="sg-book-viewer-header">
+            <button class="sg-close-btn" type="button" data-sg-close="sg-book-viewer-overlay" aria-label="Close" style="position:static;color:white;">×</button>
+            <h3 id="sg-book-viewer-title" style="margin:0;font-size:1rem;">Collage</h3>
+            <span style="width:24px;"></span>
+        </div>
+        <div class="sg-book-viewer-body">
+            <div class="sg-scene-canvas" id="sg-book-viewer-canvas"></div>
+        </div>
     </div>
 </div>
 
@@ -1758,9 +1899,14 @@ function checkMatches() {
         <div class="sg-scene-header">
             <button class="sg-close-btn" type="button" data-sg-close="sg-scene-overlay" aria-label="Close" style="position:static;color:white;">×</button>
             <h3>Place your stickers 🎨</h3>
+            <div class="sg-size-selector" role="radiogroup" aria-label="Sticker size">
+                <button type="button" class="sg-size-btn" data-size="8" aria-label="Small">S</button>
+                <button type="button" class="sg-size-btn" data-size="12" aria-label="Medium">M</button>
+                <button type="button" class="sg-size-btn sg-active" data-size="18" aria-label="Large">L</button>
+            </div>
             <label>
                 <input type="checkbox" id="sg-confirm-toggle" checked>
-                Confirm before placing
+                Confirm
             </label>
         </div>
         <div class="sg-scene-body" id="sg-scene-body">
@@ -1789,6 +1935,9 @@ function checkMatches() {
     const BACKGROUNDS = ["School.webp"]; // extend as more are added
 
     // ------------- state + persistence -------------
+    const SIZE_DEFAULT = 18; // L: matches the original default scalePct
+    const VALID_SIZES = [8, 12, 18];
+
     const emptyState = () => ({
         points: 0,
         collection: [],
@@ -1801,6 +1950,11 @@ function checkMatches() {
         // Future packs prefer fresh (never-offered) stickers; deprioritized
         // ones are pulled from the tail only when fresh runs out.
         deprioritized: [],
+        // Selected sticker size for the next placement (8/12/18 = S/M/L).
+        // L is the largest allowed (no scale-up beyond the original default).
+        currentPlacementSize: SIZE_DEFAULT,
+        // Saved scenes (collages). Each: {id, background, placements, savedAt}
+        savedCollages: [],
     });
 
     let memoryState = null; // fallback if localStorage unavailable
@@ -1952,6 +2106,8 @@ function checkMatches() {
     // Expose for the quiz flow + dev console
     window.stickerGame = {
         awardPoint,
+        saveCurrentToBook,
+        openStickerBook,
         devFillCollection,
         devAddPoints,
         devOpenScene,
@@ -2066,6 +2222,12 @@ function checkMatches() {
         }
         const toggle = $("sg-confirm-toggle");
         if (toggle) toggle.checked = !!state.confirmPlacement;
+        // Reflect saved size selection in the S/M/L buttons
+        const activeSize = VALID_SIZES.includes(state.currentPlacementSize)
+            ? state.currentPlacementSize : SIZE_DEFAULT;
+        document.querySelectorAll(".sg-size-btn").forEach(btn => {
+            btn.classList.toggle("sg-active", Number(btn.dataset.size) === activeSize);
+        });
         renderPlacedStickers();
         renderTray();
         setOpen("sg-scene-overlay", true);
@@ -2093,12 +2255,32 @@ function checkMatches() {
         const placedIds = new Set(state.placements.map(p => p.stickerId));
         const unplaced = state.collection.filter(id => !placedIds.has(id));
         if (unplaced.length === 0) {
+            // All current stickers placed — offer "Save to my sticker book".
+            // Saving snapshots the scene to history and resets the active
+            // collection/placements so she can earn a new batch.
+            const wrap = document.createElement("div");
+            wrap.style.display = "flex";
+            wrap.style.flexDirection = "column";
+            wrap.style.alignItems = "center";
+            wrap.style.gap = "10px";
+            wrap.style.padding = "12px";
+            wrap.style.width = "100%";
+
             const msg = document.createElement("div");
             msg.style.color = "white";
-            msg.style.padding = "20px";
             msg.style.fontWeight = "700";
-            msg.textContent = "🎉 All placed! Tap the × to close.";
-            tray.appendChild(msg);
+            msg.style.fontSize = "1rem";
+            msg.textContent = "🎉 All placed! Save your collage?";
+            wrap.appendChild(msg);
+
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "sg-save-btn";
+            btn.textContent = "💾 Save to my sticker book";
+            btn.addEventListener("click", saveCurrentToBook);
+            wrap.appendChild(btn);
+
+            tray.appendChild(wrap);
             if (!state.completed) {
                 state.completed = true;
                 saveState(state);
@@ -2116,13 +2298,117 @@ function checkMatches() {
         });
     }
 
+    function saveCurrentToBook() {
+        if (!state.placements.length) return;
+        const collage = {
+            id: "c" + Date.now(),
+            background: BACKGROUNDS[0],
+            placements: state.placements.slice(),
+            savedAt: new Date().toISOString(),
+        };
+        state.savedCollages = (state.savedCollages || []).concat([collage]);
+        // Reset the active collection + scene so she can earn a new batch.
+        // Points, deprioritized list, and saved collages all persist.
+        state.collection = [];
+        state.placements = [];
+        state.placementUnlocked = false;
+        state.completed = false;
+        saveState(state);
+        flashCheer("📖 Saved to your book!");
+        // Close the scene and reflect new empty state in the UI
+        setOpen("sg-scene-overlay", false);
+        refreshCollection();
+        refreshBadge();
+    }
+
+    // ------------- historic sticker book -------------
+    function openStickerBook() {
+        renderStickerBook();
+        setOpen("sg-book-overlay", true);
+    }
+    function renderStickerBook() {
+        const grid = $("sg-book-grid");
+        const counter = $("sg-book-counter");
+        if (!grid) return;
+        const collages = state.savedCollages || [];
+        if (counter) {
+            counter.textContent = collages.length === 1
+                ? "1 collage"
+                : collages.length + " collages";
+        }
+        grid.innerHTML = "";
+        if (collages.length === 0) {
+            const empty = document.createElement("div");
+            empty.className = "sg-book-empty";
+            empty.textContent = "No collages yet — fill your collection and save one!";
+            grid.appendChild(empty);
+            return;
+        }
+        // Newest first
+        [...collages].reverse().forEach(collage => {
+            const tile = document.createElement("div");
+            tile.className = "sg-book-tile";
+            tile.addEventListener("click", () => openCollageViewer(collage));
+
+            const canvas = document.createElement("div");
+            canvas.className = "sg-book-tile-canvas";
+            canvas.style.backgroundImage = "url('" + BACKGROUND_DIR + (collage.background || BACKGROUNDS[0]) + "')";
+            tile.appendChild(canvas);
+
+            // Render miniature stickers using the same percentages
+            collage.placements.forEach(p => {
+                const img = document.createElement("img");
+                img.src = STICKER_DIR + p.stickerId;
+                img.className = "sg-placed";
+                img.style.left = p.xPct + "%";
+                img.style.top = p.yPct + "%";
+                img.style.setProperty("--rot", (p.rotationDeg || 0) + "deg");
+                img.style.setProperty("--sg-placed-w", (p.scalePct || SIZE_DEFAULT) + "%");
+                canvas.appendChild(img);
+            });
+
+            const date = document.createElement("div");
+            date.className = "sg-book-tile-date";
+            try {
+                const d = new Date(collage.savedAt);
+                date.textContent = d.toLocaleDateString();
+            } catch (e) { date.textContent = ""; }
+            tile.appendChild(date);
+
+            grid.appendChild(tile);
+        });
+    }
+    function openCollageViewer(collage) {
+        const canvas = $("sg-book-viewer-canvas");
+        const title = $("sg-book-viewer-title");
+        if (!canvas) return;
+        canvas.innerHTML = "";
+        canvas.style.backgroundImage = "url('" + BACKGROUND_DIR + (collage.background || BACKGROUNDS[0]) + "')";
+        collage.placements.forEach(p => {
+            const img = document.createElement("img");
+            img.src = STICKER_DIR + p.stickerId;
+            img.className = "sg-placed";
+            img.style.left = p.xPct + "%";
+            img.style.top = p.yPct + "%";
+            img.style.setProperty("--rot", (p.rotationDeg || 0) + "deg");
+            img.style.setProperty("--sg-placed-w", (p.scalePct || SIZE_DEFAULT) + "%");
+            canvas.appendChild(img);
+        });
+        if (title) {
+            try {
+                const d = new Date(collage.savedAt);
+                title.textContent = "Collage from " + d.toLocaleDateString();
+            } catch (e) { title.textContent = "Collage"; }
+        }
+        setOpen("sg-book-viewer-overlay", true);
+    }
+
     // Drag from tray onto scene-canvas using Pointer Events
     function attachTrayDrag(item) {
         let activePointerId = null;
         let ghost = null;
         let stickerId = item.dataset.stickerId;
         let moveH = null, upH = null, cancelH = null;
-        const DEFAULT_SCALE_PCT = 18; // % of scene width
 
         function cleanup() {
             if (ghost) { ghost.remove(); ghost = null; }
@@ -2140,11 +2426,16 @@ function checkMatches() {
             if (e.button !== undefined && e.button !== 0) return;
             activePointerId = e.pointerId;
 
+            // Use the currently-selected placement size for both the ghost
+            // and the final placement. Size is capped at SIZE_DEFAULT.
+            const sizePct = VALID_SIZES.includes(state.currentPlacementSize)
+                ? state.currentPlacementSize : SIZE_DEFAULT;
+
             // Create a floating ghost that follows the pointer
             ghost = document.createElement("div");
             ghost.className = "sg-drag-ghost";
             const canvasRect = $("sg-scene-canvas").getBoundingClientRect();
-            const ghostW = (canvasRect.width * DEFAULT_SCALE_PCT) / 100;
+            const ghostW = (canvasRect.width * sizePct) / 100;
             ghost.style.setProperty("--sg-ghost-w", ghostW + "px");
             ghost.innerHTML = '<img src="' + STICKER_DIR + stickerId + '" alt="">';
             ghost.style.left = e.clientX + "px";
@@ -2183,11 +2474,13 @@ function checkMatches() {
 
     function finalizePlacement(stickerId, xPct, yPct, clientX, clientY) {
         const place = () => {
+            const sizePct = VALID_SIZES.includes(state.currentPlacementSize)
+                ? state.currentPlacementSize : SIZE_DEFAULT;
             state.placements.push({
                 stickerId,
                 xPct: +xPct.toFixed(2),
                 yPct: +yPct.toFixed(2),
-                scalePct: 18,
+                scalePct: sizePct,
                 rotationDeg: 0,
             });
             saveState(state);
@@ -2287,6 +2580,28 @@ function checkMatches() {
             toggle.addEventListener("change", () => {
                 state.confirmPlacement = !!toggle.checked;
                 saveState(state);
+            });
+        }
+
+        // Size selector (S/M/L) — caps at L; never scales above starting size
+        document.querySelectorAll(".sg-size-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const size = Number(btn.dataset.size);
+                if (!VALID_SIZES.includes(size)) return;
+                state.currentPlacementSize = size;
+                saveState(state);
+                document.querySelectorAll(".sg-size-btn").forEach(b => {
+                    b.classList.toggle("sg-active", b === btn);
+                });
+            });
+        });
+
+        // "📖 My Sticker Book" link in collection modal
+        const bookLink = $("sg-book-link");
+        if (bookLink) {
+            bookLink.addEventListener("click", () => {
+                setOpen("sg-collection-overlay", false);
+                openStickerBook();
             });
         }
 
