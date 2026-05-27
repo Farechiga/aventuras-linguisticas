@@ -2100,6 +2100,21 @@ function checkMatches() {
         document.querySelectorAll(".sg-modal-overlay").forEach(o => o.classList.remove("sg-open"));
         console.log("[stickerGame] state reset");
     }
+    // One-call demo of the full backdrop-flow first-time experience:
+    // reset → fill 10 stickers → open scene → backdrop picker auto-fires.
+    // Useful for screen recordings or a quick walk-through.
+    function devDemoBackdropFlow() {
+        console.log("[stickerGame] demo: resetting state…");
+        devReset();
+        console.log("[stickerGame] demo: filling 10 stickers + opening placement scene");
+        devOpenScene();
+        console.log(
+            "[stickerGame] demo ready.\n" +
+            "  1) pick a backdrop in the picker that just opened\n" +
+            "  2) drag your 10 stickers onto the scene\n" +
+            "  3) tap 💾 Save to my sticker book to test the save flow"
+        );
+    }
 
     // Expose for the quiz flow + dev console
     window.stickerGame = {
@@ -2111,6 +2126,7 @@ function checkMatches() {
         devAddPoints,
         devOpenScene,
         devReset,
+        devDemoBackdropFlow,
     };
 
     // ------------- pack picker -------------
