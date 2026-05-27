@@ -428,6 +428,40 @@ body::after {
     50%      { box-shadow: 0 0 0 6px rgba(133, 41, 106, 0.18); }
 }
 
+/* Empty-slot affordance: shows "tap a Spanish phrase" when nothing is
+   selected yet, so first-tap-on-slot isn't a silent no-op. The hint is
+   suppressed once a token is selected (the .tap-target pulse takes over)
+   or once the slot is filled. */
+.match-slot-hint {
+    color: rgba(74, 41, 75, 0.55);
+    font-style: italic;
+    font-size: 0.9rem;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* One-shot tooltip after the first selection of a round. Auto-dismisses on
+   first placement; only shown once per round. */
+.match-firsttime-tip {
+    background: #ffd54a;
+    color: #2A2D4E;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin: 0 0 12px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+}
+.match-firsttime-tip.match-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Defensive: keep decorative layers from intercepting taps */
 .svg-overlay, .svg-overlay * { pointer-events: none; }
 body::before, body::after { pointer-events: none; }
@@ -1064,16 +1098,16 @@ body::before, body::after { pointer-events: none; }
         
         <div class="matching-area">
             <div>
-                <div class="component-title">Match Spanish phrases to English translations:</div>
+                <div class="component-title">Tap a Spanish phrase, then tap its English match.</div>
                 <div class="english-components" id="english-components">
-                    <!-- English components and dropzones will go here -->
+                    <!-- English slots are inserted here from matchState -->
                 </div>
             </div>
-            
+
             <div>
-                <div class="component-title">Drag and Drop the Spanish Phrases:</div>
+                <div class="component-title">Spanish phrases</div>
                 <div class="spanish-options-matching" id="spanish-options-matching">
-                    <!-- Spanish draggable components will go here -->
+                    <!-- Spanish phrase tokens are inserted here from matchState -->
                 </div>
             </div>
             
@@ -1471,6 +1505,11 @@ let matchState = {
     tokens: [],          // [{ id, text, correctSlotId, location: 'tray' | slotId }]
     slots: [],           // [{ id, english }]
     selectedTokenId: null,
+    // One-shot tooltip ("👉 Now tap an English match!") shown the first time
+    // a token gets selected in a round. Suppressed forever once any placement
+    // has happened in the round.
+    firstTipShown: false,
+    placementMade: false,
 };
 
 function showMatchingGame() {
@@ -1510,6 +1549,9 @@ function showMatchingGame() {
     }));
     shuffleArray(matchState.tokens);
     matchState.selectedTokenId = null;
+    matchState.firstTipShown = false;
+    matchState.placementMade = false;
+    clearFirstTimeTooltip(); // remove any leftover tip from a previous round
 
     // Slot DOM scaffolding (their contents come from renderMatchState)
     matchState.slots.forEach(slot => {
@@ -1549,14 +1591,24 @@ function showMatchingGame() {
 // Pure render: rebuilds tray + slot DOM from matchState. Because each token
 // lives in exactly one location in state, it can only appear in one place.
 function renderMatchState() {
+    const somethingSelected = !!matchState.selectedTokenId;
     // Slots
     document.querySelectorAll('.spanish-dropzone').forEach(slotEl => {
         const slotId = slotEl.dataset.slotId;
         slotEl.innerHTML = '';
         slotEl.classList.remove('correct-match', 'incorrect-match');
         const token = matchState.tokens.find(t => t.location === slotId);
-        if (token) slotEl.appendChild(createTokenEl(token));
-        slotEl.classList.toggle('tap-target', !token && !!matchState.selectedTokenId);
+        if (token) {
+            slotEl.appendChild(createTokenEl(token));
+        } else if (!somethingSelected) {
+            // No token + no selection → show the empty-slot hint so the
+            // first tap on a slot isn't a silent no-op.
+            const hint = document.createElement('span');
+            hint.className = 'match-slot-hint';
+            hint.textContent = 'tap a Spanish phrase';
+            slotEl.appendChild(hint);
+        }
+        slotEl.classList.toggle('tap-target', !token && somethingSelected);
     });
     // Tray (uses the shuffled order baked into matchState.tokens)
     const tray = document.getElementById('spanish-options-matching');
@@ -1600,6 +1652,8 @@ function onTokenTap(tokenId) {
             matchState.selectedTokenId === tokenId ? null : tokenId;
         speakSpanishSegment(token.text);
         renderMatchState();
+        // Show "Now tap an English match!" the first time something is selected
+        if (matchState.selectedTokenId) maybeShowFirstTimeTooltip();
         return;
     }
 
@@ -1613,6 +1667,8 @@ function onTokenTap(tokenId) {
             token.location = 'tray';
             incoming.location = targetSlot;
             matchState.selectedTokenId = null;
+            matchState.placementMade = true;
+            clearFirstTimeTooltip();
             speakSpanishSegment(incoming.text);
             renderMatchState();
             return;
@@ -1631,8 +1687,32 @@ function onSlotTap(slotId) {
     if (!token) return;
     token.location = slotId;
     matchState.selectedTokenId = null;
+    matchState.placementMade = true;
+    clearFirstTimeTooltip();
     speakSpanishSegment(token.text);
     renderMatchState();
+}
+
+// One-shot tooltip that points the kid to the slots after her very first
+// selection of the round. Idempotent: bails if already shown this round, or
+// if any placement has already happened.
+function maybeShowFirstTimeTooltip() {
+    if (matchState.firstTipShown || matchState.placementMade) return;
+    const englishComponentsEl = document.getElementById('english-components');
+    if (!englishComponentsEl || !englishComponentsEl.parentNode) return;
+    matchState.firstTipShown = true;
+    const tip = document.createElement('div');
+    tip.className = 'match-firsttime-tip';
+    tip.id = 'match-firsttime-tip';
+    tip.textContent = '👉 Now tap an English match!';
+    englishComponentsEl.parentNode.insertBefore(tip, englishComponentsEl);
+    // Defer the visible class to next frame so the transition runs
+    requestAnimationFrame(() => tip.classList.add('match-visible'));
+}
+
+function clearFirstTimeTooltip() {
+    const tip = document.getElementById('match-firsttime-tip');
+    if (tip) tip.remove();
 }
 
 // Function to speak Spanish segment
