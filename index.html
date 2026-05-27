@@ -352,7 +352,14 @@ body::after {
     border-radius: 10px;
     padding: 12px;
     min-height: 50px;
-    transition: all 0.3s;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+@media (max-width: 768px) {
+    .match-container .spanish-dropzone {
+        min-height: 70px;
+        padding: 16px 12px;
+    }
 }
 
 .spanish-dropzone.highlight {
@@ -1496,11 +1503,42 @@ function initDragAndDrop() {
 // even when the pointer leaves the element. The dragged element gets
 // pointer-events:none so elementFromPoint() can see the dropzone underneath.
 // Small movements (<6px) stay as taps so onclick still fires speakSpanishSegment.
+// Find the best dropzone for a release point. Preference order:
+//   1. The dropzone directly under the pointer
+//   2. The most recently hovered dropzone (sticky — survives a final
+//      jitter move that took the finger off the target)
+//   3. The closest dropzone within DROP_TOLERANCE pixels
+// Returns null if nothing qualifies.
+const DROP_TOLERANCE = 50;
+function findBestDropzone(x, y, stickyDropzone) {
+    const under = document.elementFromPoint(x, y);
+    const direct = under ? under.closest('.spanish-dropzone') : null;
+    if (direct) return direct;
+    if (stickyDropzone && document.body.contains(stickyDropzone)) {
+        // Only honour the sticky one if release is within tolerance of it
+        const r = stickyDropzone.getBoundingClientRect();
+        const cx = Math.max(r.left, Math.min(x, r.right));
+        const cy = Math.max(r.top, Math.min(y, r.bottom));
+        const d = Math.hypot(x - cx, y - cy);
+        if (d <= DROP_TOLERANCE) return stickyDropzone;
+    }
+    let best = null, bestDist = Infinity;
+    document.querySelectorAll('.spanish-dropzone').forEach(dz => {
+        const r = dz.getBoundingClientRect();
+        const cx = Math.max(r.left, Math.min(x, r.right));
+        const cy = Math.max(r.top, Math.min(y, r.bottom));
+        const d = Math.hypot(x - cx, y - cy);
+        if (d < bestDist && d <= DROP_TOLERANCE) { best = dz; bestDist = d; }
+    });
+    return best;
+}
+
 function attachPointerDrag(draggable, performDrop) {
     let startX = 0, startY = 0;
     let offsetX = 0, offsetY = 0;
     let dragging = false;
-    let activeDropzone = null;
+    let activeDropzone = null;     // currently-hovered (drives live highlight)
+    let lastHoveredDropzone = null; // sticky — survives a final off-target move
     let originalStyles = null;
     let activePointerId = null;
     let suppressClick = false;
@@ -1542,6 +1580,7 @@ function attachPointerDrag(draggable, performDrop) {
             activeDropzone.classList.remove('highlight');
             activeDropzone = null;
         }
+        lastHoveredDropzone = null;
         draggable.classList.remove('dragging');
         dragging = false;
         if (moveHandler) {
@@ -1582,15 +1621,22 @@ function attachPointerDrag(draggable, performDrop) {
                 activeDropzone = newDz;
                 if (activeDropzone) activeDropzone.classList.add('highlight');
             }
+            // Sticky hover: only remember dropzones we've actually entered, so
+            // a final off-target jitter doesn't lose the drop.
+            if (newDz) lastHoveredDropzone = newDz;
         };
 
         upHandler = (ev) => {
             if (ev.pointerId !== activePointerId) return;
             if (dragging) {
                 restore();
-                if (activeDropzone) {
-                    activeDropzone.classList.remove('highlight');
-                    performDrop(activeDropzone, draggable);
+                // Tolerant pick: direct hit, then sticky last-hovered, then
+                // closest dropzone within DROP_TOLERANCE of release point.
+                const target = findBestDropzone(ev.clientX, ev.clientY, lastHoveredDropzone);
+                if (activeDropzone) activeDropzone.classList.remove('highlight');
+                if (target) {
+                    target.classList.remove('highlight');
+                    performDrop(target, draggable);
                 }
             }
             cleanup();
@@ -1751,11 +1797,16 @@ function checkMatches() {
         placementUnlocked: false,
         completed: false,
         confirmPlacement: true,
+        // Stickers offered in a previous pack but not chosen. Oldest first.
+        // Future packs prefer fresh (never-offered) stickers; deprioritized
+        // ones are pulled from the tail only when fresh runs out.
+        deprioritized: [],
     });
 
     let memoryState = null; // fallback if localStorage unavailable
     let stickerPool = [];   // filenames loaded from index.json
     let awardedThisSession = new Set(); // questionIds awarded in this session
+    let lastOfferedStickers = [];       // last pack's 3 choices, for deprio bookkeeping
 
     function loadState() {
         try {
@@ -1919,7 +1970,15 @@ function checkMatches() {
             refreshBadge();
             return;
         }
-        const choices = shuffle(unowned).slice(0, Math.min(3, unowned.length));
+        // Prefer "fresh" stickers (never offered in a past pack); fall back to
+        // deprioritized ones in oldest-first order. This way a sticker she's
+        // skipped before only comes back once everything new has been seen.
+        const deprioSet = new Set(state.deprioritized || []);
+        const fresh = unowned.filter(s => !deprioSet.has(s));
+        const stale = (state.deprioritized || []).filter(s => !owned.has(s));
+        const candidates = shuffle(fresh).concat(stale);
+        const choices = candidates.slice(0, Math.min(3, candidates.length));
+        lastOfferedStickers = choices.slice();
         renderPack(choices);
     }
     function renderPack(choices) {
@@ -1943,6 +2002,14 @@ function checkMatches() {
             [...container.children].forEach(c => c.style.pointerEvents = "none");
             if (btnEl) btnEl.classList.add("sg-chosen");
         }
+        // Stickers offered but NOT chosen get pushed to the back of the queue.
+        // Chosen sticker is removed from deprio entirely (it's now owned).
+        const notChosen = lastOfferedStickers.filter(id => id !== filename);
+        state.deprioritized = (state.deprioritized || [])
+            .filter(id => id !== filename && !notChosen.includes(id))
+            .concat(notChosen);
+        lastOfferedStickers = [];
+
         state.collection.push(filename);
         state.pendingPacks = Math.max(0, state.pendingPacks - 1);
         if (state.collection.length >= COLLECTION_GOAL) state.placementUnlocked = true;
