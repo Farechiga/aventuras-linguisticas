@@ -937,7 +937,29 @@
 }
 
 @media (max-width: 480px) {
-    .sg-badge { top: 12px; left: 12px; padding: 8px 12px; font-size: 0.95rem; }
+    /* Make the top-corner chips compact so they don't overlap the centered
+       logo on phones. Progress bar hidden — "N/3" carries the info on its own. */
+    .sg-badge {
+        top: 10px;
+        left: 10px;
+        padding: 5px 10px;
+        font-size: 0.82rem;
+        gap: 4px;
+    }
+    .sg-badge .sg-badge-star { font-size: 0.95rem; }
+    .sg-badge .sg-progress-track { display: none; }
+
+    .score-container {
+        top: 10px;
+        right: 10px;
+        padding: 5px 12px;
+        font-size: 0.85rem;
+    }
+    .score-stickers-link {
+        font-size: 0.65rem;
+        margin-top: 2px;
+    }
+
     .sg-pack-option { width: 130px; height: 160px; }
     .sg-modal-title { font-size: 1.25rem; }
 }
