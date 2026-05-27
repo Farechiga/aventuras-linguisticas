@@ -14,7 +14,7 @@
     }
     
     body {
-        background-color: #f9f0e8;
+        background-color: #eef0f2;
         overflow-x: hidden;
     }
  
@@ -113,9 +113,9 @@ body::after {
             width: 90%;
             max-width: 600px;
             margin: 20px auto;
-            background-color: rgba(255, 251, 240, 0.92);
+            background-color: #ffffff;
             padding: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
             position: relative;
             overflow: hidden;
             border-radius: 20px;
@@ -471,17 +471,19 @@ body::after {
           fill: #eae8bc;
         }
 
-        /* Position logo top-left without affecting content layout */
+        /* Logo centered above the question/answer card */
 
 .logo-left {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 10px;
   z-index: 5;
+  position: relative;
 }
 
 .logo-left img {
-  width: 200px;
+  width: 240px;
+  max-width: 60vw;
   height: auto;
   pointer-events: none;
   user-select: none;
@@ -531,18 +533,18 @@ body::after {
             </g>
             <path class="st3" d="M463.11,2264.56s3.81,1.27,4.08,3.52c.39,3.27-4.19,1.26-6.42-.5s.05-3.28,2.34-3.02h0Z"/>
           </g>
+          <polygon class="st1" points="5334.16 2955.13 5254.51 2846.83 5126.9 2889.12 5205.28 2779.9 5125.62 2671.61 5253.72 2712.4 5332.1 2603.18 5332.89 2737.61 5460.99 2778.4 5333.38 2820.69 5334.16 2955.13"/>
+          <polygon class="st1" points="5469.55 2382.32 5365.92 2349.31 5302.51 2437.68 5301.87 2328.92 5198.23 2295.92 5301.47 2261.7 5300.84 2152.94 5365.28 2240.56 5468.52 2206.34 5405.11 2294.7 5469.55 2382.32"/>
+          <polygon class="st1" points="5297.75 722.32 5254.16 671.15 5192.02 696.8 5227.22 639.53 5183.63 588.36 5248.97 604.14 5284.16 546.87 5289.35 613.88 5354.69 629.66 5292.56 655.3 5297.75 722.32"/>
+
         </svg>
         </div>
-        
+
         <div class="score-container">
             Score: <span class="correct-count">0</span>
         </div>
         
         <div class="manuscript">
-            <div class="character-image" id="current-character"></div>
-            
-<div class="instruction-text">Seraphina please help the character choose the correct Spanish translation!</div>
-
             <div class="english-sentence" id="english-text">
                 Loading question...
             </div>
@@ -1046,7 +1048,7 @@ function showMatchingGame() {
     shuffledSpanishSegments.forEach(segment => {
         const draggable = document.createElement('div');
         draggable.className = 'draggable';
-        draggable.draggable = true;
+        draggable.draggable = false;
         draggable.textContent = segment;
         draggable.onclick = () => speakSpanishSegment(segment);
         
@@ -1107,17 +1109,14 @@ function speakSpanishSegment(text) {
     }
 }
 
-// Initialize drag and drop functionality
+// Initialize drag and drop. Uses Pointer Events (mouse + touch + stylus)
+// instead of HTML5 native drag — works reliably on iOS/Android where
+// HTML5 dragstart doesn't fire on touchscreens.
 function initDragAndDrop() {
     const draggables = document.querySelectorAll('.draggable');
-    const dropzones = document.querySelectorAll('.spanish-dropzone');
 
-    let draggedElement = null;
-
-    // Shared "drop into dropzone" logic (mouse + touch both call this)
     function performDrop(dropzone, draggedEl) {
         if (!dropzone || !draggedEl) return;
-        // If dropzone already has content, return that content to options
         if (dropzone.children.length > 0 && dropzone.children[0] !== draggedEl) {
             const existing = dropzone.children[0];
             document.querySelector('#spanish-options-matching').appendChild(existing);
@@ -1126,52 +1125,25 @@ function initDragAndDrop() {
         speakSpanishSegment(draggedEl.textContent);
     }
 
-    // Mouse / pointer drag (HTML5 drag-and-drop)
-    draggables.forEach(draggable => {
-        draggable.addEventListener('dragstart', () => {
-            draggable.classList.add('dragging');
-            draggedElement = draggable;
-        });
-
-        draggable.addEventListener('dragend', () => {
-            draggable.classList.remove('dragging');
-        });
-
-        // Touch (mobile) — HTML5 dragstart doesn't fire on touchscreens
-        attachTouchDrag(draggable, performDrop);
-    });
-
-    // Dropzones (mouse)
-    dropzones.forEach(dropzone => {
-        dropzone.addEventListener('dragover', e => {
-            e.preventDefault();
-            dropzone.classList.add('highlight');
-        });
-
-        dropzone.addEventListener('dragleave', () => {
-            dropzone.classList.remove('highlight');
-        });
-
-        dropzone.addEventListener('drop', e => {
-            e.preventDefault();
-            dropzone.classList.remove('highlight');
-            performDrop(dropzone, draggedElement);
-        });
-    });
+    draggables.forEach(draggable => attachPointerDrag(draggable, performDrop));
 }
 
-// Touch-based drag for mobile. Lifts the element with position:fixed and
-// follows the finger; on release, drops into whichever .spanish-dropzone
-// is under the finger (uses elementFromPoint). Short presses without
-// movement still fire the element's onclick (speakSpanishSegment).
-function attachTouchDrag(draggable, performDrop) {
+// Drag implementation using Pointer Events. On pointerdown we capture the
+// pointer and attach move/up listeners to `document` so events keep firing
+// even when the pointer leaves the element. The dragged element gets
+// pointer-events:none so elementFromPoint() can see the dropzone underneath.
+// Small movements (<6px) stay as taps so onclick still fires speakSpanishSegment.
+function attachPointerDrag(draggable, performDrop) {
     let startX = 0, startY = 0;
     let offsetX = 0, offsetY = 0;
     let dragging = false;
     let activeDropzone = null;
     let originalStyles = null;
+    let activePointerId = null;
+    let suppressClick = false;
+    let moveHandler = null, upHandler = null, cancelHandler = null;
 
-    function lift(touch) {
+    function lift() {
         const rect = draggable.getBoundingClientRect();
         originalStyles = {
             position: draggable.style.position,
@@ -1202,60 +1174,84 @@ function attachTouchDrag(draggable, performDrop) {
         originalStyles = null;
     }
 
-    draggable.addEventListener('touchstart', (e) => {
-        if (e.touches.length !== 1) return;
-        const touch = e.touches[0];
-        startX = touch.clientX;
-        startY = touch.clientY;
-        const rect = draggable.getBoundingClientRect();
-        offsetX = touch.clientX - rect.left;
-        offsetY = touch.clientY - rect.top;
-    }, { passive: true });
-
-    draggable.addEventListener('touchmove', (e) => {
-        if (e.touches.length !== 1) return;
-        const touch = e.touches[0];
-
-        if (!dragging) {
-            // Only lift after the finger moves past a small threshold; short
-            // touches stay as taps so the click handler can fire.
-            const dx = Math.abs(touch.clientX - startX);
-            const dy = Math.abs(touch.clientY - startY);
-            if (dx < 6 && dy < 6) return;
-            lift(touch);
-        }
-
-        e.preventDefault(); // block page scroll while dragging
-        draggable.style.left = (touch.clientX - offsetX) + 'px';
-        draggable.style.top = (touch.clientY - offsetY) + 'px';
-
-        const under = document.elementFromPoint(touch.clientX, touch.clientY);
-        const newDz = under ? under.closest('.spanish-dropzone') : null;
-        if (newDz !== activeDropzone) {
-            if (activeDropzone) activeDropzone.classList.remove('highlight');
-            activeDropzone = newDz;
-            if (activeDropzone) activeDropzone.classList.add('highlight');
-        }
-    }, { passive: false });
-
-    draggable.addEventListener('touchend', () => {
-        if (!dragging) return; // it was a tap — let onclick handle it
-        restore();
-        draggable.classList.remove('dragging');
+    function cleanup() {
         if (activeDropzone) {
             activeDropzone.classList.remove('highlight');
-            performDrop(activeDropzone, draggable);
+            activeDropzone = null;
         }
+        draggable.classList.remove('dragging');
         dragging = false;
-        activeDropzone = null;
+        if (moveHandler) {
+            document.removeEventListener('pointermove', moveHandler);
+            document.removeEventListener('pointerup', upHandler);
+            document.removeEventListener('pointercancel', cancelHandler);
+            moveHandler = upHandler = cancelHandler = null;
+        }
+        activePointerId = null;
+    }
+
+    draggable.addEventListener('pointerdown', (e) => {
+        if (activePointerId !== null) return;
+        if (e.button !== undefined && e.button !== 0) return; // ignore right-click
+        activePointerId = e.pointerId;
+        startX = e.clientX;
+        startY = e.clientY;
+        const rect = draggable.getBoundingClientRect();
+        offsetX = e.clientX - rect.left;
+        offsetY = e.clientY - rect.top;
+
+        moveHandler = (ev) => {
+            if (ev.pointerId !== activePointerId) return;
+            if (!dragging) {
+                const dx = Math.abs(ev.clientX - startX);
+                const dy = Math.abs(ev.clientY - startY);
+                if (dx < 6 && dy < 6) return;
+                lift();
+                suppressClick = true;
+            }
+            ev.preventDefault();
+            draggable.style.left = (ev.clientX - offsetX) + 'px';
+            draggable.style.top = (ev.clientY - offsetY) + 'px';
+            const under = document.elementFromPoint(ev.clientX, ev.clientY);
+            const newDz = under ? under.closest('.spanish-dropzone') : null;
+            if (newDz !== activeDropzone) {
+                if (activeDropzone) activeDropzone.classList.remove('highlight');
+                activeDropzone = newDz;
+                if (activeDropzone) activeDropzone.classList.add('highlight');
+            }
+        };
+
+        upHandler = (ev) => {
+            if (ev.pointerId !== activePointerId) return;
+            if (dragging) {
+                restore();
+                if (activeDropzone) {
+                    activeDropzone.classList.remove('highlight');
+                    performDrop(activeDropzone, draggable);
+                }
+            }
+            cleanup();
+        };
+
+        cancelHandler = (ev) => {
+            if (ev.pointerId !== activePointerId) return;
+            if (dragging) restore();
+            cleanup();
+        };
+
+        document.addEventListener('pointermove', moveHandler, { passive: false });
+        document.addEventListener('pointerup', upHandler);
+        document.addEventListener('pointercancel', cancelHandler);
     });
 
-    draggable.addEventListener('touchcancel', () => {
-        if (dragging) restore();
-        draggable.classList.remove('dragging');
-        if (activeDropzone) activeDropzone.classList.remove('highlight');
-        dragging = false;
-        activeDropzone = null;
+    // Swallow the synthetic click that fires after a drag so we don't
+    // double-trigger speakSpanishSegment.
+    draggable.addEventListener('click', (e) => {
+        if (suppressClick) {
+            suppressClick = false;
+            e.stopPropagation();
+            e.preventDefault();
+        }
     });
 }
 
