@@ -14,7 +14,7 @@
     }
     
     body {
-        background-color: #eef0f2;
+        background-color: #80797C;
         overflow-x: hidden;
     }
  
@@ -129,9 +129,9 @@ body::after {
             width: 90%;
             max-width: 600px;
             margin: 20px auto;
-            background-color: #ffffff;
+            background-color: #80797C;
             padding: 25px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
             position: relative;
             overflow: hidden;
             border-radius: 20px;
@@ -291,7 +291,7 @@ body::after {
     max-height: 90vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    background-color: rgba(255, 251, 240, 0.95);
+    background-color: #80797C;
     border-radius: 20px;
     padding: 25px;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
@@ -326,8 +326,9 @@ body::after {
 
 .component-title {
     font-weight: bold;
-    color: #8a64ba;
-    margin-bottom: 5px;
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-size: 1rem;
 }
 
 .match-container {
@@ -1013,9 +1014,19 @@ body::before, body::after { pointer-events: none; }
 }
 
 @media (max-width: 768px) {
-  .logo, .logo svg, .svg-overlay {
+  /* Hide the layered/parallax background pieces on mobile. Fixed-position
+     overlays desync from the scrolling content on iOS Safari; use a flat
+     solid fill on body instead. */
+  .logo, .logo svg, .svg-overlay,
+  body::before, body::after {
     display: none !important;
   }
+  body { background-color: #80797C; }
+
+  /* Smaller logo + tighter gap before the content card on phones */
+  .logo-left { margin: 8px auto 4px; }
+  .logo-left img { width: 140px; max-width: 45vw; }
+  .manuscript { margin-top: 6px; }
 }
       </style>
 <linearGradient id="edge-gradient" x1="0" y1="0" x2="1" y2="0">
@@ -1090,12 +1101,6 @@ body::before, body::after { pointer-events: none; }
     <!-- Modal for Matching Game -->
 <div class="modal-overlay" id="matching-modal-overlay">
     <div class="matching-modal">
-        <div class="modal-title">¡Match the sentence parts!</div>
-        
-        <div class="original-sentence" id="original-sentence">
-            <!-- Original Spanish sentence will go here -->
-        </div>
-        
         <div class="matching-area">
             <div>
                 <div class="component-title">Tap a Spanish phrase, then tap its English match.</div>
@@ -1105,7 +1110,6 @@ body::before, body::after { pointer-events: none; }
             </div>
 
             <div>
-                <div class="component-title">Spanish phrases</div>
                 <div class="spanish-options-matching" id="spanish-options-matching">
                     <!-- Spanish phrase tokens are inserted here from matchState -->
                 </div>
@@ -1521,8 +1525,6 @@ function showMatchingGame() {
         setTimeout(loadQuestion, 1500);
         return;
     }
-
-    document.getElementById('original-sentence').textContent = sentenceData.spanish;
 
     const englishComponentsEl = document.getElementById('english-components');
     const spanishOptionsEl    = document.getElementById('spanish-options-matching');
@@ -2099,14 +2101,11 @@ function checkMatches() {
             refreshBadge();
             return;
         }
-        // Prefer "fresh" stickers (never offered in a past pack); fall back to
-        // deprioritized ones in oldest-first order. This way a sticker she's
-        // skipped before only comes back once everything new has been seen.
-        const deprioSet = new Set(state.deprioritized || []);
-        const fresh = unowned.filter(s => !deprioSet.has(s));
-        const stale = (state.deprioritized || []).filter(s => !owned.has(s));
-        const candidates = shuffle(fresh).concat(stale);
-        const choices = candidates.slice(0, Math.min(3, candidates.length));
+        // Pure-random draw every pack: shuffle the entire unowned pool and
+        // take 3. No carryover of previously-shown stickers, so each pack
+        // feels fresh and surprising. (state.deprioritized is retained for
+        // backward-compat with older saves but no longer read or written.)
+        const choices = shuffle(unowned).slice(0, Math.min(3, unowned.length));
         lastOfferedStickers = choices.slice();
         renderPack(choices);
     }
@@ -2131,12 +2130,6 @@ function checkMatches() {
             [...container.children].forEach(c => c.style.pointerEvents = "none");
             if (btnEl) btnEl.classList.add("sg-chosen");
         }
-        // Stickers offered but NOT chosen get pushed to the back of the queue.
-        // Chosen sticker is removed from deprio entirely (it's now owned).
-        const notChosen = lastOfferedStickers.filter(id => id !== filename);
-        state.deprioritized = (state.deprioritized || [])
-            .filter(id => id !== filename && !notChosen.includes(id))
-            .concat(notChosen);
         lastOfferedStickers = [];
 
         state.collection.push(filename);
