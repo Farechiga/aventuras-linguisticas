@@ -1649,6 +1649,18 @@ function findBestDropzone(x, y, stickyDropzone) {
     return best;
 }
 
+// Cancel any currently-playing TTS audio. Called on new drag activity so
+// gameplay never has to wait for a previous segment to finish narrating.
+function cancelCurrentTts() {
+    if (typeof _currentTtsAudio !== "undefined" && _currentTtsAudio) {
+        try { _currentTtsAudio.pause(); } catch (e) {}
+        _currentTtsAudio = null;
+    }
+    if ("speechSynthesis" in window) {
+        try { window.speechSynthesis.cancel(); } catch (e) {}
+    }
+}
+
 function attachPointerDrag(draggable, performDrop) {
     let startX = 0, startY = 0;
     let offsetX = 0, offsetY = 0;
@@ -1659,6 +1671,22 @@ function attachPointerDrag(draggable, performDrop) {
     let activePointerId = null;
     let suppressClick = false;
     let moveHandler = null, upHandler = null, cancelHandler = null;
+
+    // showMatchingGame sets draggable.onclick BEFORE this runs, which means
+    // the synthesized click after a drag would re-fire speakSpanishSegment
+    // (causing audio to restart and feel "in the way"). Hoist the original
+    // onclick into our own listener so suppressClick actually wins.
+    const originalOnClick = draggable.onclick;
+    draggable.onclick = null;
+    draggable.addEventListener("click", (e) => {
+        if (suppressClick) {
+            suppressClick = false;
+            e.stopPropagation();
+            e.preventDefault();
+            return;
+        }
+        if (originalOnClick) originalOnClick.call(draggable, e);
+    });
 
     function lift() {
         const rect = draggable.getBoundingClientRect();
@@ -1711,6 +1739,9 @@ function attachPointerDrag(draggable, performDrop) {
     draggable.addEventListener('pointerdown', (e) => {
         if (activePointerId !== null) return;
         if (e.button !== undefined && e.button !== 0) return; // ignore right-click
+        // Kill any in-flight narration so a fresh interaction is instant —
+        // don't make the kid wait for the previous segment to finish speaking.
+        cancelCurrentTts();
         activePointerId = e.pointerId;
         startX = e.clientX;
         startY = e.clientY;
@@ -1769,15 +1800,6 @@ function attachPointerDrag(draggable, performDrop) {
         document.addEventListener('pointercancel', cancelHandler);
     });
 
-    // Swallow the synthetic click that fires after a drag so we don't
-    // double-trigger speakSpanishSegment.
-    draggable.addEventListener('click', (e) => {
-        if (suppressClick) {
-            suppressClick = false;
-            e.stopPropagation();
-            e.preventDefault();
-        }
-    });
 }
 
 // Check if the matching is correct
