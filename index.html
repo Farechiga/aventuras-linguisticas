@@ -679,9 +679,11 @@ function loadQuestion() {
     currentCharacterIndex = randomCharacterIndex;
     currentSentenceIndex = randomSentenceIndex;
     
-    // Update character image with SVG
-    const characterIcon = characterIcons[selectedCharacter.character] || characterIcons.default;
-    characterImage.style.backgroundImage = `url('${characterIcon}')`;
+    // Update character image with SVG (element may be removed from layout)
+    if (characterImage) {
+        const characterIcon = characterIcons[selectedCharacter.character] || characterIcons.default;
+        characterImage.style.backgroundImage = `url('${characterIcon}')`;
+    }
     
     // Update English text
     englishText.textContent = sentenceData.english;
