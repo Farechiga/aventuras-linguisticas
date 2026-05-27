@@ -2,6 +2,7 @@
 // Auto-normalized: segments.english[] and segments.spanish[] are lowercase,
 // punctuation-stripped, whitespace-collapsed. Full english/spanish strings
 // (sentence.english, sentence.spanish) are unchanged in content.
+// Phase 2 re-capitalized proper nouns in segments only.
 
 const translationData = [
   {
@@ -12,13 +13,13 @@ const translationData = [
         "spanish": "Belle compartió sus libros con los niños del pueblo.",
         "segments": {
           "spanish": [
-            "belle compartió",
+            "Belle compartió",
             "sus libros",
             "con",
             "los niños del pueblo"
           ],
           "english": [
-            "belle shared",
+            "Belle shared",
             "her books",
             "with",
             "the village kids"
@@ -30,16 +31,16 @@ const translationData = [
         "spanish": "Belle descubrió en la bondad de San Francisco hacia los lobos un modelo para acercarse a la Bestia con compasión.",
         "segments": {
           "spanish": [
-            "belle descubrió",
-            "en la bondad de san francisco",
+            "Belle descubrió",
+            "en la bondad de San Francisco",
             "hacia los lobos",
-            "un modelo para acercarse a la bestia con compasión"
+            "un modelo para acercarse a la Bestia con compasión"
           ],
           "english": [
-            "belle discovered",
-            "in saint francis's kindness",
+            "Belle discovered",
+            "in Saint Francis's kindness",
             "to wolves",
-            "a model for approaching the beast with compassion"
+            "a model for approaching the Beast with compassion"
           ]
         }
       },
@@ -48,14 +49,14 @@ const translationData = [
         "spanish": "Belle aprendió de la paciencia de Santa Teresa que la transformación requiere tiempo y persistencia gentil.",
         "segments": {
           "spanish": [
-            "belle aprendió",
-            "de la paciencia de santa teresa",
+            "Belle aprendió",
+            "de la paciencia de Santa Teresa",
             "que la transformación requiere",
             "tiempo y persistencia gentil"
           ],
           "english": [
-            "belle learned",
-            "from saint teresa's patience",
+            "Belle learned",
+            "from Saint Teresa's patience",
             "that transformation requires",
             "time and gentle persistence"
           ]
@@ -66,16 +67,16 @@ const translationData = [
         "spanish": "Belle aplicó la creencia de San Agustín de que el amor revela la verdadera naturaleza a sus interacciones con la Bestia.",
         "segments": {
           "spanish": [
-            "belle aplicó",
-            "la creencia de san agustín",
+            "Belle aplicó",
+            "la creencia de San Agustín",
             "de que el amor revela la verdadera naturaleza",
-            "a sus interacciones con la bestia"
+            "a sus interacciones con la Bestia"
           ],
           "english": [
-            "belle applied",
-            "saint augustine's belief",
+            "Belle applied",
+            "Saint Augustine's belief",
             "that love reveals one's true nature",
-            "to her interactions with the beast"
+            "to her interactions with the Beast"
           ]
         }
       },
@@ -84,16 +85,16 @@ const translationData = [
         "spanish": "Belle recordó las enseñanzas de Santa Catalina sobre ver el potencial divino en todos cuando miraba a la Bestia.",
         "segments": {
           "spanish": [
-            "belle recordó",
-            "las enseñanzas de santa catalina",
+            "Belle recordó",
+            "las enseñanzas de Santa Catalina",
             "sobre ver el potencial divino en todos",
-            "cuando miraba a la bestia"
+            "cuando miraba a la Bestia"
           ],
           "english": [
-            "belle remembered",
-            "saint catherine's teachings",
+            "Belle remembered",
+            "Saint Catherine's teachings",
             "about seeing divine potential in everyone",
-            "when looking at the beast"
+            "when looking at the Beast"
           ]
         }
       },
@@ -102,16 +103,16 @@ const translationData = [
         "spanish": "Belle reflexionó sobre el valor de Santa Juana para reconocer la verdad más allá de las apariencias en su relación con la Bestia.",
         "segments": {
           "spanish": [
-            "belle reflexionó",
-            "sobre el valor de santa juana",
+            "Belle reflexionó",
+            "sobre el valor de Santa Juana",
             "para reconocer la verdad más allá de las apariencias",
-            "en su relación con la bestia"
+            "en su relación con la Bestia"
           ],
           "english": [
-            "belle reflected",
-            "on saint joan's courage",
+            "Belle reflected",
+            "on Saint Joan's courage",
             "to recognize truth beyond appearances",
-            "in her relationship with the beast"
+            "in her relationship with the Beast"
           ]
         }
       },
@@ -120,16 +121,16 @@ const translationData = [
         "spanish": "Belle encontró en la dedicación de San Vicente a servir a los marginados una guía para sanar el espíritu herido de la Bestia.",
         "segments": {
           "spanish": [
-            "belle encontró",
-            "en la dedicación de san vicente",
+            "Belle encontró",
+            "en la dedicación de San Vicente",
             "a servir a los marginados",
-            "una guía para sanar el espíritu herido de la bestia"
+            "una guía para sanar el espíritu herido de la Bestia"
           ],
           "english": [
-            "belle found",
-            "in saint vincent's dedication",
+            "Belle found",
+            "in Saint Vincent's dedication",
             "to serving the marginalized",
-            "a guide to healing the beast's wounded spirit"
+            "a guide to healing the Beast's wounded spirit"
           ]
         }
       },
@@ -138,16 +139,16 @@ const translationData = [
         "spanish": "Belle practicó el principio de San Benito de escuchar con el oído del corazón durante conversaciones con la Bestia.",
         "segments": {
           "spanish": [
-            "belle practicó",
-            "el principio de san benito",
+            "Belle practicó",
+            "el principio de San Benito",
             "de escuchar con el oído del corazón",
-            "durante conversaciones con la bestia"
+            "durante conversaciones con la Bestia"
           ],
           "english": [
-            "belle practiced",
-            "saint benedict's principle",
+            "Belle practiced",
+            "Saint Benedict's principle",
             "of listening with the ear of the heart",
-            "during conversations with the beast"
+            "during conversations with the Beast"
           ]
         }
       },
@@ -156,16 +157,16 @@ const translationData = [
         "spanish": "Belle adoptó la sabiduría de Santa Clara sobre el poder transformador del amor constante en su acercamiento a la Bestia.",
         "segments": {
           "spanish": [
-            "belle adoptó",
-            "la sabiduría de santa clara",
+            "Belle adoptó",
+            "la sabiduría de Santa Clara",
             "sobre el poder transformador del amor constante",
-            "en su acercamiento a la bestia"
+            "en su acercamiento a la Bestia"
           ],
           "english": [
-            "belle embraced",
-            "saint clare's wisdom",
+            "Belle embraced",
+            "Saint Clare's wisdom",
             "about the transformative power of steady love",
-            "in her approach to the beast"
+            "in her approach to the Beast"
           ]
         }
       },
@@ -174,16 +175,16 @@ const translationData = [
         "spanish": "Belle encontró inspiración en el acto de San Martín de compartir su capa al ofrecer bondad a la Bestia aislada.",
         "segments": {
           "spanish": [
-            "belle encontró inspiración",
-            "en el acto de san martín",
+            "Belle encontró inspiración",
+            "en el acto de San Martín",
             "de compartir su capa",
-            "al ofrecer bondad a la bestia aislada"
+            "al ofrecer bondad a la Bestia aislada"
           ],
           "english": [
-            "belle drew inspiration",
-            "from saint martin's act",
+            "Belle drew inspiration",
+            "from Saint Martin's act",
             "of sharing his cloak",
-            "when offering kindness to the isolated beast"
+            "when offering kindness to the isolated Beast"
           ]
         }
       },
@@ -192,16 +193,16 @@ const translationData = [
         "spanish": "Belle entendió de la perseverancia de Santa Mónica que la esperanza constante podía transformar gradualmente el carácter de la Bestia.",
         "segments": {
           "spanish": [
-            "belle entendió",
-            "de la perseverancia de santa mónica",
+            "Belle entendió",
+            "de la perseverancia de Santa Mónica",
             "que la esperanza constante",
-            "podía transformar gradualmente el carácter de la bestia"
+            "podía transformar gradualmente el carácter de la Bestia"
           ],
           "english": [
-            "belle understood",
-            "from saint monica's perseverance",
+            "Belle understood",
+            "from Saint Monica's perseverance",
             "that consistent hope",
-            "could gradually transform the beast's character"
+            "could gradually transform the Beast's character"
           ]
         }
       },
@@ -210,16 +211,16 @@ const translationData = [
         "spanish": "Belle implementó la filosofía de Santa Teresa de pequeños actos de amor en sus interacciones diarias con la Bestia.",
         "segments": {
           "spanish": [
-            "belle implementó",
-            "la filosofía de santa teresa",
+            "Belle implementó",
+            "la filosofía de Santa Teresa",
             "de pequeños actos de amor",
-            "en sus interacciones diarias con la bestia"
+            "en sus interacciones diarias con la Bestia"
           ],
           "english": [
-            "belle implemented",
-            "saint thérèse's philosophy",
+            "Belle implemented",
+            "Saint Thérèse's philosophy",
             "of small acts of love",
-            "in her daily interactions with the beast"
+            "in her daily interactions with the Beast"
           ]
         }
       },
@@ -228,16 +229,16 @@ const translationData = [
         "spanish": "Belle reconoció en la paciencia de San Patricio con conversos difíciles un modelo para esperar mientras la Bestia evolucionaba.",
         "segments": {
           "spanish": [
-            "belle reconoció",
-            "en la paciencia de san patricio",
+            "Belle reconoció",
+            "en la paciencia de San Patricio",
             "con conversos difíciles",
-            "un modelo para esperar mientras la bestia evolucionaba"
+            "un modelo para esperar mientras la Bestia evolucionaba"
           ],
           "english": [
-            "belle recognized",
-            "in saint patrick's patience",
+            "Belle recognized",
+            "in Saint Patrick's patience",
             "with difficult converts",
-            "a model for waiting as the beast evolved"
+            "a model for waiting as the Beast evolved"
           ]
         }
       },
@@ -246,16 +247,16 @@ const translationData = [
         "spanish": "Belle aplicó la capacidad de Santa Bernardita de ver belleza en lugares inesperados al descubrir al príncipe dentro de la Bestia.",
         "segments": {
           "spanish": [
-            "belle aplicó",
-            "la capacidad de santa bernardita",
+            "Belle aplicó",
+            "la capacidad de Santa Bernardita",
             "de ver belleza en lugares inesperados",
-            "al descubrir al príncipe dentro de la bestia"
+            "al descubrir al príncipe dentro de la Bestia"
           ],
           "english": [
-            "belle applied",
-            "saint bernadette's ability",
+            "Belle applied",
+            "Saint Bernadette's ability",
             "to see beauty in unexpected places",
-            "when discovering the prince within the beast"
+            "when discovering the prince within the Beast"
           ]
         }
       },
@@ -264,16 +265,16 @@ const translationData = [
         "spanish": "Belle encontró fuerza en la dedicación de Santa Isabel a amar a personas difíciles cuando enfrentaba el temperamento de la Bestia.",
         "segments": {
           "spanish": [
-            "belle encontró fuerza",
-            "en la dedicación de santa isabel",
+            "Belle encontró fuerza",
+            "en la dedicación de Santa Isabel",
             "a amar a personas difíciles",
-            "cuando enfrentaba el temperamento de la bestia"
+            "cuando enfrentaba el temperamento de la Bestia"
           ],
           "english": [
-            "belle found strength",
-            "in saint elizabeth's dedication",
+            "Belle found strength",
+            "in Saint Elizabeth's dedication",
             "to loving difficult people",
-            "when facing the beast's temper"
+            "when facing the Beast's temper"
           ]
         }
       },
@@ -282,16 +283,16 @@ const translationData = [
         "spanish": "Belle extrajo sabiduría de la enseñanza de Santo Tomás de Aquino de que el amor perfecto expulsa el miedo al acercarse a la intimidante Bestia.",
         "segments": {
           "spanish": [
-            "belle extrajo sabiduría",
-            "de la enseñanza de santo tomás de aquino",
+            "Belle extrajo sabiduría",
+            "de la enseñanza de Santo Tomás de Aquino",
             "de que el amor perfecto expulsa el miedo",
-            "al acercarse a la intimidante bestia"
+            "al acercarse a la intimidante Bestia"
           ],
           "english": [
-            "belle drew wisdom",
-            "from saint thomas aquinas's teaching",
+            "Belle drew wisdom",
+            "from Saint Thomas Aquinas's teaching",
             "that perfect love drives out fear",
-            "when approaching the intimidating beast"
+            "when approaching the intimidating Beast"
           ]
         }
       },
@@ -300,16 +301,16 @@ const translationData = [
         "spanish": "Belle aplicó la creencia de Santa Hildegarda en el poder curativo de la naturaleza mientras creaba un jardín con la Bestia.",
         "segments": {
           "spanish": [
-            "belle aplicó",
-            "la creencia de santa hildegarda",
+            "Belle aplicó",
+            "la creencia de Santa Hildegarda",
             "en el poder curativo de la naturaleza",
-            "mientras creaba un jardín con la bestia"
+            "mientras creaba un jardín con la Bestia"
           ],
           "english": [
-            "belle applied",
-            "saint hildegard's belief",
+            "Belle applied",
+            "Saint Hildegard's belief",
             "in the healing power of nature",
-            "while creating a garden with the beast"
+            "while creating a garden with the Beast"
           ]
         }
       },
@@ -318,16 +319,16 @@ const translationData = [
         "spanish": "Belle recordó el consejo de San Francisco de Sales sobre la persuasión amable durante conversaciones difíciles con la Bestia.",
         "segments": {
           "spanish": [
-            "belle recordó",
-            "el consejo de san francisco de sales",
+            "Belle recordó",
+            "el consejo de San Francisco de Sales",
             "sobre la persuasión amable",
-            "durante conversaciones difíciles con la bestia"
+            "durante conversaciones difíciles con la Bestia"
           ],
           "english": [
-            "belle remembered",
-            "saint francis de sales's advice",
+            "Belle remembered",
+            "Saint Francis de Sales's advice",
             "on gentle persuasion",
-            "during difficult conversations with the beast"
+            "during difficult conversations with the Beast"
           ]
         }
       },
@@ -336,16 +337,16 @@ const translationData = [
         "spanish": "Belle practicó la perseverancia de San Antonio en buscar tesoros perdidos al descubrir al príncipe escondido dentro de la Bestia.",
         "segments": {
           "spanish": [
-            "belle practicó",
-            "la perseverancia de san antonio",
+            "Belle practicó",
+            "la perseverancia de San Antonio",
             "en buscar tesoros perdidos",
-            "al descubrir al príncipe escondido dentro de la bestia"
+            "al descubrir al príncipe escondido dentro de la Bestia"
           ],
           "english": [
-            "belle practiced",
-            "saint anthony's perseverance",
+            "Belle practiced",
+            "Saint Anthony's perseverance",
             "in searching for lost treasures",
-            "when discovering the prince hidden within the beast"
+            "when discovering the prince hidden within the Beast"
           ]
         }
       },
@@ -354,16 +355,16 @@ const translationData = [
         "spanish": "Belle siguió el ejemplo de Santa Rita de transformar la hostilidad en bondad cuando se enfrentaba al enojo de la Bestia.",
         "segments": {
           "spanish": [
-            "belle siguió",
-            "el ejemplo de santa rita",
+            "Belle siguió",
+            "el ejemplo de Santa Rita",
             "de transformar la hostilidad en bondad",
-            "cuando se enfrentaba al enojo de la bestia"
+            "cuando se enfrentaba al enojo de la Bestia"
           ],
           "english": [
-            "belle followed",
-            "saint rita's example",
+            "Belle followed",
+            "Saint Rita's example",
             "of transforming hostility into kindness",
-            "when faced with the beast's anger"
+            "when faced with the Beast's anger"
           ]
         }
       },
@@ -372,16 +373,16 @@ const translationData = [
         "spanish": "Belle adoptó la enseñanza de Santa Cecilia de que la belleza a través del arte ablanda los corazones mientras compartía música con la Bestia.",
         "segments": {
           "spanish": [
-            "belle adoptó",
-            "la enseñanza de santa cecilia",
+            "Belle adoptó",
+            "la enseñanza de Santa Cecilia",
             "de que la belleza a través del arte ablanda los corazones",
-            "mientras compartía música con la bestia"
+            "mientras compartía música con la Bestia"
           ],
           "english": [
-            "belle embraced",
-            "saint cecilia's teaching",
+            "Belle embraced",
+            "Saint Cecilia's teaching",
             "that beauty through art softens hearts",
-            "while sharing music with the beast"
+            "while sharing music with the Beast"
           ]
         }
       },
@@ -390,16 +391,16 @@ const translationData = [
         "spanish": "Belle reflexionó sobre la compasión de Santa Brígida por todas las criaturas cuando cuidaba a la Bestia herida.",
         "segments": {
           "spanish": [
-            "belle reflexionó",
-            "sobre la compasión de santa brígida",
+            "Belle reflexionó",
+            "sobre la compasión de Santa Brígida",
             "por todas las criaturas",
-            "cuando cuidaba a la bestia herida"
+            "cuando cuidaba a la Bestia herida"
           ],
           "english": [
-            "belle reflected",
-            "on saint brigid's compassion",
+            "Belle reflected",
+            "on Saint Brigid's compassion",
             "for all creatures",
-            "when tending to the wounded beast"
+            "when tending to the wounded Beast"
           ]
         }
       },
@@ -408,16 +409,16 @@ const translationData = [
         "spanish": "Belle aplicó la perspectiva de San Juan de la Cruz de que la oscuridad precede a la transformación cuando guiaba a la Bestia a través de sus luchas.",
         "segments": {
           "spanish": [
-            "belle aplicó",
-            "la perspectiva de san juan de la cruz",
+            "Belle aplicó",
+            "la perspectiva de San Juan de la Cruz",
             "de que la oscuridad precede a la transformación",
-            "cuando guiaba a la bestia a través de sus luchas"
+            "cuando guiaba a la Bestia a través de sus luchas"
           ],
           "english": [
-            "belle applied",
-            "saint john of the cross's insight",
+            "Belle applied",
+            "Saint John of the Cross's insight",
             "that darkness precedes transformation",
-            "when guiding the beast through his struggles"
+            "when guiding the Beast through his struggles"
           ]
         }
       },
@@ -426,16 +427,16 @@ const translationData = [
         "spanish": "Belle encontró inspiración en la creencia de Santo Domingo en el poder de la verdad para iluminar mentes mientras educaba a la Bestia.",
         "segments": {
           "spanish": [
-            "belle encontró inspiración",
-            "en la creencia de santo domingo",
+            "Belle encontró inspiración",
+            "en la creencia de Santo Domingo",
             "en el poder de la verdad para iluminar mentes",
-            "mientras educaba a la bestia"
+            "mientras educaba a la Bestia"
           ],
           "english": [
-            "belle found inspiration",
-            "in saint dominic's belief",
+            "Belle found inspiration",
+            "in Saint Dominic's belief",
             "in the power of truth to illuminate minds",
-            "as she educated the beast"
+            "as she educated the Beast"
           ]
         }
       },
@@ -444,16 +445,16 @@ const translationData = [
         "spanish": "Belle canalizó la convicción de Santa Escolástica de que la conversación genuina transforma almas durante charlas nocturnas con la Bestia.",
         "segments": {
           "spanish": [
-            "belle canalizó",
-            "la convicción de santa escolástica",
+            "Belle canalizó",
+            "la convicción de Santa Escolástica",
             "de que la conversación genuina transforma almas",
-            "durante charlas nocturnas con la bestia"
+            "durante charlas nocturnas con la Bestia"
           ],
           "english": [
-            "belle channeled",
-            "saint scholastica's conviction",
+            "Belle channeled",
+            "Saint Scholastica's conviction",
             "that genuine conversation transforms souls",
-            "during evening talks with the beast"
+            "during evening talks with the Beast"
           ]
         }
       },
@@ -462,16 +463,16 @@ const translationData = [
         "spanish": "Belle entendió de la fuerza silenciosa de San José que las acciones hablan más que las palabras al demostrar su lealtad a la Bestia.",
         "segments": {
           "spanish": [
-            "belle entendió",
-            "de la fuerza silenciosa de san josé",
+            "Belle entendió",
+            "de la fuerza silenciosa de San José",
             "que las acciones hablan más que las palabras",
-            "al demostrar su lealtad a la bestia"
+            "al demostrar su lealtad a la Bestia"
           ],
           "english": [
-            "belle understood",
-            "from saint joseph's silent strength",
+            "Belle understood",
+            "from Saint Joseph's silent strength",
             "that actions speak louder than words",
-            "when proving her loyalty to the beast"
+            "when proving her loyalty to the Beast"
           ]
         }
       },
@@ -480,16 +481,16 @@ const translationData = [
         "spanish": "Belle practicó la filosofía de empatía de Santa Edith Stein al ver verdaderamente a la persona dentro del temible exterior de la Bestia.",
         "segments": {
           "spanish": [
-            "belle practicó",
-            "la filosofía de empatía de santa edith stein",
+            "Belle practicó",
+            "la filosofía de empatía de Santa Edith Stein",
             "al ver verdaderamente",
-            "a la persona dentro del temible exterior de la bestia"
+            "a la persona dentro del temible exterior de la Bestia"
           ],
           "english": [
-            "belle practiced",
-            "saint edith stein's philosophy of empathy",
+            "Belle practiced",
+            "Saint Edith Stein's philosophy of empathy",
             "by truly seeing",
-            "the person within the beast's fearsome exterior"
+            "the person within the Beast's fearsome exterior"
           ]
         }
       },
@@ -498,16 +499,16 @@ const translationData = [
         "spanish": "Belle implementó la creencia de San Felipe Neri en el poder transformador de la alegría al llevar risas al sombrío castillo de la Bestia.",
         "segments": {
           "spanish": [
-            "belle implementó",
-            "la creencia de san felipe neri",
+            "Belle implementó",
+            "la creencia de San Felipe Neri",
             "en el poder transformador de la alegría",
-            "al llevar risas al sombrío castillo de la bestia"
+            "al llevar risas al sombrío castillo de la Bestia"
           ],
           "english": [
-            "belle implemented",
-            "saint philip neri's belief",
+            "Belle implemented",
+            "Saint Philip Neri's belief",
             "in the transformative power of joy",
-            "when bringing laughter to the beast's gloomy castle"
+            "when bringing laughter to the Beast's gloomy castle"
           ]
         }
       },
@@ -516,16 +517,16 @@ const translationData = [
         "spanish": "Belle siguió el ejemplo de amor sacrificial de San Maximiliano Kolbe al arriesgar su libertad para salvar a su padre y a la Bestia.",
         "segments": {
           "spanish": [
-            "belle siguió",
+            "Belle siguió",
             "el ejemplo de amor sacrificial",
-            "de san maximiliano kolbe",
-            "al arriesgar su libertad para salvar a su padre y a la bestia"
+            "de San Maximiliano Kolbe",
+            "al arriesgar su libertad para salvar a su padre y a la Bestia"
           ],
           "english": [
-            "belle followed",
-            "saint maximilian kolbe's example",
+            "Belle followed",
+            "Saint Maximilian Kolbe's example",
             "of sacrificial love",
-            "when risking her freedom to save her father and the beast"
+            "when risking her freedom to save her father and the Beast"
           ]
         }
       },
@@ -534,16 +535,16 @@ const translationData = [
         "spanish": "Belle se inspiró en la suave persistencia en la fe de Santa Kateri Tekakwitha al continuar creyendo en la redención de la Bestia.",
         "segments": {
           "spanish": [
-            "belle se inspiró",
+            "Belle se inspiró",
             "en la suave persistencia en la fe",
-            "de santa kateri tekakwitha",
-            "al continuar creyendo en la redención de la bestia"
+            "de Santa Kateri Tekakwitha",
+            "al continuar creyendo en la redención de la Bestia"
           ],
           "english": [
-            "belle drew from",
-            "saint kateri tekakwitha's gentle persistence",
+            "Belle drew from",
+            "Saint Kateri Tekakwitha's gentle persistence",
             "in faith",
-            "when continuing to believe in the beast's redemption"
+            "when continuing to believe in the Beast's redemption"
           ]
         }
       },
@@ -552,16 +553,16 @@ const translationData = [
         "spanish": "Belle siguió el consejo de San Ignacio de encontrar bondad en todas las cosas al buscar la humanidad en la Bestia.",
         "segments": {
           "spanish": [
-            "belle siguió",
-            "el consejo de san ignacio",
+            "Belle siguió",
+            "el consejo de San Ignacio",
             "de encontrar bondad en todas las cosas",
-            "al buscar la humanidad en la bestia"
+            "al buscar la humanidad en la Bestia"
           ],
           "english": [
-            "belle followed",
-            "saint ignatius's counsel",
+            "Belle followed",
+            "Saint Ignatius's counsel",
             "to find goodness in all things",
-            "when seeking the humanity in the beast"
+            "when seeking the humanity in the Beast"
           ]
         }
       },
@@ -571,13 +572,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "los libros ayudaron",
-            "a belle",
+            "a Belle",
             "a resolver",
             "muchos problemas"
           ],
           "english": [
             "books helped",
-            "belle",
+            "Belle",
             "solve",
             "many problems"
           ]
@@ -588,13 +589,13 @@ const translationData = [
         "spanish": "Belle compartió sus libros con los niños del pueblo.",
         "segments": {
           "spanish": [
-            "belle compartió",
+            "Belle compartió",
             "sus libros",
             "con",
             "los niños del pueblo"
           ],
           "english": [
-            "belle shared",
+            "Belle shared",
             "her books",
             "with",
             "the village kids"
@@ -607,13 +608,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "los libros ayudaron",
-            "a belle",
+            "a Belle",
             "a resolver",
             "muchos problemas"
           ],
           "english": [
             "books helped",
-            "belle",
+            "Belle",
             "solve",
             "many problems"
           ]
@@ -624,14 +625,14 @@ const translationData = [
         "spanish": "Belle enseñó a Bestia a ser amable y paciente.",
         "segments": {
           "spanish": [
-            "belle enseñó",
-            "a bestia",
+            "Belle enseñó",
+            "a Bestia",
             "a ser",
             "amable y paciente"
           ],
           "english": [
-            "belle taught",
-            "beast",
+            "Belle taught",
+            "Beast",
             "to be",
             "kind and patient"
           ]
@@ -643,13 +644,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "leer ayudó",
-            "a belle",
+            "a Belle",
             "a encontrar",
             "nuevas soluciones"
           ],
           "english": [
             "reading helped",
-            "belle",
+            "Belle",
             "find",
             "new solutions"
           ]
@@ -660,13 +661,13 @@ const translationData = [
         "spanish": "A Belle le encantaba compartir cuentos con amigos.",
         "segments": {
           "spanish": [
-            "a belle le encantaba",
+            "a Belle le encantaba",
             "compartir",
             "cuentos",
             "con amigos"
           ],
           "english": [
-            "belle loved",
+            "Belle loved",
             "to share",
             "stories",
             "with friends"
@@ -678,13 +679,13 @@ const translationData = [
         "spanish": "Belle inventó máquinas para ayudar con tareas del pueblo.",
         "segments": {
           "spanish": [
-            "belle inventó",
+            "Belle inventó",
             "máquinas",
             "para ayudar con",
             "tareas del pueblo"
           ],
           "english": [
-            "belle invented",
+            "Belle invented",
             "machines",
             "to help with",
             "village chores"
@@ -697,13 +698,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "a través de amabilidad",
-            "belle resolvió",
+            "Belle resolvió",
             "conflictos",
             "en el castillo"
           ],
           "english": [
             "through kindness",
-            "belle solved",
+            "Belle solved",
             "conflicts",
             "in the castle"
           ]
@@ -714,13 +715,13 @@ const translationData = [
         "spanish": "Belle usó ciencia para mejorar el pozo del pueblo.",
         "segments": {
           "spanish": [
-            "belle usó",
+            "Belle usó",
             "ciencia",
             "para mejorar",
             "el pozo del pueblo"
           ],
           "english": [
-            "belle used",
+            "Belle used",
             "science",
             "to improve",
             "the village well"
@@ -733,15 +734,15 @@ const translationData = [
         "segments": {
           "spanish": [
             "la colaboración ayudó",
-            "a belle",
+            "a Belle",
             "a resolver",
             "la maldición misteriosa"
           ],
           "english": [
             "collaboration helped",
-            "belle",
+            "Belle",
             "solve",
-            "the beast's mysterious curse"
+            "the Beast's mysterious curse"
           ]
         }
       },
@@ -750,13 +751,13 @@ const translationData = [
         "spanish": "El valor de Belle le ayudó a enfrentar los lobos peligrosos.",
         "segments": {
           "spanish": [
-            "el valor de belle",
+            "el valor de Belle",
             "le ayudó",
             "a enfrentar",
             "los lobos peligrosos"
           ],
           "english": [
-            "belle's courage",
+            "Belle's courage",
             "helped her",
             "face",
             "the dangerous wolves"
@@ -768,13 +769,13 @@ const translationData = [
         "spanish": "Belle diseñó mejores herramientas para los inventos de su padre.",
         "segments": {
           "spanish": [
-            "belle diseñó",
+            "Belle diseñó",
             "mejores herramientas",
             "para",
             "los inventos de su padre"
           ],
           "english": [
-            "belle designed",
+            "Belle designed",
             "better tools",
             "for",
             "her father's inventions"
@@ -787,13 +788,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con creatividad",
-            "belle hizo",
+            "Belle hizo",
             "que el castillo",
             "pareciera un hogar"
           ],
           "english": [
             "with creativity",
-            "belle made",
+            "Belle made",
             "the castle",
             "feel like home"
           ]
@@ -804,13 +805,13 @@ const translationData = [
         "spanish": "Belle enseñó a los aldeanos a compartir conocimientos y habilidades.",
         "segments": {
           "spanish": [
-            "belle enseñó",
+            "Belle enseñó",
             "a los aldeanos",
             "a compartir",
             "conocimientos y habilidades"
           ],
           "english": [
-            "belle taught",
+            "Belle taught",
             "villagers",
             "to share",
             "knowledge and skills"
@@ -823,13 +824,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el pensamiento científico",
-            "ayudó a belle",
+            "ayudó a Belle",
             "a resolver",
             "problemas cotidianos"
           ],
           "english": [
             "scientific thinking",
-            "helped belle",
+            "helped Belle",
             "solve",
             "everyday problems"
           ]
@@ -840,13 +841,13 @@ const translationData = [
         "spanish": "Los experimentos de Belle mejoraron cultivos en los campos.",
         "segments": {
           "spanish": [
-            "los experimentos de belle",
+            "los experimentos de Belle",
             "mejoraron",
             "cultivos",
             "en los campos"
           ],
           "english": [
-            "belle's experiments",
+            "Belle's experiments",
             "improved",
             "crops",
             "in the village fields"
@@ -858,13 +859,13 @@ const translationData = [
         "spanish": "Belle organizó a los aldeanos para construir un nuevo puente.",
         "segments": {
           "spanish": [
-            "belle organizó",
+            "Belle organizó",
             "a los aldeanos",
             "para construir",
             "un nuevo puente"
           ],
           "english": [
-            "belle organized",
+            "Belle organized",
             "villagers",
             "to build",
             "a new bridge"
@@ -876,13 +877,13 @@ const translationData = [
         "spanish": "Belle creó mapas para ayudar a navegar el bosque.",
         "segments": {
           "spanish": [
-            "belle creó",
+            "Belle creó",
             "mapas",
             "para ayudar a navegar",
             "el bosque"
           ],
           "english": [
-            "belle created",
+            "Belle created",
             "maps",
             "to help navigate",
             "the forest"
@@ -895,13 +896,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "trabajando juntos",
-            "belle y bestia",
+            "Belle y Bestia",
             "resolvieron",
             "misterios de biblioteca"
           ],
           "english": [
             "working together",
-            "belle and beast",
+            "Belle and Beast",
             "solved",
             "library mysteries"
           ]
@@ -912,13 +913,13 @@ const translationData = [
         "spanish": "La amabilidad de Belle transformó ira en comprensión y compasión.",
         "segments": {
           "spanish": [
-            "la amabilidad de belle",
+            "la amabilidad de Belle",
             "transformó",
             "ira",
             "en comprensión y compasión"
           ],
           "english": [
-            "belle's kindness",
+            "Belle's kindness",
             "transformed",
             "anger",
             "into understanding and compassion"
@@ -930,13 +931,13 @@ const translationData = [
         "spanish": "Belle probó valientemente los nuevos inventos de su padre.",
         "segments": {
           "spanish": [
-            "belle probó",
+            "Belle probó",
             "valientemente",
             "los nuevos inventos",
             "de su padre"
           ],
           "english": [
-            "belle",
+            "Belle",
             "bravely tested",
             "her father's",
             "newest inventions"
@@ -948,13 +949,13 @@ const translationData = [
         "spanish": "Belle descubrió conocimiento antiguo en libros olvidados del castillo.",
         "segments": {
           "spanish": [
-            "belle descubrió",
+            "Belle descubrió",
             "conocimiento antiguo",
             "en libros olvidados",
             "del castillo"
           ],
           "english": [
-            "belle discovered",
+            "Belle discovered",
             "ancient knowledge",
             "in forgotten",
             "castle books"
@@ -966,13 +967,13 @@ const translationData = [
         "spanish": "Belle enseñó al personal del castillo a leer y escribir.",
         "segments": {
           "spanish": [
-            "belle enseñó",
+            "Belle enseñó",
             "al personal del castillo",
             "a leer",
             "y escribir"
           ],
           "english": [
-            "belle taught",
+            "Belle taught",
             "castle staff",
             "to read",
             "and write"
@@ -984,13 +985,13 @@ const translationData = [
         "spanish": "Las soluciones creativas de Belle ayudaron durante el duro invierno.",
         "segments": {
           "spanish": [
-            "las soluciones creativas de belle",
+            "las soluciones creativas de Belle",
             "ayudaron",
             "durante",
             "el duro invierno"
           ],
           "english": [
-            "belle's creative solutions",
+            "Belle's creative solutions",
             "helped",
             "during",
             "the harsh winter"
@@ -1002,13 +1003,13 @@ const translationData = [
         "spanish": "Belle construyó telescopios para estudiar estrellas por la noche.",
         "segments": {
           "spanish": [
-            "belle construyó",
+            "Belle construyó",
             "telescopios",
             "para estudiar estrellas",
             "por la noche"
           ],
           "english": [
-            "belle built",
+            "Belle built",
             "telescopes",
             "to study stars",
             "at night"
@@ -1020,13 +1021,13 @@ const translationData = [
         "spanish": "Belle ayudó a aldeanos a crear un sistema de riego.",
         "segments": {
           "spanish": [
-            "belle ayudó",
+            "Belle ayudó",
             "a aldeanos",
             "a crear",
             "un sistema de riego"
           ],
           "english": [
-            "belle helped",
+            "Belle helped",
             "villagers",
             "create",
             "an irrigation system"
@@ -1041,13 +1042,13 @@ const translationData = [
             "aprender",
             "diferentes idiomas",
             "expandió",
-            "las habilidades de resolución de belle"
+            "las habilidades de resolución de Belle"
           ],
           "english": [
             "learning",
             "different languages",
             "expanded",
-            "belle's problem-solving abilities"
+            "Belle's problem-solving abilities"
           ]
         }
       },
@@ -1056,13 +1057,13 @@ const translationData = [
         "spanish": "Belle dibujó planes detallados antes de comenzar nuevos proyectos.",
         "segments": {
           "spanish": [
-            "belle dibujó",
+            "Belle dibujó",
             "planes detallados",
             "antes de comenzar",
             "nuevos proyectos"
           ],
           "english": [
-            "belle drew",
+            "Belle drew",
             "detailed plans",
             "before starting",
             "new projects"
@@ -1075,13 +1076,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con paciencia",
-            "belle enseñó",
+            "Belle enseñó",
             "a niños",
             "a leer y escribir"
           ],
           "english": [
             "with patience",
-            "belle taught",
+            "Belle taught",
             "children",
             "to read and write"
           ]
@@ -1092,13 +1093,13 @@ const translationData = [
         "spanish": "Belle estudió estrellas para ayudar a navegar de noche.",
         "segments": {
           "spanish": [
-            "belle estudió",
+            "Belle estudió",
             "estrellas",
             "para ayudar",
             "a navegar de noche"
           ],
           "english": [
-            "belle studied",
+            "Belle studied",
             "stars",
             "to help",
             "navigate at night"
@@ -1110,13 +1111,13 @@ const translationData = [
         "spanish": "Belle desarrolló recetas usando ingredientes disponibles localmente.",
         "segments": {
           "spanish": [
-            "belle desarrolló",
+            "Belle desarrolló",
             "recetas",
             "usando",
             "ingredientes disponibles localmente"
           ],
           "english": [
-            "belle developed",
+            "Belle developed",
             "recipes",
             "using",
             "locally available ingredients"
@@ -1129,13 +1130,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "los experimentos de jardín",
-            "de belle",
+            "de Belle",
             "mejoraron",
             "la agricultura del pueblo"
           ],
           "english": [
             "garden experiments",
-            "belle",
+            "Belle",
             "improved",
             "farming throughout the village"
           ]
@@ -1147,13 +1148,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "cuando fallaron los cultivos",
-            "belle encontró",
+            "Belle encontró",
             "fuentes alternativas",
             "de alimentos"
           ],
           "english": [
             "when crops failed",
-            "belle found",
+            "Belle found",
             "alternative sources",
             "of food"
           ]
@@ -1164,13 +1165,13 @@ const translationData = [
         "spanish": "Belle y Bestia trabajaron juntos resolviendo antiguos rompecabezas.",
         "segments": {
           "spanish": [
-            "belle y bestia",
+            "Belle y Bestia",
             "trabajaron juntos",
             "resolviendo",
             "antiguos rompecabezas"
           ],
           "english": [
-            "belle and beast",
+            "Belle and Beast",
             "worked together",
             "solving",
             "ancient puzzles"
@@ -1182,13 +1183,13 @@ const translationData = [
         "spanish": "Belle creó vacunas a partir de plantas medicinales y hierbas.",
         "segments": {
           "spanish": [
-            "belle creó",
+            "Belle creó",
             "vacunas",
             "a partir de",
             "plantas medicinales y hierbas"
           ],
           "english": [
-            "belle created",
+            "Belle created",
             "vaccines",
             "from",
             "medicinal plants and herbs"
@@ -1201,13 +1202,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el invento de rueda hidráulica",
-            "de belle",
+            "de Belle",
             "impulsó",
             "el molino"
           ],
           "english": [
             "water wheel invention",
-            "belle's",
+            "Belle's",
             "powered",
             "the village mill"
           ]
@@ -1218,13 +1219,13 @@ const translationData = [
         "spanish": "Belle enseñó a músicos a leer y escribir música.",
         "segments": {
           "spanish": [
-            "belle enseñó",
+            "Belle enseñó",
             "a músicos",
             "a leer y escribir",
             "música"
           ],
           "english": [
-            "belle taught",
+            "Belle taught",
             "musicians",
             "to read and write",
             "music"
@@ -1236,13 +1237,13 @@ const translationData = [
         "spanish": "Belle combinó arte y ciencia para resolver problemas.",
         "segments": {
           "spanish": [
-            "belle combinó",
+            "Belle combinó",
             "arte y ciencia",
             "para resolver",
             "problemas"
           ],
           "english": [
-            "belle combined",
+            "Belle combined",
             "art and science",
             "to solve",
             "problems"
@@ -1255,13 +1256,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "las observaciones cuidadosas",
-            "de belle",
+            "de Belle",
             "ayudaron a identificar",
             "plantas dañinas"
           ],
           "english": [
             "careful observations",
-            "belle's",
+            "Belle's",
             "helped identify",
             "harmful plants"
           ]
@@ -1272,13 +1273,13 @@ const translationData = [
         "spanish": "Belle creó soluciones para problemas antes que ocurrieran.",
         "segments": {
           "spanish": [
-            "belle creó",
+            "Belle creó",
             "soluciones",
             "para problemas",
             "antes que ocurrieran"
           ],
           "english": [
-            "belle created",
+            "Belle created",
             "solutions",
             "for problems",
             "before they happened"
@@ -1290,13 +1291,13 @@ const translationData = [
         "spanish": "Belle inspiró a otros a encontrar sus propias soluciones.",
         "segments": {
           "spanish": [
-            "belle inspiró",
+            "Belle inspiró",
             "a otros",
             "a encontrar",
             "sus propias soluciones"
           ],
           "english": [
-            "belle inspired",
+            "Belle inspired",
             "others",
             "to find",
             "their own solutions"
@@ -1308,13 +1309,13 @@ const translationData = [
         "spanish": "Belle explicó ideas complejas usando dibujos simples.",
         "segments": {
           "spanish": [
-            "belle explicó",
+            "Belle explicó",
             "ideas complejas",
             "usando",
             "dibujos simples"
           ],
           "english": [
-            "belle explained",
+            "Belle explained",
             "complex ideas",
             "using",
             "simple drawings"
@@ -1327,13 +1328,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el botiquín",
-            "de belle",
+            "de Belle",
             "ayudó durante",
             "enfermedades invernales"
           ],
           "english": [
             "medicine cabinet",
-            "belle's",
+            "Belle's",
             "helped during",
             "winter illnesses"
           ]
@@ -1344,13 +1345,13 @@ const translationData = [
         "spanish": "Belle mejoró la seguridad del castillo con ingeniosos dispositivos mecánicos.",
         "segments": {
           "spanish": [
-            "belle mejoró",
+            "Belle mejoró",
             "la seguridad del castillo",
             "con",
             "ingeniosos dispositivos mecánicos"
           ],
           "english": [
-            "belle improved",
+            "Belle improved",
             "castle security",
             "with",
             "clever mechanical devices"
@@ -1362,13 +1363,13 @@ const translationData = [
         "spanish": "Belle creó un sistema de comunicación por todo el castillo.",
         "segments": {
           "spanish": [
-            "belle creó",
+            "Belle creó",
             "un sistema de comunicación",
             "por todo",
             "el castillo"
           ],
           "english": [
-            "belle created",
+            "Belle created",
             "a communication system",
             "throughout",
             "the castle"
@@ -1380,13 +1381,13 @@ const translationData = [
         "spanish": "Belle dirigió reuniones del pueblo para resolver problemas comunitarios.",
         "segments": {
           "spanish": [
-            "belle dirigió",
+            "Belle dirigió",
             "reuniones del pueblo",
             "para resolver",
             "problemas comunitarios"
           ],
           "english": [
-            "belle led",
+            "Belle led",
             "village meetings",
             "to solve",
             "community problems"
@@ -1403,15 +1404,15 @@ const translationData = [
         "spanish": "Bestia se reconoció en la humillante transformación de Nabucodonosor del orgullo al arrepentimiento.",
         "segments": {
           "spanish": [
-            "bestia se reconoció",
+            "Bestia se reconoció",
             "en la humillante transformación",
-            "de nabucodonosor",
+            "de Nabucodonosor",
             "del orgullo al arrepentimiento"
           ],
           "english": [
-            "the beast recognized himself",
+            "the Beast recognized himself",
             "in the humbling transformation",
-            "of nebuchadnezzar",
+            "of Nebuchadnezzar",
             "from pride to repentance"
           ]
         }
@@ -1421,15 +1422,15 @@ const translationData = [
         "spanish": "Bestia encontró esperanza en las palabras de Pablo de que en Cristo uno se convierte en nueva criatura, las cosas viejas pasando.",
         "segments": {
           "spanish": [
-            "bestia encontró esperanza",
-            "en las palabras de pablo",
-            "de que en cristo uno se convierte en nueva criatura",
+            "Bestia encontró esperanza",
+            "en las palabras de Pablo",
+            "de que en Cristo uno se convierte en nueva criatura",
             "las cosas viejas pasando"
           ],
           "english": [
-            "the beast found hope",
-            "in paul's words",
-            "that in christ one becomes a new creation",
+            "the Beast found hope",
+            "in Paul's words",
+            "that in Christ one becomes a new creation",
             "old things passing away"
           ]
         }
@@ -1439,13 +1440,13 @@ const translationData = [
         "spanish": "Bestia lloró al leer la historia del hijo pródigo, viéndose a sí mismo como perdido pero acogido por el amor del Padre.",
         "segments": {
           "spanish": [
-            "bestia lloró",
+            "Bestia lloró",
             "al leer la historia del hijo pródigo",
             "viéndose a sí mismo como perdido",
             "pero acogido por el amor del padre"
           ],
           "english": [
-            "the beast wept",
+            "the Beast wept",
             "reading the prodigal son's story",
             "seeing himself as lost",
             "but welcomed back by the father's love"
@@ -1457,14 +1458,14 @@ const translationData = [
         "spanish": "Bestia meditaba en los salmos de confesión de David, aprendiendo a derramar su corazón en genuino arrepentimiento.",
         "segments": {
           "spanish": [
-            "bestia meditaba",
-            "en los salmos de confesión de david",
+            "Bestia meditaba",
+            "en los Salmos de confesión de David",
             "aprendiendo a derramar su corazón",
             "en genuino arrepentimiento"
           ],
           "english": [
-            "the beast meditated",
-            "on david's psalms of confession",
+            "the Beast meditated",
+            "on David's Psalms of confession",
             "learning to pour out his heart",
             "in genuine repentance"
           ]
@@ -1475,16 +1476,16 @@ const translationData = [
         "spanish": "Bestia entendió la enseñanza de Cristo de que los últimos serán los primeros cuando se humilló para servir a Bella.",
         "segments": {
           "spanish": [
-            "bestia entendió",
-            "la enseñanza de cristo",
+            "Bestia entendió",
+            "la enseñanza de Cristo",
             "de que los últimos serán los primeros",
-            "cuando se humilló para servir a bella"
+            "cuando se humilló para servir a Bella"
           ],
           "english": [
-            "the beast understood",
-            "christ's teaching",
+            "the Beast understood",
+            "Christ's teaching",
             "that the last shall be first",
-            "when he humbled himself to serve belle"
+            "when he humbled himself to serve Belle"
           ]
         }
       },
@@ -1493,14 +1494,14 @@ const translationData = [
         "spanish": "Bestia fue consolado por las palabras de Isaías de que aunque sus pecados fueran como la grana, serían blancos como la nieve.",
         "segments": {
           "spanish": [
-            "bestia fue consolado",
-            "por las palabras de isaías",
+            "Bestia fue consolado",
+            "por las palabras de Isaías",
             "de que aunque sus pecados fueran como la grana",
             "serían blancos como la nieve"
           ],
           "english": [
-            "the beast was comforted",
-            "by isaiah's words",
+            "the Beast was comforted",
+            "by Isaiah's words",
             "that though his sins were as scarlet",
             "they would be white as snow"
           ]
@@ -1511,14 +1512,14 @@ const translationData = [
         "spanish": "Bestia reflexionó sobre la negación y restauración de Pedro, encontrando esperanza para su propia redención a pesar de fracasos pasados.",
         "segments": {
           "spanish": [
-            "bestia reflexionó",
-            "sobre la negación y restauración de pedro",
+            "Bestia reflexionó",
+            "sobre la negación y restauración de Pedro",
             "encontrando esperanza para su propia redención",
             "a pesar de fracasos pasados"
           ],
           "english": [
-            "the beast reflected",
-            "on peter's denial and restoration",
+            "the Beast reflected",
+            "on Peter's denial and restoration",
             "finding hope for his own redemption",
             "despite past failures"
           ]
@@ -1529,14 +1530,14 @@ const translationData = [
         "spanish": "Bestia aprendió de Zaqueo que la salvación llega a aquellos que se arrepienten y hacen restitución por errores pasados.",
         "segments": {
           "spanish": [
-            "bestia aprendió",
-            "de zaqueo",
+            "Bestia aprendió",
+            "de Zaqueo",
             "que la salvación llega a aquellos que se arrepienten",
             "y hacen restitución por errores pasados"
           ],
           "english": [
-            "the beast learned",
-            "from zacchaeus",
+            "the Beast learned",
+            "from Zacchaeus",
             "that salvation comes to those who repent",
             "and make restitution for past wrongs"
           ]
@@ -1547,14 +1548,14 @@ const translationData = [
         "spanish": "Bestia resonó con la historia de Jacob luchando con Dios, mientras él mismo luchaba con su propia identidad y rendición final.",
         "segments": {
           "spanish": [
-            "bestia resonó",
-            "con la historia de jacob luchando con dios",
+            "Bestia resonó",
+            "con la historia de Jacob luchando con Dios",
             "mientras él mismo luchaba",
             "con su propia identidad y rendición final"
           ],
           "english": [
-            "the beast resonated",
-            "with the story of jacob wrestling with god",
+            "the Beast resonated",
+            "with the story of Jacob wrestling with God",
             "as he struggled",
             "with his own identity and ultimate surrender"
           ]
@@ -1565,15 +1566,15 @@ const translationData = [
         "spanish": "Bestia encontró consuelo en la segunda oportunidad de Jonás después de huir del propósito de Dios, creyendo que la transformación aún era posible para él.",
         "segments": {
           "spanish": [
-            "bestia encontró consuelo",
-            "en la segunda oportunidad de jonás",
-            "después de huir del propósito de dios",
+            "Bestia encontró consuelo",
+            "en la segunda oportunidad de Jonás",
+            "después de huir del propósito de Dios",
             "creyendo que la transformación aún era posible para él"
           ],
           "english": [
-            "the beast found solace",
-            "in jonah's second chance",
-            "after running from god's purpose",
+            "the Beast found solace",
+            "in Jonah's second chance",
+            "after running from God's purpose",
             "believing transformation was still possible for him"
           ]
         }
@@ -1583,14 +1584,14 @@ const translationData = [
         "spanish": "Bestia contempló al ladrón en la cruz que encontró redención en sus últimas horas, comprendiendo que nunca es demasiado tarde para la gracia.",
         "segments": {
           "spanish": [
-            "bestia contempló",
-            "al ladrón en la cruz",
+            "Bestia contempló",
+            "al ladrón en la Cruz",
             "que encontró redención en sus últimas horas",
             "comprendiendo que nunca es demasiado tarde para la gracia"
           ],
           "english": [
-            "the beast contemplated",
-            "the thief on the cross",
+            "the Beast contemplated",
+            "the thief on the Cross",
             "who found redemption in his final hours",
             "realizing it's never too late for grace"
           ]
@@ -1601,15 +1602,15 @@ const translationData = [
         "spanish": "Bestia absorbió el relato de Mateo sobre Jesús calmando la tormenta, aprendiendo a domar la tempestad de su propia ira.",
         "segments": {
           "spanish": [
-            "bestia absorbió",
-            "el relato de mateo",
-            "sobre jesús calmando la tormenta",
+            "Bestia absorbió",
+            "el relato de Mateo",
+            "sobre Jesús calmando la tormenta",
             "aprendiendo a domar la tempestad de su propia ira"
           ],
           "english": [
-            "the beast absorbed",
-            "matthew's account",
-            "of jesus calming the storm",
+            "the Beast absorbed",
+            "Matthew's account",
+            "of Jesus calming the storm",
             "learning to tame the tempest of his own rage"
           ]
         }
@@ -1619,14 +1620,14 @@ const translationData = [
         "spanish": "Bestia aplicó la enseñanza de Romanos de que el sufrimiento produce perseverancia y carácter mientras soportaba su existencia maldita.",
         "segments": {
           "spanish": [
-            "bestia aplicó",
-            "la enseñanza de romanos",
+            "Bestia aplicó",
+            "la enseñanza de Romanos",
             "de que el sufrimiento produce perseverancia y carácter",
             "mientras soportaba su existencia maldita"
           ],
           "english": [
-            "the beast applied",
-            "romans' teaching",
+            "the Beast applied",
+            "Romans' teaching",
             "that suffering produces perseverance and character",
             "as he endured his cursed existence"
           ]
@@ -1637,14 +1638,14 @@ const translationData = [
         "spanish": "Bestia se relacionó con la lucha de Moisés con la ira, estudiando cómo el profeta aprendió paciencia durante sus años en el desierto.",
         "segments": {
           "spanish": [
-            "bestia se relacionó",
-            "con la lucha de moisés con la ira",
+            "Bestia se relacionó",
+            "con la lucha de Moisés con la ira",
             "estudiando cómo el profeta aprendió paciencia",
             "durante sus años en el desierto"
           ],
           "english": [
-            "the beast related",
-            "to moses' struggle with anger",
+            "the Beast related",
+            "to Moses' struggle with anger",
             "studying how the prophet learned patience",
             "through his wilderness years"
           ]
@@ -1655,14 +1656,14 @@ const translationData = [
         "spanish": "Bestia fue conmovido por la curación de Cristo al leproso, anhelando que su propia forma exterior coincidiera con su corazón en transformación.",
         "segments": {
           "spanish": [
-            "bestia fue conmovido",
-            "por la curación de cristo al leproso",
+            "Bestia fue conmovido",
+            "por la curación de Cristo al leproso",
             "anhelando que su propia forma exterior",
             "coincidiera con su corazón en transformación"
           ],
           "english": [
-            "the beast was touched",
-            "by christ's healing of the leper",
+            "the Beast was touched",
+            "by Christ's healing of the leper",
             "yearning for his own outward form",
             "to match his transforming heart"
           ]
@@ -1673,14 +1674,14 @@ const translationData = [
         "spanish": "Bestia practicaba las Bienaventuranzas diariamente, descubriendo que la mansedumbre y la misericordia eran más poderosas que su antigua ira y orgullo.",
         "segments": {
           "spanish": [
-            "bestia practicaba",
-            "las bienaventuranzas diariamente",
+            "Bestia practicaba",
+            "las Bienaventuranzas diariamente",
             "descubriendo que la mansedumbre y la misericordia",
             "eran más poderosas que su antigua ira y orgullo"
           ],
           "english": [
-            "the beast practiced",
-            "the beatitudes daily",
+            "the Beast practiced",
+            "the Beatitudes daily",
             "discovering that meekness and mercy",
             "were more powerful than his former rage and pride"
           ]
@@ -1691,14 +1692,14 @@ const translationData = [
         "spanish": "Bestia encontró significado en las palabras de Cristo de que aquellos que pierden su vida la encontrarán, entregando su antigua naturaleza egoísta.",
         "segments": {
           "spanish": [
-            "bestia encontró significado",
-            "en las palabras de cristo",
+            "Bestia encontró significado",
+            "en las palabras de Cristo",
             "de que aquellos que pierden su vida la encontrarán",
             "entregando su antigua naturaleza egoísta"
           ],
           "english": [
-            "the beast found meaning",
-            "in christ's words",
+            "the Beast found meaning",
+            "in Christ's words",
             "that those who lose their life will find it",
             "surrendering his old selfish nature"
           ]
@@ -1709,14 +1710,14 @@ const translationData = [
         "spanish": "Bestia aprendió del ciego de Betsaida cuya vista llegó gradualmente, comprendiendo que su propia transformación ocurriría por etapas.",
         "segments": {
           "spanish": [
-            "bestia aprendió",
-            "del ciego de betsaida",
+            "Bestia aprendió",
+            "del ciego de Betsaida",
             "cuya vista llegó gradualmente",
             "comprendiendo que su propia transformación ocurriría por etapas"
           ],
           "english": [
-            "the beast learned",
-            "from the blind man at bethsaida",
+            "the Beast learned",
+            "from the blind man at Bethsaida",
             "whose sight came gradually",
             "realizing his own transformation would happen in stages"
           ]
@@ -1727,15 +1728,15 @@ const translationData = [
         "spanish": "Bestia se identificó con Lázaro siendo llamado desde la tumba, sintiendo que Dios similarmente lo llamaba de vuelta a la verdadera humanidad.",
         "segments": {
           "spanish": [
-            "bestia se identificó",
-            "con lázaro siendo llamado desde la tumba",
-            "sintiendo que dios similarmente",
+            "Bestia se identificó",
+            "con Lázaro siendo llamado desde la tumba",
+            "sintiendo que Dios similarmente",
             "lo llamaba de vuelta a la verdadera humanidad"
           ],
           "english": [
-            "the beast identified",
-            "with lazarus being called forth from the tomb",
-            "feeling god was similarly",
+            "the Beast identified",
+            "with Lazarus being called forth from the tomb",
+            "feeling God was similarly",
             "calling him back to true humanity"
           ]
         }
@@ -1745,16 +1746,16 @@ const translationData = [
         "spanish": "Bestia reflexionó sobre la enseñanza de Jesús de que el amor es el mandamiento más grande, permitiendo que el amor por Bella ablandara su endurecido corazón.",
         "segments": {
           "spanish": [
-            "bestia reflexionó",
-            "sobre la enseñanza de jesús",
+            "Bestia reflexionó",
+            "sobre la enseñanza de Jesús",
             "de que el amor es el mandamiento más grande",
-            "permitiendo que el amor por bella ablandara su endurecido corazón"
+            "permitiendo que el amor por Bella ablandara su endurecido corazón"
           ],
           "english": [
-            "the beast pondered",
-            "jesus's teaching",
+            "the Beast pondered",
+            "Jesus's teaching",
             "that love is the greatest commandment",
-            "allowing love for belle to soften his hardened heart"
+            "allowing love for Belle to soften his hardened heart"
           ]
         }
       },
@@ -1763,14 +1764,14 @@ const translationData = [
         "spanish": "Bestia fue conmovido por Cristo lavando los pies de sus discípulos, inspirado a cambiar su orgullo aristocrático por servicio humilde.",
         "segments": {
           "spanish": [
-            "bestia fue conmovido",
-            "por cristo lavando los pies de sus discípulos",
+            "Bestia fue conmovido",
+            "por Cristo lavando los pies de sus discípulos",
             "inspirado a cambiar",
             "su orgullo aristocrático por servicio humilde"
           ],
           "english": [
-            "the beast was moved",
-            "by christ washing his disciples' feet",
+            "the Beast was moved",
+            "by Christ washing his disciples' feet",
             "inspired to exchange",
             "his aristocratic pride for humble service"
           ]
@@ -1781,15 +1782,15 @@ const translationData = [
         "spanish": "Bestia se encontró en la parábola de Jesús sobre la oveja perdida, comprendiendo que Dios nunca lo había abandonado a pesar de su forma monstruosa.",
         "segments": {
           "spanish": [
-            "bestia se encontró",
-            "en la parábola de jesús sobre la oveja perdida",
-            "comprendiendo que dios nunca lo había abandonado",
+            "Bestia se encontró",
+            "en la parábola de Jesús sobre la oveja perdida",
+            "comprendiendo que Dios nunca lo había abandonado",
             "a pesar de su forma monstruosa"
           ],
           "english": [
-            "the beast found himself",
-            "in jesus's parable of the lost sheep",
-            "realizing god had never abandoned him",
+            "the Beast found himself",
+            "in Jesus's parable of the lost sheep",
+            "realizing God had never abandoned him",
             "despite his monstrous form"
           ]
         }
@@ -1799,14 +1800,14 @@ const translationData = [
         "spanish": "Bestia abrazó la esperanza de resurrección en Corintios, creyendo que su maldición finalmente daría paso a la restauración.",
         "segments": {
           "spanish": [
-            "bestia abrazó",
-            "la esperanza de resurrección en corintios",
+            "Bestia abrazó",
+            "la esperanza de resurrección en Corintios",
             "creyendo que su maldición",
             "finalmente daría paso a la restauración"
           ],
           "english": [
-            "the beast embraced",
-            "the hope of resurrection in corinthians",
+            "the Beast embraced",
+            "the hope of resurrection in Corinthians",
             "believing that his curse",
             "would ultimately give way to restoration"
           ]
@@ -1817,14 +1818,14 @@ const translationData = [
         "spanish": "Bestia adoptó la promesa de Ezequiel de un nuevo corazón y espíritu para reemplazar su pétreo corazón de egoísmo.",
         "segments": {
           "spanish": [
-            "bestia adoptó",
-            "la promesa de ezequiel",
+            "Bestia adoptó",
+            "la promesa de Ezequiel",
             "de un nuevo corazón y espíritu",
             "para reemplazar su pétreo corazón de egoísmo"
           ],
           "english": [
-            "the beast embraced",
-            "ezekiel's promise",
+            "the Beast embraced",
+            "Ezekiel's promise",
             "of a new heart and spirit",
             "to replace his stony heart of selfishness"
           ]
@@ -1835,15 +1836,15 @@ const translationData = [
         "spanish": "Bestia extrajo fuerza de la perseverancia de Job, creyendo que Dios estaba refinando su carácter a través del sufrimiento.",
         "segments": {
           "spanish": [
-            "bestia extrajo fuerza",
-            "de la perseverancia de job",
-            "creyendo que dios estaba refinando su carácter",
+            "Bestia extrajo fuerza",
+            "de la perseverancia de Job",
+            "creyendo que Dios estaba refinando su carácter",
             "a través del sufrimiento"
           ],
           "english": [
-            "the beast drew strength",
-            "from job's perseverance",
-            "believing god was refining his character",
+            "the Beast drew strength",
+            "from Job's perseverance",
+            "believing God was refining his character",
             "through suffering"
           ]
         }
@@ -1853,14 +1854,14 @@ const translationData = [
         "spanish": "Bestia estudió las suaves interacciones de Jesús con los marginados, aprendiendo a templar su ira con compasión.",
         "segments": {
           "spanish": [
-            "bestia estudió",
-            "las suaves interacciones de jesús",
+            "Bestia estudió",
+            "las suaves interacciones de Jesús",
             "con los marginados",
             "aprendiendo a templar su ira con compasión"
           ],
           "english": [
-            "the beast studied",
-            "jesus's gentle interactions",
+            "the Beast studied",
+            "Jesus's gentle interactions",
             "with outcasts",
             "learning to temper his anger with compassion"
           ]
@@ -1871,14 +1872,14 @@ const translationData = [
         "spanish": "Bestia se identificó con la transformación de Saúl en Pablo, esperando que su propia naturaleza bestial pudiera ser transformada de manera similar.",
         "segments": {
           "spanish": [
-            "bestia se identificó",
-            "con la transformación de saúl en pablo",
+            "Bestia se identificó",
+            "con la transformación de Saúl en Pablo",
             "esperando que su propia naturaleza bestial",
             "pudiera ser transformada de manera similar"
           ],
           "english": [
-            "the beast found identification",
-            "with saul's transformation into paul",
+            "the Beast found identification",
+            "with Saul's transformation into Paul",
             "hoping his own beastly nature",
             "could be similarly transformed"
           ]
@@ -1889,14 +1890,14 @@ const translationData = [
         "spanish": "Bestia atesoraba las palabras de Juan de que Dios es amor, comprendiendo que su capacidad de amar era evidencia de creación divina dentro de él.",
         "segments": {
           "spanish": [
-            "bestia atesoraba",
-            "las palabras de juan de que dios es amor",
+            "Bestia atesoraba",
+            "las palabras de Juan de que Dios es amor",
             "comprendiendo que su capacidad de amar",
             "era evidencia de creación divina dentro de él"
           ],
           "english": [
-            "the beast cherished",
-            "john's words that god is love",
+            "the Beast cherished",
+            "John's words that God is love",
             "realizing his capacity to love",
             "was evidence of divine creation within him"
           ]
@@ -1907,14 +1908,14 @@ const translationData = [
         "spanish": "Bestia fue conmovido por el sacrificio de Cristo en la cruz, entendiendo que la gracia se extendía incluso a alguien como él.",
         "segments": {
           "spanish": [
-            "bestia fue conmovido",
-            "por el sacrificio de cristo en la cruz",
+            "Bestia fue conmovido",
+            "por el sacrificio de Cristo en la Cruz",
             "entendiendo que la gracia",
             "se extendía incluso a alguien como él"
           ],
           "english": [
-            "the beast was moved",
-            "by christ's sacrifice on the cross",
+            "the Beast was moved",
+            "by Christ's sacrifice on the Cross",
             "understanding that grace",
             "was extended even to someone like him"
           ]
@@ -1925,15 +1926,15 @@ const translationData = [
         "spanish": "Bestia oraba como el publicano en la parábola de Jesús, 'Dios, ten misericordia de mí, un pecador,' encontrando aceptación y perdón.",
         "segments": {
           "spanish": [
-            "bestia oraba",
-            "como el publicano en la parábola de jesús",
-            "'dios ten misericordia de mí un pecador'",
+            "Bestia oraba",
+            "como el publicano en la parábola de Jesús",
+            "'Dios ten misericordia de mí un pecador'",
             "encontrando aceptación y perdón"
           ],
           "english": [
-            "the beast prayed",
-            "like the tax collector in jesus's parable",
-            "'god have mercy on me a sinner'",
+            "the Beast prayed",
+            "like the tax collector in Jesus's parable",
+            "'God have mercy on me a sinner'",
             "finding acceptance and forgiveness"
           ]
         }
@@ -1948,13 +1949,13 @@ const translationData = [
         "spanish": "Cenicienta se mantuvo amable a pesar de tiempos difíciles.",
         "segments": {
           "spanish": [
-            "cenicienta",
+            "Cenicienta",
             "se mantuvo amable",
             "a pesar de",
             "tiempos difíciles"
           ],
           "english": [
-            "cinderella",
+            "Cinderella",
             "stayed kind",
             "despite",
             "tough times"
@@ -1966,15 +1967,15 @@ const translationData = [
         "spanish": "Cenicienta reflexionó sobre la homilía del sacerdote acerca de la perseverancia de Job durante sus interminables tareas.",
         "segments": {
           "spanish": [
-            "cenicienta reflexionó",
+            "Cenicienta reflexionó",
             "sobre la homilía del sacerdote",
-            "acerca de la perseverancia de job",
+            "acerca de la perseverancia de Job",
             "durante sus interminables tareas"
           ],
           "english": [
-            "cinderella reflected",
+            "Cinderella reflected",
             "on the priest's homily",
-            "about job's perseverance",
+            "about Job's perseverance",
             "during her endless chores"
           ]
         }
@@ -1984,13 +1985,13 @@ const translationData = [
         "spanish": "Cenicienta adoptó la enseñanza de la Misa sobre la humildad mientras fregaba pisos sin quejarse.",
         "segments": {
           "spanish": [
-            "cenicienta adoptó",
-            "la enseñanza de la misa",
+            "Cenicienta adoptó",
+            "la enseñanza de la Misa",
             "sobre la humildad",
             "mientras fregaba pisos sin quejarse"
           ],
           "english": [
-            "cinderella embraced",
+            "Cinderella embraced",
             "the mass teaching",
             "on humility",
             "as she scrubbed floors without complaint"
@@ -2002,13 +2003,13 @@ const translationData = [
         "spanish": "Cenicienta encontró fortaleza en las palabras del sacerdote sobre la belleza interior superando las apariencias externas.",
         "segments": {
           "spanish": [
-            "cenicienta encontró fortaleza",
+            "Cenicienta encontró fortaleza",
             "en las palabras del sacerdote",
             "sobre la belleza interior",
             "superando las apariencias externas"
           ],
           "english": [
-            "cinderella found strength",
+            "Cinderella found strength",
             "in the priest's words",
             "about inner beauty",
             "surpassing external appearances"
@@ -2020,16 +2021,16 @@ const translationData = [
         "spanish": "Cenicienta practicó el perdón hacia sus hermanastras después de escuchar el sermón dominical sobre la misericordia.",
         "segments": {
           "spanish": [
-            "cenicienta practicó",
+            "Cenicienta practicó",
             "el perdón",
             "hacia sus hermanastras",
             "después de escuchar el sermón dominical sobre la misericordia"
           ],
           "english": [
-            "cinderella practiced",
+            "Cinderella practiced",
             "forgiveness",
             "toward her stepsisters",
-            "after hearing the sunday sermon on mercy"
+            "after hearing the Sunday sermon on mercy"
           ]
         }
       },
@@ -2038,13 +2039,13 @@ const translationData = [
         "spanish": "Cenicienta aplicó la enseñanza del sacerdote sobre la paciencia mientras soportaba el duro trato de su madrastra.",
         "segments": {
           "spanish": [
-            "cenicienta aplicó",
+            "Cenicienta aplicó",
             "la enseñanza del sacerdote",
             "sobre la paciencia",
             "mientras soportaba el duro trato de su madrastra"
           ],
           "english": [
-            "cinderella applied",
+            "Cinderella applied",
             "the priest's teaching",
             "on patience",
             "while enduring her stepmother's harsh treatment"
@@ -2056,15 +2057,15 @@ const translationData = [
         "spanish": "Cenicienta recordó la lección de la Misa sobre Dios viendo lo que está oculto cuando trabajaba sin reconocimiento.",
         "segments": {
           "spanish": [
-            "cenicienta recordó",
-            "la lección de la misa",
-            "sobre dios viendo lo que está oculto",
+            "Cenicienta recordó",
+            "la lección de la Misa",
+            "sobre Dios viendo lo que está oculto",
             "cuando trabajaba sin reconocimiento"
           ],
           "english": [
-            "cinderella remembered",
+            "Cinderella remembered",
             "the mass lesson",
-            "about god seeing what is hidden",
+            "about God seeing what is hidden",
             "when working without recognition"
           ]
         }
@@ -2074,13 +2075,13 @@ const translationData = [
         "spanish": "Cenicienta extrajo valor del sermón del sacerdote sobre la dignidad siendo inherente en lugar de otorgada por otros.",
         "segments": {
           "spanish": [
-            "cenicienta extrajo valor",
+            "Cenicienta extrajo valor",
             "del sermón del sacerdote",
             "sobre la dignidad siendo inherente",
             "en lugar de otorgada por otros"
           ],
           "english": [
-            "cinderella drew courage",
+            "Cinderella drew courage",
             "from the priest's sermon",
             "on dignity being inherent",
             "rather than bestowed by others"
@@ -2092,13 +2093,13 @@ const translationData = [
         "spanish": "Cenicienta mantuvo la esperanza al recordar el mensaje del sacerdote de que las pruebas refinan el carácter como el oro.",
         "segments": {
           "spanish": [
-            "cenicienta mantuvo la esperanza",
+            "Cenicienta mantuvo la esperanza",
             "al recordar el mensaje del sacerdote",
             "de que las pruebas refinan",
             "el carácter como el oro"
           ],
           "english": [
-            "cinderella maintained hope",
+            "Cinderella maintained hope",
             "through recalling the priest's message",
             "that trials refine",
             "one's character like gold"
@@ -2110,14 +2111,14 @@ const translationData = [
         "spanish": "Cenicienta personificó la enseñanza dominical sobre la fuerza silenciosa mientras mantenía la gracia bajo presión.",
         "segments": {
           "spanish": [
-            "cenicienta personificó",
+            "Cenicienta personificó",
             "la enseñanza dominical",
             "sobre la fuerza silenciosa",
             "mientras mantenía la gracia bajo presión"
           ],
           "english": [
-            "cinderella embodied",
-            "the sunday teaching",
+            "Cinderella embodied",
+            "the Sunday teaching",
             "on quiet strength",
             "while maintaining grace under pressure"
           ]
@@ -2128,13 +2129,13 @@ const translationData = [
         "spanish": "Cenicienta vivió el mensaje de la homilía sobre encontrar alegría en el servicio a pesar de sus difíciles circunstancias.",
         "segments": {
           "spanish": [
-            "cenicienta vivió",
+            "Cenicienta vivió",
             "el mensaje de la homilía",
             "sobre encontrar alegría en el servicio",
             "a pesar de sus difíciles circunstancias"
           ],
           "english": [
-            "cinderella lived",
+            "Cinderella lived",
             "the homily's message",
             "about finding joy in service",
             "despite her difficult circumstances"
@@ -2146,13 +2147,13 @@ const translationData = [
         "spanish": "Cenicienta confió en la sabiduría del sacerdote de que la bondad regresa de formas inesperadas cuando apareció su hada madrina.",
         "segments": {
           "spanish": [
-            "cenicienta confió",
+            "Cenicienta confió",
             "en la sabiduría del sacerdote",
             "de que la bondad regresa de formas inesperadas",
             "cuando apareció su hada madrina"
           ],
           "english": [
-            "cinderella trusted",
+            "Cinderella trusted",
             "the priest's wisdom",
             "that kindness returns in unexpected ways",
             "as her fairy godmother appeared"
@@ -2164,13 +2165,13 @@ const translationData = [
         "spanish": "Cenicienta demostró la enseñanza de la Misa sobre la autenticidad al revelar su verdadero ser al príncipe.",
         "segments": {
           "spanish": [
-            "cenicienta demostró",
-            "la enseñanza de la misa",
+            "Cenicienta demostró",
+            "la enseñanza de la Misa",
             "sobre la autenticidad",
             "al revelar su verdadero ser al príncipe"
           ],
           "english": [
-            "cinderella demonstrated",
+            "Cinderella demonstrated",
             "the mass teaching",
             "on authenticity",
             "when revealing her true self to the prince"
@@ -2182,14 +2183,14 @@ const translationData = [
         "spanish": "Cenicienta practicó el mensaje sabático del perdón mostrando misericordia hacia su familia política después de convertirse en princesa.",
         "segments": {
           "spanish": [
-            "cenicienta practicó",
+            "Cenicienta practicó",
             "el mensaje sabático del perdón",
             "mostrando misericordia",
             "hacia su familia política después de convertirse en princesa"
           ],
           "english": [
-            "cinderella practiced",
-            "the sabbath message of forgiveness",
+            "Cinderella practiced",
+            "the Sabbath message of forgiveness",
             "by showing mercy",
             "to her stepfamily after becoming princess"
           ]
@@ -2200,13 +2201,13 @@ const translationData = [
         "spanish": "Cenicienta recordó las palabras del sacerdote sobre la humildad precediendo al honor mientras ascendía a la condición real.",
         "segments": {
           "spanish": [
-            "cenicienta recordó",
+            "Cenicienta recordó",
             "las palabras del sacerdote",
             "sobre la humildad precediendo al honor",
             "mientras ascendía a la condición real"
           ],
           "english": [
-            "cinderella recalled",
+            "Cinderella recalled",
             "the priest's words",
             "about humility preceding honor",
             "as she ascended to royal status"
@@ -2218,13 +2219,13 @@ const translationData = [
         "spanish": "Cenicienta personificó la enseñanza sagrada de que la verdadera nobleza proviene del carácter en lugar del nacimiento al convertirse en princesa.",
         "segments": {
           "spanish": [
-            "cenicienta personificó",
+            "Cenicienta personificó",
             "la enseñanza sagrada",
             "de que la verdadera nobleza proviene del carácter",
             "en lugar del nacimiento al convertirse en princesa"
           ],
           "english": [
-            "cinderella embodied",
+            "Cinderella embodied",
             "the holy teaching",
             "that true nobility comes from character",
             "rather than birth as she became princess"
@@ -2236,14 +2237,14 @@ const translationData = [
         "spanish": "Cenicienta encontró consuelo en la enseñanza de Jesús de que los mansos heredarán la tierra mientras soportaba las exigencias de su madrastra.",
         "segments": {
           "spanish": [
-            "cenicienta encontró consuelo",
-            "en la enseñanza de jesús",
+            "Cenicienta encontró consuelo",
+            "en la enseñanza de Jesús",
             "de que los mansos heredarán la tierra",
             "mientras soportaba las exigencias de su madrastra"
           ],
           "english": [
-            "cinderella found comfort",
-            "in jesus's teaching",
+            "Cinderella found comfort",
+            "in Jesus's teaching",
             "that the meek shall inherit the earth",
             "while enduring her stepmother's demands"
           ]
@@ -2254,14 +2255,14 @@ const translationData = [
         "spanish": "Cenicienta reflexionó sobre las Bienaventuranzas, encontrando fuerza en la promesa de que aquellos que lloran serán consolados.",
         "segments": {
           "spanish": [
-            "cenicienta reflexionó",
-            "sobre las bienaventuranzas",
+            "Cenicienta reflexionó",
+            "sobre las Bienaventuranzas",
             "encontrando fuerza en la promesa",
             "de que aquellos que lloran serán consolados"
           ],
           "english": [
-            "cinderella reflected",
-            "on the beatitudes",
+            "Cinderella reflected",
+            "on the Beatitudes",
             "finding strength in the promise",
             "that those who mourn shall be comforted"
           ]
@@ -2272,14 +2273,14 @@ const translationData = [
         "spanish": "Cenicienta adoptó el ejemplo de Cristo de lavar los pies de los discípulos mientras realizaba humildemente sus tareas domésticas.",
         "segments": {
           "spanish": [
-            "cenicienta adoptó",
-            "el ejemplo de cristo",
+            "Cenicienta adoptó",
+            "el ejemplo de Cristo",
             "de lavar los pies de los discípulos",
             "mientras realizaba humildemente sus tareas domésticas"
           ],
           "english": [
-            "cinderella embraced",
-            "christ's example",
+            "Cinderella embraced",
+            "Christ's example",
             "of washing disciples' feet",
             "as she humbly performed her household duties"
           ]
@@ -2290,13 +2291,13 @@ const translationData = [
         "spanish": "Cenicienta practicó el principio de que los últimos serán los primeros al servir a otros sin reconocimiento.",
         "segments": {
           "spanish": [
-            "cenicienta practicó",
+            "Cenicienta practicó",
             "el principio",
             "de que los últimos serán los primeros",
             "al servir a otros sin reconocimiento"
           ],
           "english": [
-            "cinderella practiced",
+            "Cinderella practiced",
             "the principle",
             "that the last shall be first",
             "when serving others without recognition"
@@ -2308,14 +2309,14 @@ const translationData = [
         "spanish": "Cenicienta recordó las palabras de Jesús sobre la pureza interior siendo más importante que la apariencia externa durante las burlas de sus hermanastras.",
         "segments": {
           "spanish": [
-            "cenicienta recordó",
-            "las palabras de jesús",
+            "Cenicienta recordó",
+            "las palabras de Jesús",
             "sobre la pureza interior siendo más importante que la apariencia externa",
             "durante las burlas de sus hermanastras"
           ],
           "english": [
-            "cinderella remembered",
-            "jesus's words",
+            "Cinderella remembered",
+            "Jesus's words",
             "about inner purity being more important than outward appearance",
             "during her stepsisters' mockery"
           ]
@@ -2326,14 +2327,14 @@ const translationData = [
         "spanish": "Cenicienta extrajo fuerza de las cartas de Pablo que enseñan que el sufrimiento produce perseverancia y carácter.",
         "segments": {
           "spanish": [
-            "cenicienta extrajo fuerza",
-            "de las cartas de pablo",
+            "Cenicienta extrajo fuerza",
+            "de las cartas de Pablo",
             "que enseñan que el sufrimiento",
             "produce perseverancia y carácter"
           ],
           "english": [
-            "cinderella drew strength",
-            "from paul's letters",
+            "Cinderella drew strength",
+            "from Paul's letters",
             "teaching that suffering",
             "produces perseverance and character"
           ]
@@ -2344,13 +2345,13 @@ const translationData = [
         "spanish": "Cenicienta aplicó la enseñanza de orar por aquellos que te maltratan cuando pensaba en su familia política.",
         "segments": {
           "spanish": [
-            "cenicienta aplicó",
+            "Cenicienta aplicó",
             "la enseñanza",
             "de orar por aquellos que te maltratan",
             "cuando pensaba en su familia política"
           ],
           "english": [
-            "cinderella applied",
+            "Cinderella applied",
             "the teaching",
             "to pray for those who mistreat you",
             "when thinking of her stepfamily"
@@ -2362,16 +2363,16 @@ const translationData = [
         "spanish": "Cenicienta encontró esperanza en la escritura de que todas las cosas cooperan para bien para aquellos que aman a Dios.",
         "segments": {
           "spanish": [
-            "cenicienta encontró esperanza",
+            "Cenicienta encontró esperanza",
             "en la escritura",
             "de que todas las cosas cooperan para bien",
-            "para aquellos que aman a dios"
+            "para aquellos que aman a Dios"
           ],
           "english": [
-            "cinderella found hope",
+            "Cinderella found hope",
             "in the scripture",
             "that all things work together for good",
-            "for those who love god"
+            "for those who love God"
           ]
         }
       },
@@ -2380,13 +2381,13 @@ const translationData = [
         "spanish": "Cenicienta personificó los frutos del Espíritu – paciencia, bondad y gentileza – en sus interacciones diarias.",
         "segments": {
           "spanish": [
-            "cenicienta personificó",
+            "Cenicienta personificó",
             "los frutos del espíritu",
             "– paciencia bondad y gentileza –",
             "en sus interacciones diarias"
           ],
           "english": [
-            "cinderella embodied",
+            "Cinderella embodied",
             "the fruits of the spirit",
             "– patience kindness and gentleness –",
             "in her daily interactions"
@@ -2398,14 +2399,14 @@ const translationData = [
         "spanish": "Cenicienta meditó en la promesa de Jesús de que aquellos que se humillan serán exaltados.",
         "segments": {
           "spanish": [
-            "cenicienta meditó",
-            "en la promesa de jesús",
+            "Cenicienta meditó",
+            "en la promesa de Jesús",
             "de que aquellos que se humillan",
             "serán exaltados"
           ],
           "english": [
-            "cinderella meditated",
-            "on jesus's promise",
+            "Cinderella meditated",
+            "on Jesus's promise",
             "that those who humble themselves",
             "will be exalted"
           ]
@@ -2416,15 +2417,15 @@ const translationData = [
         "spanish": "Cenicienta confió en la enseñanza bíblica de que Dios mira el corazón cuando otros la juzgaban por su apariencia.",
         "segments": {
           "spanish": [
-            "cenicienta confió",
+            "Cenicienta confió",
             "en la enseñanza bíblica",
-            "de que dios mira el corazón",
+            "de que Dios mira el corazón",
             "cuando otros la juzgaban por su apariencia"
           ],
           "english": [
-            "cinderella trusted",
-            "the biblical teaching",
-            "that god looks at the heart",
+            "Cinderella trusted",
+            "the Biblical teaching",
+            "that God looks at the heart",
             "when others judged her by appearance"
           ]
         }
@@ -2434,15 +2435,15 @@ const translationData = [
         "spanish": "Cenicienta practicó el perdón como se enseña en el Padre Nuestro mientras soportaba la crueldad de sus hermanastras.",
         "segments": {
           "spanish": [
-            "cenicienta practicó",
+            "Cenicienta practicó",
             "el perdón",
-            "como se enseña en el padre nuestro",
+            "como se enseña en el Padre Nuestro",
             "mientras soportaba la crueldad de sus hermanastras"
           ],
           "english": [
-            "cinderella practiced",
+            "Cinderella practiced",
             "forgiveness",
-            "as taught in the lord's prayer",
+            "as taught in the lord's Prayer",
             "while enduring her stepsisters' cruelty"
           ]
         }
@@ -2452,14 +2453,14 @@ const translationData = [
         "spanish": "Cenicienta se recordaba a sí misma las palabras de Jesús de que la verdadera grandeza viene a través de servir a otros.",
         "segments": {
           "spanish": [
-            "cenicienta se recordaba a sí misma",
-            "las palabras de jesús",
+            "Cenicienta se recordaba a sí misma",
+            "las palabras de Jesús",
             "de que la verdadera grandeza",
             "viene a través de servir a otros"
           ],
           "english": [
-            "cinderella reminded herself",
-            "of jesus's words",
+            "Cinderella reminded herself",
+            "of Jesus's words",
             "that true greatness",
             "comes through serving others"
           ]
@@ -2470,13 +2471,13 @@ const translationData = [
         "spanish": "Cenicienta encontró sabiduría en la parábola de la semilla de mostaza, creyendo que sus pequeños actos de bondad crecerían en algo mayor.",
         "segments": {
           "spanish": [
-            "cenicienta encontró sabiduría",
+            "Cenicienta encontró sabiduría",
             "en la parábola de la semilla de mostaza",
             "creyendo que sus pequeños actos de bondad",
             "crecerían en algo mayor"
           ],
           "english": [
-            "cinderella found wisdom",
+            "Cinderella found wisdom",
             "in the parable of the mustard seed",
             "believing her small acts of kindness",
             "would grow into something greater"
@@ -2488,14 +2489,14 @@ const translationData = [
         "spanish": "Cenicienta vivió según las enseñanzas de Mateo, dejando que su luz interior brillara incluso en la oscuridad de sus circunstancias.",
         "segments": {
           "spanish": [
-            "cenicienta vivió",
-            "según las enseñanzas de mateo",
+            "Cenicienta vivió",
+            "según las enseñanzas de Mateo",
             "dejando que su luz interior brillara",
             "incluso en la oscuridad de sus circunstancias"
           ],
           "english": [
-            "cinderella lived",
-            "by the teachings in matthew",
+            "Cinderella lived",
+            "by the teachings in Matthew",
             "letting her inner light shine",
             "even in the darkness of her circumstances"
           ]
@@ -2507,13 +2508,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el trabajo duro",
-            "ayudó a cenicienta",
+            "ayudó a Cenicienta",
             "a resolver",
             "problemas"
           ],
           "english": [
             "hard work",
-            "helped cinderella",
+            "helped Cinderella",
             "solve",
             "problems"
           ]
@@ -2524,13 +2525,13 @@ const translationData = [
         "spanish": "Cenicienta encontró otra forma de ir al baile.",
         "segments": {
           "spanish": [
-            "cenicienta encontró",
+            "Cenicienta encontró",
             "otra forma",
             "de ir",
             "al baile"
           ],
           "english": [
-            "cinderella found",
+            "Cinderella found",
             "another way",
             "to",
             "the ball"
@@ -2543,13 +2544,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "los amigos",
-            "ayudaron a cenicienta",
+            "ayudaron a Cenicienta",
             "a superar",
             "obstáculos"
           ],
           "english": [
             "friends",
-            "helped cinderella",
+            "helped Cinderella",
             "overcome",
             "obstacles"
           ]
@@ -2560,13 +2561,13 @@ const translationData = [
         "spanish": "Cenicienta diseñó un sistema de filtración de agua para su hogar.",
         "segments": {
           "spanish": [
-            "cenicienta diseñó",
+            "Cenicienta diseñó",
             "de agua",
             "un sistema de filtración",
             "para su hogar"
           ],
           "english": [
-            "cinderella designed",
+            "Cinderella designed",
             "a water",
             "filtration system",
             "for her home"
@@ -2579,13 +2580,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con creatividad",
-            "cenicienta transformó",
+            "Cenicienta transformó",
             "telas viejas",
             "en hermosa ropa"
           ],
           "english": [
             "with creativity",
-            "cinderella repurposed",
+            "Cinderella repurposed",
             "old fabric",
             "into beautiful clothing"
           ]
@@ -2596,13 +2597,13 @@ const translationData = [
         "spanish": "Cenicienta enseñó a pájaros a ayudar con tareas domésticas.",
         "segments": {
           "spanish": [
-            "cenicienta enseñó",
+            "Cenicienta enseñó",
             "a pájaros",
             "a ayudar",
             "con tareas domésticas"
           ],
           "english": [
-            "cinderella taught",
+            "Cinderella taught",
             "birds",
             "to help",
             "with household chores"
@@ -2617,13 +2618,13 @@ const translationData = [
             "la colaboración",
             "con ratones",
             "resolvió",
-            "el problema de transporte de cenicienta"
+            "el problema de transporte de Cenicienta"
           ],
           "english": [
             "collaboration",
             "with mice",
             "solved",
-            "cinderella's transportation problem"
+            "Cinderella's transportation problem"
           ]
         }
       },
@@ -2632,13 +2633,13 @@ const translationData = [
         "spanish": "El diario de Cenicienta registraba importantes observaciones y descubrimientos.",
         "segments": {
           "spanish": [
-            "el diario de cenicienta",
+            "el diario de Cenicienta",
             "registraba",
             "importantes observaciones",
             "y descubrimientos"
           ],
           "english": [
-            "cinderella's journal",
+            "Cinderella's journal",
             "recorded",
             "important observations",
             "and discoveries"
@@ -2651,13 +2652,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "las técnicas de jardín",
-            "que cenicienta desarrolló",
+            "que Cenicienta desarrolló",
             "aumentaron",
             "la producción de verduras"
           ],
           "english": [
             "the garden techniques",
-            "cinderella developed",
+            "Cinderella developed",
             "increased",
             "vegetable yields"
           ]
@@ -2668,13 +2669,13 @@ const translationData = [
         "spanish": "Cenicienta creó remedios herbales para dolencias domésticas comunes.",
         "segments": {
           "spanish": [
-            "cenicienta creó",
+            "Cenicienta creó",
             "remedios herbales",
             "para",
             "dolencias domésticas comunes"
           ],
           "english": [
-            "cinderella created",
+            "Cinderella created",
             "herbal remedies",
             "for",
             "common household ailments"
@@ -2687,13 +2688,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "a pesar de recursos limitados",
-            "cenicienta inventó",
+            "Cenicienta inventó",
             "eficientes",
             "herramientas de limpieza"
           ],
           "english": [
             "despite limited resources",
-            "cinderella invented",
+            "Cinderella invented",
             "efficient",
             "cleaning tools"
           ]
@@ -2705,13 +2706,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el valor",
-            "de cenicienta",
+            "de Cenicienta",
             "le ayudó a superar",
             "desafíos diarios"
           ],
           "english": [
             "courage",
-            "cinderella's",
+            "Cinderella's",
             "helped her overcome",
             "daily challenges"
           ]
@@ -2723,13 +2724,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "cuando escaseaba la comida",
-            "cenicienta encontró",
+            "Cenicienta encontró",
             "fuentes alternativas",
             "de nutrición"
           ],
           "english": [
             "when food was scarce",
-            "cinderella found",
+            "Cinderella found",
             "alternative",
             "nutrition sources"
           ]
@@ -2740,13 +2741,13 @@ const translationData = [
         "spanish": "Cenicienta estableció un sistema de apoyo vecinal para familias.",
         "segments": {
           "spanish": [
-            "cenicienta estableció",
+            "Cenicienta estableció",
             "un sistema",
             "de apoyo vecinal",
             "para familias"
           ],
           "english": [
-            "cinderella established",
+            "Cinderella established",
             "a system",
             "neighborhood support",
             "for families"
@@ -2758,13 +2759,13 @@ const translationData = [
         "spanish": "La excepcional gestión del tiempo de Cenicienta ayudó a aliviar su abrumadora carga de trabajo.",
         "segments": {
           "spanish": [
-            "de cenicienta",
+            "de Cenicienta",
             "la excepcional gestión del tiempo",
             "helped ease",
             "su abrumadora carga de trabajo"
           ],
           "english": [
-            "cinderella's",
+            "Cinderella's",
             "exceptional time management",
             "ayudó a aliviar",
             "hher overwhelming workload"
@@ -2776,13 +2777,13 @@ const translationData = [
         "spanish": "Cenicienta enseñó lectura y escritura a niños del pueblo.",
         "segments": {
           "spanish": [
-            "cenicienta",
+            "Cenicienta",
             "enseñó",
             "lectura y escritura",
             "a niños del pueblo"
           ],
           "english": [
-            "cinderella",
+            "Cinderella",
             "taught",
             "reading and writing",
             "to village children"
@@ -2795,13 +2796,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante observación",
-            "cenicienta",
+            "Cenicienta",
             "mejoró",
             "la rotación de cultivos en jardines"
           ],
           "english": [
             "through observation",
-            "cinderella",
+            "Cinderella",
             "improved",
             "crop rotation in gardens"
           ]
@@ -2812,13 +2813,13 @@ const translationData = [
         "spanish": "Cenicienta resolvió disputas entre hermanastras con paciencia extraordinaria.",
         "segments": {
           "spanish": [
-            "cenicienta",
+            "Cenicienta",
             "resolvió disputas",
             "entre hermanastras",
             "con paciencia extraordinaria"
           ],
           "english": [
-            "cinderella",
+            "Cinderella",
             "solved disputes",
             "between stepsisters",
             "with remarkable patience"
@@ -2832,13 +2833,13 @@ const translationData = [
           "spanish": [
             "la biblioteca del palacio",
             "ayudó",
-            "a cenicienta",
+            "a Cenicienta",
             "a resolver problemas complejos"
           ],
           "english": [
             "the palace library",
             "helped",
-            "cinderella",
+            "Cinderella",
             "solve complex problems"
           ]
         }
@@ -2848,13 +2849,13 @@ const translationData = [
         "spanish": "Cenicienta creó mapas para recolectar bayas forestales eficientemente.",
         "segments": {
           "spanish": [
-            "cenicienta",
+            "Cenicienta",
             "creó mapas",
             "para recolectar",
             "bayas forestales eficientemente"
           ],
           "english": [
-            "cinderella",
+            "Cinderella",
             "created maps",
             "for efficient",
             "forest berry gathering"
@@ -2868,13 +2869,13 @@ const translationData = [
           "spanish": [
             "reuniones comunitarias semanales",
             "ayudaron",
-            "a cenicienta",
+            "a Cenicienta",
             "a atender necesidades del pueblo"
           ],
           "english": [
             "weekly community meetings",
             "helped",
-            "cinderella",
+            "Cinderella",
             "address village needs"
           ]
         }
@@ -2884,13 +2885,13 @@ const translationData = [
         "spanish": "Cenicienta diseñó sistemas de recolección de lluvia para el castillo.",
         "segments": {
           "spanish": [
-            "cenicienta",
+            "Cenicienta",
             "diseñó",
             "sistemas de recolección de lluvia",
             "para el castillo"
           ],
           "english": [
-            "cinderella",
+            "Cinderella",
             "designed",
             "rainwater collection systems",
             "for the castle"
@@ -2902,13 +2903,13 @@ const translationData = [
         "spanish": "Cenicienta organizó a los pobladores para reconstruir después de la tormenta.",
         "segments": {
           "spanish": [
-            "cenicienta",
+            "Cenicienta",
             "organizó",
             "a los pobladores",
             "para reconstruir después de la tormenta"
           ],
           "english": [
-            "cinderella",
+            "Cinderella",
             "organized",
             "townspeople",
             "to rebuild after the storm"
@@ -2921,13 +2922,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "la medicina casera",
-            "de cenicienta",
+            "de Cenicienta",
             "ayudó a curar",
             "la enfermedad de su madrastra"
           ],
           "english": [
             "homemade medicine",
-            "cinderella's",
+            "Cinderella's",
             "helped heal",
             "her stepmother's illness"
           ]
@@ -2939,13 +2940,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con herramientas simples",
-            "cenicienta",
+            "Cenicienta",
             "reparó",
             "muebles domésticos efectivamente"
           ],
           "english": [
             "with simple tools",
-            "cinderella",
+            "Cinderella",
             "repaired",
             "household furniture effectively"
           ]
@@ -2956,13 +2957,13 @@ const translationData = [
         "spanish": "Cenicienta enseñó a niños a cultivar verduras en espacios pequeños.",
         "segments": {
           "spanish": [
-            "cenicienta",
+            "Cenicienta",
             "enseñó a niños",
             "a cultivar verduras",
             "en espacios pequeños"
           ],
           "english": [
-            "cinderella",
+            "Cinderella",
             "taught children",
             "to grow vegetables",
             "in small spaces"
@@ -2975,13 +2976,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el método",
-            "de cenicienta",
+            "de Cenicienta",
             "para conservar alimentos",
             "redujo el hambre invernal"
           ],
           "english": [
             "method",
-            "cinderella's",
+            "Cinderella's",
             "for preserving food",
             "reduced winter hunger"
           ]
@@ -2992,13 +2993,13 @@ const translationData = [
         "spanish": "Cenicienta desarrolló tintes naturales a partir de plantas locales.",
         "segments": {
           "spanish": [
-            "cenicienta",
+            "Cenicienta",
             "desarrolló",
             "tintes naturales",
             "a partir de plantas locales"
           ],
           "english": [
-            "cinderella",
+            "Cinderella",
             "developed",
             "natural dyes",
             "from local plants"
@@ -3012,13 +3013,13 @@ const translationData = [
           "spanish": [
             "observaciones cuidadosas",
             "ayudaron",
-            "a cenicienta",
+            "a Cenicienta",
             "a predecir patrones climáticos con precisión"
           ],
           "english": [
             "careful observations",
             "helped",
-            "cinderella",
+            "Cinderella",
             "predict weather patterns accurately"
           ]
         }
@@ -3029,13 +3030,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "las habilidades diplomáticas",
-            "de cenicienta",
+            "de Cenicienta",
             "resolvieron conflictos",
             "entre reinos vecinos"
           ],
           "english": [
             "diplomatic skills",
-            "cinderella's",
+            "Cinderella's",
             "resolved conflicts",
             "between neighboring kingdoms"
           ]
@@ -3047,13 +3048,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando matemáticas",
-            "cenicienta",
+            "Cenicienta",
             "mejoró",
             "la distribución de recursos del castillo"
           ],
           "english": [
             "using mathematics",
-            "cinderella",
+            "Cinderella",
             "improved",
             "the castle's resource distribution"
           ]
@@ -3064,13 +3065,13 @@ const translationData = [
         "spanish": "Cenicienta enseñó a aldeanos a detectar y purificar agua contaminada.",
         "segments": {
           "spanish": [
-            "cenicienta",
+            "Cenicienta",
             "enseñó a aldeanos",
             "a detectar y purificar",
             "agua contaminada"
           ],
           "english": [
-            "cinderella",
+            "Cinderella",
             "taught villagers",
             "to detect and purify",
             "contaminated water"
@@ -3084,13 +3085,13 @@ const translationData = [
           "spanish": [
             "el trabajo en equipo",
             "ayudó",
-            "a cenicienta",
+            "a Cenicienta",
             "a completar proyectos en tiempo récord"
           ],
           "english": [
             "teamwork",
             "helped",
-            "cinderella",
+            "Cinderella",
             "complete projects in record time"
           ]
         }
@@ -3100,13 +3101,13 @@ const translationData = [
         "spanish": "Cenicienta inventó un mejor sistema para entregar correo.",
         "segments": {
           "spanish": [
-            "cenicienta",
+            "Cenicienta",
             "inventó",
             "un mejor sistema",
             "para entregar correo"
           ],
           "english": [
-            "cinderella",
+            "Cinderella",
             "invented",
             "a better system",
             "for delivering mail"
@@ -3119,13 +3120,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el conocimiento botánico",
-            "de cenicienta",
+            "de Cenicienta",
             "ayudó a identificar",
             "hierbas medicinales rápidamente"
           ],
           "english": [
             "botanical knowledge",
-            "cinderella's",
+            "Cinderella's",
             "helped identify",
             "medicinal herbs quickly"
           ]
@@ -3136,13 +3137,13 @@ const translationData = [
         "spanish": "Cenicienta mejoró la acústica del castillo para mejores actuaciones musicales.",
         "segments": {
           "spanish": [
-            "cenicienta",
+            "Cenicienta",
             "mejoró",
             "la acústica del castillo",
             "para mejores actuaciones musicales"
           ],
           "english": [
-            "cinderella",
+            "Cinderella",
             "improved",
             "castle acoustics",
             "for better music performances"
@@ -3155,13 +3156,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "estudiando el comportamiento animal",
-            "cenicienta",
+            "Cenicienta",
             "previno",
             "problemas de plagas en el jardín"
           ],
           "english": [
             "by studying animal behavior",
-            "cinderella",
+            "Cinderella",
             "prevented",
             "garden pest problems"
           ]
@@ -3172,13 +3173,13 @@ const translationData = [
         "spanish": "Cenicienta diseñó zapatos cómodos para miembros del personal del palacio.",
         "segments": {
           "spanish": [
-            "cenicienta",
+            "Cenicienta",
             "diseñó",
             "zapatos cómodos",
             "para miembros del personal del palacio"
           ],
           "english": [
-            "cinderella",
+            "Cinderella",
             "designed",
             "comfortable shoes",
             "for palace staff members"
@@ -3190,13 +3191,13 @@ const translationData = [
         "spanish": "Cenicienta ayudó a granjeros a implementar técnicas mejoradas de riego.",
         "segments": {
           "spanish": [
-            "cenicienta",
+            "Cenicienta",
             "ayudó a granjeros",
             "a implementar",
             "técnicas mejoradas de riego"
           ],
           "english": [
-            "cinderella",
+            "Cinderella",
             "helped farmers",
             "implement",
             "improved irrigation techniques"
@@ -3208,13 +3209,13 @@ const translationData = [
         "spanish": "La cocina comunitaria de Cenicienta alimentó a muchos durante la sequía.",
         "segments": {
           "spanish": [
-            "la cocina comunitaria de cenicienta",
+            "la cocina comunitaria de Cenicienta",
             "alimentó",
             "a muchos",
             "durante la sequía"
           ],
           "english": [
-            "cinderella's community kitchen",
+            "Cinderella's community kitchen",
             "fed",
             "many",
             "during the drought"
@@ -3226,13 +3227,13 @@ const translationData = [
         "spanish": "Cenicienta creó hermoso arte a partir de materiales reciclados.",
         "segments": {
           "spanish": [
-            "cenicienta",
+            "Cenicienta",
             "creó",
             "hermoso arte",
             "a partir de materiales reciclados"
           ],
           "english": [
-            "cinderella",
+            "Cinderella",
             "created",
             "beautiful art",
             "from recycled materials"
@@ -3244,13 +3245,13 @@ const translationData = [
         "spanish": "La amabilidad de Cenicienta transformó rivales en amigos solidarios.",
         "segments": {
           "spanish": [
-            "la amabilidad de cenicienta",
+            "la amabilidad de Cenicienta",
             "transformó",
             "rivales",
             "en amigos solidarios"
           ],
           "english": [
-            "cinderella's kindness",
+            "Cinderella's kindness",
             "transformed",
             "rivals",
             "into supportive friends"
@@ -3262,13 +3263,13 @@ const translationData = [
         "spanish": "La amabilidad de Cenicienta resolvió muchos problemas.",
         "segments": {
           "spanish": [
-            "la amabilidad de cenicienta",
+            "la amabilidad de Cenicienta",
             "resolvió",
             "muchos",
             "problemas"
           ],
           "english": [
-            "cinderella's kindness",
+            "Cinderella's kindness",
             "solved",
             "many",
             "problems"
@@ -3285,14 +3286,14 @@ const translationData = [
         "spanish": "El Grinch se sobresaltó con las palabras de Jesús sobre amar al prójimo, sintiendo una punzada inesperada en su corazón encogido.",
         "segments": {
           "spanish": [
-            "el grinch se sobresaltó",
-            "con las palabras de jesús",
+            "el Grinch se sobresaltó",
+            "con las palabras de Jesús",
             "sobre amar al prójimo",
             "sintiendo una punzada inesperada en su corazón encogido"
           ],
           "english": [
-            "the grinch was startled",
-            "by jesus's words",
+            "the Grinch was startled",
+            "by Jesus's words",
             "about loving neighbors",
             "feeling an unexpected twinge in his shrunken heart"
           ]
@@ -3303,14 +3304,14 @@ const translationData = [
         "spanish": "El Grinch reflexionó sobre la parábola de Jesús de la oveja perdida, preguntándose si él también valía la pena dejar a las noventa y nueve por él.",
         "segments": {
           "spanish": [
-            "el grinch reflexionó",
-            "sobre la parábola de jesús de la oveja perdida",
+            "el Grinch reflexionó",
+            "sobre la parábola de Jesús de la oveja perdida",
             "preguntándose si él también",
             "valía la pena dejar a las noventa y nueve por él"
           ],
           "english": [
-            "the grinch pondered",
-            "jesus's parable of the lost sheep",
+            "the Grinch pondered",
+            "Jesus's parable of the lost sheep",
             "wondering if he too",
             "was worth leaving the ninety-nine for"
           ]
@@ -3321,13 +3322,13 @@ const translationData = [
         "spanish": "El Grinch se encontró llorando por la bienvenida del hijo pródigo, sin haber experimentado nunca tal aceptación incondicional.",
         "segments": {
           "spanish": [
-            "el grinch se encontró llorando",
+            "el Grinch se encontró llorando",
             "por la bienvenida del hijo pródigo",
             "sin haber experimentado nunca",
             "tal aceptación incondicional"
           ],
           "english": [
-            "the grinch found himself weeping",
+            "the Grinch found himself weeping",
             "over the prodigal son's welcome home",
             "having never experienced",
             "such unconditional acceptance"
@@ -3339,14 +3340,14 @@ const translationData = [
         "spanish": "El Grinch fue desafiado por la bendición de las Bienaventuranzas sobre los pobres de espíritu, reconociendo su propio vacío espiritual.",
         "segments": {
           "spanish": [
-            "el grinch fue desafiado",
-            "por la bendición de las bienaventuranzas",
+            "el Grinch fue desafiado",
+            "por la bendición de las Bienaventuranzas",
             "sobre los pobres de espíritu",
             "reconociendo su propio vacío espiritual"
           ],
           "english": [
-            "the grinch was challenged",
-            "by the beatitudes' blessing",
+            "the Grinch was challenged",
+            "by the Beatitudes' blessing",
             "on the poor in spirit",
             "recognizing his own spiritual emptiness"
           ]
@@ -3357,15 +3358,15 @@ const translationData = [
         "spanish": "El corazón endurecido del Grinch se ablandó al leer sobre Dios dando a Ezequiel un corazón de carne para reemplazar su corazón de piedra.",
         "segments": {
           "spanish": [
-            "el corazón endurecido del grinch se ablandó",
-            "al leer sobre dios",
-            "dando a ezequiel un corazón de carne",
+            "el corazón endurecido del Grinch se ablandó",
+            "al leer sobre Dios",
+            "dando a Ezequiel un corazón de carne",
             "para reemplazar su corazón de piedra"
           ],
           "english": [
-            "the grinch's hardened heart softened",
-            "reading about god",
-            "giving ezekiel a heart of flesh",
+            "the Grinch's hardened heart softened",
+            "reading about God",
+            "giving Ezekiel a heart of flesh",
             "to replace his heart of stone"
           ]
         }
@@ -3375,15 +3376,15 @@ const translationData = [
         "spanish": "El Grinch se identificó con el viaje de Pablo de perseguidor a apóstol, preguntándose si su propio odio podría transformarse en amor.",
         "segments": {
           "spanish": [
-            "el grinch se identificó",
-            "con el viaje de pablo",
-            "de perseguidor a apóstol",
+            "el Grinch se identificó",
+            "con el viaje de Pablo",
+            "de perseguidor a Apóstol",
             "preguntándose si su propio odio podría transformarse en amor"
           ],
           "english": [
-            "the grinch identified",
-            "with paul's journey",
-            "from persecutor to apostle",
+            "the Grinch identified",
+            "with Paul's journey",
+            "from persecutor to Apostle",
             "wondering if his own hatred could transform to love"
           ]
         }
@@ -3393,15 +3394,15 @@ const translationData = [
         "spanish": "El Grinch contempló a Jesús cenando con pecadores y marginados, sorprendido de que Dios pudiera acoger incluso a alguien como él.",
         "segments": {
           "spanish": [
-            "el grinch contempló",
-            "a jesús cenando con pecadores y marginados",
-            "sorprendido de que dios",
+            "el Grinch contempló",
+            "a Jesús cenando con pecadores y marginados",
+            "sorprendido de que Dios",
             "pudiera acoger incluso a alguien como él"
           ],
           "english": [
-            "the grinch contemplated",
-            "jesus dining with sinners and outcasts",
-            "surprised that god",
+            "the Grinch contemplated",
+            "Jesus dining with sinners and outcasts",
+            "surprised that God",
             "might welcome even someone like him"
           ]
         }
@@ -3411,16 +3412,16 @@ const translationData = [
         "spanish": "El Grinch luchó con la enseñanza de Jesús de perdonar setenta veces siete, sabiendo que el perdón de los Quién requeriría una gracia similar.",
         "segments": {
           "spanish": [
-            "el grinch luchó",
-            "con la enseñanza de jesús",
+            "el Grinch luchó",
+            "con la enseñanza de Jesús",
             "de perdonar setenta veces siete",
             "sabiendo que el perdón de los quién requeriría una gracia similar"
           ],
           "english": [
-            "the grinch struggled",
-            "with jesus's teaching",
+            "the Grinch struggled",
+            "with Jesus's teaching",
             "to forgive seventy times seven",
-            "knowing the whos' forgiveness would require similar grace"
+            "knowing the Whos' forgiveness would require similar grace"
           ]
         }
       },
@@ -3429,14 +3430,14 @@ const translationData = [
         "spanish": "El Grinch se reconoció en la parábola de Jesús del hombre rico que almacenaba tesoros pero permanecía vacío por dentro.",
         "segments": {
           "spanish": [
-            "el grinch se reconoció",
-            "en la parábola de jesús",
+            "el Grinch se reconoció",
+            "en la parábola de Jesús",
             "del hombre rico que almacenaba tesoros",
             "pero permanecía vacío por dentro"
           ],
           "english": [
-            "the grinch recognized himself",
-            "in jesus's parable",
+            "the Grinch recognized himself",
+            "in Jesus's parable",
             "of the rich man who stored up treasures",
             "but remained empty inside"
           ]
@@ -3447,16 +3448,16 @@ const translationData = [
         "spanish": "El Grinch sintió una molesta punzada de conciencia al leer sobre el Buen Samaritano, cerrando rápidamente la Biblia con un gruñido despectivo.",
         "segments": {
           "spanish": [
-            "el grinch sintió",
+            "el Grinch sintió",
             "una molesta punzada de conciencia",
-            "al leer sobre el buen samaritano",
-            "cerrando rápidamente la biblia con un gruñido despectivo"
+            "al leer sobre el Buen Samaritano",
+            "cerrando rápidamente la Biblia con un gruñido despectivo"
           ],
           "english": [
-            "the grinch felt",
+            "the Grinch felt",
             "an annoying prick of conscience",
-            "reading about the good samaritan",
-            "quickly shutting the bible with a dismissive grunt"
+            "reading about the Good Samaritan",
+            "quickly shutting the Bible with a dismissive grunt"
           ]
         }
       },
@@ -3465,14 +3466,14 @@ const translationData = [
         "spanish": "El Grinch se preguntaba si la salvación de Jesús podría salvar un corazón dos tamaños más pequeño.",
         "segments": {
           "spanish": [
-            "el grinch se preguntaba",
-            "si la salvación de jesús",
+            "el Grinch se preguntaba",
+            "si la salvación de Jesús",
             "podría salvar un corazón",
             "dos tamaños más pequeño"
           ],
           "english": [
-            "the grinch wondered",
-            "if jesus's salvation",
+            "the Grinch wondered",
+            "if Jesus's salvation",
             "could save a heart",
             "two sizes too small"
           ]
@@ -3483,16 +3484,16 @@ const translationData = [
         "spanish": "El Grinch gruñó ante el pasaje de Corintios sobre el amor siendo paciente y bondadoso, luego se encontró extrañamente paciente con Max.",
         "segments": {
           "spanish": [
-            "el grinch gruñó",
-            "ante el pasaje de corintios",
+            "el Grinch gruñó",
+            "ante el pasaje de Corintios",
             "sobre el amor siendo paciente y bondadoso",
-            "luego se encontró extrañamente paciente con max"
+            "luego se encontró extrañamente paciente con Max"
           ],
           "english": [
-            "the grinch snarled",
-            "at the corinthians passage",
+            "the Grinch snarled",
+            "at the Corinthians passage",
             "about love being patient and kind",
-            "then found himself uncharacteristically patient with max"
+            "then found himself uncharacteristically patient with Max"
           ]
         }
       },
@@ -3501,14 +3502,14 @@ const translationData = [
         "spanish": "El Grinch se inquietó con la pregunta de Jesús '¿De qué sirve ganar el mundo entero si se pierde el alma?'",
         "segments": {
           "spanish": [
-            "el grinch se inquietó",
-            "con la pregunta de jesús",
+            "el Grinch se inquietó",
+            "con la pregunta de Jesús",
             "de qué sirve ganar el mundo",
             "entero si se pierde el alma"
           ],
           "english": [
-            "the grinch was unsettled",
-            "by jesus's question",
+            "the Grinch was unsettled",
+            "by Jesus's question",
             "what good is it to gain the whole world",
             "yet forfeit your soul"
           ]
@@ -3524,13 +3525,13 @@ const translationData = [
         "spanish": "Mulan usó ideas inteligentes en el ejército.",
         "segments": {
           "spanish": [
-            "mulan",
+            "Mulan",
             "usó",
             "ideas inteligentes",
             "en el ejército"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "used",
             "clever ideas",
             "in the army"
@@ -3542,13 +3543,13 @@ const translationData = [
         "spanish": "Mulan trepó el poste con pensamiento astuto.",
         "segments": {
           "spanish": [
-            "mulan",
+            "Mulan",
             "trepó",
             "el poste",
             "con pensamiento astuto"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "climbed",
             "the pole",
             "with smart thinking"
@@ -3562,13 +3563,13 @@ const translationData = [
           "spanish": [
             "nuevas ideas",
             "ayudaron",
-            "a mulan",
+            "a Mulan",
             "a resolver problemas difíciles"
           ],
           "english": [
             "new ideas",
             "helped",
-            "mulan",
+            "Mulan",
             "solve tough problems"
           ]
         }
@@ -3578,13 +3579,13 @@ const translationData = [
         "spanish": "Mulan observaba cuidadosamente antes de resolver problemas.",
         "segments": {
           "spanish": [
-            "mulan",
+            "Mulan",
             "observaba cuidadosamente",
             "antes de",
             "resolver problemas"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "watched carefully",
             "before",
             "solving problems"
@@ -3596,13 +3597,13 @@ const translationData = [
         "spanish": "Mulán creó un sistema de poleas para mover suministros pesados.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "creó",
             "un sistema de poleas",
             "para mover suministros pesados"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "created",
             "a pulley system",
             "to move heavy supplies"
@@ -3615,13 +3616,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "la estrategia militar",
-            "de mulán",
+            "de Mulán",
             "dependía",
             "de análisis cuidadoso del terreno"
           ],
           "english": [
             "military strategy",
-            "mulan's",
+            "Mulan's",
             "relied on",
             "careful terrain analysis"
           ]
@@ -3633,13 +3634,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando plantas locales",
-            "mulán",
+            "Mulán",
             "desarrolló",
             "tratamientos medicinales efectivos"
           ],
           "english": [
             "using local plants",
-            "mulan",
+            "Mulan",
             "developed",
             "effective medicinal treatments"
           ]
@@ -3650,13 +3651,13 @@ const translationData = [
         "spanish": "Mulán enseñó a soldados a leer mapas y orientarse.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "enseñó a soldados",
             "a leer mapas",
             "y orientarse"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "taught soldiers",
             "to read maps",
             "and navigate"
@@ -3669,12 +3670,12 @@ const translationData = [
         "segments": {
           "spanish": [
             "el disfraz",
-            "de mulán",
+            "de Mulán",
             "demostró sus habilidades creativas",
             "para resolver problemas"
           ],
           "english": [
-            "mulan's disguise",
+            "Mulan's disguise",
             "demonstrated",
             "her creative",
             "problem solving skills"
@@ -3688,13 +3689,13 @@ const translationData = [
           "spanish": [
             "el trabajo en equipo",
             "ayudó",
-            "a la unidad de mulán",
+            "a la unidad de Mulán",
             "a superar peligrosos pasos montañosos"
           ],
           "english": [
             "teamwork",
             "helped",
-            "mulan's unit",
+            "Mulan's unit",
             "overcome dangerous mountain passes"
           ]
         }
@@ -3704,13 +3705,13 @@ const translationData = [
         "spanish": "Mulán diseñó un diseño de campamento más eficiente.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "diseñó",
             "un diseño de campamento",
             "más eficiente"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "designed",
             "a more efficient",
             "camp layout"
@@ -3723,13 +3724,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "las habilidades de observación",
-            "de mulán",
+            "de Mulán",
             "ayudaron a predecir",
             "movimientos enemigos con precisión"
           ],
           "english": [
             "observation skills",
-            "mulan's",
+            "Mulan's",
             "helped predict",
             "enemy movements accurately"
           ]
@@ -3740,13 +3741,13 @@ const translationData = [
         "spanish": "Mulán inventó armadura ligera que mejoró la movilidad.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "inventó",
             "armadura ligera",
             "que mejoró la movilidad"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "invented",
             "lightweight armor",
             "that improved mobility"
@@ -3759,13 +3760,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "estudiando astronomía",
-            "mulán",
+            "Mulán",
             "mejoró",
             "técnicas de navegación nocturna"
           ],
           "english": [
             "by studying astronomy",
-            "mulan",
+            "Mulan",
             "improved",
             "nighttime navigation techniques"
           ]
@@ -3776,13 +3777,13 @@ const translationData = [
         "spanish": "Mulán organizó a aldeanos para construir sistemas de prevención de inundaciones.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "organizó a aldeanos",
             "para construir",
             "sistemas de prevención de inundaciones"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "organized villagers",
             "to build",
             "flood prevention systems"
@@ -3794,13 +3795,13 @@ const translationData = [
         "spanish": "Las habilidades diplomáticas de Mulán previnieron conflictos innecesarios.",
         "segments": {
           "spanish": [
-            "las habilidades diplomáticas de mulán",
+            "las habilidades diplomáticas de Mulán",
             "previnieron",
             "innecesarios",
             "conflictos"
           ],
           "english": [
-            "mulan's diplomatic skills",
+            "Mulan's diplomatic skills",
             "prevented",
             "unnecessary",
             "conflict"
@@ -3812,13 +3813,13 @@ const translationData = [
         "spanish": "Mulán creó mejores métodos para conservar suministros de alimentos.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "creó",
             "mejores métodos",
             "para conservar suministros de alimentos"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "created",
             "better methods",
             "for preserving food supplies"
@@ -3830,13 +3831,13 @@ const translationData = [
         "spanish": "Mulán enseñó a niños a usar matemáticas en la vida diaria.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "enseñó a niños",
             "a usar matemáticas",
             "en la vida diaria"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "taught children",
             "to use mathematics",
             "in daily life"
@@ -3848,13 +3849,13 @@ const translationData = [
         "spanish": "Mulán implementó un sistema de señales para comunicación en el campo de batalla.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "implementó",
             "un sistema de señales",
             "para comunicación en el campo de batalla"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "implemented",
             "a signal system",
             "for battlefield communication"
@@ -3866,13 +3867,13 @@ const translationData = [
         "spanish": "La compasión de Mulán ayudó a integrar antiguos enemigos en la sociedad.",
         "segments": {
           "spanish": [
-            "la compasión de mulán",
+            "la compasión de Mulán",
             "ayudó a integrar",
             "antiguos enemigos",
             "en la sociedad"
           ],
           "english": [
-            "mulan's compassion",
+            "Mulan's compassion",
             "helped integrate",
             "former enemies",
             "into society"
@@ -3884,13 +3885,13 @@ const translationData = [
         "spanish": "Mulán desarrolló técnicas para moverse silenciosamente a través de bosques.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "desarrolló técnicas",
             "para moverse silenciosamente",
             "a través de bosques"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "developed techniques",
             "for moving silently",
             "through forests"
@@ -3902,13 +3903,13 @@ const translationData = [
         "spanish": "Mulán creó programas de entrenamiento que desarrollaron habilidades de trabajo en equipo.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "creó programas de entrenamiento",
             "que desarrollaron",
             "habilidades de trabajo en equipo"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "created training programs",
             "that built",
             "teamwork skills"
@@ -3920,13 +3921,13 @@ const translationData = [
         "spanish": "Mulán creó un sistema de camuflaje usando materiales naturales.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "creó",
             "un sistema de camuflaje",
             "usando materiales naturales"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "created",
             "a camouflage system",
             "using natural materials"
@@ -3938,13 +3939,13 @@ const translationData = [
         "spanish": "Mulán enseñó a aldeanos cómo predecir patrones climáticos.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "enseñó a aldeanos",
             "cómo predecir",
             "patrones climáticos"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "taught villagers",
             "how to predict",
             "weather patterns"
@@ -3957,13 +3958,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando herramientas simples",
-            "mulán",
+            "Mulán",
             "construyó",
             "estructuras defensivas efectivas"
           ],
           "english": [
             "using simple tools",
-            "mulan",
+            "Mulan",
             "built",
             "effective defensive structures"
           ]
@@ -3974,13 +3975,13 @@ const translationData = [
         "spanish": "Mulán diseñó entrenamiento especializado para diferentes habilidades de combate.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "diseñó",
             "entrenamiento especializado",
             "para diferentes habilidades de combate"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "designed",
             "specialized training",
             "for different combat skills"
@@ -3993,13 +3994,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "los métodos de purificación de agua",
-            "de mulán",
+            "de Mulán",
             "previnieron enfermedades",
             "entre tropas"
           ],
           "english": [
             "water purification methods",
-            "mulan's",
+            "Mulan's",
             "prevented illness",
             "among troops"
           ]
@@ -4010,13 +4011,13 @@ const translationData = [
         "spanish": "Mulán estudió huellas de animales para encontrar caminos seguros.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "estudió",
             "huellas de animales",
             "para encontrar caminos seguros"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "studied",
             "animal tracks",
             "to find secure paths"
@@ -4028,13 +4029,13 @@ const translationData = [
         "spanish": "Mulán implementó horarios de rotación para tareas del campamento.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "implementó",
             "horarios de rotación",
             "para tareas del campamento"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "implemented",
             "rotation schedules",
             "for camp duties"
@@ -4047,13 +4048,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el conocimiento de hierbas",
-            "de mulán",
+            "de Mulán",
             "salvó",
             "a muchos soldados heridos"
           ],
           "english": [
             "herbal knowledge",
-            "mulan's",
+            "Mulan's",
             "saved",
             "many wounded soldiers"
           ]
@@ -4064,13 +4065,13 @@ const translationData = [
         "spanish": "Mulán creó mapas mostrando rutas seguras a través de territorio enemigo.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "creó mapas",
             "mostrando rutas seguras",
             "a través de territorio enemigo"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "created maps",
             "showing safe routes",
             "through enemy territory"
@@ -4082,13 +4083,13 @@ const translationData = [
         "spanish": "Mulán enseñó a soldados a encontrar comida en áreas silvestres.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "enseñó a soldados",
             "a encontrar comida",
             "en áreas silvestres"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "taught soldiers",
             "to find food",
             "in wilderness areas"
@@ -4100,13 +4101,13 @@ const translationData = [
         "spanish": "Mulán desarrolló técnicas para hacer refugios livianos y duraderos.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "desarrolló técnicas",
             "para hacer",
             "refugios livianos y duraderos"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "developed techniques",
             "for making",
             "lightweight durable shelters"
@@ -4119,13 +4120,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el estilo de liderazgo",
-            "de mulán",
+            "de Mulán",
             "animaba a todos",
             "a contribuir ideas"
           ],
           "english": [
             "leadership style",
-            "mulan's",
+            "Mulan's",
             "encouraged everyone",
             "to contribute ideas"
           ]
@@ -4136,13 +4137,13 @@ const translationData = [
         "spanish": "Mulán creó un sistema de códigos para mensajes secretos.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "creó",
             "un sistema de códigos",
             "para mensajes secretos"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "created",
             "a code system",
             "for secret messages"
@@ -4154,13 +4155,13 @@ const translationData = [
         "spanish": "Mulán diseñó sillas de montar mejoradas para equitación de larga distancia.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "diseñó",
             "sillas de montar mejoradas",
             "para equitación de larga distancia"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "designed",
             "improved saddles",
             "for long-distance horse riding"
@@ -4172,13 +4173,13 @@ const translationData = [
         "spanish": "Mulán enseñó técnicas de meditación para mejorar concentración durante batallas.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "enseñó técnicas de meditación",
             "para mejorar concentración",
             "durante batallas"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "taught meditation techniques",
             "to improve focus",
             "during battle"
@@ -4190,13 +4191,13 @@ const translationData = [
         "spanish": "Mulán organizó esfuerzos comunitarios para reconstruir pueblos dañados.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "organizó",
             "esfuerzos comunitarios",
             "para reconstruir pueblos dañados"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "organized",
             "community efforts",
             "to rebuild damaged villages"
@@ -4208,13 +4209,13 @@ const translationData = [
         "spanish": "Mulán desarrolló métodos para tratar varias heridas de combate.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "desarrolló métodos",
             "para tratar",
             "varias heridas de combate"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "developed methods",
             "for treating",
             "various combat wounds"
@@ -4226,13 +4227,13 @@ const translationData = [
         "spanish": "Mulán construyó sistemas de riego que salvaron cultivos durante sequías.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "construyó sistemas de riego",
             "que salvaron cultivos",
             "durante sequías"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "built irrigation systems",
             "that saved crops",
             "during drought"
@@ -4245,12 +4246,12 @@ const translationData = [
         "segments": {
           "spanish": [
             "el equipo",
-            "de mulán",
+            "de Mulán",
             "creó estrategias efectivas",
             "usando recursos limitados"
           ],
           "english": [
-            "mulan's team",
+            "Mulan's team",
             "created",
             "effective strategies",
             "using limited resources"
@@ -4262,13 +4263,13 @@ const translationData = [
         "spanish": "Mulán estableció reglas justas para resolver disputas pacíficamente.",
         "segments": {
           "spanish": [
-            "mulán",
+            "Mulán",
             "estableció reglas justas",
             "para resolver disputas",
             "pacíficamente"
           ],
           "english": [
-            "mulan",
+            "Mulan",
             "established fair rules",
             "for resolving disputes",
             "peacefully"
@@ -4281,13 +4282,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "los planes astutos",
-            "de mulán",
+            "de Mulán",
             "salvaron",
             "a sus amigos"
           ],
           "english": [
             "clever plans",
-            "mulan's",
+            "Mulan's",
             "saved",
             "her friends"
           ]
@@ -4303,13 +4304,13 @@ const translationData = [
         "spanish": "Aurora resolvía acertijos con animales del bosque.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "resolvía",
             "acertijos",
             "con animales del bosque"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "solved",
             "puzzles",
             "with forest animals"
@@ -4323,13 +4324,13 @@ const translationData = [
           "spanish": [
             "los animales",
             "ayudaron",
-            "a aurora",
+            "a Aurora",
             "a encontrar su casa"
           ],
           "english": [
             "animals",
             "helped",
-            "aurora",
+            "Aurora",
             "find her way home"
           ]
         }
@@ -4339,13 +4340,13 @@ const translationData = [
         "spanish": "Aurora se mantuvo tranquila al enfrentar el peligro.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "se mantuvo tranquila",
             "al",
             "enfrentar el peligro"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "stayed calm",
             "when",
             "facing danger"
@@ -4357,13 +4358,13 @@ const translationData = [
         "spanish": "La amabilidad de Aurora ganó muchos amigos del bosque.",
         "segments": {
           "spanish": [
-            "la amabilidad de aurora",
+            "la amabilidad de Aurora",
             "ganó",
             "muchos",
             "amigos del bosque"
           ],
           "english": [
-            "aurora's kindness",
+            "Aurora's kindness",
             "won",
             "many",
             "forest friends"
@@ -4375,13 +4376,13 @@ const translationData = [
         "spanish": "Aurora creó remedios herbales para curar dolencias de aldeanos.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "creó remedios herbales",
             "para curar",
             "dolencias de aldeanos"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "created herbal remedies",
             "to heal",
             "villagers' ailments"
@@ -4393,13 +4394,13 @@ const translationData = [
         "spanish": "Aurora enseñó a animales del bosque a ayudar con jardinería.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "enseñó a animales del bosque",
             "a ayudar",
             "con jardinería"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "taught forest animals",
             "to help",
             "with gardening"
@@ -4411,13 +4412,13 @@ const translationData = [
         "spanish": "Aurora diseñó un sistema de calefacción solar para invierno.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "diseñó",
             "un sistema de calefacción solar",
             "para invierno"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "designed",
             "a solar heating system",
             "for winter"
@@ -4430,13 +4431,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante observación",
-            "aurora",
+            "Aurora",
             "predijo patrones climáticos",
             "con precisión"
           ],
           "english": [
             "through observation",
-            "aurora",
+            "Aurora",
             "predicted weather patterns",
             "with accuracy"
           ]
@@ -4447,13 +4448,13 @@ const translationData = [
         "spanish": "La resolución de problemas de Aurora dependía de escuchar diferentes perspectivas.",
         "segments": {
           "spanish": [
-            "la resolución de problemas de aurora",
+            "la resolución de problemas de Aurora",
             "dependía",
             "de escuchar",
             "diferentes perspectivas"
           ],
           "english": [
-            "aurora's problem-solving",
+            "Aurora's problem-solving",
             "relied",
             "on listening to",
             "different perspectives"
@@ -4465,13 +4466,13 @@ const translationData = [
         "spanish": "Aurora creó mapas de caminos seguros a través del bosque.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "creó",
             "mapas de caminos seguros",
             "a través del bosque"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "created",
             "maps of safe paths",
             "through forests"
@@ -4483,13 +4484,13 @@ const translationData = [
         "spanish": "Aurora desarrolló nuevas técnicas agrícolas después de estudiar plantas.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "desarrolló nuevas técnicas agrícolas",
             "después de",
             "estudiar plantas"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "developed new farming techniques",
             "after",
             "studying plants"
@@ -4502,12 +4503,12 @@ const translationData = [
         "segments": {
           "spanish": [
             "la amabilidad",
-            "de aurora",
+            "de Aurora",
             "transformó enemigos",
             "en aliados y amigos"
           ],
           "english": [
-            "aurora's kindness",
+            "Aurora's kindness",
             "transformed",
             "enemies",
             "into allies and friends"
@@ -4519,13 +4520,13 @@ const translationData = [
         "spanish": "Aurora construyó un sistema de filtración de agua usando materiales naturales.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "construyó",
             "un sistema de filtración de agua",
             "usando materiales naturales"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "built",
             "a water filtration system",
             "using natural materials"
@@ -4537,13 +4538,13 @@ const translationData = [
         "spanish": "Aurora enseñó a niños a reconocer plantas curativas de forma segura.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "enseñó a niños",
             "a reconocer plantas curativas",
             "de forma segura"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "taught children",
             "to recognize healing plants",
             "safely"
@@ -4555,13 +4556,13 @@ const translationData = [
         "spanish": "Aurora organizó un sistema comunitario para compartir excedentes de alimentos.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "organizó",
             "un sistema comunitario",
             "para compartir excedentes de alimentos"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "organized",
             "a community system",
             "for sharing surplus food"
@@ -4573,13 +4574,13 @@ const translationData = [
         "spanish": "Aurora desarrolló tintes naturales para hermosos colores de tela.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "desarrolló",
             "tintes naturales",
             "para hermosos colores de tela"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "developed",
             "natural dyes",
             "for beautiful fabric colors"
@@ -4592,13 +4593,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el conocimiento de estrellas",
-            "de aurora",
+            "de Aurora",
             "ayudó a viajeros",
             "a navegar seguramente"
           ],
           "english": [
             "knowledge of stars",
-            "aurora's",
+            "Aurora's",
             "helped travelers",
             "navigate safely"
           ]
@@ -4609,13 +4610,13 @@ const translationData = [
         "spanish": "Aurora creó un sistema basado en plantas para control de insectos.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "creó",
             "un sistema basado en plantas",
             "para control de insectos"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "created",
             "a plant-based system",
             "for insect control"
@@ -4628,13 +4629,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el valor",
-            "de aurora",
+            "de Aurora",
             "le ayudó a enfrentar",
             "desafíos desconocidos del bosque"
           ],
           "english": [
             "courage",
-            "aurora's",
+            "Aurora's",
             "helped her face",
             "unknown forest challenges"
           ]
@@ -4645,13 +4646,13 @@ const translationData = [
         "spanish": "Aurora rediseñó el castillo para incorporar luz natural.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "rediseñó el castillo",
             "para incorporar",
             "luz natural"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "redesigned the castle",
             "to incorporate",
             "natural light"
@@ -4663,13 +4664,13 @@ const translationData = [
         "spanish": "Aurora enseñó prácticas de conservación forestal a leñadores locales.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "enseñó",
             "prácticas de conservación forestal",
             "a leñadores locales"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "taught",
             "forest conservation practices",
             "to local woodcutters"
@@ -4682,13 +4683,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "la diplomacia",
-            "de aurora",
+            "de Aurora",
             "resolvió conflictos",
             "entre bosque y pueblo"
           ],
           "english": [
             "diplomacy",
-            "aurora's",
+            "Aurora's",
             "resolved conflicts",
             "between forest and village"
           ]
@@ -4699,13 +4700,13 @@ const translationData = [
         "spanish": "Aurora desarrolló métodos para conservar alimentos durante el invierno.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "desarrolló métodos",
             "para conservar alimentos",
             "durante el invierno"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "developed methods",
             "for preserving food",
             "through winter"
@@ -4717,13 +4718,13 @@ const translationData = [
         "spanish": "Aurora creó instrumentos musicales con materiales naturales del bosque.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "creó",
             "instrumentos musicales",
             "con materiales naturales del bosque"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "created",
             "musical instruments",
             "from natural forest materials"
@@ -4735,13 +4736,13 @@ const translationData = [
         "spanish": "Aurora estableció un sistema de mensajería con aves por todo el reino.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "estableció",
             "un sistema de mensajería con aves",
             "por todo el reino"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "established",
             "a bird messaging system",
             "across the kingdom"
@@ -4753,13 +4754,13 @@ const translationData = [
         "spanish": "Aurora enseñó a aldeanos a predecir tormentas usando patrones de nubes.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "enseñó a aldeanos",
             "a predecir tormentas",
             "usando patrones de nubes"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "taught villagers",
             "to predict storms",
             "using cloud patterns"
@@ -4771,13 +4772,13 @@ const translationData = [
         "spanish": "Aurora creó pasajes secretos para escapar de situaciones peligrosas.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "creó",
             "pasajes secretos",
             "para escapar de situaciones peligrosas"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "created",
             "secret passages",
             "for escaping dangerous situations"
@@ -4789,13 +4790,13 @@ const translationData = [
         "spanish": "Aurora construyó puentes usando enredaderas fuertes y materiales del bosque.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "construyó puentes",
             "usando enredaderas fuertes",
             "y materiales del bosque"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "built bridges",
             "using strong vines",
             "and forest materials"
@@ -4807,13 +4808,13 @@ const translationData = [
         "spanish": "Aurora desarrolló remedios a base de miel para tratar enfermedades comunes.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "desarrolló",
             "remedios a base de miel",
             "para tratar enfermedades comunes"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "developed",
             "honey-based remedies",
             "for treating common illnesses"
@@ -4825,13 +4826,13 @@ const translationData = [
         "spanish": "El equipo de Aurora implementó sistemas de riego por todo el reino.",
         "segments": {
           "spanish": [
-            "el equipo de aurora",
+            "el equipo de Aurora",
             "implementó",
             "sistemas de riego",
             "por todo el reino"
           ],
           "english": [
-            "aurora's team",
+            "Aurora's team",
             "implemented",
             "irrigation systems",
             "throughout the kingdom"
@@ -4843,13 +4844,13 @@ const translationData = [
         "spanish": "Aurora diseñó molinos de viento para alimentar el sistema de agua del castillo.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "diseñó molinos de viento",
             "para alimentar",
             "el sistema de agua del castillo"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "designed windmills",
             "to power",
             "the castle's water system"
@@ -4861,13 +4862,13 @@ const translationData = [
         "spanish": "Aurora usó telarañas para crear vendajes curativos.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "usó telarañas",
             "para crear",
             "vendajes curativos"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "used spider webs",
             "to create",
             "healing bandages"
@@ -4879,13 +4880,13 @@ const translationData = [
         "spanish": "Aurora creó un lenguaje para comunicarse con criaturas del bosque.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "creó",
             "un lenguaje para comunicarse",
             "con criaturas del bosque"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "created",
             "a language for communicating",
             "with forest creatures"
@@ -4898,13 +4899,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "las observaciones de plantas",
-            "de aurora",
+            "de Aurora",
             "llevaron",
             "a nuevas medicinas"
           ],
           "english": [
             "observations of plants",
-            "aurora's",
+            "Aurora's",
             "led to",
             "new medicines"
           ]
@@ -4915,13 +4916,13 @@ const translationData = [
         "spanish": "Aurora estableció un sistema para detección temprana de incendios forestales.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "estableció un sistema",
             "para detección temprana",
             "de incendios forestales"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "established a system",
             "for early detection",
             "of forest fires"
@@ -4933,13 +4934,13 @@ const translationData = [
         "spanish": "Aurora enseñó a niños a orientarse usando estrellas y puntos de referencia.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "enseñó a niños",
             "a orientarse usando estrellas",
             "y puntos de referencia"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "taught children",
             "to navigate using stars",
             "and landmarks"
@@ -4951,13 +4952,13 @@ const translationData = [
         "spanish": "Aurora encontró soluciones naturales para problemas de plagas del castillo.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "encontró soluciones naturales",
             "para problemas",
             "de plagas del castillo"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "found natural solutions",
             "for problems",
             "with castle pests"
@@ -4969,13 +4970,13 @@ const translationData = [
         "spanish": "Aurora creó sistemas de respiración submarina con materiales vegetales.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "creó",
             "sistemas de respiración submarina",
             "con materiales vegetales"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "created",
             "underwater breathing systems",
             "from plant materials"
@@ -4987,13 +4988,13 @@ const translationData = [
         "spanish": "Aurora resolvió escasez de agua mediante métodos innovadores de recolección.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "resolvió escasez de agua",
             "mediante",
             "métodos innovadores de recolección"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "solved kingdom water shortages",
             "through",
             "innovative collection methods"
@@ -5005,13 +5006,13 @@ const translationData = [
         "spanish": "Aurora diseñó equipos más seguros para extraer piedras preciosas.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "diseñó",
             "equipos más seguros",
             "para extraer piedras preciosas"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "designed",
             "safer equipment",
             "for mining precious stones"
@@ -5023,13 +5024,13 @@ const translationData = [
         "spanish": "Aurora resolvió conflictos escuchando y encontrando puntos en común.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "resolvió conflictos",
             "escuchando",
             "y encontrando puntos en común"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "resolved conflicts",
             "through listening",
             "and finding common ground"
@@ -5041,13 +5042,13 @@ const translationData = [
         "spanish": "Aurora creó fertilizantes naturales que mejoraron dramáticamente el rendimiento de cultivos.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "creó fertilizantes naturales",
             "que mejoraron dramáticamente",
             "el rendimiento de cultivos"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "created natural fertilizers",
             "that improved",
             "crop yields dramatically"
@@ -5059,13 +5060,13 @@ const translationData = [
         "spanish": "Aurora descubrió tintes naturales que nunca se desvanecían con el tiempo.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "descubrió tintes naturales",
             "que nunca se desvanecían",
             "con el tiempo"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "discovered natural dyes",
             "that never faded",
             "with time"
@@ -5077,13 +5078,13 @@ const translationData = [
         "spanish": "El valor de Aurora le ayudó a explorar regiones forestales no mapeadas.",
         "segments": {
           "spanish": [
-            "el valor de aurora",
+            "el valor de Aurora",
             "le ayudó",
             "a explorar",
             "regiones forestales no mapeadas"
           ],
           "english": [
-            "aurora's courage",
+            "Aurora's courage",
             "helped",
             "her explore",
             "unmapped forest regions"
@@ -5095,13 +5096,13 @@ const translationData = [
         "spanish": "Aurora encontró soluciones que ayudaron a todos.",
         "segments": {
           "spanish": [
-            "aurora",
+            "Aurora",
             "encontró soluciones",
             "que ayudaron",
             "a todos"
           ],
           "english": [
-            "aurora",
+            "Aurora",
             "found solutions",
             "that helped",
             "everyone"
@@ -5118,13 +5119,13 @@ const translationData = [
         "spanish": "Pocahontas escuchó a los espíritus para encontrar su camino.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "escuchó",
             "a los espíritus",
             "para encontrar su camino"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "listened",
             "to the spirits",
             "to find her path"
@@ -5137,13 +5138,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "cuando dos mundos chocaron",
-            "pocahontas",
+            "Pocahontas",
             "construyó",
             "un puente"
           ],
           "english": [
             "when two worlds collided",
-            "pocahontas",
+            "Pocahontas",
             "built",
             "a bridge"
           ]
@@ -5154,13 +5155,13 @@ const translationData = [
         "spanish": "Pocahontas usó sabiduría para prevenir una guerra terrible.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "usó sabiduría",
             "para prevenir",
             "una guerra terrible"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "used wisdom",
             "to prevent",
             "a terrible war"
@@ -5173,13 +5174,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "a través del entendimiento",
-            "pocahontas",
+            "Pocahontas",
             "resolvió",
             "el mayor conflicto"
           ],
           "english": [
             "through understanding",
-            "pocahontas",
+            "Pocahontas",
             "solved",
             "the greatest conflict"
           ]
@@ -5190,13 +5191,13 @@ const translationData = [
         "spanish": "Pocahontas enseñó a sus amigos a respetar la sabiduría de la naturaleza.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "enseñó a sus amigos",
             "a respetar",
             "la sabiduría de la naturaleza"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "taught her friends",
             "to respect",
             "nature's wisdom"
@@ -5209,13 +5210,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con valentía",
-            "pocahontas",
+            "Pocahontas",
             "enfrentó",
             "los desafíos desconocidos por delante"
           ],
           "english": [
             "with courage",
-            "pocahontas",
+            "Pocahontas",
             "faced",
             "the unknown challenges ahead"
           ]
@@ -5226,13 +5227,13 @@ const translationData = [
         "spanish": "Pocahontas creía que la colaboración podría resolver el problema del agua.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "creía",
             "que la colaboración podría resolver",
             "el problema del agua"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "believed",
             "collaboration could solve",
             "the village's water problem"
@@ -5245,13 +5246,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "a través de la bondad",
-            "pocahontas",
+            "Pocahontas",
             "ayudó a sanar",
             "divisiones comunitarias"
           ],
           "english": [
             "through kindness",
-            "pocahontas",
+            "Pocahontas",
             "helped heal",
             "community divisions"
           ]
@@ -5262,13 +5263,13 @@ const translationData = [
         "spanish": "Pocahontas estudiaba las estrellas para navegar senderos difíciles del bosque.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "estudiaba las estrellas",
             "para navegar",
             "senderos difíciles del bosque"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "studied the stars",
             "to navigate",
             "difficult forest paths"
@@ -5280,13 +5281,13 @@ const translationData = [
         "spanish": "Pocahontas creaba herramientas con recursos naturales a su alrededor.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "creaba herramientas",
             "con recursos naturales",
             "a su alrededor"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "created tools",
             "from natural resources",
             "around her"
@@ -5298,13 +5299,13 @@ const translationData = [
         "spanish": "Pocahontas mostró cómo diferentes perspectivas podían traer nuevas soluciones.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "mostró",
             "cómo diferentes perspectivas",
             "podían traer nuevas soluciones"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "showed",
             "how different perspectives",
             "could bring new solutions"
@@ -5317,13 +5318,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "cuando tormentas dañaron cultivos",
-            "pocahontas",
+            "Pocahontas",
             "ideó",
             "métodos innovadores de siembra"
           ],
           "english": [
             "when storms damaged crops",
-            "pocahontas",
+            "Pocahontas",
             "devised",
             "innovative planting methods"
           ]
@@ -5334,13 +5335,13 @@ const translationData = [
         "spanish": "Pocahontas aprendió medicina de los ancianos para sanar a otros.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "aprendió medicina",
             "de los ancianos",
             "para sanar a otros"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "learned medicine",
             "from the elders",
             "to heal others"
@@ -5353,13 +5354,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante observación",
-            "pocahontas",
+            "Pocahontas",
             "descubrió patrones",
             "en migraciones de animales"
           ],
           "english": [
             "through observation",
-            "pocahontas",
+            "Pocahontas",
             "discovered patterns",
             "in animal migrations"
           ]
@@ -5370,13 +5371,13 @@ const translationData = [
         "spanish": "Pocahontas enseñaba a los niños a encontrar soluciones creativas a problemas.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "enseñaba a los niños",
             "a encontrar soluciones creativas",
             "a problemas"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "taught children",
             "to find creative solutions",
             "to problems"
@@ -5388,13 +5389,13 @@ const translationData = [
         "spanish": "La valiente Pocahontas construyó puentes entre comunidades hostiles.",
         "segments": {
           "spanish": [
-            "la valiente pocahontas",
+            "la valiente Pocahontas",
             "construyó",
             "puentes",
             "entre comunidades hostiles"
           ],
           "english": [
-            "the brave pocahontas",
+            "the brave Pocahontas",
             "built",
             "bridges",
             "between hostile communities"
@@ -5406,13 +5407,13 @@ const translationData = [
         "spanish": "Pocahontas experimentaba con arcilla para hacer vasijas más resistentes.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "experimentaba con arcilla",
             "para hacer",
             "vasijas más resistentes"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "experimented with clay",
             "to make",
             "stronger cooking vessels"
@@ -5425,13 +5426,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con empatía",
-            "pocahontas",
+            "Pocahontas",
             "resolvió conflictos",
             "entre tribus rivales"
           ],
           "english": [
             "with empathy",
-            "pocahontas",
+            "Pocahontas",
             "resolved conflicts",
             "between rival tribes"
           ]
@@ -5442,13 +5443,13 @@ const translationData = [
         "spanish": "Pocahontas mapeó fuentes de agua para ayudar durante estaciones secas.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "mapeó fuentes de agua",
             "para ayudar",
             "durante estaciones secas"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "mapped water sources",
             "to help",
             "during dry seasons"
@@ -5460,13 +5461,13 @@ const translationData = [
         "spanish": "Pocahontas organizaba equipos para completar proyectos comunitarios difíciles.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "organizaba equipos",
             "para completar",
             "proyectos comunitarios difíciles"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "organized teams",
             "to complete",
             "difficult community projects"
@@ -5478,13 +5479,13 @@ const translationData = [
         "spanish": "Pocahontas estudiaba plantas medicinales para crear remedios curativos.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "estudiaba plantas medicinales",
             "para crear",
             "remedios curativos"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "studied medicinal plants",
             "to create",
             "healing remedies"
@@ -5497,13 +5498,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "a través de cuentos",
-            "pocahontas",
+            "Pocahontas",
             "enseñaba",
             "importantes habilidades de supervivencia"
           ],
           "english": [
             "through storytelling",
-            "pocahontas",
+            "Pocahontas",
             "taught",
             "important survival skills"
           ]
@@ -5514,13 +5515,13 @@ const translationData = [
         "spanish": "Pocahontas diseñó sistemas de riego para cultivos de la aldea.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "diseñó",
             "sistemas de riego",
             "para cultivos de la aldea"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "designed",
             "irrigation systems",
             "for village crops"
@@ -5533,13 +5534,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con paciencia",
-            "pocahontas",
+            "Pocahontas",
             "resolvió",
             "los desafíos de almacenamiento de alimentos"
           ],
           "english": [
             "with patience",
-            "pocahontas",
+            "Pocahontas",
             "solved",
             "the tribe's food storage challenges"
           ]
@@ -5550,14 +5551,14 @@ const translationData = [
         "spanish": "Pocahontas usó corrientes del río para transportar materiales pesados.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "usó corrientes del río",
             "para transportar",
             "materiales pesados"
           ],
           "english": [
-            "pocahontas",
-            "used river currents",
+            "Pocahontas",
+            "used River currents",
             "to transport",
             "heavy materials"
           ]
@@ -5568,13 +5569,13 @@ const translationData = [
         "spanish": "Pocahontas encontró plantas curativas durante el duro invierno.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "encontró plantas curativas",
             "durante",
             "el duro invierno"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "found healing plants",
             "during",
             "the harsh winter"
@@ -5586,13 +5587,13 @@ const translationData = [
         "spanish": "Pocahontas inspiró a los aldeanos a trabajar juntos durante sequías.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "inspiró a los aldeanos",
             "a trabajar juntos",
             "durante sequías"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "inspired villagers",
             "to work together",
             "during droughts"
@@ -5605,13 +5606,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con determinación",
-            "pocahontas",
+            "Pocahontas",
             "resolvió",
             "los problemas de refugio de la tribu"
           ],
           "english": [
             "with determination",
-            "pocahontas",
+            "Pocahontas",
             "solved",
             "the tribe's shelter problems"
           ]
@@ -5622,13 +5623,13 @@ const translationData = [
         "spanish": "Pocahontas creó tintes de bayas para hermosas obras artísticas.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "creó tintes",
             "de bayas",
             "para hermosas obras artísticas"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "created dyes",
             "from berries",
             "for beautiful artwork"
@@ -5640,13 +5641,13 @@ const translationData = [
         "spanish": "La valiente Pocahontas predijo patrones climáticos usando formaciones de nubes.",
         "segments": {
           "spanish": [
-            "la valiente pocahontas",
+            "la valiente Pocahontas",
             "predijo",
             "patrones climáticos",
             "usando formaciones de nubes"
           ],
           "english": [
-            "the brave pocahontas",
+            "the brave Pocahontas",
             "predicted",
             "weather patterns",
             "using cloud formations"
@@ -5658,13 +5659,13 @@ const translationData = [
         "spanish": "Pocahontas enseñó técnicas para preservar alimentos durante el invierno.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "enseñó técnicas",
             "para preservar alimentos",
             "durante el invierno"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "taught techniques",
             "for preserving food",
             "through winter"
@@ -5677,13 +5678,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante observación cuidadosa",
-            "pocahontas",
+            "Pocahontas",
             "mejoró",
             "métodos de caza"
           ],
           "english": [
             "through careful observation",
-            "pocahontas",
+            "Pocahontas",
             "improved",
             "hunting methods"
           ]
@@ -5694,13 +5695,13 @@ const translationData = [
         "spanish": "Pocahontas desarrolló un sistema para filtrar agua contaminada.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "desarrolló",
             "un sistema",
             "para filtrar agua contaminada"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "developed",
             "a system",
             "to filter contaminated water"
@@ -5712,13 +5713,13 @@ const translationData = [
         "spanish": "Pocahontas fomentó la paz escuchando diferentes perspectivas.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "fomentó la paz",
             "escuchando",
             "diferentes perspectivas"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "fostered peace",
             "by listening to",
             "different perspectives"
@@ -5730,13 +5731,13 @@ const translationData = [
         "spanish": "Pocahontas diseñó presas naturales para controlar inundaciones del bosque.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "diseñó presas naturales",
             "para controlar",
             "inundaciones del bosque"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "engineered natural dams",
             "to control",
             "forest flooding"
@@ -5749,13 +5750,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con materiales locales",
-            "pocahontas",
+            "Pocahontas",
             "creó herramientas educativas",
             "para niños"
           ],
           "english": [
             "with local materials",
-            "pocahontas",
+            "Pocahontas",
             "created educational tools",
             "for children"
           ]
@@ -5766,13 +5767,13 @@ const translationData = [
         "spanish": "Pocahontas descubrió repelentes naturales de insectos para protección aldeana.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "descubrió",
             "repelentes naturales de insectos",
             "para protección aldeana"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "discovered",
             "natural insect repellents",
             "for village protection"
@@ -5784,13 +5785,13 @@ const translationData = [
         "spanish": "La sabia Pocahontas estableció rotación de cultivos para agricultura sostenible.",
         "segments": {
           "spanish": [
-            "la sabia pocahontas",
+            "la sabia Pocahontas",
             "estableció",
             "rotación de cultivos",
             "para agricultura sostenible"
           ],
           "english": [
-            "the wise pocahontas",
+            "the wise Pocahontas",
             "established",
             "crop rotation",
             "for sustainable farming"
@@ -5802,13 +5803,13 @@ const translationData = [
         "spanish": "Pocahontas estudiaba comportamiento animal para predecir cambios ambientales.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "estudiaba comportamiento animal",
             "para predecir",
             "cambios ambientales"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "studied animal behavior",
             "to predict",
             "environmental changes"
@@ -5821,13 +5822,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante diplomacia",
-            "pocahontas",
+            "Pocahontas",
             "resolvió disputas de recursos",
             "entre aldeas"
           ],
           "english": [
             "through diplomacy",
-            "pocahontas",
+            "Pocahontas",
             "resolved resource disputes",
             "between villages"
           ]
@@ -5838,13 +5839,13 @@ const translationData = [
         "spanish": "Pocahontas inventó nuevas técnicas de pesca durante escasez alimentaria.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "inventó",
             "nuevas técnicas de pesca",
             "durante escasez alimentaria"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "invented",
             "new fishing techniques",
             "during food shortages"
@@ -5856,13 +5857,13 @@ const translationData = [
         "spanish": "La ingeniosa Pocahontas creó refugios impermeables usando materiales naturales.",
         "segments": {
           "spanish": [
-            "la ingeniosa pocahontas",
+            "la ingeniosa Pocahontas",
             "creó",
             "refugios impermeables",
             "usando materiales naturales"
           ],
           "english": [
-            "the resourceful pocahontas",
+            "the resourceful Pocahontas",
             "created",
             "waterproof shelters",
             "using natural materials"
@@ -5874,13 +5875,13 @@ const translationData = [
         "spanish": "Pocahontas organizó reuniones para compartir conocimientos entre diferentes tribus.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "organizó",
             "reuniones para compartir conocimientos",
             "entre diferentes tribus"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "organized",
             "knowledge-sharing gatherings",
             "between different tribes"
@@ -5893,13 +5894,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con planificación cuidadosa",
-            "pocahontas",
+            "Pocahontas",
             "ayudó a prepararse",
             "para desafíos estacionales"
           ],
           "english": [
             "with careful planning",
-            "pocahontas",
+            "Pocahontas",
             "helped prepare",
             "for seasonal challenges"
           ]
@@ -5910,13 +5911,13 @@ const translationData = [
         "spanish": "Pocahontas creó medicinas naturales de combinaciones de plantas forestales.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "creó medicinas naturales",
             "de",
             "combinaciones de plantas forestales"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "created natural medicines",
             "from",
             "forest plant combinations"
@@ -5928,13 +5929,13 @@ const translationData = [
         "spanish": "Pocahontas diseñó canoas que se movían rápidamente por los rápidos.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "diseñó canoas",
             "que se movían rápidamente",
             "por los rápidos"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "designed canoes",
             "that moved swiftly",
             "through rapids"
@@ -5946,13 +5947,13 @@ const translationData = [
         "spanish": "Pocahontas enseñó habilidades diplomáticas para resolver conflictos tribales.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "enseñó",
             "habilidades diplomáticas",
             "para resolver conflictos tribales"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "taught",
             "diplomatic skills",
             "to resolve tribal conflicts"
@@ -5965,13 +5966,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con intuición",
-            "pocahontas",
+            "Pocahontas",
             "predijo cambios estacionales",
             "con precisión"
           ],
           "english": [
             "with intuition",
-            "pocahontas",
+            "Pocahontas",
             "predicted seasonal weather changes",
             "accurately"
           ]
@@ -5982,13 +5983,13 @@ const translationData = [
         "spanish": "Pocahontas inventó sistemas de señales para comunicación a larga distancia.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "inventó",
             "sistemas de señales",
             "para comunicación a larga distancia"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "invented",
             "signal systems",
             "for long-distance communication"
@@ -6000,13 +6001,13 @@ const translationData = [
         "spanish": "La ingeniosa Pocahontas creó mapas utilizando puntos de referencia naturales.",
         "segments": {
           "spanish": [
-            "la ingeniosa pocahontas",
+            "la ingeniosa Pocahontas",
             "creó mapas",
             "utilizando",
             "puntos de referencia naturales"
           ],
           "english": [
-            "the resourceful pocahontas",
+            "the resourceful Pocahontas",
             "created maps",
             "using",
             "natural landmarks"
@@ -6018,13 +6019,13 @@ const translationData = [
         "spanish": "Pocahontas desarrolló técnicas para purificar fuentes de agua contaminadas.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "desarrolló técnicas",
             "para purificar",
             "fuentes de agua contaminadas"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "developed techniques",
             "for purifying",
             "contaminated water sources"
@@ -6037,13 +6038,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante experimentación",
-            "pocahontas",
+            "Pocahontas",
             "descubrió",
             "repelentes naturales contra insectos"
           ],
           "english": [
             "through experimentation",
-            "pocahontas",
+            "Pocahontas",
             "discovered",
             "natural insect repellents"
           ]
@@ -6054,13 +6055,13 @@ const translationData = [
         "spanish": "Pocahontas construyó refugios que resistían severas tormentas invernales.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "construyó refugios",
             "que resistían",
             "severas tormentas invernales"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "built shelters",
             "that withstood",
             "severe winter storms"
@@ -6072,13 +6073,13 @@ const translationData = [
         "spanish": "La sabia Pocahontas organizó distribución de alimentos durante duras hambrunas.",
         "segments": {
           "spanish": [
-            "la sabia pocahontas",
+            "la sabia Pocahontas",
             "organizó",
             "distribución de alimentos",
             "durante duras hambrunas"
           ],
           "english": [
-            "the wise pocahontas",
+            "the wise Pocahontas",
             "organized",
             "food distribution",
             "during harsh famines"
@@ -6090,13 +6091,13 @@ const translationData = [
         "spanish": "Pocahontas estableció redes comerciales entre tribus anteriormente hostiles.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "estableció",
             "redes comerciales",
             "entre tribus anteriormente hostiles"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "established",
             "trade networks",
             "between previously hostile tribes"
@@ -6109,13 +6110,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con paciencia",
-            "pocahontas",
+            "Pocahontas",
             "domesticó plantas silvestres",
             "para cosechas confiables"
           ],
           "english": [
             "with patience",
-            "pocahontas",
+            "Pocahontas",
             "domesticated wild plants",
             "for reliable harvests"
           ]
@@ -6126,13 +6127,13 @@ const translationData = [
         "spanish": "Pocahontas creó tintes naturales que resistían años de desgaste.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "creó tintes naturales",
             "que resistían",
             "años de desgaste"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "created natural dyes",
             "that withstood",
             "years of wear"
@@ -6144,13 +6145,13 @@ const translationData = [
         "spanish": "La valiente Pocahontas navegó terrenos peligrosos para encontrar recursos.",
         "segments": {
           "spanish": [
-            "la valiente pocahontas",
+            "la valiente Pocahontas",
             "navegó",
             "terrenos peligrosos",
             "para encontrar recursos"
           ],
           "english": [
-            "the brave pocahontas",
+            "the brave Pocahontas",
             "navigated",
             "treacherous terrain",
             "to find resources"
@@ -6162,13 +6163,13 @@ const translationData = [
         "spanish": "Pocahontas enseñó astronomía a niños usando patrones en cielos nocturnos.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "enseñó astronomía a niños",
             "usando patrones",
             "en cielos nocturnos"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "taught children astronomy",
             "using patterns",
             "in night skies"
@@ -6181,13 +6182,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante colaboración",
-            "pocahontas",
+            "Pocahontas",
             "resolvió",
             "complejos problemas habitacionales comunitarios"
           ],
           "english": [
             "through collaboration",
-            "pocahontas",
+            "Pocahontas",
             "solved",
             "complex community housing problems"
           ]
@@ -6198,13 +6199,13 @@ const translationData = [
         "spanish": "Pocahontas diseñó barreras naturales para proteger aldeas de inundaciones.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "diseñó",
             "barreras naturales",
             "para proteger aldeas de inundaciones"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "engineered",
             "natural barriers",
             "to protect villages from floods"
@@ -6216,13 +6217,13 @@ const translationData = [
         "spanish": "La amable Pocahontas compartió innovaciones agrícolas con comunidades vecinas.",
         "segments": {
           "spanish": [
-            "la amable pocahontas",
+            "la amable Pocahontas",
             "compartió",
             "innovaciones agrícolas",
             "con comunidades vecinas"
           ],
           "english": [
-            "the kind pocahontas",
+            "the kind Pocahontas",
             "shared",
             "agricultural innovations",
             "with neighboring communities"
@@ -6234,13 +6235,13 @@ const translationData = [
         "spanish": "Pocahontas desarrolló prácticas de caza sostenibles para preservar fauna.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "desarrolló",
             "prácticas de caza sostenibles",
             "para preservar fauna"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "developed",
             "sustainable hunting practices",
             "to preserve wildlife"
@@ -6253,13 +6254,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con pensamiento estratégico",
-            "pocahontas",
+            "Pocahontas",
             "creó",
             "sistemas eficientes de gestión de recursos"
           ],
           "english": [
             "with strategic thinking",
-            "pocahontas",
+            "Pocahontas",
             "created",
             "efficient resource management systems"
           ]
@@ -6270,13 +6271,13 @@ const translationData = [
         "spanish": "Pocahontas enseñó a otros a respetar la naturaleza y vida.",
         "segments": {
           "spanish": [
-            "pocahontas",
+            "Pocahontas",
             "enseñó a otros",
             "a respetar",
             "la naturaleza y vida"
           ],
           "english": [
-            "pocahontas",
+            "Pocahontas",
             "taught others",
             "to respect",
             "nature and life"
@@ -6313,13 +6314,13 @@ const translationData = [
           "spanish": [
             "annie descubrió",
             "plantas medicinales",
-            "con sacagawea",
+            "con Sacagawea",
             "durante su expedición"
           ],
           "english": [
             "annie discovered",
             "medicine plants",
-            "with sacagawea",
+            "with Sacagawea",
             "during their expedition"
           ]
         }
@@ -6330,13 +6331,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "annie ayudó",
-            "a thomas edison",
+            "a Thomas Edison",
             "a probar",
             "su último invento"
           ],
           "english": [
             "annie helped",
-            "thomas edison",
+            "Thomas Edison",
             "test",
             "his latest invention"
           ]
@@ -6350,13 +6351,13 @@ const translationData = [
             "annie aprendió",
             "sobre gravedad",
             "ayudando",
-            "a isaac newton"
+            "a Isaac Newton"
           ],
           "english": [
             "annie learned",
             "about gravity",
             "by assisting",
-            "isaac newton"
+            "Isaac Newton"
           ]
         }
       },
@@ -6367,14 +6368,14 @@ const translationData = [
           "spanish": [
             "annie estudió",
             "matemáticas antiguas",
-            "con pitágoras",
-            "en grecia"
+            "con Pitágoras",
+            "en Grecia"
           ],
           "english": [
             "annie studied",
             "ancient mathematics",
-            "with pythagoras",
-            "in greece"
+            "with Pythagoras",
+            "in Greece"
           ]
         }
       },
@@ -6386,13 +6387,13 @@ const translationData = [
             "annie intercambió",
             "técnicas agrícolas",
             "con",
-            "george washington carver"
+            "George Washington Carver"
           ],
           "english": [
             "annie exchanged",
             "agricultural techniques",
             "with",
-            "george washington carver"
+            "George Washington Carver"
           ]
         }
       },
@@ -6410,7 +6411,7 @@ const translationData = [
             "annie observed",
             "surgical procedures",
             "with",
-            "ancient chinese physicians"
+            "ancient Chinese physicians"
           ]
         }
       },
@@ -6422,13 +6423,13 @@ const translationData = [
             "annie experimentó",
             "volando cometas",
             "junto a",
-            "los hermanos wright"
+            "los hermanos Wright"
           ],
           "english": [
             "annie experimented",
-            "with flying kites",
+            "with Flying kites",
             "alongside",
-            "wright brothers"
+            "Wright brothers"
           ]
         }
       },
@@ -6439,14 +6440,14 @@ const translationData = [
           "spanish": [
             "annie decodificó",
             "jeroglíficos",
-            "con jean-françois champollion",
-            "en egipto"
+            "con Jean-François Champollion",
+            "en Egipto"
           ],
           "english": [
             "annie decoded",
             "hieroglyphics",
-            "with jean-françois champollion",
-            "in egypt"
+            "with Jean-François Champollion",
+            "in Egypt"
           ]
         }
       },
@@ -6456,13 +6457,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "annie ayudó",
-            "a juana de arco",
+            "a Juana de Arco",
             "a inspirar tropas",
             "con valentía"
           ],
           "english": [
             "annie helped",
-            "joan of arc",
+            "Joan of Arc",
             "inspire troops",
             "with courage"
           ]
@@ -6476,12 +6477,12 @@ const translationData = [
             "annie diseñó",
             "mejoras",
             "para sistemas de acueductos",
-            "romanos antiguos"
+            "Romanos antiguos"
           ],
           "english": [
             "annie designed",
             "improvements",
-            "for ancient roman",
+            "for ancient Roman",
             "aqueduct systems"
           ]
         }
@@ -6492,13 +6493,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "annie colaboró",
-            "con cleopatra",
+            "con Cleopatra",
             "para resolver",
             "desafíos diplomáticos"
           ],
           "english": [
             "annie collaborated",
-            "with cleopatra",
+            "with Cleopatra",
             "to solve",
             "diplomatic challenges"
           ]
@@ -6512,13 +6513,13 @@ const translationData = [
             "annie discutió",
             "corrientes oceánicas",
             "con",
-            "el capitán james cook"
+            "el Capitán James Cook"
           ],
           "english": [
             "annie discussed",
             "ocean currents",
             "with",
-            "captain james cook"
+            "Captain James Cook"
           ]
         }
       },
@@ -6530,13 +6531,13 @@ const translationData = [
             "annie aprendió",
             "sobre teorías",
             "de evolución",
-            "de charles darwin"
+            "de Charles Darwin"
           ],
           "english": [
             "annie learned",
             "about",
             "evolution theories",
-            "from charles darwin"
+            "from Charles Darwin"
           ]
         }
       },
@@ -6546,13 +6547,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "annie ayudó",
-            "a nikola tesla",
+            "a Nikola Tesla",
             "a realizar experimentos eléctricos",
             "seguramente"
           ],
           "english": [
             "annie helped",
-            "nikola tesla",
+            "Nikola Tesla",
             "conduct electricity experiments",
             "safely"
           ]
@@ -6566,13 +6567,13 @@ const translationData = [
             "annie aprendió",
             "estrategias de ajedrez",
             "de",
-            "la joven reina isabel i"
+            "la joven Reina Isabel i"
           ],
           "english": [
             "annie learned",
             "chess strategies",
             "from",
-            "young queen elizabeth i"
+            "young Queen Elizabeth i"
           ]
         }
       },
@@ -6584,13 +6585,13 @@ const translationData = [
             "annie exploró",
             "medicinas naturales",
             "con",
-            "hildegard von bingen"
+            "Hildegard von Bingen"
           ],
           "english": [
             "annie explored",
             "natural medicines",
             "with",
-            "hildegard von bingen"
+            "Hildegard von Bingen"
           ]
         }
       },
@@ -6601,13 +6602,13 @@ const translationData = [
           "spanish": [
             "annie observó",
             "eventos astronómicos",
-            "con copérnico",
+            "con Copérnico",
             "en su observatorio"
           ],
           "english": [
             "annie observed",
             "astronomical events",
-            "with copernicus",
+            "with Copernicus",
             "at his observatory"
           ]
         }
@@ -6618,13 +6619,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "annie ayudó",
-            "a alexander graham bell",
+            "a Alexander Graham Bell",
             "a probar",
             "su prototipo telefónico"
           ],
           "english": [
             "annie helped",
-            "alexander graham bell",
+            "Alexander Graham Bell",
             "test",
             "his telephone prototype"
           ]
@@ -6637,13 +6638,13 @@ const translationData = [
           "spanish": [
             "annie compuso",
             "poesía",
-            "con emily dickinson",
+            "con Emily Dickinson",
             "durante tardes tranquilas"
           ],
           "english": [
             "annie composed",
             "poetry",
-            "with emily dickinson",
+            "with Emily Dickinson",
             "during quiet afternoons"
           ]
         }
@@ -6654,15 +6655,15 @@ const translationData = [
         "segments": {
           "spanish": [
             "annie ayudó",
-            "a leonardo da vinci",
+            "a Leonardo da Vinci",
             "con",
             "su diseño de máquina voladora"
           ],
           "english": [
             "annie assisted",
-            "leonardo da vinci",
+            "Leonardo da Vinci",
             "with",
-            "his flying machine design"
+            "his Flying machine design"
           ]
         }
       },
@@ -6674,13 +6675,13 @@ const translationData = [
             "annie aprendió",
             "sobre electricidad",
             "de",
-            "benjamin franklin"
+            "Benjamin Franklin"
           ],
           "english": [
             "annie learned",
             "about electricity",
             "from",
-            "benjamin franklin"
+            "Benjamin Franklin"
           ]
         }
       },
@@ -6690,13 +6691,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "annie colaboró",
-            "con mozart",
+            "con Mozart",
             "para componer",
             "una melodía mágica"
           ],
           "english": [
             "annie collaborated",
-            "with mozart",
+            "with Mozart",
             "to compose",
             "a magical melody"
           ]
@@ -6708,13 +6709,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "annie ayudó",
-            "a florence nightingale",
+            "a Florence Nightingale",
             "a cuidar",
             "soldados heridos"
           ],
           "english": [
             "annie helped",
-            "florence nightingale",
+            "Florence Nightingale",
             "care for",
             "wounded soldiers"
           ]
@@ -6727,13 +6728,13 @@ const translationData = [
           "spanish": [
             "annie discutió",
             "astronomía",
-            "con galileo",
+            "con Galileo",
             "bajo cielos estrellados"
           ],
           "english": [
             "annie discussed",
             "astronomy",
-            "with galileo",
+            "with Galileo",
             "under starry skies"
           ]
         }
@@ -6752,7 +6753,7 @@ const translationData = [
             "annie learned",
             "pyramid construction techniques",
             "from",
-            "ancient egyptian architects"
+            "ancient Egyptian architects"
           ]
         }
       },
@@ -6764,13 +6765,13 @@ const translationData = [
             "annie intercambió",
             "conocimientos médicos modernos",
             "con",
-            "hipócrates"
+            "Hipócrates"
           ],
           "english": [
             "annie traded",
             "modern medical knowledge",
             "with",
-            "hippocrates"
+            "Hippocrates"
           ]
         }
       },
@@ -6781,13 +6782,13 @@ const translationData = [
           "spanish": [
             "annie compartió",
             "historias",
-            "con william shakespeare",
+            "con William Shakespeare",
             "para inspiración"
           ],
           "english": [
             "annie shared",
             "stories",
-            "with william shakespeare",
+            "with William Shakespeare",
             "for inspiration"
           ]
         }
@@ -6800,13 +6801,13 @@ const translationData = [
             "annie descubrió",
             "secretos de navegación",
             "con",
-            "cristóbal colón"
+            "Cristóbal Colón"
           ],
           "english": [
             "annie discovered",
             "navigation secrets",
             "with",
-            "christopher columbus"
+            "Christopher Columbus"
           ]
         }
       },
@@ -6818,13 +6819,13 @@ const translationData = [
             "annie estudió",
             "fósiles de dinosaurios",
             "con",
-            "mary anning"
+            "Mary Anning"
           ],
           "english": [
             "annie studied",
             "dinosaur fossils",
             "with",
-            "mary anning"
+            "Mary Anning"
           ]
         }
       },
@@ -6842,7 +6843,7 @@ const translationData = [
             "annie learned",
             "martial arts",
             "from",
-            "ancient japanese samurai"
+            "ancient Japanese samurai"
           ]
         }
       },
@@ -6852,15 +6853,15 @@ const translationData = [
         "segments": {
           "spanish": [
             "annie ayudó",
-            "a george washington",
+            "a George Washington",
             "a cruzar",
-            "el río delaware congelado"
+            "el río Delaware congelado"
           ],
           "english": [
             "annie helped",
-            "george washington",
+            "George Washington",
             "cross",
-            "the frozen delaware river"
+            "the frozen Delaware River"
           ]
         }
       },
@@ -6872,13 +6873,13 @@ const translationData = [
             "annie discutió",
             "derechos humanos",
             "con",
-            "abraham lincoln"
+            "Abraham Lincoln"
           ],
           "english": [
             "annie discussed",
             "human rights",
             "with",
-            "abraham lincoln"
+            "Abraham Lincoln"
           ]
         }
       },
@@ -6890,13 +6891,13 @@ const translationData = [
             "annie exploró",
             "las profundidades del océano",
             "con",
-            "jacques cousteau"
+            "Jacques Cousteau"
           ],
           "english": [
             "annie explored",
             "the ocean depths",
             "with",
-            "jacques cousteau"
+            "Jacques Cousteau"
           ]
         }
       },
@@ -6907,13 +6908,13 @@ const translationData = [
           "spanish": [
             "annie pintó",
             "junto a",
-            "vincent van gogh",
+            "Vincent van Gogh",
             "en su estudio"
           ],
           "english": [
             "annie painted",
             "alongside",
-            "vincent van gogh",
+            "Vincent van Gogh",
             "in his studio"
           ]
         }
@@ -6924,13 +6925,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "annie ayudó",
-            "a marie curie",
+            "a Marie Curie",
             "con",
             "sus experimentos de radiación"
           ],
           "english": [
             "annie helped",
-            "marie curie",
+            "Marie Curie",
             "with",
             "her radiation experiments"
           ]
@@ -6978,13 +6979,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "annie ayudó",
-            "a jack",
+            "a Jack",
             "a superar sus miedos",
             "durante aventuras desafiantes"
           ],
           "english": [
             "annie helped",
-            "jack",
+            "Jack",
             "overcome his fears",
             "during challenging adventures"
           ]
@@ -7212,13 +7213,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "annie colaboró",
-            "con jack",
+            "con Jack",
             "para descifrar",
             "mensajes misteriosos"
           ],
           "english": [
             "annie collaborated",
-            "with jack",
+            "with Jack",
             "to decode",
             "mysterious messages"
           ]
@@ -7446,13 +7447,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "annie animó",
-            "a jack",
+            "a Jack",
             "cuando",
             "enfrentaban desafíos difíciles"
           ],
           "english": [
             "annie encouraged",
-            "jack",
+            "Jack",
             "when",
             "facing difficult challenges"
           ]
@@ -7574,13 +7575,13 @@ const translationData = [
             "annie recolectó",
             "importantes artefactos históricos",
             "para",
-            "morgan"
+            "Morgan"
           ],
           "english": [
             "annie gathered",
             "important historical artifacts",
             "for",
-            "morgan"
+            "Morgan"
           ]
         }
       },
@@ -7648,13 +7649,13 @@ const translationData = [
         "spanish": "W A L L E coleccionaba objetos útiles para resolver desafíos diarios.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "coleccionaba objetos útiles",
             "para resolver",
             "desafíos diarios"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "collected useful objects",
             "to solve",
             "daily challenges"
@@ -7667,13 +7668,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con creatividad",
-            "w a l l e",
+            "W A L L E",
             "transformó basura",
             "en herramientas útiles"
           ],
           "english": [
             "with creativity",
-            "w a l l e",
+            "W A L L E",
             "repurposed trash",
             "into helpful tools"
           ]
@@ -7684,13 +7685,13 @@ const translationData = [
         "spanish": "W A L L E construyó escaleras con objetos descartados para alcanzar lugares altos.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "construyó escaleras",
             "con objetos descartados",
             "para alcanzar lugares altos"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "built stairs",
             "from discarded items",
             "to reach high places"
@@ -7702,13 +7703,13 @@ const translationData = [
         "spanish": "La amabilidad de W A L L E ayudó a forjar alianzas y amistades inesperadas.",
         "segments": {
           "spanish": [
-            "la amabilidad de w a l l e",
+            "la amabilidad de W A L L E",
             "ayudó a forjar",
             "inesperadas",
             "alianzas y amistades"
           ],
           "english": [
-            "w a l l e's kindness",
+            "W A L L E's kindness",
             "helped forge",
             "unexpected",
             "alliances and friendships"
@@ -7720,13 +7721,13 @@ const translationData = [
         "spanish": "W A L L E creó arte con materiales abandonados para expresar sentimientos.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "creó arte",
             "con materiales abandonados",
             "para expresar sentimientos"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "created art",
             "from abandoned materials",
             "to express feelings"
@@ -7739,13 +7740,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con valentía",
-            "w a l l e",
+            "W A L L E",
             "se aventuró en áreas desconocidas",
             "buscando soluciones"
           ],
           "english": [
             "through courage",
-            "w a l l e",
+            "W A L L E",
             "ventured into unknown areas",
             "seeking solutions"
           ]
@@ -7756,13 +7757,13 @@ const translationData = [
         "spanish": "W A L L E diseñó complejos sistemas de reciclaje con piezas recuperadas.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "diseñó",
             "complejos sistemas de reciclaje",
             "con piezas recuperadas"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "designed",
             "intricate recycling systems",
             "from salvaged parts"
@@ -7775,13 +7776,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con curiosidad",
-            "w a l l e",
+            "W A L L E",
             "descubrió nuevas formas",
             "de limpiar suelo contaminado"
           ],
           "english": [
             "with curiosity",
-            "w a l l e",
+            "W A L L E",
             "discovered new ways",
             "to clean polluted soil"
           ]
@@ -7792,13 +7793,13 @@ const translationData = [
         "spanish": "La persistencia de W A L L E ayudó a encontrar fuentes de agua durante sequías.",
         "segments": {
           "spanish": [
-            "la persistencia de w a l l e",
+            "la persistencia de W A L L E",
             "ayudó a encontrar",
             "fuentes de agua",
             "durante sequías"
           ],
           "english": [
-            "w a l l e's persistence",
+            "W A L L E's persistence",
             "helped find",
             "water sources",
             "during droughts"
@@ -7811,13 +7812,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando trabajo en equipo",
-            "w a l l e y eve",
+            "W A L L E y EVE",
             "restauraron",
             "ecosistemas dañados"
           ],
           "english": [
             "using teamwork",
-            "w a l l e and eve",
+            "W A L L E and EVE",
             "restored",
             "damaged ecosystems"
           ]
@@ -7828,13 +7829,13 @@ const translationData = [
         "spanish": "W A L L E enseñó a otros robots a apreciar la belleza de la Tierra.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "enseñó a otros robots",
             "a apreciar",
             "la belleza de la tierra"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "taught other robots",
             "to appreciate",
             "earth's beauty"
@@ -7847,13 +7848,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con ingenio",
-            "w a l l e",
+            "W A L L E",
             "creó colectores solares",
             "con basura reflectante"
           ],
           "english": [
             "with ingenuity",
-            "w a l l e",
+            "W A L L E",
             "created solar collectors",
             "from reflective trash"
           ]
@@ -7864,13 +7865,13 @@ const translationData = [
         "spanish": "W A L L E construyó refugios para pequeñas criaturas durante tormentas.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "construyó refugios",
             "para pequeñas criaturas",
             "durante tormentas"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "built shelters",
             "for small creatures",
             "during storms"
@@ -7882,13 +7883,13 @@ const translationData = [
         "spanish": "La consideración de W A L L E transformó espacios abandonados en jardines.",
         "segments": {
           "spanish": [
-            "la consideración de w a l l e",
+            "la consideración de W A L L E",
             "transformó",
             "espacios abandonados",
             "en jardines"
           ],
           "english": [
-            "w a l l e's thoughtfulness",
+            "W A L L E's thoughtfulness",
             "transformed",
             "neglected spaces",
             "into gardens"
@@ -7901,13 +7902,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante observación",
-            "w a l l e",
+            "W A L L E",
             "aprendió a predecir",
             "patrones climáticos peligrosos"
           ],
           "english": [
             "through observation",
-            "w a l l e",
+            "W A L L E",
             "learned to predict",
             "dangerous weather patterns"
           ]
@@ -7918,13 +7919,13 @@ const translationData = [
         "spanish": "W A L L E desarrolló métodos para filtrar agua contaminada efectivamente.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "desarrolló métodos",
             "para filtrar",
             "agua contaminada efectivamente"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "developed methods",
             "to filter",
             "polluted water effectively"
@@ -7937,13 +7938,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con determinación",
-            "w a l l e",
+            "W A L L E",
             "despejó caminos",
             "a través de montañas de basura"
           ],
           "english": [
             "with determination",
-            "w a l l e",
+            "W A L L E",
             "cleared pathways",
             "through mountains of trash"
           ]
@@ -7954,13 +7955,13 @@ const translationData = [
         "spanish": "W A L L E creó sistemas de comunicación usando electrónicos descartados.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "creó",
             "sistemas de comunicación",
             "usando electrónicos descartados"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "created",
             "communication systems",
             "using discarded electronics"
@@ -7973,13 +7974,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "las innovaciones de reciclaje",
-            "de w a l l e",
+            "de W A L L E",
             "ayudaron a restaurar",
             "el ambiente terrestre"
           ],
           "english": [
             "recycling innovations",
-            "w a l l e's",
+            "W A L L E's",
             "helped restore",
             "earth's environment"
           ]
@@ -7991,13 +7992,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante colaboración",
-            "w a l l e y amigos",
+            "W A L L E y amigos",
             "revitalizaron",
             "paisajes áridos"
           ],
           "english": [
             "through collaboration",
-            "w a l l e and friends",
+            "W A L L E and friends",
             "revitalized",
             "barren landscapes"
           ]
@@ -8008,13 +8009,13 @@ const translationData = [
         "spanish": "W A L L E organizó robots para limpiar grandes áreas contaminadas.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "organizó robots",
             "para limpiar",
             "grandes áreas contaminadas"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "organized robots",
             "to clean",
             "large contaminated areas"
@@ -8027,13 +8028,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con improvisación",
-            "w a l l e",
+            "W A L L E",
             "construyó puentes",
             "sobre peligrosos abismos"
           ],
           "english": [
             "with improvisation",
-            "w a l l e",
+            "W A L L E",
             "built bridges",
             "across dangerous chasms"
           ]
@@ -8044,13 +8045,13 @@ const translationData = [
         "spanish": "W A L L E creó sistemas de alerta para tormentas de polvo cercanas.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "creó",
             "sistemas de alerta",
             "para tormentas de polvo cercanas"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "created",
             "warning systems",
             "for approaching dust storms"
@@ -8063,13 +8064,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con paciencia",
-            "w a l l e",
+            "W A L L E",
             "restauró tecnología olvidada",
             "a condición funcional"
           ],
           "english": [
             "through patience",
-            "w a l l e",
+            "W A L L E",
             "restored forgotten technology",
             "to working condition"
           ]
@@ -8080,13 +8081,13 @@ const translationData = [
         "spanish": "W A L L E diseñó mapas de rutas seguras a través de peligros.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "diseñó mapas",
             "de rutas seguras",
             "a través de peligros"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "designed maps",
             "of safe travel routes",
             "through dangers"
@@ -8099,13 +8100,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con recursos limitados",
-            "w a l l e",
+            "W A L L E",
             "resolvió",
             "complejos desafíos ambientales"
           ],
           "english": [
             "with limited resources",
-            "w a l l e",
+            "W A L L E",
             "solved",
             "complex environmental challenges"
           ]
@@ -8116,13 +8117,13 @@ const translationData = [
         "spanish": "W A L L E enseñó a humanos la importancia de proteger recursos naturales.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "enseñó a humanos",
             "la importancia",
             "de proteger recursos naturales"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "taught humans",
             "the importance",
             "of protecting natural resources"
@@ -8134,13 +8135,13 @@ const translationData = [
         "spanish": "La compasión de W A L L E inspiró a otros a ayudar a reparar la Tierra.",
         "segments": {
           "spanish": [
-            "la compasión de w a l l e",
+            "la compasión de W A L L E",
             "inspiró a otros",
             "a ayudar",
             "a reparar la tierra"
           ],
           "english": [
-            "w a l l e's compassion",
+            "W A L L E's compassion",
             "inspired others",
             "to help",
             "repair earth"
@@ -8153,13 +8154,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante prueba y error",
-            "w a l l e",
+            "W A L L E",
             "desarrolló",
             "sistemas eficientes de clasificación"
           ],
           "english": [
             "through trial and error",
-            "w a l l e",
+            "W A L L E",
             "developed",
             "efficient sorting systems"
           ]
@@ -8170,13 +8171,13 @@ const translationData = [
         "spanish": "W A L L E convirtió materiales de desecho en valiosos recursos de construcción.",
         "segments": {
           "spanish": [
-            "w a l l e convirtió",
+            "W A L L E convirtió",
             "materiales de desecho",
             "en",
             "valiosos recursos de construcción"
           ],
           "english": [
-            "w a l l e converted",
+            "W A L L E converted",
             "waste materials",
             "into",
             "valuable building resources"
@@ -8189,13 +8190,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con análisis cuidadoso",
-            "w a l l e",
+            "W A L L E",
             "identificó componentes reutilizables",
             "entre escombros"
           ],
           "english": [
             "with careful analysis",
-            "w a l l e",
+            "W A L L E",
             "identified reusable components",
             "from debris"
           ]
@@ -8206,13 +8207,13 @@ const translationData = [
         "spanish": "W A L L E creó fuentes alternativas de energía con maquinaria abandonada.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "creó",
             "fuentes alternativas de energía",
             "con maquinaria abandonada"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "created",
             "alternative energy sources",
             "from abandoned machinery"
@@ -8224,13 +8225,13 @@ const translationData = [
         "spanish": "El pensamiento innovador de W A L L E resolvió problemas aparentemente imposibles de residuos.",
         "segments": {
           "spanish": [
-            "el pensamiento innovador de w a l l e",
+            "el pensamiento innovador de W A L L E",
             "resolvió",
             "problemas aparentemente imposibles",
             "de residuos"
           ],
           "english": [
-            "w a l l e's innovative thinking",
+            "W A L L E's innovative thinking",
             "solved",
             "seemingly impossible problems",
             "waste"
@@ -8243,14 +8244,14 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante empatía",
-            "w a l l e",
+            "W A L L E",
             "unió diferentes modelos de robots",
             "hacia objetivos"
           ],
           "english": [
             "through empathy",
-            "w a l l e",
-            "united different robot models",
+            "W A L L E",
+            "united different Robot models",
             "toward goals"
           ]
         }
@@ -8260,13 +8261,13 @@ const translationData = [
         "spanish": "W A L L E estableció sistemas de preservación de semillas para futura regeneración.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "estableció",
             "sistemas de preservación de semillas",
             "para futura regeneración"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "established",
             "seed preservation systems",
             "for future regeneration"
@@ -8279,13 +8280,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con planificación estratégica",
-            "w a l l e",
+            "W A L L E",
             "coordinó",
             "operaciones de limpieza a gran escala"
           ],
           "english": [
             "with strategic planning",
-            "w a l l e",
+            "W A L L E",
             "coordinated",
             "large-scale cleanup operations"
           ]
@@ -8296,13 +8297,13 @@ const translationData = [
         "spanish": "W A L L E adaptó viejas tecnologías para servir nuevos propósitos.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "adaptó viejas tecnologías",
             "para servir",
             "nuevos propósitos"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "adapted old technologies",
             "to serve",
             "new purposes"
@@ -8314,13 +8315,13 @@ const translationData = [
         "spanish": "La ingeniosidad de W A L L E convirtió escasez en oportunidades inesperadas.",
         "segments": {
           "spanish": [
-            "la ingeniosidad de w a l l e",
+            "la ingeniosidad de W A L L E",
             "convirtió",
             "escasez",
             "en oportunidades inesperadas"
           ],
           "english": [
-            "w a l l e's resourcefulness",
+            "W A L L E's resourcefulness",
             "turned",
             "scarcity",
             "into unexpected opportunities"
@@ -8333,13 +8334,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con dedicación",
-            "w a l l e",
+            "W A L L E",
             "revitalizó suelo contaminado",
             "para plantación"
           ],
           "english": [
             "through dedication",
-            "w a l l e",
+            "W A L L E",
             "revitalized contaminated soil",
             "for planting"
           ]
@@ -8350,13 +8351,13 @@ const translationData = [
         "spanish": "W A L L E construyó sistemas de recolección de lluvia con contenedores descartados.",
         "segments": {
           "spanish": [
-            "w a l l e",
+            "W A L L E",
             "construyó",
             "sistemas de recolección de lluvia",
             "con contenedores descartados"
           ],
           "english": [
-            "w a l l e",
+            "W A L L E",
             "built",
             "rainwater collection systems",
             "from discarded containers"
@@ -8373,13 +8374,13 @@ const translationData = [
         "spanish": "EVE usó tecnología avanzada de escaneo para identificar plantas viables.",
         "segments": {
           "spanish": [
-            "eve",
+            "EVE",
             "usó tecnología avanzada de escaneo",
             "para identificar",
             "plantas viables"
           ],
           "english": [
-            "eve",
+            "EVE",
             "used advanced scanning technology",
             "to identify",
             "viable plants"
@@ -8392,13 +8393,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con precisión",
-            "eve",
+            "EVE",
             "eliminó escombros peligrosos",
             "bloqueando rutas de evacuación"
           ],
           "english": [
             "with precision",
-            "eve",
+            "EVE",
             "cleared dangerous debris",
             "blocking evacuation routes"
           ]
@@ -8409,13 +8410,13 @@ const translationData = [
         "spanish": "EVE enseñó a otros robots a reconocer amenazas ambientales.",
         "segments": {
           "spanish": [
-            "eve",
+            "EVE",
             "enseñó a otros robots",
             "a reconocer",
             "amenazas ambientales"
           ],
           "english": [
-            "eve",
+            "EVE",
             "taught other robots",
             "to recognize",
             "environmental threats"
@@ -8428,13 +8429,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante colaboración",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "protegieron",
             "el espécimen vegetal"
           ],
           "english": [
             "through collaboration",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "protected",
             "the plant specimen"
           ]
@@ -8445,13 +8446,13 @@ const translationData = [
         "spanish": "EVE desarrolló patrones de vuelo eficientes para conservar energía.",
         "segments": {
           "spanish": [
-            "eve",
+            "EVE",
             "desarrolló",
             "patrones de vuelo eficientes",
             "para conservar energía"
           ],
           "english": [
-            "eve",
+            "EVE",
             "developed",
             "efficient flight patterns",
             "to conserve energy"
@@ -8464,13 +8465,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con valentía",
-            "eve",
+            "EVE",
             "navegó áreas peligrosas",
             "para encontrar recursos"
           ],
           "english": [
             "with courage",
-            "eve",
+            "EVE",
             "navigated dangerous areas",
             "to find resources"
           ]
@@ -8481,13 +8482,13 @@ const translationData = [
         "spanish": "El pensamiento rápido de EVE evitó fallos catastróficos en sistemas de nave.",
         "segments": {
           "spanish": [
-            "el pensamiento rápido de eve",
+            "el pensamiento rápido de EVE",
             "evitó",
             "evitó fallos catastróficos",
             "en sistemas de nave"
           ],
           "english": [
-            "eve's quick thinking",
+            "EVE's quick thinking",
             "prevented",
             "catastrophic system failures",
             "aboard ship"
@@ -8499,13 +8500,13 @@ const translationData = [
         "spanish": "EVE creó escudos protectores utilizando su tecnología avanzada.",
         "segments": {
           "spanish": [
-            "eve",
+            "EVE",
             "creó escudos protectores",
             "utilizando",
             "su tecnología avanzada"
           ],
           "english": [
-            "eve",
+            "EVE",
             "created protective shields",
             "using",
             "her advanced technology"
@@ -8518,13 +8519,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con amabilidad",
-            "eve",
+            "EVE",
             "ayudó a reparar",
             "robots compañeros dañados"
           ],
           "english": [
             "through kindness",
-            "eve",
+            "EVE",
             "helped repair",
             "damaged companion robots"
           ]
@@ -8535,13 +8536,13 @@ const translationData = [
         "spanish": "EVE diseñó sistemas eficientes para catalogar recursos restantes terrestres.",
         "segments": {
           "spanish": [
-            "eve",
+            "EVE",
             "diseñó sistemas eficientes",
             "para catalogar",
             "recursos restantes terrestres"
           ],
           "english": [
-            "eve",
+            "EVE",
             "designed efficient systems",
             "for cataloging",
             "earth's remaining resources"
@@ -8554,13 +8555,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con análisis metódico",
-            "eve",
+            "EVE",
             "identificó patrones",
             "en recuperación ecológica"
           ],
           "english": [
             "with methodical analysis",
-            "eve",
+            "EVE",
             "identified patterns",
             "in ecological recovery"
           ]
@@ -8572,12 +8573,12 @@ const translationData = [
         "segments": {
           "spanish": [
             "la consideración",
-            "de eve",
+            "de EVE",
             "ayudó a establecer armonía",
             "entre diferentes robots"
           ],
           "english": [
-            "eve's thoughtfulness",
+            "EVE's thoughtfulness",
             "helped",
             "establish harmony",
             "between different robots"
@@ -8589,13 +8590,13 @@ const translationData = [
         "spanish": "EVE proyectó mapas holográficos para guiar exploradores perdidos a casa.",
         "segments": {
           "spanish": [
-            "eve",
+            "EVE",
             "proyectó mapas holográficos",
             "para guiar",
             "exploradores perdidos a casa"
           ],
           "english": [
-            "eve",
+            "EVE",
             "projected holographic maps",
             "to guide",
             "lost explorers home"
@@ -8608,13 +8609,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con precisión gentil",
-            "eve",
+            "EVE",
             "reparó",
             "delicada tecnología antigua"
           ],
           "english": [
             "with gentle precision",
-            "eve",
+            "EVE",
             "repaired",
             "delicate ancient technology"
           ]
@@ -8625,13 +8626,13 @@ const translationData = [
         "spanish": "EVE calculó condiciones óptimas de crecimiento para especies vegetales en peligro.",
         "segments": {
           "spanish": [
-            "eve",
+            "EVE",
             "calculó",
             "condiciones óptimas de crecimiento",
             "para especies vegetales en peligro"
           ],
           "english": [
-            "eve",
+            "EVE",
             "calculated",
             "optimal growing conditions",
             "for endangered plant species"
@@ -8644,13 +8645,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante trabajo en equipo",
-            "eve",
+            "EVE",
             "estableció redes de comunicación",
             "entre asentamientos"
           ],
           "english": [
             "through teamwork",
-            "eve",
+            "EVE",
             "established communication networks",
             "between settlements"
           ]
@@ -8661,13 +8662,13 @@ const translationData = [
         "spanish": "EVE diseñó sistemas automatizados de riego para jardines comunitarios.",
         "segments": {
           "spanish": [
-            "eve",
+            "EVE",
             "diseñó",
             "sistemas automatizados de riego",
             "para jardines comunitarios"
           ],
           "english": [
-            "eve",
+            "EVE",
             "designed",
             "automated irrigation systems",
             "for community gardens"
@@ -8680,13 +8681,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con pensamiento analítico",
-            "eve",
+            "EVE",
             "resolvió",
             "complejos problemas de contaminación del suelo"
           ],
           "english": [
             "with analytical thinking",
-            "eve",
+            "EVE",
             "solved",
             "complex soil contamination problems"
           ]
@@ -8697,7 +8698,7 @@ const translationData = [
         "spanish": "La empatía de EVE ayudó a entender necesidades humanas durante reasentamiento.",
         "segments": {
           "spanish": [
-            "la empatía de eve",
+            "la empatía de EVE",
             "ayudó a entender",
             "necesidades humanas",
             "durante reasentamiento"
@@ -8715,13 +8716,13 @@ const translationData = [
         "spanish": "EVE construyó domos protectores para resguardar plántulas frágiles.",
         "segments": {
           "spanish": [
-            "eve",
+            "EVE",
             "construyó domos protectores",
             "para resguardar",
             "plántulas frágiles"
           ],
           "english": [
-            "eve",
+            "EVE",
             "constructed protective domes",
             "to shield",
             "fragile seedlings"
@@ -8734,15 +8735,15 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante habilidad diplomática",
-            "eve",
+            "EVE",
             "resolvió conflictos",
             "entre facciones robóticas"
           ],
           "english": [
             "through diplomatic skill",
-            "eve",
+            "EVE",
             "resolved conflicts",
-            "between robot factions"
+            "between Robot factions"
           ]
         }
       },
@@ -8751,13 +8752,13 @@ const translationData = [
         "spanish": "EVE adaptó sus capacidades para asistir en exploración submarina.",
         "segments": {
           "spanish": [
-            "eve",
+            "EVE",
             "adaptó sus capacidades",
             "para asistir",
             "en exploración submarina"
           ],
           "english": [
-            "eve",
+            "EVE",
             "adapted her capabilities",
             "to assist",
             "in underwater exploration"
@@ -8770,13 +8771,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con previsión",
-            "eve",
+            "EVE",
             "creó planes alternativos",
             "para fallos inesperados de sistema"
           ],
           "english": [
             "with foresight",
-            "eve",
+            "EVE",
             "created backup plans",
             "for unexpected system failures"
           ]
@@ -8787,13 +8788,13 @@ const translationData = [
         "spanish": "EVE implementó protocolos innovadores de seguridad para proteger comunidades vulnerables.",
         "segments": {
           "spanish": [
-            "eve",
+            "EVE",
             "implementó",
             "protocolos innovadores de seguridad",
             "para proteger comunidades vulnerables"
           ],
           "english": [
-            "eve",
+            "EVE",
             "implemented",
             "innovative security protocols",
             "to protect vulnerable communities"
@@ -8806,13 +8807,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el liderazgo",
-            "de eve",
+            "de EVE",
             "unió grupos diversos",
             "hacia metas comunes de restauración"
           ],
           "english": [
             "leadership",
-            "eve's",
+            "EVE's",
             "united diverse groups",
             "toward common restoration goals"
           ]
@@ -8824,13 +8825,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante planificación cuidadosa",
-            "eve",
+            "EVE",
             "orquestó",
             "proyectos de reforestación a gran escala"
           ],
           "english": [
             "through careful planning",
-            "eve",
+            "EVE",
             "orchestrated",
             "large-scale reforestation projects"
           ]
@@ -8841,13 +8842,13 @@ const translationData = [
         "spanish": "EVE desarrolló herramientas especializadas para delicadas misiones de recuperación arqueológica.",
         "segments": {
           "spanish": [
-            "eve",
+            "EVE",
             "desarrolló herramientas especializadas",
             "para delicadas",
             "misiones de recuperación arqueológica"
           ],
           "english": [
-            "eve",
+            "EVE",
             "developed specialized tools",
             "for delicate",
             "archaeological recovery missions"
@@ -8860,13 +8861,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con determinación",
-            "eve",
+            "EVE",
             "superó interferencia atmosférica",
             "afectando sistemas de comunicación"
           ],
           "english": [
             "with determination",
-            "eve",
+            "EVE",
             "overcame atmospheric interference",
             "affecting communication systems"
           ]
@@ -8877,13 +8878,13 @@ const translationData = [
         "spanish": "EVE creó programas educativos para instruir a robots más jóvenes.",
         "segments": {
           "spanish": [
-            "eve",
+            "EVE",
             "creó programas educativos",
             "para instruir",
             "a robots más jóvenes"
           ],
           "english": [
-            "eve",
+            "EVE",
             "created teaching programs",
             "to educate",
             "younger robots"
@@ -8896,13 +8897,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante ingenio",
-            "eve",
+            "EVE",
             "transformó radiación dañina",
             "en energía útil"
           ],
           "english": [
             "through ingenuity",
-            "eve",
+            "EVE",
             "transformed harmful radiation",
             "into useful energy"
           ]
@@ -8914,12 +8915,12 @@ const translationData = [
         "segments": {
           "spanish": [
             "la paciencia",
-            "de eve",
+            "de EVE",
             "ayudó a rehabilitar exitosamente",
             "sistemas ecológicos dañados"
           ],
           "english": [
-            "eve's patience",
+            "EVE's patience",
             "helped",
             "successfully rehabilitate",
             "damaged ecological systems"
@@ -8932,13 +8933,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con compasión",
-            "eve",
+            "EVE",
             "guió a humanos asustados",
             "a través de tecnología desconocida"
           ],
           "english": [
             "with compassion",
-            "eve",
+            "EVE",
             "guided frightened humans",
             "through unfamiliar technology"
           ]
@@ -8949,13 +8950,13 @@ const translationData = [
         "spanish": "EVE y W A L L E restauraron antiguas torres de comunicación para colonos.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "restauraron",
             "antiguas torres de comunicación",
             "para colonos"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "restored",
             "ancient communication towers",
             "for settlers"
@@ -8968,13 +8969,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con fortalezas compartidas",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "purificaron",
             "fuentes de agua contaminadas"
           ],
           "english": [
             "with shared strengths",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "purified",
             "contaminated water sources"
           ]
@@ -8985,13 +8986,13 @@ const translationData = [
         "spanish": "EVE y W A L L E diseñaron hábitats sostenibles para humanos retornantes.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "diseñaron",
             "hábitats sostenibles",
             "para humanos retornantes"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "designed",
             "sustainable habitats",
             "for returning humans"
@@ -9004,13 +9005,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante apoyo mutuo",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "navegaron",
             "terreno peligroso"
           ],
           "english": [
             "through mutual support",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "navigated",
             "dangerous terrain"
           ]
@@ -9021,13 +9022,13 @@ const translationData = [
         "spanish": "EVE y W A L L E establecieron paso seguro a través de zonas tóxicas.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "establecieron",
             "paso seguro",
             "a través de zonas tóxicas"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "established",
             "safe passage",
             "through toxic zones"
@@ -9040,13 +9041,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con inteligencia combinada",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "resolvieron",
             "complejos enigmas ecológicos"
           ],
           "english": [
             "with combined intelligence",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "solved",
             "complex ecological puzzles"
           ]
@@ -9057,13 +9058,13 @@ const translationData = [
         "spanish": "EVE y W A L L E crearon un banco de semillas para plantas en peligro.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "crearon",
             "un banco de semillas",
             "para plantas en peligro"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "created",
             "a seed bank",
             "for endangered plants"
@@ -9076,13 +9077,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante esfuerzos persistentes",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "despejaron",
             "campos de escombros"
           ],
           "english": [
             "through persistent efforts",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "cleared",
             "debris fields"
           ]
@@ -9093,13 +9094,13 @@ const translationData = [
         "spanish": "EVE y W A L L E mapearon recursos subterráneos para futuras generaciones.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "mapearon",
             "recursos subterráneos",
             "para futuras generaciones"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "mapped",
             "underground resources",
             "for future generations"
@@ -9112,13 +9113,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con ingenio",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "convirtieron desechos",
             "en materiales de construcción"
           ],
           "english": [
             "with resourcefulness",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "converted waste",
             "into building materials"
           ]
@@ -9129,13 +9130,13 @@ const translationData = [
         "spanish": "EVE y W A L L E enseñaron administración ambiental a humanos despertados.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "enseñaron",
             "administración ambiental",
             "a humanos despertados"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "taught",
             "environmental stewardship",
             "to awakened humans"
@@ -9148,13 +9149,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante coordinación cuidadosa",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "rescataron",
             "exploradores atrapados"
           ],
           "english": [
             "through careful coordination",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "rescued",
             "trapped explorers"
           ]
@@ -9165,15 +9166,15 @@ const translationData = [
         "spanish": "EVE y W A L L E organizaron equipos robóticos para operaciones eficientes de limpieza.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "organizaron",
             "equipos robóticos",
             "para operaciones eficientes de limpieza"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "organized",
-            "robot teams",
+            "Robot teams",
             "for efficient cleanup operations"
           ]
         }
@@ -9183,13 +9184,13 @@ const translationData = [
         "spanish": "EVE y W A L L E establecieron redes de comunicación entre asentamientos distantes.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "establecieron",
             "redes de comunicación",
             "entre asentamientos distantes"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "established",
             "communication networks",
             "between distant settlements"
@@ -9202,13 +9203,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con habilidades complementarias",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "reconstruyeron",
             "estructuras colapsadas"
           ],
           "english": [
             "with complementary skills",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "rebuilt",
             "collapsed structures"
           ]
@@ -9219,13 +9220,13 @@ const translationData = [
         "spanish": "EVE y W A L L E purificaron suelo contaminado usando métodos innovadores.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "purificaron",
             "suelo contaminado",
             "usando métodos innovadores"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "purified",
             "contaminated soil",
             "using innovative methods"
@@ -9238,13 +9239,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante investigación metódica",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "identificaron",
             "candidatos de plantas extintas"
           ],
           "english": [
             "through methodical research",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "identified",
             "extinct plant candidates"
           ]
@@ -9255,13 +9256,13 @@ const translationData = [
         "spanish": "EVE y W A L L E crearon una base de datos de especies recuperándose terrestres.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "crearon",
             "una base de datos",
             "de especies recuperándose terrestres"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "created",
             "a database",
             "of earth's recovering species"
@@ -9274,13 +9275,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con paciencia",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "nutrieron delicadas plántulas",
             "hasta madurez"
           ],
           "english": [
             "with patience",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "nurtured delicate seedlings",
             "to maturity"
           ]
@@ -9291,13 +9292,13 @@ const translationData = [
         "spanish": "EVE y W A L L E establecieron zonas protectoras alrededor de hábitats frágiles.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "establecieron",
             "zonas protectoras",
             "alrededor de hábitats frágiles"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "established",
             "protective zones",
             "around fragile habitats"
@@ -9310,13 +9311,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante ingeniería creativa",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "restauraron",
             "sistemas de limpieza oceánica"
           ],
           "english": [
             "through creative engineering",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "restored",
             "ocean cleaning systems"
           ]
@@ -9327,13 +9328,13 @@ const translationData = [
         "spanish": "EVE y W A L L E desarrollaron sistemas de alerta temprana para peligros ambientales.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "desarrollaron",
             "sistemas de alerta temprana",
             "para peligros ambientales"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "developed",
             "early warning systems",
             "for environmental dangers"
@@ -9346,13 +9347,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con determinación",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "descontaminaron",
             "áreas radioactivas con seguridad"
           ],
           "english": [
             "with determination",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "decontaminated",
             "radioactive areas safely"
           ]
@@ -9363,13 +9364,13 @@ const translationData = [
         "spanish": "EVE y W A L L E entrenaron a otros robots en técnicas de restauración ambiental.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "entrenaron",
             "a otros robots",
             "en técnicas de restauración ambiental"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "trained",
             "other robots",
             "in environmental restoration techniques"
@@ -9382,13 +9383,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante planificación sistemática",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "priorizaron",
             "zonas críticas de recuperación"
           ],
           "english": [
             "through systematic planning",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "prioritized",
             "critical recovery zones"
           ]
@@ -9399,13 +9400,13 @@ const translationData = [
         "spanish": "EVE y W A L L E descubrieron tecnología antigua con aplicaciones ambientales.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "descubrieron",
             "tecnología antigua",
             "con aplicaciones ambientales"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "discovered",
             "ancient technology",
             "with environmental applications"
@@ -9418,13 +9419,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con precisión",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "trasplantaron flora rara",
             "a ubicaciones más seguras"
           ],
           "english": [
             "with precision",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "transplanted rare flora",
             "to safer locations"
           ]
@@ -9435,13 +9436,13 @@ const translationData = [
         "spanish": "EVE y W A L L E monitorearon composición atmosférica para elementos tóxicos.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "monitorearon",
             "composición atmosférica",
             "para elementos tóxicos"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "monitored",
             "atmospheric composition",
             "for toxic elements"
@@ -9454,13 +9455,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante colaboración",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "reactivaron",
             "sistemas inactivos de filtración acuática"
           ],
           "english": [
             "through collaboration",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "reactivated",
             "dormant water filtration systems"
           ]
@@ -9471,13 +9472,13 @@ const translationData = [
         "spanish": "EVE y W A L L E iniciaron quemas controladas para promover regeneración forestal.",
         "segments": {
           "spanish": [
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "iniciaron",
             "quemas controladas",
             "para promover regeneración forestal"
           ],
           "english": [
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "initiated",
             "controlled burns",
             "to promote forest regeneration"
@@ -9490,13 +9491,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con ingenio",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "convirtieron chatarra metálica",
             "en equipo médico"
           ],
           "english": [
             "with ingenuity",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "converted scrap metal",
             "into medical equipment"
           ]
@@ -9508,13 +9509,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con persistencia",
-            "eve y w a l l e",
+            "EVE y W A L L E",
             "reactivaron",
             "sistemas agrícolas dormantes"
           ],
           "english": [
             "with persistence",
-            "eve and w a l l e",
+            "EVE and W A L L E",
             "revived",
             "dormant agricultural systems"
           ]
@@ -9530,13 +9531,13 @@ const translationData = [
         "spanish": "Rapunzel usó su largo cabello para escapar de la torre.",
         "segments": {
           "spanish": [
-            "rapunzel",
+            "Rapunzel",
             "usó su largo cabello",
             "para escapar",
             "de la torre"
           ],
           "english": [
-            "rapunzel",
+            "Rapunzel",
             "used her long hair",
             "to escape",
             "the tower"
@@ -9548,15 +9549,15 @@ const translationData = [
         "spanish": "Rapunzel encontró consuelo en la historia del encarcelamiento de José, confiando en que Dios tenía un propósito para sus años en la torre.",
         "segments": {
           "spanish": [
-            "rapunzel encontró consuelo",
-            "en la historia del encarcelamiento de josé",
-            "confiando en que dios",
+            "Rapunzel encontró consuelo",
+            "en la historia del encarcelamiento de José",
+            "confiando en que Dios",
             "tenía un propósito para sus años en la torre"
           ],
           "english": [
-            "rapunzel found comfort",
-            "in joseph's story of imprisonment",
-            "trusting that god",
+            "Rapunzel found comfort",
+            "in Joseph's story of imprisonment",
+            "trusting that God",
             "had a purpose for her years in the tower"
           ]
         }
@@ -9566,14 +9567,14 @@ const translationData = [
         "spanish": "Rapunzel meditaba en los Salmos de David durante noches solitarias, encontrando esperanza en sus palabras de liberación.",
         "segments": {
           "spanish": [
-            "rapunzel meditaba",
-            "en los salmos de david",
+            "Rapunzel meditaba",
+            "en los Salmos de David",
             "durante noches solitarias",
             "encontrando esperanza en sus palabras de liberación"
           ],
           "english": [
-            "rapunzel meditated",
-            "on the psalms of david",
+            "Rapunzel meditated",
+            "on the Psalms of David",
             "during lonely nights",
             "finding hope in his words of deliverance"
           ]
@@ -9584,14 +9585,14 @@ const translationData = [
         "spanish": "Rapunzel reflexionaba sobre la paciencia de Job en el sufrimiento mientras soportaba año tras año de aislamiento.",
         "segments": {
           "spanish": [
-            "rapunzel reflexionaba",
-            "sobre la paciencia de job",
+            "Rapunzel reflexionaba",
+            "sobre la paciencia de Job",
             "en el sufrimiento",
             "mientras soportaba año tras año de aislamiento"
           ],
           "english": [
-            "rapunzel reflected",
-            "on job's patience",
+            "Rapunzel reflected",
+            "on Job's patience",
             "through suffering",
             "as she endured year after year of isolation"
           ]
@@ -9602,15 +9603,15 @@ const translationData = [
         "spanish": "Rapunzel canalizaba la creatividad dada a Bezalel en Éxodo cuando pintaba las paredes de su torre con historias coloridas.",
         "segments": {
           "spanish": [
-            "rapunzel canalizaba",
-            "la creatividad dada a bezalel",
-            "en éxodo",
+            "Rapunzel canalizaba",
+            "la creatividad dada a Bezalel",
+            "en Éxodo",
             "cuando pintaba las paredes de su torre con historias coloridas"
           ],
           "english": [
-            "rapunzel channeled",
-            "the creativity given to bezalel",
-            "in exodus",
+            "Rapunzel channeled",
+            "the creativity given to Bezalel",
+            "in Exodus",
             "when painting her tower walls with colorful stories"
           ]
         }
@@ -9620,15 +9621,15 @@ const translationData = [
         "spanish": "Rapunzel cantaba himnos de alabanza como Pablo y Silas en prisión, transformando su cautiverio con melodías de fe.",
         "segments": {
           "spanish": [
-            "rapunzel cantaba",
+            "Rapunzel cantaba",
             "himnos de alabanza",
-            "como pablo y silas en prisión",
+            "como Pablo y Silas en prisión",
             "transformando su cautiverio con melodías de fe"
           ],
           "english": [
-            "rapunzel sang",
+            "Rapunzel sang",
             "hymns of praise",
-            "like paul and silas in prison",
+            "like Paul and Silas in prison",
             "transforming her captivity with melodies of faith"
           ]
         }
@@ -9638,14 +9639,14 @@ const translationData = [
         "spanish": "Rapunzel adoptó la enseñanza de Eclesiastés de que todo tiene su tiempo, creyendo que su libertad llegaría en el momento adecuado.",
         "segments": {
           "spanish": [
-            "rapunzel adoptó",
-            "la enseñanza de eclesiastés",
+            "Rapunzel adoptó",
+            "la enseñanza de Eclesiastés",
             "de que todo tiene su tiempo",
             "creyendo que su libertad llegaría en el momento adecuado"
           ],
           "english": [
-            "rapunzel embraced",
-            "the ecclesiastes teaching",
+            "Rapunzel embraced",
+            "the Ecclesiastes teaching",
             "that everything has its season",
             "believing her freedom would come at the right time"
           ]
@@ -9656,14 +9657,14 @@ const translationData = [
         "spanish": "Rapunzel aprendió de la fidelidad de Daniel en Babilonia a mantener sus oraciones a pesar del control de la bruja.",
         "segments": {
           "spanish": [
-            "rapunzel aprendió",
-            "de la fidelidad de daniel en babilonia",
+            "Rapunzel aprendió",
+            "de la fidelidad de Daniel en Babilonia",
             "a mantener sus oraciones",
             "a pesar del control de la bruja"
           ],
           "english": [
-            "rapunzel learned",
-            "from daniel's faithfulness in babylon",
+            "Rapunzel learned",
+            "from Daniel's faithfulness in Babylon",
             "to maintain her prayers",
             "despite the witch's control"
           ]
@@ -9674,15 +9675,15 @@ const translationData = [
         "spanish": "Rapunzel practicaba la gratitud como el leproso sanado en Lucas, agradeciendo a Dios por pequeñas bendiciones en su vida confinada.",
         "segments": {
           "spanish": [
-            "rapunzel practicaba",
-            "la gratitud como el leproso sanado en lucas",
-            "agradeciendo a dios",
+            "Rapunzel practicaba",
+            "la gratitud como el leproso sanado en Lucas",
+            "agradeciendo a Dios",
             "por pequeñas bendiciones en su vida confinada"
           ],
           "english": [
-            "rapunzel practiced",
-            "gratitude like the healed leper in luke",
-            "thanking god",
+            "Rapunzel practiced",
+            "gratitude like the healed leper in Luke",
+            "thanking God",
             "for small blessings in her confined life"
           ]
         }
@@ -9692,15 +9693,15 @@ const translationData = [
         "spanish": "Rapunzel recordaba la larga espera de Sara por un hijo, confiando en el tiempo de Dios para su propia liberación de la torre.",
         "segments": {
           "spanish": [
-            "rapunzel recordaba",
-            "la larga espera de sara por un hijo",
-            "confiando en el tiempo de dios",
+            "Rapunzel recordaba",
+            "la larga espera de Sara por un hijo",
+            "confiando en el tiempo de Dios",
             "para su propia liberación de la torre"
           ],
           "english": [
-            "rapunzel remembered",
-            "sarah's long wait for a child",
-            "trusting god's timing",
+            "Rapunzel remembered",
+            "Sarah's long wait for a child",
+            "trusting God's timing",
             "for her own deliverance from the tower"
           ]
         }
@@ -9710,14 +9711,14 @@ const translationData = [
         "spanish": "Rapunzel estudiaba los proverbios de Salomón sobre la sabiduría, cultivando un corazón comprensivo durante sus años solitarios.",
         "segments": {
           "spanish": [
-            "rapunzel estudiaba",
-            "los proverbios de salomón sobre la sabiduría",
+            "Rapunzel estudiaba",
+            "los proverbios de Salomón sobre la sabiduría",
             "cultivando un corazón comprensivo",
             "durante sus años solitarios"
           ],
           "english": [
-            "rapunzel studied",
-            "solomon's proverbs on wisdom",
+            "Rapunzel studied",
+            "Solomon's proverbs on wisdom",
             "cultivating an understanding heart",
             "during her solitary years"
           ]
@@ -9728,15 +9729,15 @@ const translationData = [
         "spanish": "Rapunzel seguía el ejemplo de lealtad de Rut al prepararse para cuidar a Madre Gothel a pesar del engaño de su captora.",
         "segments": {
           "spanish": [
-            "rapunzel seguía",
-            "el ejemplo de lealtad de rut",
-            "al prepararse para cuidar a madre gothel",
+            "Rapunzel seguía",
+            "el ejemplo de lealtad de Rut",
+            "al prepararse para cuidar a Madre Gothel",
             "a pesar del engaño de su captora"
           ],
           "english": [
-            "rapunzel followed",
-            "the example of ruth's loyalty",
-            "by preparing to care for mother gothel",
+            "Rapunzel followed",
+            "the example of Ruth's loyalty",
+            "by preparing to care for Mother Gothel",
             "despite her captor's deception"
           ]
         }
@@ -9746,14 +9747,14 @@ const translationData = [
         "spanish": "Rapunzel aplicaba la enseñanza de Jesús de 'dejar brillar tu luz' manteniendo esperanza y alegría a pesar de su encarcelamiento.",
         "segments": {
           "spanish": [
-            "rapunzel aplicaba",
-            "la enseñanza de jesús",
+            "Rapunzel aplicaba",
+            "la enseñanza de Jesús",
             "de 'dejar brillar tu luz'",
             "manteniendo esperanza y alegría a pesar de su encarcelamiento"
           ],
           "english": [
-            "rapunzel applied",
-            "jesus's teaching",
+            "Rapunzel applied",
+            "Jesus's teaching",
             "to 'let your light shine'",
             "by maintaining hope and joy despite her imprisonment"
           ]
@@ -9764,14 +9765,14 @@ const translationData = [
         "spanish": "Rapunzel encontró inspiración en la perseverancia de Noé durante larga espera, creyendo fielmente en la promesa de un nuevo comienzo.",
         "segments": {
           "spanish": [
-            "rapunzel encontró inspiración",
-            "en la perseverancia de noé",
+            "Rapunzel encontró inspiración",
+            "en la perseverancia de Noé",
             "durante larga espera",
             "creyendo fielmente en la promesa de un nuevo comienzo"
           ],
           "english": [
-            "rapunzel found inspiration",
-            "in noah's perseverance",
+            "Rapunzel found inspiration",
+            "in Noah's perseverance",
             "during long waiting",
             "believing faithfully in the promise of a new beginning"
           ]
@@ -9782,15 +9783,15 @@ const translationData = [
         "spanish": "Rapunzel contemplaba la identidad oculta de Ester, confiando en el propósito de Dios detrás de su propia existencia aislada.",
         "segments": {
           "spanish": [
-            "rapunzel contemplaba",
-            "la identidad oculta de ester",
-            "confiando en el propósito de dios",
+            "Rapunzel contemplaba",
+            "la identidad oculta de Ester",
+            "confiando en el propósito de Dios",
             "detrás de su propia existencia aislada"
           ],
           "english": [
-            "rapunzel contemplated",
-            "esther's hidden identity",
-            "trusting god's purpose",
+            "Rapunzel contemplated",
+            "Esther's hidden identity",
+            "trusting God's purpose",
             "behind her own secluded existence"
           ]
         }
@@ -9800,14 +9801,14 @@ const translationData = [
         "spanish": "Rapunzel personificaba la enseñanza de Filipenses de regocijarse siempre mientras cantaba durante sus días de confinamiento.",
         "segments": {
           "spanish": [
-            "rapunzel personificaba",
-            "la enseñanza de filipenses",
+            "Rapunzel personificaba",
+            "la enseñanza de Filipenses",
             "de regocijarse siempre",
             "mientras cantaba durante sus días de confinamiento"
           ],
           "english": [
-            "rapunzel embodied",
-            "the philippians teaching",
+            "Rapunzel embodied",
+            "the Philippians teaching",
             "to rejoice always",
             "as she sang through her days of confinement"
           ]
@@ -9819,13 +9820,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con creatividad",
-            "rapunzel",
+            "Rapunzel",
             "aprovechó al máximo",
             "su aislamiento"
           ],
           "english": [
             "with creativity",
-            "rapunzel",
+            "Rapunzel",
             "made the most of",
             "her isolation"
           ]
@@ -9836,13 +9837,13 @@ const translationData = [
         "spanish": "Rapunzel encontró valor para seguir sus sueños y estrellas.",
         "segments": {
           "spanish": [
-            "rapunzel",
+            "Rapunzel",
             "encontró valor",
             "para seguir",
             "sus sueños y estrellas"
           ],
           "english": [
-            "rapunzel",
+            "Rapunzel",
             "found courage",
             "to follow",
             "her dreams and stars"
@@ -9855,13 +9856,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "pintar",
-            "ayudó a rapunzel",
+            "ayudó a Rapunzel",
             "a resolver",
             "su aburrimiento creativamente"
           ],
           "english": [
             "painting",
-            "helped rapunzel",
+            "helped Rapunzel",
             "solve",
             "her boredom problem creatively"
           ]
@@ -9872,13 +9873,13 @@ const translationData = [
         "spanish": "Rapunzel usó su largo cabello para crear cuerdas de rescate.",
         "segments": {
           "spanish": [
-            "rapunzel",
+            "Rapunzel",
             "usó su largo cabello",
             "para crear",
             "cuerdas de rescate"
           ],
           "english": [
-            "rapunzel",
+            "Rapunzel",
             "used her long hair",
             "to create",
             "rescue ropes"
@@ -9890,13 +9891,13 @@ const translationData = [
         "spanish": "Rapunzel inventó un sistema de poleas para su torre.",
         "segments": {
           "spanish": [
-            "rapunzel",
+            "Rapunzel",
             "inventó",
             "un sistema de poleas",
             "para su torre"
           ],
           "english": [
-            "rapunzel",
+            "Rapunzel",
             "invented",
             "a pulley system",
             "for her tower"
@@ -9908,13 +9909,13 @@ const translationData = [
         "spanish": "Rapunzel enseñó a los niños del pueblo a leer y escribir.",
         "segments": {
           "spanish": [
-            "rapunzel",
+            "Rapunzel",
             "enseñó",
             "a los niños del pueblo",
             "a leer y escribir"
           ],
           "english": [
-            "rapunzel",
+            "Rapunzel",
             "taught",
             "village children",
             "to read and write"
@@ -9927,13 +9928,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con creatividad",
-            "rapunzel",
+            "Rapunzel",
             "transformó",
             "objetos cotidianos en herramientas"
           ],
           "english": [
             "with creativity",
-            "rapunzel",
+            "Rapunzel",
             "transformed",
             "everyday objects into tools"
           ]
@@ -9944,13 +9945,13 @@ const translationData = [
         "spanish": "Rapunzel descubrió propiedades curativas en plantas locales.",
         "segments": {
           "spanish": [
-            "rapunzel",
+            "Rapunzel",
             "descubrió",
             "propiedades curativas",
             "en plantas locales"
           ],
           "english": [
-            "rapunzel",
+            "Rapunzel",
             "discovered",
             "healing properties",
             "in local plants"
@@ -9962,13 +9963,13 @@ const translationData = [
         "spanish": "La valiente Rapunzel construyó puentes entre comunidades aisladas.",
         "segments": {
           "spanish": [
-            "la valiente rapunzel",
+            "la valiente Rapunzel",
             "construyó",
             "puentes",
             "entre comunidades aisladas"
           ],
           "english": [
-            "the brave rapunzel",
+            "the brave Rapunzel",
             "built",
             "bridges",
             "between isolated communities"
@@ -9980,13 +9981,13 @@ const translationData = [
         "spanish": "Rapunzel mapeó el reino para ayudar a viajeros perdidos.",
         "segments": {
           "spanish": [
-            "rapunzel",
+            "Rapunzel",
             "mapeó",
             "el reino",
             "para ayudar a viajeros perdidos"
           ],
           "english": [
-            "rapunzel",
+            "Rapunzel",
             "mapped",
             "the kingdom",
             "to help lost travelers"
@@ -9999,13 +10000,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante observación",
-            "rapunzel",
+            "Rapunzel",
             "predijo",
             "patrones climáticos con precisión"
           ],
           "english": [
             "through observation",
-            "rapunzel",
+            "Rapunzel",
             "predicted",
             "weather patterns accurately"
           ]
@@ -10016,13 +10017,13 @@ const translationData = [
         "spanish": "Rapunzel diseñó un sistema de recolección de agua para su torre.",
         "segments": {
           "spanish": [
-            "rapunzel",
+            "Rapunzel",
             "diseñó",
             "un sistema de recolección de agua",
             "para su torre"
           ],
           "english": [
-            "rapunzel",
+            "Rapunzel",
             "designed",
             "a water collection system",
             "for her tower"
@@ -10034,13 +10035,13 @@ const translationData = [
         "spanish": "Rapunzel creó pinturas naturales de flores y bayas.",
         "segments": {
           "spanish": [
-            "rapunzel",
+            "Rapunzel",
             "creó",
             "pinturas naturales",
             "de flores y bayas"
           ],
           "english": [
-            "rapunzel",
+            "Rapunzel",
             "created",
             "natural paints",
             "from flowers and berries"
@@ -10052,13 +10053,13 @@ const translationData = [
         "spanish": "Rapunzel resolvió problemas complejos usando su conocimiento matemático.",
         "segments": {
           "spanish": [
-            "rapunzel",
+            "Rapunzel",
             "resolvió",
             "problemas complejos",
             "usando su conocimiento matemático"
           ],
           "english": [
-            "rapunzel",
+            "Rapunzel",
             "solved",
             "complex problems",
             "using her mathematical knowledge"
@@ -10071,13 +10072,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con paciencia",
-            "rapunzel",
+            "Rapunzel",
             "enseñó a pájaros",
             "a entregar mensajes"
           ],
           "english": [
             "with patience",
-            "rapunzel",
+            "Rapunzel",
             "taught birds",
             "to deliver messages"
           ]
@@ -10088,13 +10089,13 @@ const translationData = [
         "spanish": "Rapunzel inventó un telescopio con pedazos de vidrio descartados.",
         "segments": {
           "spanish": [
-            "rapunzel",
+            "Rapunzel",
             "inventó",
             "un telescopio",
             "con pedazos de vidrio descartados"
           ],
           "english": [
-            "rapunzel",
+            "Rapunzel",
             "invented",
             "a telescope",
             "from discarded glass pieces"
@@ -10106,13 +10107,13 @@ const translationData = [
         "spanish": "La ingeniosa Rapunzel desarrolló métodos para preservar alimentos más tiempo.",
         "segments": {
           "spanish": [
-            "la ingeniosa rapunzel",
+            "la ingeniosa Rapunzel",
             "desarrolló",
             "métodos",
             "para preservar alimentos más tiempo"
           ],
           "english": [
-            "ever resourceful rapunzel",
+            "ever resourceful Rapunzel",
             "developed",
             "methods",
             "to preserve food longer"
@@ -10124,13 +10125,13 @@ const translationData = [
         "spanish": "Rapunzel estudió patrones estelares para crear mapas de navegación.",
         "segments": {
           "spanish": [
-            "rapunzel",
+            "Rapunzel",
             "estudió",
             "patrones estelares",
             "para crear mapas de navegación"
           ],
           "english": [
-            "rapunzel",
+            "Rapunzel",
             "studied",
             "star patterns",
             "to create navigation maps"
@@ -10143,13 +10144,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante diplomacia",
-            "rapunzel",
+            "Rapunzel",
             "resolvió",
             "conflictos en el reino"
           ],
           "english": [
             "through diplomacy",
-            "rapunzel",
+            "Rapunzel",
             "resolved",
             "conflicts in the kingdom"
           ]
@@ -10160,13 +10161,13 @@ const translationData = [
         "spanish": "Rapunzel diseñó máquinas simples para ayudar a los aldeanos a trabajar eficazmente.",
         "segments": {
           "spanish": [
-            "rapunzel",
+            "Rapunzel",
             "diseñó máquinas simples",
             "para ayudar a los aldeanos",
             "a trabajar eficazmente"
           ],
           "english": [
-            "rapunzel",
+            "Rapunzel",
             "engineered simple machines",
             "to help villagers",
             "work efficiently"
@@ -10178,13 +10179,13 @@ const translationData = [
         "spanish": "La amable Rapunzel compartía conocimiento libremente con quienes buscaban ayuda.",
         "segments": {
           "spanish": [
-            "la amable rapunzel",
+            "la amable Rapunzel",
             "compartía",
             "conocimiento libremente",
             "con quienes buscaban ayuda"
           ],
           "english": [
-            "the kind rapunzel",
+            "the kind Rapunzel",
             "shared",
             "knowledge freely",
             "with those seeking help"
@@ -10196,13 +10197,13 @@ const translationData = [
         "spanish": "Rapunzel creó un reloj de sol para medir el tiempo con precisión.",
         "segments": {
           "spanish": [
-            "rapunzel",
+            "Rapunzel",
             "creó",
             "un reloj de sol",
             "para medir el tiempo con precisión"
           ],
           "english": [
-            "rapunzel",
+            "Rapunzel",
             "created",
             "a sundial",
             "to track time accurately"
@@ -10215,13 +10216,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con pensamiento colaborativo",
-            "rapunzel",
+            "Rapunzel",
             "resolvió",
             "la escasez de agua del reino"
           ],
           "english": [
             "with collaborative thinking",
-            "rapunzel",
+            "Rapunzel",
             "solved",
             "the kingdom's water shortage"
           ]
@@ -10232,13 +10233,13 @@ const translationData = [
         "spanish": "La curiosidad de Rapunzel la llevó a descubrir la verdad.",
         "segments": {
           "spanish": [
-            "la curiosidad de rapunzel",
+            "la curiosidad de Rapunzel",
             "la llevó",
             "a descubrir",
             "la verdad"
           ],
           "english": [
-            "rapunzel's curiosity",
+            "Rapunzel's curiosity",
             "led her",
             "to discover",
             "the truth"
@@ -10255,13 +10256,13 @@ const translationData = [
         "spanish": "Moana aprendió a navegar leyendo las estrellas.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "aprendió",
             "a navegar",
             "leyendo las estrellas"
           ],
           "english": [
-            "moana",
+            "Moana",
             "learned",
             "to navigate",
             "by reading the stars"
@@ -10274,13 +10275,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "ante los obstáculos",
-            "moana",
+            "Moana",
             "nunca",
             "se rindió"
           ],
           "english": [
             "when faced with obstacles",
-            "moana",
+            "Moana",
             "never",
             "gave up"
           ]
@@ -10291,14 +10292,14 @@ const translationData = [
         "spanish": "Moana extrajo valor de la victoria de David sobre Goliat al enfrentar los desafíos del vasto océano.",
         "segments": {
           "spanish": [
-            "moana extrajo valor",
-            "de la victoria de david sobre goliat",
+            "Moana extrajo valor",
+            "de la victoria de David sobre Goliat",
             "al enfrentar",
             "los desafíos del vasto océano"
           ],
           "english": [
-            "moana drew courage",
-            "from david's victory over goliath",
+            "Moana drew courage",
+            "from David's victory over Goliath",
             "when facing",
             "the vast ocean's challenges"
           ]
@@ -10309,14 +10310,14 @@ const translationData = [
         "spanish": "Moana recordaba a Moisés dividiendo el Mar Rojo cuando las aguas parecían demasiado abrumadoras.",
         "segments": {
           "spanish": [
-            "moana recordaba",
-            "a moisés dividiendo el mar rojo",
+            "Moana recordaba",
+            "a Moisés dividiendo el Mar Rojo",
             "cuando",
             "las aguas parecían demasiado abrumadoras"
           ],
           "english": [
-            "moana remembered",
-            "moses parting the red sea",
+            "Moana remembered",
+            "Moses parting the Red Sea",
             "whenever",
             "the waters seemed too overwhelming"
           ]
@@ -10327,14 +10328,14 @@ const translationData = [
         "spanish": "Moana confió en el plan de Dios como José, creyendo que su viaje tenía un propósito mayor para su pueblo.",
         "segments": {
           "spanish": [
-            "moana confió",
-            "en el plan de dios como josé",
+            "Moana confió",
+            "en el plan de Dios como José",
             "creyendo que su viaje",
             "tenía un propósito mayor para su pueblo"
           ],
           "english": [
-            "moana trusted",
-            "in god's plan like joseph",
+            "Moana trusted",
+            "in God's plan like Joseph",
             "believing her journey",
             "had greater purpose for her people"
           ]
@@ -10345,14 +10346,14 @@ const translationData = [
         "spanish": "Moana encontró inspiración en el valor de Ester para acercarse a la autoridad por el bien de salvar a su pueblo.",
         "segments": {
           "spanish": [
-            "moana encontró inspiración",
-            "en el valor de ester",
+            "Moana encontró inspiración",
+            "en el valor de Ester",
             "para acercarse a la autoridad",
             "por el bien de salvar a su pueblo"
           ],
           "english": [
-            "moana found inspiration",
-            "in esther's courage",
+            "Moana found inspiration",
+            "in Esther's courage",
             "to approach authority",
             "for the sake of saving her people"
           ]
@@ -10363,14 +10364,14 @@ const translationData = [
         "spanish": "Moana reflexionó sobre Jesús calmando la tormenta cuando enfrentaba tempestades durante su viaje por mar.",
         "segments": {
           "spanish": [
-            "moana reflexionó",
-            "sobre jesús calmando la tormenta",
+            "Moana reflexionó",
+            "sobre Jesús calmando la tormenta",
             "cuando enfrentaba tempestades",
             "durante su viaje por mar"
           ],
           "english": [
-            "moana reflected",
-            "on jesus calming the storm",
+            "Moana reflected",
+            "on Jesus calming the storm",
             "when she faced tempests",
             "during her sea voyage"
           ]
@@ -10381,14 +10382,14 @@ const translationData = [
         "spanish": "Moana adoptó la perseverancia del Apóstol Pablo a través de naufragios al navegar aguas traicioneras.",
         "segments": {
           "spanish": [
-            "moana adoptó",
-            "la perseverancia del apóstol pablo",
+            "Moana adoptó",
+            "la perseverancia del Apóstol Pablo",
             "a través de naufragios",
             "al navegar aguas traicioneras"
           ],
           "english": [
-            "moana embraced",
-            "the apostle paul's perseverance",
+            "Moana embraced",
+            "the Apostle Paul's perseverance",
             "through shipwrecks",
             "when navigating treacherous waters"
           ]
@@ -10399,15 +10400,15 @@ const translationData = [
         "spanish": "Moana meditaba en el Salmo 139 sobre Dios conociendo las profundidades del mar durante sus exploraciones oceánicas.",
         "segments": {
           "spanish": [
-            "moana meditaba",
-            "en el salmo 139",
-            "sobre dios conociendo las profundidades del mar",
+            "Moana meditaba",
+            "en el Salmo 139",
+            "sobre Dios conociendo las profundidades del mar",
             "durante sus exploraciones oceánicas"
           ],
           "english": [
-            "moana meditated",
-            "on psalm 139",
-            "about god knowing the depths of the sea",
+            "Moana meditated",
+            "on Psalm 139",
+            "about God knowing the depths of the sea",
             "during her ocean explorations"
           ]
         }
@@ -10417,16 +10418,16 @@ const translationData = [
         "spanish": "Moana recordó la misión de Jonás a Nínive al aceptar su llamado para restaurar el corazón de Te Fiti.",
         "segments": {
           "spanish": [
-            "moana recordó",
-            "la misión de jonás a nínive",
+            "Moana recordó",
+            "la misión de Jonás a Nínive",
             "al aceptar su llamado",
-            "para restaurar el corazón de te fiti"
+            "para restaurar el corazón de te Fiti"
           ],
           "english": [
-            "moana remembered",
-            "jonah's mission to nineveh",
+            "Moana remembered",
+            "Jonah's mission to Nineveh",
             "when accepting her calling",
-            "to restore the heart of te fiti"
+            "to restore the heart of te Fiti"
           ]
         }
       },
@@ -10435,14 +10436,14 @@ const translationData = [
         "spanish": "Moana aplicó la sabiduría de Salomón para resolver conflictos entre las necesidades de su aldea y el llamado del océano.",
         "segments": {
           "spanish": [
-            "moana aplicó",
-            "la sabiduría de salomón",
+            "Moana aplicó",
+            "la sabiduría de Salomón",
             "para resolver conflictos",
             "entre las necesidades de su aldea y el llamado del océano"
           ],
           "english": [
-            "moana applied",
-            "solomon's wisdom",
+            "Moana applied",
+            "Solomon's wisdom",
             "in resolving conflicts",
             "between the needs of her village and the ocean's call"
           ]
@@ -10453,14 +10454,14 @@ const translationData = [
         "spanish": "Moana encontró fuerza en la lealtad de Rut hacia Noemí al elegir servir a su comunidad isleña por encima de deseos personales.",
         "segments": {
           "spanish": [
-            "moana encontró fuerza",
-            "en la lealtad de rut hacia noemí",
+            "Moana encontró fuerza",
+            "en la lealtad de Rut hacia Noemí",
             "al elegir servir a su comunidad isleña",
             "por encima de deseos personales"
           ],
           "english": [
-            "moana found strength",
-            "in ruth's loyalty to naomi",
+            "Moana found strength",
+            "in Ruth's loyalty to Naomi",
             "when choosing to serve her island community",
             "above personal desires"
           ]
@@ -10471,14 +10472,14 @@ const translationData = [
         "spanish": "Moana adoptó la enseñanza de Jesús de 'adentrarse en aguas profundas' cuando se aventuró más allá del arrecife.",
         "segments": {
           "spanish": [
-            "moana adoptó",
-            "la enseñanza de jesús",
+            "Moana adoptó",
+            "la enseñanza de Jesús",
             "de 'adentrarse en aguas profundas'",
             "cuando se aventuró más allá del arrecife"
           ],
           "english": [
-            "moana embraced",
-            "jesus's teaching",
+            "Moana embraced",
+            "Jesus's teaching",
             "to 'put out into deep water'",
             "when venturing beyond the reef"
           ]
@@ -10489,14 +10490,14 @@ const translationData = [
         "spanish": "Moana se apoyó en la fe descrita en Hebreos como 'la certeza de lo que se espera' durante sus momentos más oscuros en el mar.",
         "segments": {
           "spanish": [
-            "moana se apoyó",
-            "en la fe descrita en hebreos",
+            "Moana se apoyó",
+            "en la fe descrita en Hebreos",
             "como 'la certeza de lo que se espera'",
             "durante sus momentos más oscuros en el mar"
           ],
           "english": [
-            "moana relied",
-            "on the faith described in hebrews",
+            "Moana relied",
+            "on the faith described in Hebrews",
             "as 'assurance of things hoped for'",
             "during her darkest moments at sea"
           ]
@@ -10507,14 +10508,14 @@ const translationData = [
         "spanish": "Moana contempló las palabras de Jesús sobre ser 'pescadores de hombres' cuando guiaba a su pueblo de regreso a las tradiciones de navegación.",
         "segments": {
           "spanish": [
-            "moana contempló",
-            "las palabras de jesús",
+            "Moana contempló",
+            "las palabras de Jesús",
             "sobre ser 'pescadores de hombres'",
             "cuando guiaba a su pueblo de regreso a las tradiciones de navegación"
           ],
           "english": [
-            "moana contemplated",
-            "jesus's words",
+            "Moana contemplated",
+            "Jesus's words",
             "about being 'fishers of people'",
             "when leading her people back to voyaging traditions"
           ]
@@ -10525,15 +10526,15 @@ const translationData = [
         "spanish": "Moana practicó el liderazgo de servicio que Jesús demostró al lavar los pies cuando servía como jefa en entrenamiento.",
         "segments": {
           "spanish": [
-            "moana practicó",
+            "Moana practicó",
             "el liderazgo de servicio",
-            "que jesús demostró al lavar los pies",
+            "que Jesús demostró al lavar los pies",
             "cuando servía como jefa en entrenamiento"
           ],
           "english": [
-            "moana practiced",
+            "Moana practiced",
             "the servant leadership",
-            "jesus demonstrated by washing feet",
+            "Jesus demonstrated by washing feet",
             "when serving as chief-in-training"
           ]
         }
@@ -10543,14 +10544,14 @@ const translationData = [
         "spanish": "Moana personificó la enseñanza de Filipenses de 'pensar en los demás por encima de uno mismo' al arriesgar su vida por el futuro de su isla.",
         "segments": {
           "spanish": [
-            "moana personificó",
-            "la enseñanza de filipenses",
+            "Moana personificó",
+            "la enseñanza de Filipenses",
             "de 'pensar en los demás por encima de uno mismo'",
             "al arriesgar su vida por el futuro de su isla"
           ],
           "english": [
-            "moana embodied",
-            "the philippians teaching",
+            "Moana embodied",
+            "the Philippians teaching",
             "to 'think about others above yourself'",
             "by risking her life for her island's future"
           ]
@@ -10561,16 +10562,16 @@ const translationData = [
         "spanish": "Moana restauró el equilibrio devolviendo el corazón de Te Fiti.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "restauró",
             "el equilibrio",
-            "devolviendo el corazón de te fiti"
+            "devolviendo el corazón de te Fiti"
           ],
           "english": [
-            "moana",
+            "Moana",
             "restored",
             "balance",
-            "by returning the heart of te fiti"
+            "by returning the heart of te Fiti"
           ]
         }
       },
@@ -10580,13 +10581,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el océano",
-            "ayudó a moana",
+            "ayudó a Moana",
             "a resolver",
             "sus desafíos más difíciles"
           ],
           "english": [
             "the ocean",
-            "helped moana",
+            "helped Moana",
             "solve",
             "her most difficult challenges"
           ]
@@ -10597,13 +10598,13 @@ const translationData = [
         "spanish": "Moana navegó a través del océano usando mapas estelares antiguos.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "navegó",
             "a través del océano",
             "usando mapas estelares antiguos"
           ],
           "english": [
-            "moana",
+            "Moana",
             "navigated",
             "across the ocean",
             "using ancient star charts"
@@ -10615,13 +10616,13 @@ const translationData = [
         "spanish": "La valiente Moana restauró el equilibrio entre naturaleza y personas.",
         "segments": {
           "spanish": [
-            "la valiente moana",
+            "la valiente Moana",
             "restauró",
             "el equilibrio",
             "entre naturaleza y personas"
           ],
           "english": [
-            "the brave moana",
+            "the brave Moana",
             "restored",
             "balance",
             "between nature and people"
@@ -10633,13 +10634,13 @@ const translationData = [
         "spanish": "Moana escuchó la sabiduría de los ancianos para resolver problemas isleños.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "escuchó",
             "la sabiduría de los ancianos",
             "para resolver problemas isleños"
           ],
           "english": [
-            "moana",
+            "Moana",
             "listened to",
             "elders' wisdom",
             "to solve island problems"
@@ -10652,13 +10653,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con determinación",
-            "moana",
+            "Moana",
             "descubrió nuevos caladeros",
             "para los aldeanos"
           ],
           "english": [
             "with determination",
-            "moana",
+            "Moana",
             "discovered new fishing grounds",
             "for villagers"
           ]
@@ -10669,13 +10670,13 @@ const translationData = [
         "spanish": "Moana diseñó velas más fuertes usando técnicas innovadoras de tejido.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "diseñó",
             "velas más fuertes",
             "usando técnicas innovadoras de tejido"
           ],
           "english": [
-            "moana",
+            "Moana",
             "designed",
             "stronger sails",
             "using innovative weaving techniques"
@@ -10687,13 +10688,13 @@ const translationData = [
         "spanish": "La ingeniosa Moana creó mapas de peligrosas corrientes oceánicas.",
         "segments": {
           "spanish": [
-            "la ingeniosa moana",
+            "la ingeniosa Moana",
             "creó",
             "mapas",
             "de peligrosas corrientes oceánicas"
           ],
           "english": [
-            "the resourceful moana",
+            "the resourceful Moana",
             "created",
             "maps",
             "of dangerous ocean currents"
@@ -10705,13 +10706,13 @@ const translationData = [
         "spanish": "Moana construyó trampas sostenibles para peces con materiales naturales.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "construyó",
             "trampas sostenibles para peces",
             "con materiales naturales"
           ],
           "english": [
-            "moana",
+            "Moana",
             "built",
             "sustainable fish traps",
             "from natural materials"
@@ -10724,13 +10725,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante colaboración",
-            "moana",
+            "Moana",
             "resolvió",
             "la crisis alimentaria de su isla"
           ],
           "english": [
             "through collaboration",
-            "moana",
+            "Moana",
             "solved",
             "her island's food shortage crisis"
           ]
@@ -10741,13 +10742,13 @@ const translationData = [
         "spanish": "Moana estudió patrones climáticos para predecir tormentas peligrosas.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "estudió patrones climáticos",
             "para predecir",
             "tormentas peligrosas"
           ],
           "english": [
-            "moana",
+            "Moana",
             "studied weather patterns",
             "to predict",
             "dangerous storms"
@@ -10759,13 +10760,13 @@ const translationData = [
         "spanish": "La amable Moana enseñó a aldeanos nuevos métodos de conservación coralina.",
         "segments": {
           "spanish": [
-            "la amable moana",
+            "la amable Moana",
             "enseñó",
             "a aldeanos",
             "nuevos métodos de conservación coralina"
           ],
           "english": [
-            "the kind moana",
+            "the kind Moana",
             "taught",
             "villagers",
             "new reef conservation methods"
@@ -10777,13 +10778,13 @@ const translationData = [
         "spanish": "Moana desarrolló técnicas para encontrar fuentes de agua dulce.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "desarrolló",
             "técnicas para encontrar",
             "fuentes de agua dulce"
           ],
           "english": [
-            "moana",
+            "Moana",
             "developed",
             "techniques for finding",
             "fresh water sources"
@@ -10796,13 +10797,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con valentía",
-            "moana",
+            "Moana",
             "estableció",
             "rutas comerciales entre islas distantes"
           ],
           "english": [
             "with courage",
-            "moana",
+            "Moana",
             "established",
             "trade routes between distant islands"
           ]
@@ -10813,13 +10814,13 @@ const translationData = [
         "spanish": "Moana restauró antiguos conocimientos de navegación para ayudar a su pueblo.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "restauró",
             "antiguos conocimientos de navegación",
             "para ayudar a su pueblo"
           ],
           "english": [
-            "moana",
+            "Moana",
             "restored",
             "ancient voyaging knowledge",
             "to help her people"
@@ -10831,13 +10832,13 @@ const translationData = [
         "spanish": "La sabia Moana creó sistemas de alerta temprana para tsunamis.",
         "segments": {
           "spanish": [
-            "la sabia moana",
+            "la sabia Moana",
             "creó",
             "sistemas de alerta temprana",
             "para tsunamis"
           ],
           "english": [
-            "the wise moana",
+            "the wise Moana",
             "created",
             "early warning systems",
             "for tsunamis"
@@ -10849,13 +10850,13 @@ const translationData = [
         "spanish": "Moana descubrió usos medicinales para plantas oceánicas nativas.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "descubrió",
             "usos medicinales",
             "para plantas oceánicas nativas"
           ],
           "english": [
-            "moana",
+            "Moana",
             "discovered",
             "medicinal uses",
             "for native ocean plants"
@@ -10868,13 +10869,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante diplomacia",
-            "moana",
+            "Moana",
             "unió",
             "comunidades isleñas previamente en conflicto"
           ],
           "english": [
             "through diplomacy",
-            "moana",
+            "Moana",
             "united",
             "previously conflicting island communities"
           ]
@@ -10885,13 +10886,13 @@ const translationData = [
         "spanish": "Moana diseñó jardines en terrazas para prevenir la erosión costera.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "diseñó",
             "jardines en terrazas",
             "para prevenir la erosión costera"
           ],
           "english": [
-            "moana",
+            "Moana",
             "engineered",
             "terraced gardens",
             "to prevent coastal erosion"
@@ -10903,13 +10904,13 @@ const translationData = [
         "spanish": "La innovadora Moana creó embarcaciones resistentes a mares agitados.",
         "segments": {
           "spanish": [
-            "la innovadora moana",
+            "la innovadora Moana",
             "creó",
             "embarcaciones resistentes",
             "a mares agitados"
           ],
           "english": [
-            "the innovative moana",
+            "the innovative Moana",
             "created",
             "vessels resistant",
             "to rough seas"
@@ -10921,13 +10922,13 @@ const translationData = [
         "spanish": "Moana organizó esfuerzos comunitarios para limpiar lagunas contaminadas.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "organizó",
             "esfuerzos comunitarios",
             "para limpiar lagunas contaminadas"
           ],
           "english": [
-            "moana",
+            "Moana",
             "organized",
             "community efforts",
             "to clean polluted lagoons"
@@ -10940,13 +10941,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con conocimiento tradicional",
-            "moana",
+            "Moana",
             "resolvió",
             "complejos desafíos ambientales"
           ],
           "english": [
             "with traditional knowledge",
-            "moana",
+            "Moana",
             "solved",
             "complex environmental challenges"
           ]
@@ -10957,13 +10958,13 @@ const translationData = [
         "spanish": "Moana creó sistemas de riego para cultivar durante sequías.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "creó",
             "sistemas de riego",
             "para cultivar durante sequías"
           ],
           "english": [
-            "moana",
+            "Moana",
             "created",
             "irrigation systems",
             "to grow crops during droughts"
@@ -10975,13 +10976,13 @@ const translationData = [
         "spanish": "La intrépida Moana predijo corrientes oceánicas peligrosas mediante observación.",
         "segments": {
           "spanish": [
-            "la intrépida moana",
+            "la intrépida Moana",
             "predijo",
             "corrientes oceánicas peligrosas",
             "mediante observación"
           ],
           "english": [
-            "the fearless moana",
+            "the fearless Moana",
             "predicted",
             "dangerous ocean currents",
             "through observation"
@@ -10993,13 +10994,13 @@ const translationData = [
         "spanish": "Moana enseñó a los niños a identificar criaturas marinas venenosas.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "enseñó a los niños",
             "a identificar",
             "criaturas marinas venenosas"
           ],
           "english": [
-            "moana",
+            "Moana",
             "taught children",
             "how to identify",
             "poisonous sea creatures"
@@ -11012,13 +11013,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con creatividad",
-            "moana",
+            "Moana",
             "transformó redes de pesca",
             "en herramientas de rescate"
           ],
           "english": [
             "with creativity",
-            "moana",
+            "Moana",
             "transformed fishing nets",
             "into rescue tools"
           ]
@@ -11029,13 +11030,13 @@ const translationData = [
         "spanish": "Moana cultivó plantas resistentes a la sal para alimentar a su aldea.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "cultivó",
             "plantas resistentes a la sal",
             "para alimentar a su aldea"
           ],
           "english": [
-            "moana",
+            "Moana",
             "cultivated",
             "salt-resistant plants",
             "to feed her village"
@@ -11047,13 +11048,13 @@ const translationData = [
         "spanish": "La inteligente Moana desarrolló tintes naturales de recursos oceánicos.",
         "segments": {
           "spanish": [
-            "la inteligente moana",
+            "la inteligente Moana",
             "desarrolló",
             "tintes naturales",
             "de recursos oceánicos"
           ],
           "english": [
-            "the clever moana",
+            "the clever Moana",
             "developed",
             "natural dyes",
             "from ocean resources"
@@ -11065,13 +11066,13 @@ const translationData = [
         "spanish": "Moana mapeó cuevas submarinas para encontrar manantiales de agua dulce.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "mapeó",
             "cuevas submarinas",
             "para encontrar manantiales de agua dulce"
           ],
           "english": [
-            "moana",
+            "Moana",
             "mapped",
             "underwater caves",
             "to find freshwater springs"
@@ -11084,13 +11085,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante experimentación",
-            "moana creó",
+            "Moana creó",
             "contenedores impermeables",
             "de hojas de palma"
           ],
           "english": [
             "through experimentation",
-            "moana created",
+            "Moana created",
             "waterproof containers",
             "from palm leaves"
           ]
@@ -11101,13 +11102,13 @@ const translationData = [
         "spanish": "Moana estableció un sistema de alerta temprana para actividad volcánica.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "estableció",
             "un sistema de alerta temprana",
             "para actividad volcánica"
           ],
           "english": [
-            "moana",
+            "Moana",
             "established",
             "an early warning system",
             "for volcanic activity"
@@ -11119,13 +11120,13 @@ const translationData = [
         "spanish": "La ingeniosa Moana encontró nuevas formas de cosechar perlas.",
         "segments": {
           "spanish": [
-            "la ingeniosa moana",
+            "la ingeniosa Moana",
             "encontró",
             "nuevas formas",
             "de cosechar perlas"
           ],
           "english": [
-            "the resourceful moana",
+            "the resourceful Moana",
             "found",
             "new ways",
             "to harvest pearls"
@@ -11137,13 +11138,13 @@ const translationData = [
         "spanish": "Moana organizó equipos comunitarios para reconstruir después de tormentas devastadoras.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "organizó equipos comunitarios",
             "para reconstruir",
             "después de tormentas devastadoras"
           ],
           "english": [
-            "moana",
+            "Moana",
             "organized community teams",
             "to rebuild",
             "after devastating storms"
@@ -11156,13 +11157,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con persistencia",
-            "moana",
+            "Moana",
             "descubrió métodos",
             "para predecir migraciones de peces"
           ],
           "english": [
             "with persistence",
-            "moana",
+            "Moana",
             "discovered methods",
             "to predict fish migrations"
           ]
@@ -11173,13 +11174,13 @@ const translationData = [
         "spanish": "Moana inventó herramientas para cosechar frutas de árboles altos seguramente.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "inventó",
             "herramientas para cosechar frutas",
             "de árboles altos seguramente"
           ],
           "english": [
-            "moana",
+            "Moana",
             "invented",
             "tools to safely harvest fruit",
             "from tall trees"
@@ -11191,13 +11192,13 @@ const translationData = [
         "spanish": "La sabia Moana enseñó prácticas pesqueras sostenibles a generaciones jóvenes.",
         "segments": {
           "spanish": [
-            "la sabia moana",
+            "la sabia Moana",
             "enseñó",
             "prácticas pesqueras sostenibles",
             "a generaciones jóvenes"
           ],
           "english": [
-            "the savvy moana",
+            "the savvy Moana",
             "taught",
             "sustainable fishing practices",
             "to younger generations"
@@ -11209,13 +11210,13 @@ const translationData = [
         "spanish": "Moana creó jardines flotantes para aumentar la producción de alimentos.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "creó",
             "jardines flotantes",
             "para aumentar la producción de alimentos"
           ],
           "english": [
-            "moana",
+            "Moana",
             "created",
             "floating gardens",
             "to increase food production"
@@ -11228,13 +11229,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante cooperación",
-            "moana",
+            "Moana",
             "estableció",
             "una red comercial entre múltiples islas"
           ],
           "english": [
             "through cooperation",
-            "moana",
+            "Moana",
             "established",
             "a multi-island trading network"
           ]
@@ -11245,13 +11246,13 @@ const translationData = [
         "spanish": "Moana desarrolló remedios naturales para tratar dolencias comunes.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "desarrolló",
             "remedios naturales",
             "para tratar dolencias comunes"
           ],
           "english": [
-            "moana",
+            "Moana",
             "developed",
             "natural remedies",
             "for treating common ailments"
@@ -11263,13 +11264,13 @@ const translationData = [
         "spanish": "La innovadora Moana diseñó sistemas más eficientes de recolección de agua.",
         "segments": {
           "spanish": [
-            "la innovadora moana",
+            "la innovadora Moana",
             "diseñó",
             "sistemas más eficientes",
             "de recolección de agua"
           ],
           "english": [
-            "the innovative moana",
+            "the innovative Moana",
             "designed",
             "more efficient",
             "water collection systems"
@@ -11281,13 +11282,13 @@ const translationData = [
         "spanish": "Moana enseñó a los aldeanos a leer señales climáticas en formaciones de nubes.",
         "segments": {
           "spanish": [
-            "moana",
+            "Moana",
             "enseñó a los aldeanos",
             "a leer señales climáticas",
             "en formaciones de nubes"
           ],
           "english": [
-            "moana",
+            "Moana",
             "taught villagers",
             "to read weather signs",
             "in cloud formations"
@@ -11300,13 +11301,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con conocimiento indígena",
-            "moana",
+            "Moana",
             "restauró el equilibrio",
             "a ecosistemas marinos"
           ],
           "english": [
             "with indigenous knowledge",
-            "moana",
+            "Moana",
             "restored balance",
             "to marine ecosystems"
           ]
@@ -11317,13 +11318,13 @@ const translationData = [
         "spanish": "La conexión de Moana con sus ancestros guió su viaje.",
         "segments": {
           "spanish": [
-            "de moana",
+            "de Moana",
             "la conexión con sus ancestros",
             "guió",
             "su viaje"
           ],
           "english": [
-            "moana's",
+            "Moana's",
             "connection to her ancestors",
             "guided",
             "her journey"
@@ -11340,13 +11341,13 @@ const translationData = [
         "spanish": "Tiana trabajó duro para lograr su sueño del restaurante.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "trabajó duro",
             "para lograr",
             "su sueño del restaurante"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "worked hard",
             "to achieve",
             "her restaurant dream"
@@ -11359,13 +11360,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con determinación",
-            "tiana",
+            "Tiana",
             "superó",
             "cada obstáculo en su camino"
           ],
           "english": [
             "with determination",
-            "tiana",
+            "Tiana",
             "overcame",
             "every obstacle in her path"
           ]
@@ -11376,13 +11377,13 @@ const translationData = [
         "spanish": "Tiana aprendió que el equilibrio entre trabajo y amor importa.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "aprendió",
             "que el equilibrio entre trabajo y amor",
             "importa"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "learned",
             "that balance between work and love",
             "matters"
@@ -11395,13 +11396,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "cocinar",
-            "dio a tiana",
+            "dio a Tiana",
             "soluciones creativas",
             "a problemas cotidianos"
           ],
           "english": [
             "cooking",
-            "gave tiana",
+            "gave Tiana",
             "creative solutions",
             "to life's problems"
           ]
@@ -11412,13 +11413,13 @@ const translationData = [
         "spanish": "Tiana creó nuevas recetas usando ingredientes cultivados localmente.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "creó",
             "nuevas recetas",
             "usando ingredientes cultivados localmente"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "created",
             "new recipes",
             "using locally grown ingredients"
@@ -11430,13 +11431,13 @@ const translationData = [
         "spanish": "La ingeniosa Tiana administró suministros del restaurante durante escasez.",
         "segments": {
           "spanish": [
-            "la ingeniosa tiana",
+            "la ingeniosa Tiana",
             "administró",
             "suministros del restaurante",
             "durante escasez"
           ],
           "english": [
-            "the resourceful tiana",
+            "the resourceful Tiana",
             "managed",
             "restaurant supplies",
             "during shortages"
@@ -11448,13 +11449,13 @@ const translationData = [
         "spanish": "Tiana enseñó habilidades culinarias a niños de su comunidad.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "enseñó",
             "habilidades culinarias",
             "a niños de su comunidad"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "taught",
             "cooking skills",
             "to children from her community"
@@ -11467,13 +11468,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con determinación",
-            "tiana",
+            "Tiana",
             "transformó",
             "un edificio abandonado en éxito"
           ],
           "english": [
             "with determination",
-            "tiana",
+            "Tiana",
             "transformed",
             "an abandoned building into success"
           ]
@@ -11484,13 +11485,13 @@ const translationData = [
         "spanish": "Tiana desarrolló técnicas de preservación para ingredientes estacionales del pantano.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "desarrolló",
             "técnicas de preservación",
             "para ingredientes estacionales del pantano"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "developed",
             "preservation techniques",
             "for seasonal bayou ingredients"
@@ -11502,13 +11503,13 @@ const translationData = [
         "spanish": "La innovadora Tiana diseñó equipos de cocina energéticamente eficientes.",
         "segments": {
           "spanish": [
-            "la innovadora tiana",
+            "la innovadora Tiana",
             "diseñó",
             "equipos de cocina",
             "energéticamente eficientes"
           ],
           "english": [
-            "the innovative tiana",
+            "the innovative Tiana",
             "designed",
             "kitchen equipment",
             "energy-efficient"
@@ -11520,13 +11521,13 @@ const translationData = [
         "spanish": "Tiana organizó jardines comunitarios para alimentar vecinos hambrientos.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "organizó",
             "jardines comunitarios",
             "para alimentar vecinos hambrientos"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "organized",
             "community gardens",
             "to feed hungry neighbors"
@@ -11539,13 +11540,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante experimentación",
-            "tiana",
+            "Tiana",
             "creó",
             "métodos de agricultura sostenible"
           ],
           "english": [
             "through experimentation",
-            "tiana",
+            "Tiana",
             "created",
             "sustainable farming methods"
           ]
@@ -11556,13 +11557,13 @@ const translationData = [
         "spanish": "Tiana resolvió problemas de purificación de agua para su restaurante.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "resolvió",
             "problemas de purificación de agua",
             "para su restaurante"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "solved",
             "water purification problems",
             "for her restaurant"
@@ -11576,13 +11577,13 @@ const translationData = [
           "spanish": [
             "con visión empresarial",
             "desarrolló",
-            "tiana",
+            "Tiana",
             "sistemas de gestión eficientes"
           ],
           "english": [
             "the business-savvy",
             "developed",
-            "tiana",
+            "Tiana",
             "efficient management systems"
           ]
         }
@@ -11592,13 +11593,13 @@ const translationData = [
         "spanish": "Tiana encontró soluciones creativas para difíciles problemas financieros.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "encontró",
             "soluciones creativas",
             "para difíciles problemas financieros"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "found",
             "creative solutions",
             "to difficult financial problems"
@@ -11611,13 +11612,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con colaboración",
-            "tiana",
+            "Tiana",
             "estableció suministros",
             "de agricultores locales"
           ],
           "english": [
             "with collaboration",
-            "tiana",
+            "Tiana",
             "established supplies",
             "from local farmers"
           ]
@@ -11628,13 +11629,13 @@ const translationData = [
         "spanish": "Tiana diseñó herramientas especiales para sus platos emblemáticos.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "diseñó",
             "herramientas especiales",
             "para sus platos emblemáticos"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "designed",
             "special tools",
             "for her signature dishes"
@@ -11646,13 +11647,13 @@ const translationData = [
         "spanish": "La amable Tiana creó oportunidades laborales para vecinos con dificultades.",
         "segments": {
           "spanish": [
-            "la amable tiana",
+            "la amable Tiana",
             "creó",
             "oportunidades laborales",
             "para vecinos con dificultades"
           ],
           "english": [
-            "the kind tiana",
+            "the kind Tiana",
             "created",
             "job opportunities",
             "for struggling neighbors"
@@ -11664,13 +11665,13 @@ const translationData = [
         "spanish": "Tiana investigó sobre nutrición para mejorar la salud comunitaria.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "investigó sobre nutrición",
             "para mejorar",
             "la salud comunitaria"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "researched nutrition",
             "to improve",
             "community health"
@@ -11683,13 +11684,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante perseverancia",
-            "tiana",
+            "Tiana",
             "superó prejuicios",
             "para lograr sus sueños"
           ],
           "english": [
             "through perseverance",
-            "tiana",
+            "Tiana",
             "overcame prejudice",
             "to achieve her dreams"
           ]
@@ -11700,13 +11701,13 @@ const translationData = [
         "spanish": "Tiana inventó envases reutilizables para comidas para llevar del restaurante.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "inventó",
             "envases reutilizables",
             "para comidas para llevar del restaurante"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "invented",
             "reusable packaging",
             "for takeaway restaurant meals"
@@ -11718,13 +11719,13 @@ const translationData = [
         "spanish": "La valiente Tiana introdujo nuevas tecnologías culinarias a su ciudad.",
         "segments": {
           "spanish": [
-            "la valiente tiana",
+            "la valiente Tiana",
             "introdujo",
             "nuevas tecnologías culinarias",
             "a su ciudad"
           ],
           "english": [
-            "the brave tiana",
+            "the brave Tiana",
             "introduced",
             "new cooking technologies",
             "to her city"
@@ -11736,13 +11737,13 @@ const translationData = [
         "spanish": "Tiana creó programas educativos sobre prácticas alimentarias sostenibles.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "creó",
             "programas educativos",
             "sobre prácticas alimentarias sostenibles"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "created",
             "educational programs",
             "about sustainable food practices"
@@ -11755,13 +11756,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con conocimiento científico",
-            "tiana",
+            "Tiana",
             "mejoró",
             "estándares de seguridad alimentaria"
           ],
           "english": [
             "with scientific knowledge",
-            "tiana",
+            "Tiana",
             "improved",
             "food safety standards"
           ]
@@ -11772,13 +11773,13 @@ const translationData = [
         "spanish": "Tiana cultivó hierbas raras para mejorar sus platos emblemáticos.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "cultivó hierbas raras",
             "para mejorar",
             "sus platos emblemáticos"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "cultivated rare herbs",
             "to enhance",
             "her signature dishes"
@@ -11790,13 +11791,13 @@ const translationData = [
         "spanish": "La emprendedora Tiana diseñó sistemas ecológicos para residuos restauranteros.",
         "segments": {
           "spanish": [
-            "la emprendedora tiana",
+            "la emprendedora Tiana",
             "diseñó",
             "sistemas ecológicos",
             "para residuos restauranteros"
           ],
           "english": [
-            "the enterprising tiana",
+            "the enterprising Tiana",
             "designed",
             "eco-friendly",
             "restaurant waste systems"
@@ -11808,13 +11809,13 @@ const translationData = [
         "spanish": "Tiana creó menús rotativos para destacar ingredientes de temporada.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "creó",
             "menús rotativos",
             "para destacar ingredientes de temporada"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "created",
             "rotating menus",
             "to showcase seasonal ingredients"
@@ -11827,13 +11828,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con ingenio",
-            "tiana",
+            "Tiana",
             "reutilizó",
             "restos de cocina en platos gourmet"
           ],
           "english": [
             "with ingenuity",
-            "tiana",
+            "Tiana",
             "repurposed",
             "kitchen scraps into gourmet dishes"
           ]
@@ -11844,13 +11845,13 @@ const translationData = [
         "spanish": "Tiana orientó a aspirantes a chef de comunidades desfavorecidas.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "orientó",
             "a aspirantes a chef",
             "de comunidades desfavorecidas"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "mentored",
             "aspiring chefs",
             "from underserved communities"
@@ -11862,13 +11863,13 @@ const translationData = [
         "spanish": "La perceptiva Tiana estudió química para mejorar técnicas culinarias.",
         "segments": {
           "spanish": [
-            "la perceptiva tiana",
+            "la perceptiva Tiana",
             "estudió química",
             "para mejorar",
             "técnicas culinarias"
           ],
           "english": [
-            "the perceptive tiana",
+            "the perceptive Tiana",
             "studied chemistry",
             "to improve",
             "cooking techniques"
@@ -11880,13 +11881,13 @@ const translationData = [
         "spanish": "Tiana negoció acuerdos de comercio justo con proveedores locales.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "negoció",
             "acuerdos de comercio justo",
             "con proveedores locales"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "negotiated",
             "fair trade agreements",
             "with local suppliers"
@@ -11899,13 +11900,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante colaboración",
-            "tiana",
+            "Tiana",
             "revitalizó",
             "métodos tradicionales de cocina pantanera"
           ],
           "english": [
             "through collaboration",
-            "tiana",
+            "Tiana",
             "revitalized",
             "traditional bayou cooking methods"
           ]
@@ -11916,13 +11917,13 @@ const translationData = [
         "spanish": "Tiana desarrolló variedades de vegetales tradicionales resistentes a sequías.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "desarrolló",
             "resistentes a sequías",
             "variedades de vegetales tradicionales"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "developed",
             "drought-resistant strains",
             "of traditional vegetables"
@@ -11934,13 +11935,13 @@ const translationData = [
         "spanish": "La considerada Tiana implementó precios accesibles para su comunidad.",
         "segments": {
           "spanish": [
-            "la considerada tiana",
+            "la considerada Tiana",
             "implementó",
             "precios accesibles",
             "para su comunidad"
           ],
           "english": [
-            "the thoughtful tiana",
+            "the thoughtful Tiana",
             "implemented",
             "accessible pricing",
             "for her community"
@@ -11952,13 +11953,13 @@ const translationData = [
         "spanish": "Tiana inventó utensilios de cocina especializados para personas discapacitadas.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "inventó",
             "utensilios de cocina especializados",
             "para personas discapacitadas"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "invented",
             "specialized cooking tools",
             "for people with disabilities"
@@ -11971,13 +11972,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con creatividad",
-            "tiana",
+            "Tiana",
             "transformó",
             "recursos limitados en obras maestras culinarias"
           ],
           "english": [
             "with creativity",
-            "tiana",
+            "Tiana",
             "transformed",
             "limited resources into culinary masterpieces"
           ]
@@ -11988,13 +11989,13 @@ const translationData = [
         "spanish": "Tiana investigó alergias alimentarias para crear opciones inclusivas de menú.",
         "segments": {
           "spanish": [
-            "tiana investigó",
+            "Tiana investigó",
             "alergias alimentarias",
             "para crear",
             "opciones inclusivas de menú"
           ],
           "english": [
-            "tiana researched",
+            "Tiana researched",
             "food allergies",
             "to create",
             "inclusive menu options"
@@ -12006,13 +12007,13 @@ const translationData = [
         "spanish": "La diplomática Tiana resolvió conflictos entre personal de cocina eficazmente.",
         "segments": {
           "spanish": [
-            "la diplomática tiana",
+            "la diplomática Tiana",
             "resolvió eficazmente",
             "conflictos",
             "entre personal de cocina"
           ],
           "english": [
-            "the diplomatic tiana",
+            "the diplomatic Tiana",
             "effectively resolved",
             "conflicts",
             "among kitchen staff"
@@ -12024,13 +12025,13 @@ const translationData = [
         "spanish": "Tiana documentó recetas tradicionales para preservar el patrimonio cultural.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "documentó recetas tradicionales",
             "para preservar",
             "el patrimonio cultural"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "documented traditional recipes",
             "to preserve",
             "cultural heritage"
@@ -12043,13 +12044,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante innovación",
-            "tiana",
+            "Tiana",
             "creó",
             "métodos de cocina energéticamente eficientes"
           ],
           "english": [
             "through innovation",
-            "tiana",
+            "Tiana",
             "created",
             "energy-efficient cooking methods"
           ]
@@ -12060,13 +12061,13 @@ const translationData = [
         "spanish": "Tiana organizó talleres culinarios para empoderar a mujeres desempleadas.",
         "segments": {
           "spanish": [
-            "tiana",
+            "Tiana",
             "organizó",
             "talleres culinarios",
             "para empoderar a mujeres desempleadas"
           ],
           "english": [
-            "tiana",
+            "Tiana",
             "organized",
             "cooking workshops",
             "to empower unemployed women"
@@ -12078,13 +12079,13 @@ const translationData = [
         "spanish": "La analítica Tiana monitoreó costos de ingredientes para mantener precios asequibles.",
         "segments": {
           "spanish": [
-            "la analítica tiana",
+            "la analítica Tiana",
             "monitoreó",
             "costos de ingredientes",
             "para mantener precios asequibles"
           ],
           "english": [
-            "the analytical tiana",
+            "the analytical Tiana",
             "tracked",
             "ingredient costs",
             "to maintain affordable prices"
@@ -12096,13 +12097,13 @@ const translationData = [
         "spanish": "Tiana construyó sistemas de refrigeración usando técnicas naturales de cosecha de hielo.",
         "segments": {
           "spanish": [
-            "tiana construyó",
+            "Tiana construyó",
             "sistemas de refrigeración",
             "usando técnicas naturales",
             "de cosecha de hielo"
           ],
           "english": [
-            "tiana built",
+            "Tiana built",
             "cooling systems",
             "using natural techniques",
             "for ice harvesting"
@@ -12115,13 +12116,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con determinación",
-            "tiana",
+            "Tiana",
             "convirtió",
             "residuos alimentarios en abono rico"
           ],
           "english": [
             "with determination",
-            "tiana",
+            "Tiana",
             "converted",
             "food waste into rich compost"
           ]
@@ -12132,13 +12133,13 @@ const translationData = [
         "spanish": "El pensamiento práctico de Tiana ayudó en situaciones difíciles.",
         "segments": {
           "spanish": [
-            "el pensamiento práctico de tiana",
+            "el pensamiento práctico de Tiana",
             "ayudó",
             "en",
             "situaciones difíciles"
           ],
           "english": [
-            "tiana's practical thinking",
+            "Tiana's practical thinking",
             "helped",
             "in",
             "difficult situations"
@@ -12155,16 +12156,16 @@ const translationData = [
         "spanish": "Jasmine y Aladdin trabajaron juntos para engañar a Jafar.",
         "segments": {
           "spanish": [
-            "jasmine y aladdin",
+            "Jasmine y Aladdin",
             "trabajaron juntos",
             "para engañar",
-            "a jafar"
+            "a Jafar"
           ],
           "english": [
-            "jasmine and aladdin",
+            "Jasmine and Aladdin",
             "worked together",
             "to outsmart",
-            "jafar"
+            "Jafar"
           ]
         }
       },
@@ -12173,13 +12174,13 @@ const translationData = [
         "spanish": "Aladdin usó su astucia callejera para resolver problemas cotidianos.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "usó",
             "su astucia callejera",
             "para resolver problemas cotidianos"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "used",
             "his street smarts",
             "to solve everyday problems"
@@ -12191,13 +12192,13 @@ const translationData = [
         "spanish": "Jasmine luchó por la libertad de elegir su propio camino.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "luchó",
             "por la libertad",
             "de elegir su propio camino"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "fought",
             "for freedom",
             "to choose her own path"
@@ -12209,13 +12210,13 @@ const translationData = [
         "spanish": "Jasmine descubrieron que la honestidad resuelve muchos problemas.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "descubrieron",
             "que la honestidad",
             "resuelve muchos problemas"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "discovered",
             "that honesty",
             "solves many problems"
@@ -12227,13 +12228,13 @@ const translationData = [
         "spanish": "Jasmine diseñó sistemas de conservación de agua para jardines palaciegos desérticos.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "diseñó",
             "sistemas de conservación de agua",
             "para jardines palaciegos desérticos"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "designed",
             "water conservation systems",
             "for desert palace gardens"
@@ -12245,13 +12246,13 @@ const translationData = [
         "spanish": "La ingeniosa Jasmine creó sistemas subterráneos de refrigeración para verano.",
         "segments": {
           "spanish": [
-            "la ingeniosa jasmine",
+            "la ingeniosa Jasmine",
             "creó",
             "sistemas subterráneos de refrigeración",
             "para verano"
           ],
           "english": [
-            "ever resourceful jasmine",
+            "ever resourceful Jasmine",
             "created",
             "underground cooling systems",
             "for summer"
@@ -12263,13 +12264,13 @@ const translationData = [
         "spanish": "Jasmine estableció centros educativos para niñas en su reino.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "estableció",
             "centros educativos",
             "para niñas en su reino"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "established",
             "education centers",
             "for girls in her kingdom"
@@ -12282,13 +12283,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con diplomacia",
-            "jasmine",
+            "Jasmine",
             "negoció paz",
             "entre tribus desérticas rivales"
           ],
           "english": [
             "with diplomacy",
-            "jasmine",
+            "Jasmine",
             "negotiated peace",
             "between rival desert tribes"
           ]
@@ -12299,13 +12300,13 @@ const translationData = [
         "spanish": "Jasmine desarrolló cultivos resistentes a sequías para ambientes áridos.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "desarrolló",
             "cultivos resistentes a sequías",
             "para ambientes áridos"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "developed",
             "drought-resistant crops",
             "for arid environments"
@@ -12317,13 +12318,13 @@ const translationData = [
         "spanish": "La curiosa Jasmine estudió astronomía para mejorar sistemas de navegación.",
         "segments": {
           "spanish": [
-            "la curiosa jasmine",
+            "la curiosa Jasmine",
             "estudió astronomía",
             "para mejorar",
             "sistemas de navegación"
           ],
           "english": [
-            "the curious jasmine",
+            "the curious Jasmine",
             "studied astronomy",
             "to improve",
             "navigation systems"
@@ -12335,13 +12336,13 @@ const translationData = [
         "spanish": "Jasmine mapeó fuentes subterráneas de agua para ayudar aldeas desérticas.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "mapeó",
             "fuentes subterráneas de agua",
             "para ayudar aldeas desérticas"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "mapped",
             "underground water sources",
             "to help desert villages"
@@ -12354,13 +12355,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante colaboración",
-            "jasmine",
+            "Jasmine",
             "estableció rutas comerciales",
             "a través de territorios hostiles"
           ],
           "english": [
             "through collaboration",
-            "jasmine",
+            "Jasmine",
             "established trade routes",
             "across hostile territories"
           ]
@@ -12371,13 +12372,13 @@ const translationData = [
         "spanish": "Jasmine inventó sistemas de filtración de arena para crear agua limpia.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "inventó",
             "sistemas de filtración de arena",
             "para crear agua limpia"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "invented",
             "sand-filtering systems",
             "to create clean water"
@@ -12389,13 +12390,13 @@ const translationData = [
         "spanish": "La compasiva Jasmine creó refugios para niños huérfanos del desierto.",
         "segments": {
           "spanish": [
-            "la compasiva jasmine",
+            "la compasiva Jasmine",
             "creó",
             "refugios",
             "para niños huérfanos del desierto"
           ],
           "english": [
-            "the compassionate jasmine",
+            "the compassionate Jasmine",
             "created",
             "shelters",
             "for orphaned desert children"
@@ -12407,13 +12408,13 @@ const translationData = [
         "spanish": "Jasmine investigó plantas medicinales del desierto para tratar enfermedades comunes.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "investigó",
             "plantas medicinales del desierto",
             "para tratar enfermedades comunes"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "researched",
             "medicinal desert plants",
             "to treat common illnesses"
@@ -12426,13 +12427,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con valentía",
-            "jasmine",
+            "Jasmine",
             "exploró cuevas desconocidas",
             "para descubrir recursos"
           ],
           "english": [
             "with courage",
-            "jasmine",
+            "Jasmine",
             "explored unknown caves",
             "to discover resources"
           ]
@@ -12443,13 +12444,13 @@ const translationData = [
         "spanish": "Jasmine diseñó molinos eólicos para comunidades del desierto.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "diseñó",
             "molinos eólicos",
             "para comunidades del desierto"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "designed",
             "wind-powered mills",
             "for desert communities"
@@ -12461,13 +12462,13 @@ const translationData = [
         "spanish": "La innovadora Jasmine creó técnicas de tejido de seda para telas más resistentes.",
         "segments": {
           "spanish": [
-            "la innovadora jasmine",
+            "la innovadora Jasmine",
             "creó",
             "técnicas de tejido de seda",
             "para telas más resistentes"
           ],
           "english": [
-            "the innovative jasmine",
+            "the innovative Jasmine",
             "created",
             "silk weaving techniques",
             "for stronger fabrics"
@@ -12479,13 +12480,13 @@ const translationData = [
         "spanish": "Jasmine organizó sistemas de irrigación para transformar desierto en tierras cultivables.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "organizó",
             "sistemas de irrigación",
             "para transformar desierto en tierras cultivables"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "organized",
             "irrigation systems",
             "to transform desert into farmland"
@@ -12498,13 +12499,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante persistencia",
-            "jasmine",
+            "Jasmine",
             "descubrió conocimientos antiguos",
             "de arquitectura sostenible"
           ],
           "english": [
             "through persistence",
-            "jasmine",
+            "Jasmine",
             "discovered ancient knowledge",
             "of sustainable architecture"
           ]
@@ -12515,13 +12516,13 @@ const translationData = [
         "spanish": "Jasmine enseñó habilidades de alfabetización a mujeres en su reino.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "enseñó",
             "habilidades de alfabetización",
             "a mujeres en su reino"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "taught",
             "literacy skills",
             "to women across her kingdom"
@@ -12533,13 +12534,13 @@ const translationData = [
         "spanish": "La estratégica Jasmine estableció sistemas de recolección pluvial por toda la ciudad.",
         "segments": {
           "spanish": [
-            "la estratégica jasmine",
+            "la estratégica Jasmine",
             "estableció",
             "sistemas de recolección pluvial",
             "por toda la ciudad"
           ],
           "english": [
-            "the strategic jasmine",
+            "the strategic Jasmine",
             "established",
             "rainwater collection systems",
             "throughout the city"
@@ -12551,13 +12552,13 @@ const translationData = [
         "spanish": "Jasmine creó canales diplomáticos entre reinos previamente aislados.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "creó",
             "canales diplomáticos",
             "entre reinos previamente aislados"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "created",
             "diplomatic channels",
             "between previously isolated kingdoms"
@@ -12570,13 +12571,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con sabiduría",
-            "jasmine",
+            "Jasmine",
             "implementó",
             "sistemas justos de gobernanza para poblaciones diversas"
           ],
           "english": [
             "with wisdom",
-            "jasmine",
+            "Jasmine",
             "implemented",
             "fair governance systems for diverse populations"
           ]
@@ -12587,13 +12588,13 @@ const translationData = [
         "spanish": "Jasmine creó sistemas de refrigeración solar para comunidades desérticas.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "creó",
             "sistemas de refrigeración solar",
             "para comunidades desérticas"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "created",
             "solar-powered cooling systems",
             "for desert communities"
@@ -12605,13 +12606,13 @@ const translationData = [
         "spanish": "La valiente Jasmine estableció rutas seguras para viajeros del desierto.",
         "segments": {
           "spanish": [
-            "la valiente jasmine",
+            "la valiente Jasmine",
             "estableció",
             "rutas seguras",
             "para viajeros del desierto"
           ],
           "english": [
-            "the brave jasmine",
+            "the brave Jasmine",
             "established",
             "safe routes",
             "for desert travelers"
@@ -12623,13 +12624,13 @@ const translationData = [
         "spanish": "Jasmine descubrió métodos antiguos para predecir tormentas de arena precisamente.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "descubrió",
             "métodos antiguos",
             "para predecir tormentas de arena precisamente"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "discovered",
             "ancient methods",
             "for predicting sandstorms accurately"
@@ -12642,13 +12643,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con trabajo en equipo",
-            "jasmine",
+            "Jasmine",
             "restauró",
             "pozos abandonados por todo el reino"
           ],
           "english": [
             "with teamwork",
-            "jasmine",
+            "Jasmine",
             "restored",
             "abandoned wells across the kingdom"
           ]
@@ -12659,13 +12660,13 @@ const translationData = [
         "spanish": "Jasmine desarrolló un lenguaje de señas para comunicarse durante tormentas arenosas.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "desarrolló",
             "un lenguaje de señas",
             "para comunicarse durante tormentas arenosas"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "developed",
             "a sign language",
             "for communicating during sandstorms"
@@ -12677,13 +12678,13 @@ const translationData = [
         "spanish": "La considerada Jasmine creó bibliotecas móviles para aldeas remotas.",
         "segments": {
           "spanish": [
-            "la considerada jasmine",
+            "la considerada Jasmine",
             "creó",
             "bibliotecas móviles",
             "para aldeas remotas"
           ],
           "english": [
-            "the thoughtful jasmine",
+            "the thoughtful Jasmine",
             "created",
             "mobile libraries",
             "for remote villages"
@@ -12695,13 +12696,13 @@ const translationData = [
         "spanish": "Jasmine diseñó sistemas naturales de refrigeración usando patrones eólicos desérticos.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "diseñó",
             "sistemas naturales de refrigeración",
             "usando patrones eólicos desérticos"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "engineered",
             "natural cooling systems",
             "using desert wind patterns"
@@ -12714,13 +12715,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante innovación",
-            "jasmine",
+            "Jasmine",
             "creó",
             "sistemas de baño eficientes en agua"
           ],
           "english": [
             "through innovation",
-            "jasmine",
+            "Jasmine",
             "created",
             "water-efficient bathing systems"
           ]
@@ -12731,13 +12732,13 @@ const translationData = [
         "spanish": "Jasmine enseñó habilidades de supervivencia desértica a niños aldeanos.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "enseñó",
             "habilidades de supervivencia desértica",
             "a niños aldeanos"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "taught",
             "desert survival skills",
             "to village children"
@@ -12749,13 +12750,13 @@ const translationData = [
         "spanish": "La diplomática Jasmine resolvió disputas sobre derechos de agua entre aldeas vecinas.",
         "segments": {
           "spanish": [
-            "la diplomática jasmine",
+            "la diplomática Jasmine",
             "resolvió",
             "disputas sobre derechos de agua",
             "entre aldeas vecinas"
           ],
           "english": [
-            "the diplomatic jasmine",
+            "the diplomatic Jasmine",
             "resolved",
             "water rights disputes",
             "between neighboring villages"
@@ -12767,13 +12768,13 @@ const translationData = [
         "spanish": "Jasmine estudió patrones estelares para crear mapas desérticos precisos.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "estudió",
             "patrones estelares",
             "para crear mapas desérticos precisos"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "studied",
             "star patterns",
             "to create accurate desert maps"
@@ -12786,13 +12787,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con creatividad",
-            "jasmine",
+            "Jasmine",
             "diseñó ropa resistente a arena",
             "para viajes desérticos"
           ],
           "english": [
             "with creativity",
-            "jasmine",
+            "Jasmine",
             "designed sand-resistant clothing",
             "for desert travel"
           ]
@@ -12803,13 +12804,13 @@ const translationData = [
         "spanish": "Jasmine pionéró técnicas de cultivo nocturno en temperaturas desérticas más frescas.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "pionéró",
             "técnicas de cultivo nocturno",
             "en temperaturas desérticas más frescas"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "pioneered",
             "night farming techniques",
             "in cooler desert temperatures"
@@ -12821,13 +12822,13 @@ const translationData = [
         "spanish": "La inventiva Jasmine creó instrumentos musicales con materiales del desierto.",
         "segments": {
           "spanish": [
-            "la inventiva jasmine",
+            "la inventiva Jasmine",
             "creó",
             "instrumentos musicales",
             "con materiales del desierto"
           ],
           "english": [
-            "the inventive jasmine",
+            "the inventive Jasmine",
             "created",
             "musical instruments",
             "from desert materials"
@@ -12839,13 +12840,13 @@ const translationData = [
         "spanish": "Jasmine implementó sistemas justos de distribución de agua durante sequías severas.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "implementó",
             "sistemas justos de distribución de agua",
             "durante sequías severas"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "implemented",
             "fair water distribution systems",
             "during severe droughts"
@@ -12858,13 +12859,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante perseverancia",
-            "jasmine",
+            "Jasmine",
             "desarrolló",
             "materiales de construcción resistentes al calor"
           ],
           "english": [
             "through perseverance",
-            "jasmine",
+            "Jasmine",
             "developed",
             "heat-resistant building materials"
           ]
@@ -12875,13 +12876,13 @@ const translationData = [
         "spanish": "Jasmine organizó equipos para rescatar viajeros perdidos en tormentas arenosas.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "organizó",
             "equipos para rescatar",
             "viajeros perdidos en tormentas arenosas"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "organized",
             "teams to rescue",
             "travelers lost in sandstorms"
@@ -12893,13 +12894,13 @@ const translationData = [
         "spanish": "La analítica Jasmine estudió ecosistemas desérticos para prevenir la desertificación.",
         "segments": {
           "spanish": [
-            "la analítica jasmine",
+            "la analítica Jasmine",
             "estudió",
             "ecosistemas desérticos",
             "para prevenir la desertificación"
           ],
           "english": [
-            "the analytical jasmine",
+            "the analytical Jasmine",
             "studied",
             "desert ecosystems",
             "to prevent desertification"
@@ -12911,13 +12912,13 @@ const translationData = [
         "spanish": "Jasmine creó sistemas subterráneos de almacenamiento para preservar suministros alimenticios.",
         "segments": {
           "spanish": [
-            "jasmine",
+            "Jasmine",
             "creó",
             "sistemas subterráneos de almacenamiento",
             "para preservar suministros alimenticios"
           ],
           "english": [
-            "jasmine",
+            "Jasmine",
             "created",
             "underground food storage systems",
             "to preserve supplies"
@@ -12930,13 +12931,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con conocimiento indígena",
-            "jasmine",
+            "Jasmine",
             "revitalizó",
             "métodos agrícolas tradicionales del desierto"
           ],
           "english": [
             "with indigenous knowledge",
-            "jasmine",
+            "Jasmine",
             "revitalized",
             "traditional desert agriculture methods"
           ]
@@ -12947,13 +12948,13 @@ const translationData = [
         "spanish": "Jasmine y Aladdin encontraron fuerza en su amistad.",
         "segments": {
           "spanish": [
-            "jasmine y aladdin",
+            "Jasmine y Aladdin",
             "encontraron",
             "fuerza",
             "en su amistad"
           ],
           "english": [
-            "jasmine and aladdin",
+            "Jasmine and Aladdin",
             "found",
             "strength",
             "in their friendship"
@@ -12970,13 +12971,13 @@ const translationData = [
         "spanish": "Ariel coleccionaba objetos humanos para aprender sobre su mundo.",
         "segments": {
           "spanish": [
-            "ariel",
+            "Ariel",
             "coleccionaba",
             "objetos humanos",
             "para aprender sobre su mundo"
           ],
           "english": [
-            "ariel",
+            "Ariel",
             "collected",
             "human objects",
             "to learn about their world"
@@ -12988,14 +12989,14 @@ const translationData = [
         "spanish": "Ariel se identificó con el llamado de Abraham a abandonar su tierra natal mientras anhelaba la vida más allá del océano.",
         "segments": {
           "spanish": [
-            "ariel se identificó",
-            "con el llamado de abraham",
+            "Ariel se identificó",
+            "con el llamado de Abraham",
             "a abandonar su tierra natal",
             "mientras anhelaba la vida más allá del océano"
           ],
           "english": [
-            "ariel related",
-            "to abraham's call",
+            "Ariel related",
+            "to Abraham's call",
             "to leave his homeland",
             "as she yearned for life beyond the ocean"
           ]
@@ -13006,15 +13007,15 @@ const translationData = [
         "spanish": "Ariel encontró afinidad con Moisés quien contempló la Tierra Prometida desde lejos tal como ella observaba el mundo humano desde debajo de las olas.",
         "segments": {
           "spanish": [
-            "ariel encontró afinidad",
-            "con moisés",
-            "quien contempló la tierra prometida desde lejos",
+            "Ariel encontró afinidad",
+            "con Moisés",
+            "quien contempló la Tierra Prometida desde lejos",
             "tal como ella observaba el mundo humano desde debajo de las olas"
           ],
           "english": [
-            "ariel found kinship",
-            "with moses",
-            "who gazed at the promised land from afar",
+            "Ariel found kinship",
+            "with Moses",
+            "who gazed at the Promised Land from afar",
             "just as she watched the human world from beneath the waves"
           ]
         }
@@ -13024,14 +13025,14 @@ const translationData = [
         "spanish": "Ariel extrajo valor de la disposición de Ester para entrar en un mundo diferente cuando se aventuró en tierra firme a pesar de los riesgos.",
         "segments": {
           "spanish": [
-            "ariel extrajo valor",
-            "de la disposición de ester",
+            "Ariel extrajo valor",
+            "de la disposición de Ester",
             "para entrar en un mundo diferente",
             "cuando se aventuró en tierra firme a pesar de los riesgos"
           ],
           "english": [
-            "ariel drew courage",
-            "from esther's willingness",
+            "Ariel drew courage",
+            "from Esther's willingness",
             "to enter a different world",
             "when she ventured onto land despite the risks"
           ]
@@ -13042,14 +13043,14 @@ const translationData = [
         "spanish": "Ariel comprendió la decisión de Rut de abrazar un nuevo pueblo y cultura cuando formaba lazos con los humanos.",
         "segments": {
           "spanish": [
-            "ariel comprendió",
-            "la decisión de rut",
+            "Ariel comprendió",
+            "la decisión de Rut",
             "de abrazar un nuevo pueblo y cultura",
             "cuando formaba lazos con los humanos"
           ],
           "english": [
-            "ariel understood",
-            "ruth's decision",
+            "Ariel understood",
+            "Ruth's decision",
             "to embrace a new people and culture",
             "when forming bonds with humans"
           ]
@@ -13060,14 +13061,14 @@ const translationData = [
         "spanish": "Ariel meditaba en las palabras de Jesús sobre estar 'en el mundo pero no ser de él' mientras navegaba entre el mar y la tierra.",
         "segments": {
           "spanish": [
-            "ariel meditaba",
-            "en las palabras de jesús",
+            "Ariel meditaba",
+            "en las palabras de Jesús",
             "sobre estar 'en el mundo pero no ser de él'",
             "mientras navegaba entre el mar y la tierra"
           ],
           "english": [
-            "ariel meditated",
-            "on jesus's words",
+            "Ariel meditated",
+            "on Jesus's words",
             "about being 'in the world but not of it'",
             "as she navigated between sea and land"
           ]
@@ -13078,14 +13079,14 @@ const translationData = [
         "spanish": "Ariel encontró resonancia en los escritos de Pablo sobre ser ciudadana del cielo mientras vivía en la tierra, sintiéndose atrapada entre dos mundos.",
         "segments": {
           "spanish": [
-            "ariel encontró resonancia",
-            "en los escritos de pablo",
+            "Ariel encontró resonancia",
+            "en los escritos de Pablo",
             "sobre ser ciudadana del cielo mientras vivía en la tierra",
             "sintiéndose atrapada entre dos mundos"
           ],
           "english": [
-            "ariel found resonance",
-            "in paul's writings",
+            "Ariel found resonance",
+            "in Paul's writings",
             "about being a citizen of heaven while living on earth",
             "feeling caught between two worlds"
           ]
@@ -13096,14 +13097,14 @@ const translationData = [
         "spanish": "Ariel se vio reflejada en el viaje submarino de Jonás y su posterior llamado a conectar con personas diferentes.",
         "segments": {
           "spanish": [
-            "ariel se vio reflejada",
-            "en el viaje submarino de jonás",
+            "Ariel se vio reflejada",
+            "en el viaje submarino de Jonás",
             "y su posterior llamado",
             "a conectar con personas diferentes"
           ],
           "english": [
-            "ariel saw herself",
-            "in jonah's underwater journey",
+            "Ariel saw herself",
+            "in Jonah's underwater journey",
             "and subsequent calling",
             "to connect with different people"
           ]
@@ -13114,14 +13115,14 @@ const translationData = [
         "spanish": "Ariel personificó la visión de Pedro de criaturas limpias e inmundas uniéndose mientras buscaba conectar los reinos submarino y humano.",
         "segments": {
           "spanish": [
-            "ariel personificó",
-            "la visión de pedro",
+            "Ariel personificó",
+            "la visión de Pedro",
             "de criaturas limpias e inmundas uniéndose",
             "mientras buscaba conectar los reinos submarino y humano"
           ],
           "english": [
-            "ariel embodied",
-            "peter's vision",
+            "Ariel embodied",
+            "Peter's vision",
             "of clean and unclean creatures uniting",
             "as she sought to bridge mer-world and human realms"
           ]
@@ -13132,14 +13133,14 @@ const translationData = [
         "spanish": "Ariel reflexionó sobre la capacidad de Daniel para servir fielmente en una cultura extranjera cuando se adaptaba a la vida con humanos.",
         "segments": {
           "spanish": [
-            "ariel reflexionó",
-            "sobre la capacidad de daniel",
+            "Ariel reflexionó",
+            "sobre la capacidad de Daniel",
             "para servir fielmente en una cultura extranjera",
             "cuando se adaptaba a la vida con humanos"
           ],
           "english": [
-            "ariel reflected",
-            "on daniel's ability",
+            "Ariel reflected",
+            "on Daniel's ability",
             "to serve faithfully in a foreign culture",
             "when adapting to life with humans"
           ]
@@ -13150,14 +13151,14 @@ const translationData = [
         "spanish": "Ariel aplicó la disposición del Apóstol Pablo de convertirse en 'todo para todos' en sus esfuerzos por entender las costumbres humanas.",
         "segments": {
           "spanish": [
-            "ariel aplicó",
-            "la disposición del apóstol pablo",
+            "Ariel aplicó",
+            "la disposición del Apóstol Pablo",
             "de convertirse en 'todo para todos'",
             "en sus esfuerzos por entender las costumbres humanas"
           ],
           "english": [
-            "ariel applied",
-            "the apostle paul's willingness",
+            "Ariel applied",
+            "the Apostle Paul's willingness",
             "to become 'all things to all people'",
             "in her efforts to understand human ways"
           ]
@@ -13168,15 +13169,15 @@ const translationData = [
         "spanish": "Ariel fue animada por el mensaje de Filipenses de que 'Todo lo puedo en Cristo que me fortalece' cuando enfrentaba los desafíos de la transformación.",
         "segments": {
           "spanish": [
-            "ariel fue animada",
-            "por el mensaje de filipenses",
-            "de que 'todo lo puedo en cristo que me fortalece'",
+            "Ariel fue animada",
+            "por el mensaje de Filipenses",
+            "de que 'todo lo puedo en Cristo que me fortalece'",
             "cuando enfrentaba los desafíos de la transformación"
           ],
           "english": [
-            "ariel was encouraged",
-            "by philippians' message",
-            "that 'i can do all things through christ who strengthens me'",
+            "Ariel was encouraged",
+            "by Philippians' message",
+            "that 'i can do all things through Christ who strengthens me'",
             "when facing the challenges of transformation"
           ]
         }
@@ -13186,14 +13187,14 @@ const translationData = [
         "spanish": "Ariel encontró sabiduría en los escritos de Salomón de que 'hay un tiempo para todo' mientras transitaba entre el mar y la tierra.",
         "segments": {
           "spanish": [
-            "ariel encontró sabiduría",
-            "en los escritos de salomón",
+            "Ariel encontró sabiduría",
+            "en los escritos de Salomón",
             "de que 'hay un tiempo para todo'",
             "mientras transitaba entre el mar y la tierra"
           ],
           "english": [
-            "ariel found wisdom",
-            "in solomon's writings",
+            "Ariel found wisdom",
+            "in Solomon's writings",
             "that 'there is a time for everything'",
             "as she transitioned between sea and land"
           ]
@@ -13204,15 +13205,15 @@ const translationData = [
         "spanish": "Ariel contemplaba la historia de la creación del Génesis donde Dios separó las aguas, sintiendo que su propia vida estaba dividida entre dos elementos.",
         "segments": {
           "spanish": [
-            "ariel contemplaba",
-            "la historia de la creación del génesis",
-            "donde dios separó las aguas",
+            "Ariel contemplaba",
+            "la historia de la creación del Génesis",
+            "donde Dios separó las aguas",
             "sintiendo que su propia vida estaba dividida entre dos elementos"
           ],
           "english": [
-            "ariel contemplated",
-            "genesis's creation story",
-            "where god separated the waters",
+            "Ariel contemplated",
+            "Genesis's creation story",
+            "where God separated the waters",
             "feeling her own life was divided between two elements"
           ]
         }
@@ -13222,14 +13223,14 @@ const translationData = [
         "spanish": "Ariel fue inspirada por Jesús caminando sobre el agua, uniendo dos mundos como ella anhelaba hacer entre el océano y la costa.",
         "segments": {
           "spanish": [
-            "ariel fue inspirada",
-            "por jesús caminando sobre el agua",
+            "Ariel fue inspirada",
+            "por Jesús caminando sobre el agua",
             "uniendo dos mundos",
             "como ella anhelaba hacer entre el océano y la costa"
           ],
           "english": [
-            "ariel was inspired",
-            "by jesus walking on water",
+            "Ariel was inspired",
+            "by Jesus walking on water",
             "bridging two worlds",
             "as she longed to do between ocean and shore"
           ]
@@ -13240,14 +13241,14 @@ const translationData = [
         "spanish": "Ariel confió en la promesa de Dios de Isaías de que 'Estoy haciendo algo nuevo' cuando emprendió su viaje para unirse al mundo humano.",
         "segments": {
           "spanish": [
-            "ariel confió",
-            "en la promesa de dios de isaías",
+            "Ariel confió",
+            "en la promesa de Dios de Isaías",
             "de que 'estoy haciendo algo nuevo'",
             "cuando emprendió su viaje para unirse al mundo humano"
           ],
           "english": [
-            "ariel trusted",
-            "in god's promise from isaiah",
+            "Ariel trusted",
+            "in God's promise from Isaiah",
             "that 'i am doing a new thing'",
             "when embarking on her journey to join the human world"
           ]
@@ -13259,13 +13260,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "la curiosidad",
-            "ayudó a ariel",
+            "ayudó a Ariel",
             "a descubrir soluciones",
             "a sus problemas"
           ],
           "english": [
             "curiosity",
-            "helped ariel",
+            "helped Ariel",
             "discover solutions",
             "to her problems"
           ]
@@ -13276,13 +13277,13 @@ const translationData = [
         "spanish": "Ariel encontró formas creativas de comunicarse sin su voz.",
         "segments": {
           "spanish": [
-            "ariel",
+            "Ariel",
             "encontró",
             "formas creativas",
             "de comunicarse sin su voz"
           ],
           "english": [
-            "ariel",
+            "Ariel",
             "found",
             "creative ways",
             "to communicate without her voice"
@@ -13295,13 +13296,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con determinación",
-            "ariel",
+            "Ariel",
             "persiguió sus sueños",
             "a pesar de obstáculos"
           ],
           "english": [
             "with determination",
-            "ariel",
+            "Ariel",
             "pursued her dreams",
             "despite obstacles"
           ]
@@ -13312,13 +13313,13 @@ const translationData = [
         "spanish": "Los amigos de Ariel la ayudaron a superar sus mayores desafíos.",
         "segments": {
           "spanish": [
-            "los amigos de ariel",
+            "los amigos de Ariel",
             "la ayudaron",
             "a superar",
             "sus mayores desafíos"
           ],
           "english": [
-            "ariel's friends",
+            "Ariel's friends",
             "helped her",
             "overcome",
             "her biggest challenges"
@@ -13335,13 +13336,13 @@ const translationData = [
         "spanish": "Aladdin construyó jardines colgantes para cultivar alimentos en áreas concurridas.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "construyó",
             "jardines colgantes",
             "para cultivar alimentos en áreas concurridas"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "built",
             "hanging gardens",
             "to grow food in crowded areas"
@@ -13354,13 +13355,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando materiales locales",
-            "aladdin",
+            "Aladdin",
             "creó",
             "sistemas eficientes de refrigeración para mercados"
           ],
           "english": [
             "using local materials",
-            "aladdin",
+            "Aladdin",
             "created",
             "efficient market cooling systems"
           ]
@@ -13372,13 +13373,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con partes recuperadas",
-            "aladdin",
+            "Aladdin",
             "inventó",
             "instrumentos musicales para huérfanos"
           ],
           "english": [
             "with salvaged parts",
-            "aladdin",
+            "Aladdin",
             "invented",
             "musical instruments for orphans"
           ]
@@ -13389,13 +13390,13 @@ const translationData = [
         "spanish": "Aladdin mapeó rutas secretas por la ciudad para mensajeros.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "mapeó",
             "rutas secretas",
             "por la ciudad para mensajeros"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "mapped",
             "secret routes",
             "through the city for messengers"
@@ -13408,13 +13409,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "durante sequías",
-            "aladdin",
+            "Aladdin",
             "descubrió",
             "fuentes subterráneas de agua para comunidades"
           ],
           "english": [
             "during droughts",
-            "aladdin",
+            "Aladdin",
             "discovered",
             "underground water sources for communities"
           ]
@@ -13425,13 +13426,13 @@ const translationData = [
         "spanish": "Aladdin implementó prácticas laborales justas en los talleres reales.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "implementó",
             "prácticas laborales justas",
             "en los talleres reales"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "implemented",
             "fair labor practices",
             "in the royal workshops"
@@ -13444,13 +13445,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con artesanos locales",
-            "aladdin",
+            "Aladdin",
             "desarrolló",
             "materiales de construcción más fuertes pero ligeros"
           ],
           "english": [
             "with local artisans",
-            "aladdin",
+            "Aladdin",
             "developed",
             "stronger but lighter building materials"
           ]
@@ -13461,13 +13462,13 @@ const translationData = [
         "spanish": "Aladdin creó un sistema de alerta para desastres naturales en toda la ciudad.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "creó",
             "un sistema de alerta",
             "para desastres naturales en toda la ciudad"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "created",
             "a city-wide alert system",
             "for natural disasters"
@@ -13480,13 +13481,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante observación cuidadosa",
-            "aladdin",
+            "Aladdin",
             "mejoró",
             "sistemas de riego para agricultores"
           ],
           "english": [
             "through careful observation",
-            "aladdin",
+            "Aladdin",
             "improved",
             "irrigation systems for farmers"
           ]
@@ -13497,13 +13498,13 @@ const translationData = [
         "spanish": "Aladdin estableció cocinas comunitarias para alimentar a niños hambrientos del vecindario.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "estableció",
             "cocinas comunitarias",
             "para alimentar a niños hambrientos del vecindario"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "established",
             "community kitchens",
             "to feed hungry neighborhood children"
@@ -13516,13 +13517,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con habilidades de ingeniería",
-            "aladdin",
+            "Aladdin",
             "restauró",
             "antiguos acueductos deteriorados"
           ],
           "english": [
             "with engineering skills",
-            "aladdin",
+            "Aladdin",
             "restored",
             "crumbling ancient aqueducts"
           ]
@@ -13533,13 +13534,13 @@ const translationData = [
         "spanish": "Aladdin enseñó oficios legítimos y habilidades comerciales a antiguos ladrones.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "enseñó",
             "oficios legítimos y habilidades comerciales",
             "a antiguos ladrones"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "taught",
             "former thieves",
             "legitimate trade and business skills"
@@ -13552,13 +13553,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando matemáticas",
-            "aladdin",
+            "Aladdin",
             "resolvió",
             "complejos problemas de construcción palaciega"
           ],
           "english": [
             "using mathematics",
-            "aladdin",
+            "Aladdin",
             "solved",
             "complex palace construction problems"
           ]
@@ -13569,13 +13570,13 @@ const translationData = [
         "spanish": "Aladdin diseñó sistemas de poleas para ayudar a ancianos a acceder al agua.",
         "segments": {
           "spanish": [
-            "aladdin diseñó",
+            "Aladdin diseñó",
             "sistemas de poleas",
             "para ayudar a ancianos",
             "a acceder al agua"
           ],
           "english": [
-            "aladdin designed",
+            "Aladdin designed",
             "pulley systems",
             "to help the elderly",
             "access water"
@@ -13588,13 +13589,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con apoyo comunitario",
-            "aladdin",
+            "Aladdin",
             "transformó",
             "edificios abandonados en escuelas"
           ],
           "english": [
             "with community support",
-            "aladdin",
+            "Aladdin",
             "transformed",
             "abandoned buildings into schools"
           ]
@@ -13605,13 +13606,13 @@ const translationData = [
         "spanish": "Aladdin pionéró sistemas de iluminación nocturna para seguridad en el mercado.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "pionéró",
             "sistemas de iluminación nocturna",
             "para seguridad en el mercado"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "pioneered",
             "nighttime lighting systems",
             "for marketplace safety"
@@ -13624,13 +13625,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante diplomacia paciente",
-            "aladdin",
+            "Aladdin",
             "unió",
             "gremios divididos de comerciantes del mercado"
           ],
           "english": [
             "through patient diplomacy",
-            "aladdin",
+            "Aladdin",
             "united",
             "divided marketplace merchant guilds"
           ]
@@ -13641,13 +13642,13 @@ const translationData = [
         "spanish": "Aladdin desarrolló lenguaje de señas para comunicarse con niños sordos.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "desarrolló",
             "lenguaje de señas",
             "para comunicarse con niños sordos"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "developed",
             "sign language",
             "to communicate with deaf children"
@@ -13659,13 +13660,13 @@ const translationData = [
         "spanish": "Aladdin creó sistemas de recolección de lluvia por toda la ciudad desértica.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "creó",
             "sistemas de recolección de lluvia",
             "por toda la ciudad desértica"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "created",
             "rainwater collection systems",
             "throughout the desert city"
@@ -13678,13 +13679,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando conocimiento antiguo",
-            "aladdin",
+            "Aladdin",
             "restauró",
             "los olvidados acueductos de la ciudad"
           ],
           "english": [
             "using ancient knowledge",
-            "aladdin",
+            "Aladdin",
             "restored",
             "the city's forgotten aqueducts"
           ]
@@ -13695,13 +13696,13 @@ const translationData = [
         "spanish": "Aladdin estableció clínicas médicas móviles para vecindarios desatendidos.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "estableció",
             "clínicas médicas móviles",
             "para vecindarios desatendidos"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "established",
             "mobile medical clinics",
             "for underserved neighborhoods"
@@ -13714,13 +13715,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con artesanos locales",
-            "aladdin",
+            "Aladdin",
             "diseñó",
             "andamios más seguros para construcción"
           ],
           "english": [
             "with local craftsmen",
-            "aladdin",
+            "Aladdin",
             "designed",
             "safer scaffolding for construction"
           ]
@@ -13731,13 +13732,13 @@ const translationData = [
         "spanish": "Aladdin resolvió problemas de contaminación de agua en distritos pobres.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "resolvió",
             "problemas de contaminación de agua",
             "en distritos pobres"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "solved",
             "water contamination issues",
             "in poor city districts"
@@ -13750,13 +13751,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante observación",
-            "aladdin",
+            "Aladdin",
             "desarrolló",
             "sistemas efectivos de alerta para tormentas arenosas"
           ],
           "english": [
             "through observation",
-            "aladdin",
+            "Aladdin",
             "developed",
             "effective sandstorm warning systems"
           ]
@@ -13767,13 +13768,13 @@ const translationData = [
         "spanish": "Aladdin organizó vigilancias vecinales para reducir tasas de criminalidad.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "organizó",
             "vigilancias vecinales",
             "para reducir tasas de criminalidad"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "organized",
             "neighborhood watches",
             "to reduce crime rates"
@@ -13786,13 +13787,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con persistencia",
-            "aladdin",
+            "Aladdin",
             "creó",
             "técnicas sostenibles de agricultura desértica"
           ],
           "english": [
             "with persistence",
-            "aladdin",
+            "Aladdin",
             "created",
             "sustainable desert farming techniques"
           ]
@@ -13803,13 +13804,13 @@ const translationData = [
         "spanish": "Aladdin transformó edificios abandonados en centros comunitarios de recursos.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "transformó",
             "edificios abandonados",
             "en centros comunitarios de recursos"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "transformed",
             "abandoned buildings",
             "into community resource centers"
@@ -13822,13 +13823,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando mecánica",
-            "aladdin",
+            "Aladdin",
             "mejoró",
             "norias para mayor eficiencia"
           ],
           "english": [
             "using mechanics",
-            "aladdin",
+            "Aladdin",
             "improved",
             "water wheels for better efficiency"
           ]
@@ -13839,13 +13840,13 @@ const translationData = [
         "spanish": "Aladdin enseñó a comerciantes estrategias justas de precios que beneficiaban a todos.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "enseñó",
             "a comerciantes estrategias justas de precios",
             "que beneficiaban a todos"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "taught",
             "merchants fair pricing strategies",
             "that benefited everyone"
@@ -13858,13 +13859,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con trabajo en equipo",
-            "aladdin",
+            "Aladdin",
             "excavó",
             "nuevos pozos durante sequía severa"
           ],
           "english": [
             "with teamwork",
-            "aladdin",
+            "Aladdin",
             "excavated",
             "new wells during severe drought"
           ]
@@ -13875,13 +13876,13 @@ const translationData = [
         "spanish": "Aladdin diseñó escaleras ligeras para equipos de bomberos de la ciudad.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "diseñó",
             "escaleras ligeras",
             "para equipos de bomberos de la ciudad"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "designed",
             "lightweight ladders",
             "for city firefighting teams"
@@ -13894,13 +13895,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante experimentación",
-            "aladdin",
+            "Aladdin",
             "descubrió formas naturales",
             "de preservar alimentos"
           ],
           "english": [
             "through experimentation",
-            "aladdin",
+            "Aladdin",
             "discovered natural ways",
             "to preserve food"
           ]
@@ -13911,13 +13912,13 @@ const translationData = [
         "spanish": "Aladdin creó un lenguaje de señas unificado para vendedores del mercado.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "creó",
             "un lenguaje de señas unificado",
             "para vendedores del mercado"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "created",
             "a unified sign language",
             "for marketplace vendors"
@@ -13930,13 +13931,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con empatía",
-            "aladdin",
+            "Aladdin",
             "reformó",
             "castigos severos para delitos menores"
           ],
           "english": [
             "with empathy",
-            "aladdin",
+            "Aladdin",
             "reformed",
             "harsh punishments for minor offenses"
           ]
@@ -13947,13 +13948,13 @@ const translationData = [
         "spanish": "Aladdin diseñó engranajes resistentes a arena para bombas críticas de agua.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "diseñó",
             "engranajes resistentes a arena",
             "para bombas críticas de agua"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "engineered",
             "sand-resistant gears",
             "for critical water pumps"
@@ -13966,13 +13967,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando materiales recuperados",
-            "aladdin",
+            "Aladdin",
             "construyó",
             "refugios para familias callejeras"
           ],
           "english": [
             "using reclaimed materials",
-            "aladdin",
+            "Aladdin",
             "built",
             "shelters for street families"
           ]
@@ -13983,13 +13984,13 @@ const translationData = [
         "spanish": "Aladdin mapeó rutas seguras por la ciudad para niños.",
         "segments": {
           "spanish": [
-            "aladdin",
+            "Aladdin",
             "mapeó",
             "rutas seguras",
             "por la ciudad para niños"
           ],
           "english": [
-            "aladdin",
+            "Aladdin",
             "mapped",
             "safe routes",
             "through the city for children"
@@ -14002,13 +14003,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con innovación",
-            "aladdin",
+            "Aladdin",
             "creó",
             "almacenamiento refrigerado para vendedores del mercado"
           ],
           "english": [
             "with innovation",
-            "aladdin",
+            "Aladdin",
             "created",
             "cooled storage for market vendors"
           ]
@@ -14020,13 +14021,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando materiales reciclados",
-            "aladdin",
+            "Aladdin",
             "creó",
             "juguetes para niños desfavorecidos"
           ],
           "english": [
             "using recycled materials",
-            "aladdin",
+            "Aladdin",
             "created",
             "toys for underprivileged children"
           ]
@@ -14042,16 +14043,16 @@ const translationData = [
         "spanish": "Mowgli aprendió habilidades de supervivencia de Baloo y Bagheera.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "aprendió",
             "habilidades de supervivencia",
-            "de baloo y bagheera"
+            "de Baloo y Bagheera"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "learned",
             "jungle survival skills",
-            "from baloo and bagheera"
+            "from Baloo and Bagheera"
           ]
         }
       },
@@ -14060,14 +14061,14 @@ const translationData = [
         "spanish": "Baloo enseñó a Mowgli a disfrutar la vida mientras resolvía problemas.",
         "segments": {
           "spanish": [
-            "baloo",
-            "enseñó a mowgli",
+            "Baloo",
+            "enseñó a Mowgli",
             "a disfrutar la vida",
             "mientras resolvía problemas"
           ],
           "english": [
-            "baloo",
-            "taught mowgli",
+            "Baloo",
+            "taught Mowgli",
             "to enjoy life",
             "while solving problems"
           ]
@@ -14078,13 +14079,13 @@ const translationData = [
         "spanish": "Mowgli usó creatividad para superar peligros en la jungla.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "usó",
             "creatividad",
             "para superar peligros en la jungla"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "used",
             "creativity",
             "to overcome dangers in the jungle"
@@ -14096,16 +14097,16 @@ const translationData = [
         "spanish": "Mowgli y Baloo encontraron formas inteligentes de escapar de Shere Khan.",
         "segments": {
           "spanish": [
-            "mowgli y baloo",
+            "Mowgli y Baloo",
             "encontraron",
             "formas inteligentes",
-            "de escapar de shere khan"
+            "de escapar de Shere Khan"
           ],
           "english": [
-            "mowgli and baloo",
+            "Mowgli and Baloo",
             "found",
             "clever ways",
-            "to escape shere khan"
+            "to escape Shere Khan"
           ]
         }
       },
@@ -14114,13 +14115,13 @@ const translationData = [
         "spanish": "Mowgli creó puentes naturales de cuerda a través de peligrosas ravinas selvéticas.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "creó",
             "puentes naturales de cuerda",
             "a través de peligrosas ravinas selvéticas"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "created",
             "natural rope bridges",
             "across dangerous jungle ravines"
@@ -14133,13 +14134,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando comportamientos animales",
-            "mowgli",
+            "Mowgli",
             "predijo",
             "tormentas monzónicas que se aproximaban"
           ],
           "english": [
             "using animal behaviors",
-            "mowgli",
+            "Mowgli",
             "predicted",
             "approaching monsoon storms"
           ]
@@ -14150,13 +14151,13 @@ const translationData = [
         "spanish": "Mowgli enseñó a los aldeanos cómo comunicarse con elefantes del bosque.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "enseñó",
             "a los aldeanos",
             "cómo comunicarse con elefantes del bosque"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "taught",
             "villagers",
             "how to communicate with forest elephants"
@@ -14169,13 +14170,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con conocimiento selvático",
-            "mowgli",
+            "Mowgli",
             "localizó",
             "manantiales ocultos de agua dulce"
           ],
           "english": [
             "with jungle knowledge",
-            "mowgli",
+            "Mowgli",
             "located",
             "hidden freshwater springs"
           ]
@@ -14186,13 +14187,13 @@ const translationData = [
         "spanish": "Mowgli desarrolló repelentes naturales de insectos a partir de plantas selvéticas.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "desarrolló",
             "repelentes naturales de insectos",
             "a partir de plantas selvéticas"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "developed",
             "natural insect repellents",
             "from jungle plants"
@@ -14205,13 +14206,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante observación",
-            "mowgli",
+            "Mowgli",
             "creó",
             "mapas de territorios peligrosos de depredadores"
           ],
           "english": [
             "through observation",
-            "mowgli",
+            "Mowgli",
             "created",
             "maps of dangerous predator territories"
           ]
@@ -14222,13 +14223,13 @@ const translationData = [
         "spanish": "Mowgli construyó refugios elevados para proteger contra inundaciones selvéticas.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "construyó",
             "refugios elevados",
             "para proteger contra inundaciones selvéticas"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "built",
             "elevated shelters",
             "to protect against jungle floods"
@@ -14241,13 +14242,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con aliados animales",
-            "mowgli",
+            "Mowgli",
             "rescató",
             "a niños perdidos en la selva"
           ],
           "english": [
             "with animal allies",
-            "mowgli",
+            "Mowgli",
             "rescued",
             "children lost in the jungle"
           ]
@@ -14258,13 +14259,13 @@ const translationData = [
         "spanish": "Mowgli identificó plantas medicinales para tratar enfermedades comunes de la aldea.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "identificó",
             "plantas medicinales",
             "para tratar enfermedades comunes de la aldea"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "identified",
             "medicinal plants",
             "to treat common village illnesses"
@@ -14277,13 +14278,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando bambú",
-            "mowgli",
+            "Mowgli",
             "creó",
             "sistemas de recolección de agua para aldeas"
           ],
           "english": [
             "using bamboo",
-            "mowgli",
+            "Mowgli",
             "created",
             "water collection systems for villages"
           ]
@@ -14294,13 +14295,13 @@ const translationData = [
         "spanish": "Mowgli enseñó técnicas de supervivencia a niños durante temporadas de sequía.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "enseñó",
             "técnicas de supervivencia",
             "a niños durante temporadas de sequía"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "taught",
             "survival techniques",
             "to children during drought seasons"
@@ -14313,13 +14314,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con ingenio",
-            "mowgli diseñó",
+            "Mowgli diseñó",
             "trampas para capturar",
             "especies invasoras"
           ],
           "english": [
             "with ingenuity",
-            "mowgli designed",
+            "Mowgli designed",
             "traps to catch",
             "invasive species"
           ]
@@ -14330,13 +14331,13 @@ const translationData = [
         "spanish": "Mowgli estableció senderos seguros a través de peligrosos territorios selvéticos.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "estableció",
             "senderos seguros",
             "a través de peligrosos territorios selvéticos"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "established",
             "safe paths",
             "through dangerous jungle territories"
@@ -14349,13 +14350,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante diplomacia",
-            "mowgli",
+            "Mowgli",
             "negoció",
             "paz entre clanes de animales"
           ],
           "english": [
             "through diplomacy",
-            "mowgli",
+            "Mowgli",
             "negotiated",
             "peace between animal clans"
           ]
@@ -14366,13 +14367,13 @@ const translationData = [
         "spanish": "Mowgli creó métodos seguros de cocina para uso en temporada seca.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "creó",
             "métodos seguros de cocina",
             "para uso en temporada seca"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "created",
             "fire-safe cooking methods",
             "for dry season use"
@@ -14385,13 +14386,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando estrategias de manada lobuna",
-            "mowgli",
+            "Mowgli",
             "organizó",
             "sistemas defensivos aldeanos"
           ],
           "english": [
             "using wolf pack strategies",
-            "mowgli",
+            "Mowgli",
             "organized",
             "village defense systems"
           ]
@@ -14402,13 +14403,13 @@ const translationData = [
         "spanish": "Mowgli descubrió formas naturales de preservar alimentos durante monzones.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "descubrió",
             "formas naturales",
             "de preservar alimentos durante monzones"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "discovered",
             "natural ways",
             "to preserve food during monsoons"
@@ -14421,13 +14422,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con colaboración",
-            "mowgli",
+            "Mowgli",
             "ayudó a restaurar",
             "ecosistemas forestales dañados"
           ],
           "english": [
             "with collaboration",
-            "mowgli",
+            "Mowgli",
             "helped restore",
             "damaged forest ecosystems"
           ]
@@ -14438,13 +14439,13 @@ const translationData = [
         "spanish": "Mowgli enseñó a aldeanos prácticas sostenibles de caza y recolección.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "enseñó a aldeanos",
             "prácticas sostenibles",
             "de caza y recolección"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "taught villagers",
             "sustainable practices",
             "for hunting and gathering"
@@ -14457,13 +14458,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando materiales locales",
-            "mowgli",
+            "Mowgli",
             "construyó",
             "sistemas de alerta para inundaciones"
           ],
           "english": [
             "using local materials",
-            "mowgli",
+            "Mowgli",
             "built",
             "flood warning systems"
           ]
@@ -14474,13 +14475,13 @@ const translationData = [
         "spanish": "Mowgli creó alarmas naturales para advertir de depredadores acercándose.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "creó",
             "alarmas naturales",
             "para advertir de depredadores acercándose"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "created",
             "natural alarms",
             "to warn of approaching predators"
@@ -14493,13 +14494,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con lianas",
-            "mowgli",
+            "Mowgli",
             "diseñó",
             "herramientas para alcanzar frutas altas"
           ],
           "english": [
             "with vines",
-            "mowgli",
+            "Mowgli",
             "designed",
             "tools to reach high fruit"
           ]
@@ -14510,13 +14511,13 @@ const translationData = [
         "spanish": "Mowgli enseñó a aldeanos a interpretar llamadas de advertencia animal.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "enseñó",
             "a aldeanos",
             "a interpretar llamadas de advertencia animal"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "taught",
             "villagers",
             "to interpret animal warning calls"
@@ -14529,13 +14530,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando patrones fluviales",
-            "mowgli",
+            "Mowgli",
             "predijo",
             "ciclos estacionales de inundaciones"
           ],
           "english": [
-            "using river patterns",
-            "mowgli",
+            "using River patterns",
+            "Mowgli",
             "predicted",
             "seasonal flooding cycles"
           ]
@@ -14546,13 +14547,13 @@ const translationData = [
         "spanish": "Mowgli desarrolló técnicas para cosechar miel seguramente de colmenas.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "desarrolló técnicas",
             "seguramente para cosechar",
             "miel de colmenas"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "developed techniques for",
             "safely harvesting honey",
             "from beehives"
@@ -14565,13 +14566,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante rastreo",
-            "mowgli",
+            "Mowgli",
             "localizó",
             "niños perdidos durante tormentas monzónicas"
           ],
           "english": [
             "through tracking",
-            "mowgli",
+            "Mowgli",
             "located",
             "children lost during monsoon storms"
           ]
@@ -14582,13 +14583,13 @@ const translationData = [
         "spanish": "Mowgli estableció sistemas de comunicación entre tribus selvéticas distantes.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "estableció",
             "sistemas de comunicación",
             "entre tribus selvéticas distantes"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "established",
             "communication systems",
             "between distant jungle tribes"
@@ -14601,13 +14602,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con sigilo de pantera",
-            "mowgli",
+            "Mowgli",
             "enseñó",
             "técnicas de movimiento silencioso a cazadores"
           ],
           "english": [
             "with panther stealth",
-            "mowgli",
+            "Mowgli",
             "taught",
             "hunters quieter movement techniques"
           ]
@@ -14618,13 +14619,13 @@ const translationData = [
         "spanish": "Mowgli descubrió depósitos de arcilla para hacer contenedores de agua.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "descubrió",
             "depósitos de arcilla",
             "para hacer contenedores de agua"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "discovered",
             "natural clay deposits",
             "for making water containers"
@@ -14637,13 +14638,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando materiales selvéticos",
-            "mowgli",
+            "Mowgli",
             "construyó",
             "refugios impermeables para temporadas lluviosas"
           ],
           "english": [
             "using jungle materials",
-            "mowgli",
+            "Mowgli",
             "built",
             "waterproof shelters for rainy seasons"
           ]
@@ -14654,13 +14655,13 @@ const translationData = [
         "spanish": "Mowgli identificó plantas forestales que purifican agua contaminada.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "identificó",
             "plantas forestales",
             "que purifican agua contaminada"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "identified",
             "forest plants",
             "that purify contaminated water"
@@ -14673,13 +14674,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con aliados animales",
-            "mowgli",
+            "Mowgli",
             "creó",
             "redes tempranas de alerta para incendios forestales"
           ],
           "english": [
             "with animal allies",
-            "mowgli",
+            "Mowgli",
             "created",
             "early wildfire warning networks"
           ]
@@ -14690,13 +14691,13 @@ const translationData = [
         "spanish": "Mowgli enseñó métodos de conservación para prevenir sobrecaza de ciertas especies.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "enseñó",
             "métodos de conservación",
             "para prevenir sobrecaza de ciertas especies"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "taught",
             "conservation methods",
             "to prevent overhunting certain species"
@@ -14709,13 +14710,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando comportamientos de aves",
-            "mowgli",
+            "Mowgli",
             "pronosticó",
             "importantes cambios de patrones climáticos"
           ],
           "english": [
             "using bird behaviors",
-            "mowgli",
+            "Mowgli",
             "forecast",
             "important weather pattern changes"
           ]
@@ -14726,13 +14727,13 @@ const translationData = [
         "spanish": "Mowgli creó escondites de alimentos ocultos por toda la selva.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "creó",
             "escondites de alimentos ocultos",
             "por toda la selva"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "created",
             "hidden food caches",
             "throughout the jungle"
@@ -14745,13 +14746,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante observación cuidadosa",
-            "mowgli",
+            "Mowgli",
             "mapeó",
             "fuentes subterráneas de agua"
           ],
           "english": [
             "through careful observation",
-            "mowgli",
+            "Mowgli",
             "mapped",
             "underground water sources"
           ]
@@ -14762,13 +14763,13 @@ const translationData = [
         "spanish": "Mowgli diseñó acueductos de bambú para irrigar cultivos de la aldea.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "diseñó",
             "acueductos de bambú",
             "para irrigar cultivos de la aldea"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "engineered",
             "bamboo aqueducts",
             "to irrigate village crops"
@@ -14781,13 +14782,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con empatía",
-            "mowgli",
+            "Mowgli",
             "rehabilitó",
             "animales heridos por trampas de caza"
           ],
           "english": [
             "with empathy",
-            "mowgli",
+            "Mowgli",
             "rehabilitated",
             "injured animals from hunting traps"
           ]
@@ -14798,13 +14799,13 @@ const translationData = [
         "spanish": "Mowgli desarrolló antídotos naturales para mordeduras comunes de serpientes selvéticas.",
         "segments": {
           "spanish": [
-            "mowgli",
+            "Mowgli",
             "desarrolló",
             "antídotos naturales",
             "para mordeduras comunes de serpientes selvéticas"
           ],
           "english": [
-            "mowgli",
+            "Mowgli",
             "developed",
             "natural antidotes",
             "for common jungle snake bites"
@@ -14817,13 +14818,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "usando pensamiento estratégico",
-            "mowgli",
+            "Mowgli",
             "burló",
             "a peligrosos cazadores furtivos entrando a la selva"
           ],
           "english": [
             "using strategic thinking",
-            "mowgli",
+            "Mowgli",
             "outsmarted",
             "dangerous poachers entering the jungle"
           ]
@@ -14834,13 +14835,13 @@ const translationData = [
         "spanish": "Los trucos humanos de Mowgli ayudaron a resolver problemas en la jungla.",
         "segments": {
           "spanish": [
-            "los trucos humanos de mowgli",
+            "los trucos humanos de Mowgli",
             "ayudaron",
             "a resolver",
             "problemas en la jungla"
           ],
           "english": [
-            "mowgli's human tricks",
+            "Mowgli's human tricks",
             "helped",
             "solve",
             "many jungle problems"
@@ -14857,13 +14858,13 @@ const translationData = [
         "spanish": "Po aprendió que creer en sí mismo resolvía muchos problemas.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "aprendió",
             "que creer en sí mismo",
             "resolvía muchos problemas"
           ],
           "english": [
-            "po",
+            "Po",
             "learned",
             "that believing in himself",
             "solved many problems"
@@ -14876,13 +14877,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con paciencia y práctica",
-            "po",
+            "Po",
             "dominó",
             "las técnicas de kung fu"
           ],
           "english": [
             "with patience and practice",
-            "po",
+            "Po",
             "mastered",
             "kung fu techniques"
           ]
@@ -14893,13 +14894,13 @@ const translationData = [
         "spanish": "Po descubrió que la comida podía inspirar soluciones creativas.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "descubrió",
             "que la comida podía inspirar",
             "soluciones creativas"
           ],
           "english": [
-            "po",
+            "Po",
             "discovered",
             "that food could inspire",
             "creative solutions"
@@ -14911,13 +14912,13 @@ const translationData = [
         "spanish": "El Guerrero Dragón encontró paz interior para derrotar oponentes.",
         "segments": {
           "spanish": [
-            "el guerrero dragón",
+            "el Guerrero Dragón",
             "encontró",
             "paz interior",
             "para derrotar oponentes"
           ],
           "english": [
-            "the dragon warrior",
+            "the Dragon Warrior",
             "found",
             "inner peace",
             "to defeat opponents"
@@ -14929,13 +14930,13 @@ const translationData = [
         "spanish": "Po creó equipos innovadores de entrenamiento con utensilios de cocina.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "creó",
             "equipos innovadores de entrenamiento",
             "con utensilios de cocina"
           ],
           "english": [
-            "po",
+            "Po",
             "created",
             "innovative training equipment",
             "from kitchen tools"
@@ -14949,13 +14950,13 @@ const translationData = [
           "spanish": [
             "usando",
             "recetas de fideos",
-            "po desarrolló",
+            "Po desarrolló",
             "comidas energizantes"
           ],
           "english": [
             "using",
             "noodle recipes",
-            "po developed",
+            "Po developed",
             "energy-boosting meals"
           ]
         }
@@ -14965,13 +14966,13 @@ const translationData = [
         "spanish": "Po enseñó a aldeanos técnicas simples de autodefensa.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "enseñó a aldeanos",
             "técnicas simples",
             "de autodefensa"
           ],
           "english": [
-            "po",
+            "Po",
             "taught villagers",
             "simple techniques",
             "for self-defense"
@@ -14985,13 +14986,13 @@ const translationData = [
           "spanish": [
             "con",
             "trabajo en equipo",
-            "po ideó estrategias",
+            "Po ideó estrategias",
             "contra ataques de bandidos"
           ],
           "english": [
             "with",
             "teamwork",
-            "po devised strategies",
+            "Po devised strategies",
             "against bandit attacks"
           ]
         }
@@ -15001,13 +15002,13 @@ const translationData = [
         "spanish": "Po diseñó equipo protector con materiales cotidianos de bambú.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "diseñó equipo protector",
             "con materiales",
             "cotidianos de bambú"
           ],
           "english": [
-            "po",
+            "Po",
             "designed protective",
             "gear from",
             "everyday bamboo materials"
@@ -15021,13 +15022,13 @@ const translationData = [
           "spanish": [
             "mediante",
             "paciencia",
-            "po resolvió",
+            "Po resolvió",
             "antiguos acertijos de templos"
           ],
           "english": [
             "through",
             "patience",
-            "po solved",
+            "Po solved",
             "ancient temple puzzles"
           ]
         }
@@ -15037,13 +15038,13 @@ const translationData = [
         "spanish": "Po construyó sistemas de distribución de agua para aldeas remotas.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "construyó sistemas",
             "de distribución de agua",
             "para aldeas remotas"
           ],
           "english": [
-            "po",
+            "Po",
             "built",
             "water distribution systems",
             "for remote villages"
@@ -15056,13 +15057,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con creatividad",
-            "po transformó",
+            "Po transformó",
             "obstáculos",
             "en oportunidades de entrenamiento"
           ],
           "english": [
             "with creativity",
-            "po transformed",
+            "Po transformed",
             "obstacles",
             "into training opportunities"
           ]
@@ -15073,13 +15074,13 @@ const translationData = [
         "spanish": "Po desarrolló técnicas respiratorias para soportar temperaturas extremas.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "desarrolló técnicas",
             "respiratorias",
             "para soportar temperaturas extremas"
           ],
           "english": [
-            "po",
+            "Po",
             "developed",
             "breathing techniques",
             "to withstand extreme temperatures"
@@ -15093,13 +15094,13 @@ const translationData = [
           "spanish": [
             "usando",
             "mecánica corporal",
-            "po inventó",
+            "Po inventó",
             "métodos eficientes de agricultura"
           ],
           "english": [
             "using",
             "body mechanics",
-            "po invented",
+            "Po invented",
             "efficient farming methods"
           ]
         }
@@ -15109,13 +15110,13 @@ const translationData = [
         "spanish": "Po estableció sistemas de alerta temprana para aldeas del valle.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "estableció sistemas",
             "de alerta temprana",
             "para aldeas del valle"
           ],
           "english": [
-            "po",
+            "Po",
             "established",
             "early warning systems",
             "for valley villages"
@@ -15128,13 +15129,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con amabilidad",
-            "po rehabilitó",
+            "Po rehabilitó",
             "antiguos enemigos",
             "convirtiéndolos en aliados"
           ],
           "english": [
             "with kindness",
-            "po rehabilitated",
+            "Po rehabilitated",
             "former enemies",
             "into allies"
           ]
@@ -15145,13 +15146,13 @@ const translationData = [
         "spanish": "Po mapeó rutas seguras de evacuación a través de pasos montañosos.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "mapeó rutas seguras",
             "de evacuación",
             "a través de pasos montañosos"
           ],
           "english": [
-            "po",
+            "Po",
             "mapped",
             "safe evacuation routes",
             "through mountain passes"
@@ -15165,13 +15166,13 @@ const translationData = [
           "spanish": [
             "mediante",
             "meditación",
-            "po desarrolló",
+            "Po desarrolló",
             "habilidades mejoradas para resolver problemas"
           ],
           "english": [
             "through",
             "meditation",
-            "po developed",
+            "Po developed",
             "enhanced problem-solving abilities"
           ]
         }
@@ -15181,13 +15182,13 @@ const translationData = [
         "spanish": "Po creó dietas equilibradas para mejorar resultados de entrenamiento.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "creó dietas",
             "equilibradas",
             "para mejorar resultados de entrenamiento"
           ],
           "english": [
-            "po",
+            "Po",
             "created",
             "balanced diets",
             "to improve training results"
@@ -15200,13 +15201,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con observación",
-            "po predijo",
+            "Po predijo",
             "zonas peligrosas",
             "de deslizamientos de tierra"
           ],
           "english": [
             "with observation",
-            "po predicted",
+            "Po predicted",
             "dangerous zones",
             "for landslides"
           ]
@@ -15217,13 +15218,13 @@ const translationData = [
         "spanish": "Po enseñó técnicas de atención plena a líderes estresados de aldeas.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "enseñó",
             "técnicas de atención plena",
             "a líderes estresados de aldeas"
           ],
           "english": [
-            "po",
+            "Po",
             "taught",
             "mindfulness techniques",
             "to stressed village leaders"
@@ -15237,13 +15238,13 @@ const translationData = [
           "spanish": [
             "usando",
             "pergaminos antiguos",
-            "po revivió",
+            "Po revivió",
             "métodos olvidados de curación"
           ],
           "english": [
             "using",
             "ancient scrolls",
-            "po revived",
+            "Po revived",
             "forgotten healing methods"
           ]
         }
@@ -15253,13 +15254,13 @@ const translationData = [
         "spanish": "Po diseñó armadura ligera para movilidad durante batallas.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "diseñó",
             "armadura ligera",
             "para movilidad durante batallas"
           ],
           "english": [
-            "po",
+            "Po",
             "designed",
             "lightweight armor",
             "for mobility during battles"
@@ -15272,13 +15273,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con persistencia",
-            "po descubrió",
+            "Po descubrió",
             "fuerza interior",
             "en héroes improbables"
           ],
           "english": [
             "with persistence",
-            "po discovered",
+            "Po discovered",
             "inner strength",
             "in unlikely heroes"
           ]
@@ -15289,13 +15290,13 @@ const translationData = [
         "spanish": "Po adaptó antiguos pergaminos en guías simples de entrenamiento.",
         "segments": {
           "spanish": [
-            "po adaptó",
+            "Po adaptó",
             "antiguos pergaminos",
             "en guías simples",
             "de entrenamiento"
           ],
           "english": [
-            "po adapted",
+            "Po adapted",
             "ancient scrolls",
             "into simple guides",
             "for training"
@@ -15309,13 +15310,13 @@ const translationData = [
           "spanish": [
             "usando",
             "analogías alimenticias",
-            "po explicó",
+            "Po explicó",
             "técnicas complejas de combate"
           ],
           "english": [
             "using",
             "food analogies",
-            "po explained",
+            "Po explained",
             "complex fighting techniques"
           ]
         }
@@ -15325,13 +15326,13 @@ const translationData = [
         "spanish": "Po diseñó artefactos de bambú para automatizar preparación de fideos.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "diseñó",
             "artefactos de bambú",
             "para automatizar preparación de fideos"
           ],
           "english": [
-            "po",
+            "Po",
             "engineered",
             "bamboo contraptions",
             "to automate noodle preparation"
@@ -15345,13 +15346,13 @@ const translationData = [
           "spanish": [
             "con ayuda",
             "de amigos",
-            "po restauró",
+            "Po restauró",
             "infraestructura dañada de la aldea"
           ],
           "english": [
             "with help",
             "from friends",
-            "po restored",
+            "Po restored",
             "damaged village infrastructure"
           ]
         }
@@ -15361,13 +15362,13 @@ const translationData = [
         "spanish": "Po creó programas flexibles de entrenamiento para diferentes capacidades.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "creó",
             "programas flexibles de entrenamiento",
             "para diferentes capacidades"
           ],
           "english": [
-            "po",
+            "Po",
             "created",
             "flexible training programs",
             "for different abilities"
@@ -15381,13 +15382,13 @@ const translationData = [
           "spanish": [
             "mediante",
             "narrativa",
-            "po enseñó",
+            "Po enseñó",
             "importantes lecciones históricas"
           ],
           "english": [
             "through",
             "storytelling",
-            "po taught",
+            "Po taught",
             "important historical lessons"
           ]
         }
@@ -15397,13 +15398,13 @@ const translationData = [
         "spanish": "Po organizó equipos comunitarios de defensa en todo el valle.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "organizó",
             "equipos comunitarios de defensa",
             "en todo el valle"
           ],
           "english": [
-            "po",
+            "Po",
             "organized",
             "community defense teams",
             "across the valley"
@@ -15416,13 +15417,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con improvisación",
-            "po convirtió",
+            "Po convirtió",
             "debilidades",
             "en ventajas estratégicas"
           ],
           "english": [
             "with improvisation",
-            "po turned",
+            "Po turned",
             "weaknesses",
             "into strategic advantages"
           ]
@@ -15433,13 +15434,13 @@ const translationData = [
         "spanish": "Po desarrolló técnicas para navegar terrenos montañosos peligrosos.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "desarrolló técnicas",
             "para navegar",
             "terrenos montañosos peligrosos"
           ],
           "english": [
-            "po",
+            "Po",
             "developed techniques",
             "for navigating",
             "dangerous mountain terrain"
@@ -15453,13 +15454,13 @@ const translationData = [
           "spanish": [
             "usando",
             "sabiduría culinaria",
-            "po creó",
+            "Po creó",
             "remedios naturales curativos"
           ],
           "english": [
             "using",
             "kitchen wisdom",
-            "po created",
+            "Po created",
             "natural healing remedies"
           ]
         }
@@ -15469,13 +15470,13 @@ const translationData = [
         "spanish": "Po construyó máquinas simples para ayudar a aldeanos ancianos.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "construyó",
             "máquinas simples",
             "para ayudar a aldeanos ancianos"
           ],
           "english": [
-            "po",
+            "Po",
             "built",
             "simple machines",
             "to help elderly villagers"
@@ -15488,13 +15489,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con determinación",
-            "po adaptó",
+            "Po adaptó",
             "entrenamiento",
             "para estudiantes lesionados"
           ],
           "english": [
             "with determination",
-            "po adapted",
+            "Po adapted",
             "training",
             "for injured students"
           ]
@@ -15505,13 +15506,13 @@ const translationData = [
         "spanish": "Po decodificó antiguas técnicas de predicción climática para agricultores.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "decodificó",
             "antiguas técnicas de predicción climática",
             "para agricultores"
           ],
           "english": [
-            "po",
+            "Po",
             "decoded",
             "ancient weather prediction techniques",
             "for farmers"
@@ -15524,13 +15525,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante observación",
-            "po identificó",
+            "Po identificó",
             "patrones",
             "en estrategias de oponentes"
           ],
           "english": [
             "through observation",
-            "po identified",
+            "Po identified",
             "patterns",
             "in opponent strategies"
           ]
@@ -15541,13 +15542,13 @@ const translationData = [
         "spanish": "Po diseñó entrenamiento especializado para fortalecer a cada estudiante.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "diseñó",
             "entrenamiento especializado",
             "para fortalecer a cada estudiante"
           ],
           "english": [
-            "po",
+            "Po",
             "designed",
             "specialized training",
             "for each student's strengths"
@@ -15561,13 +15562,13 @@ const translationData = [
           "spanish": [
             "con",
             "materiales reciclados",
-            "po construyó",
+            "Po construyó",
             "equipos efectivos de entrenamiento"
           ],
           "english": [
             "with",
             "recycled materials",
-            "po built",
+            "Po built",
             "effective training equipment"
           ]
         }
@@ -15577,13 +15578,13 @@ const translationData = [
         "spanish": "Po creó tratados de paz entre aldeas anteriormente hostiles.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "creó",
             "tratados de paz",
             "entre aldeas anteriormente hostiles"
           ],
           "english": [
-            "po",
+            "Po",
             "created",
             "peace treaties",
             "between formerly hostile villages"
@@ -15597,13 +15598,13 @@ const translationData = [
           "spanish": [
             "usando",
             "principios físicos",
-            "po mejoró",
+            "Po mejoró",
             "diseños de puentes aldeanos"
           ],
           "english": [
             "using",
             "physics principles",
-            "po improved",
+            "Po improved",
             "village bridge designs"
           ]
         }
@@ -15613,13 +15614,13 @@ const translationData = [
         "spanish": "Po organizó sistemas de distribución alimentaria durante escasez invernal.",
         "segments": {
           "spanish": [
-            "po",
+            "Po",
             "organizó",
             "sistemas de distribución alimentaria",
             "durante escasez invernal"
           ],
           "english": [
-            "po",
+            "Po",
             "organized",
             "food distribution systems",
             "during winter shortages"
@@ -15632,13 +15633,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con empatía",
-            "po resolvió",
+            "Po resolvió",
             "conflictos",
             "entre estudiantes rivales"
           ],
           "english": [
             "with empathy",
-            "po resolved",
+            "Po resolved",
             "conflicts",
             "between rival students"
           ]
@@ -15649,13 +15650,13 @@ const translationData = [
         "spanish": "La compasión de Po le ayudó a resolver conflictos pacíficamente cuando era posible.",
         "segments": {
           "spanish": [
-            "la compasión de po",
+            "la compasión de Po",
             "le ayudó",
             "a resolver conflictos",
             "pacíficamente cuando era posible"
           ],
           "english": [
-            "po's compassion",
+            "Po's compassion",
             "helped",
             "solve conflicts",
             "peacefully when possible"
@@ -15672,13 +15673,13 @@ const translationData = [
         "spanish": "Tigress desarrolló técnicas de entrenamiento de precisión para jóvenes estudiantes de kung fu.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "desarrolló",
             "técnicas de entrenamiento de precisión",
             "para jóvenes estudiantes de kung fu"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "developed",
             "precision training techniques",
             "for young kung fu students"
@@ -15691,13 +15692,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con paciencia",
-            "tigress enseñó",
+            "Tigress enseñó",
             "formas difíciles",
             "de combate a principiantes"
           ],
           "english": [
             "with patience",
-            "tigress taught",
+            "Tigress taught",
             "difficult forms",
             "to beginners of combat"
           ]
@@ -15708,13 +15709,13 @@ const translationData = [
         "spanish": "Tigress diseñó equipo especializado de entrenamiento para diferentes estilos de lucha.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "diseñó equipo",
             "especializado de entrenamiento",
             "para diferentes estilos de lucha"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "designed equipment",
             "specialized for training",
             "for different fighting styles"
@@ -15727,13 +15728,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante disciplina",
-            "tigress ayudó",
+            "Tigress ayudó",
             "a estudiantes",
             "a superar sus mayores miedos"
           ],
           "english": [
             "through discipline",
-            "tigress helped",
+            "Tigress helped",
             "students",
             "overcome their greatest fears"
           ]
@@ -15744,13 +15745,13 @@ const translationData = [
         "spanish": "Tigress creó formaciones defensivas para proteger áreas vulnerables de la aldea.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "creó",
             "formaciones defensivas",
             "para proteger áreas vulnerables de la aldea"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "created",
             "defensive formations",
             "to protect vulnerable village areas"
@@ -15764,13 +15765,13 @@ const translationData = [
           "spanish": [
             "con",
             "pensamiento estratégico",
-            "tigress planeó",
+            "Tigress planeó",
             "rutas eficientes de evacuación aldeana"
           ],
           "english": [
             "with",
             "strategic thinking",
-            "tigress planned",
+            "Tigress planned",
             "efficient village evacuation routes"
           ]
         }
@@ -15780,13 +15781,13 @@ const translationData = [
         "spanish": "Tigress inventó armadura reforzada usando materiales ligeros de bambú.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "inventó",
             "armadura reforzada",
             "usando materiales ligeros de bambú"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "invented",
             "reinforced armor",
             "using lightweight bamboo materials"
@@ -15800,13 +15801,13 @@ const translationData = [
           "spanish": [
             "usando",
             "mecánica corporal",
-            "tigress enseñó",
+            "Tigress enseñó",
             "a aldeanos a mover objetos pesados"
           ],
           "english": [
             "using",
             "body mechanics",
-            "tigress taught",
+            "Tigress taught",
             "villagers to move heavy objects"
           ]
         }
@@ -15816,13 +15817,13 @@ const translationData = [
         "spanish": "Tigress desarrolló señales manuales para comunicación silenciosa en equipo.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "desarrolló",
             "señales manuales",
             "para comunicación silenciosa en equipo"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "developed",
             "hand signals",
             "for silent team communication"
@@ -15835,13 +15836,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante colaboración",
-            "tigress estableció",
+            "Tigress estableció",
             "programas de entrenamiento",
             "para defensores de la aldea"
           ],
           "english": [
             "through collaboration",
-            "tigress established",
+            "Tigress established",
             "training programs",
             "for village defenders"
           ]
@@ -15852,13 +15853,13 @@ const translationData = [
         "spanish": "Tigress analizó patrones de ataque para predecir estrategias de movimiento enemigo.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "analizó patrones de ataque",
             "para predecir estrategias",
             "de movimiento enemigo"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "analyzed attack patterns",
             "to predict strategies",
             "of enemy movement"
@@ -15871,13 +15872,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con compasión",
-            "tigress guió",
+            "Tigress guió",
             "a estudiantes",
             "con dificultades en técnicas complicadas"
           ],
           "english": [
             "with compassion",
-            "tigress mentored",
+            "Tigress mentored",
             "students",
             "struggling with difficult techniques"
           ]
@@ -15888,13 +15889,13 @@ const translationData = [
         "spanish": "Tigress diseñó sistemas de vigilancia aprovechando ventajas del terreno natural.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "diseñó",
             "sistemas de vigilancia",
             "aprovechando ventajas del terreno natural"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "engineered",
             "surveillance systems",
             "using natural terrain advantages"
@@ -15908,13 +15909,13 @@ const translationData = [
           "spanish": [
             "usando",
             "principios matemáticos",
-            "tigress mejoró",
+            "Tigress mejoró",
             "precisión en maniobras de combate"
           ],
           "english": [
             "using",
             "mathematical principles",
-            "tigress improved",
+            "Tigress improved",
             "precision in combat maneuvers"
           ]
         }
@@ -15924,13 +15925,13 @@ const translationData = [
         "spanish": "Tigress creó métodos de entrenamiento adaptados a fortalezas individuales.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "creó",
             "métodos de entrenamiento adaptados",
             "a fortalezas individuales"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "created",
             "training methods",
             "that adapted to individual strengths"
@@ -15943,13 +15944,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante observación",
-            "tigress identificó",
+            "Tigress identificó",
             "debilidades estructurales",
             "en fortificaciones enemigas"
           ],
           "english": [
             "through observation",
-            "tigress identified",
+            "Tigress identified",
             "structural weaknesses",
             "in enemy fortifications"
           ]
@@ -15960,13 +15961,13 @@ const translationData = [
         "spanish": "Tigress construyó equipo de rescate para misiones en terrenos peligrosos.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "construyó",
             "equipo de rescate",
             "para misiones en terrenos peligrosos"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "built",
             "rescue equipment",
             "for missions in dangerous terrain"
@@ -15979,13 +15980,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con determinación",
-            "tigress desarrolló",
+            "Tigress desarrolló",
             "técnicas",
             "para combatir oponentes más grandes"
           ],
           "english": [
             "with determination",
-            "tigress developed",
+            "Tigress developed",
             "techniques",
             "for fighting larger opponents"
           ]
@@ -15996,13 +15997,13 @@ const translationData = [
         "spanish": "Tigress organizó entrenamiento de defensa táctica para todo el valle.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "organizó",
             "entrenamiento de defensa táctica",
             "para todo el valle"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "organized",
             "tactical defense training",
             "for the entire valley"
@@ -16016,13 +16017,13 @@ const translationData = [
           "spanish": [
             "usando",
             "principios físicos",
-            "tigress enseñó",
+            "Tigress enseñó",
             "uso eficiente del momento"
           ],
           "english": [
             "using",
             "physics principles",
-            "tigress taught",
+            "Tigress taught",
             "efficient use of momentum"
           ]
         }
@@ -16032,13 +16033,13 @@ const translationData = [
         "spanish": "Tigress adaptó técnicas antiguas para estudiantes con limitaciones físicas.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "adaptó",
             "técnicas antiguas",
             "para estudiantes con limitaciones físicas"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "adapted",
             "ancient techniques",
             "for students with physical limitations"
@@ -16052,13 +16053,13 @@ const translationData = [
           "spanish": [
             "con",
             "análisis cuidadoso",
-            "tigress identificó",
+            "Tigress identificó",
             "fallas en formaciones defensivas"
           ],
           "english": [
             "with",
             "careful analysis",
-            "tigress identified",
+            "Tigress identified",
             "flaws in defensive formations"
           ]
         }
@@ -16068,13 +16069,13 @@ const translationData = [
         "spanish": "Tigress creó horarios de entrenamiento optimizados para diferentes estilos de aprendizaje.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "creó",
             "horarios de entrenamiento optimizados",
             "para diferentes estilos de aprendizaje"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "created",
             "training schedules optimized",
             "for different learning styles"
@@ -16088,14 +16089,14 @@ const translationData = [
           "spanish": [
             "mediante",
             "tutoría",
-            "tigress ayudó",
-            "a po a descubrir sus fortalezas únicas"
+            "Tigress ayudó",
+            "a Po a descubrir sus fortalezas únicas"
           ],
           "english": [
             "through",
             "mentorship",
-            "tigress helped",
-            "po discover his unique strengths"
+            "Tigress helped",
+            "Po discover his unique strengths"
           ]
         }
       },
@@ -16104,13 +16105,13 @@ const translationData = [
         "spanish": "Tigress diseñó estrategias de combate utilizando habilidades de cada miembro del equipo.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "diseñó",
             "estrategias de combate",
             "utilizando habilidades de cada miembro del equipo"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "designed",
             "combat strategies",
             "utilizing each team member's abilities"
@@ -16124,13 +16125,13 @@ const translationData = [
           "spanish": [
             "con",
             "geometría aplicada",
-            "tigress mejoró",
+            "Tigress mejoró",
             "precisión y eficiencia de golpes"
           ],
           "english": [
             "with",
             "applied geometry",
-            "tigress improved",
+            "Tigress improved",
             "strike accuracy and efficiency"
           ]
         }
@@ -16140,13 +16141,13 @@ const translationData = [
         "spanish": "Tigress desarrolló ejercicios de entrenamiento que fortalecían grupos musculares específicos.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "desarrolló",
             "ejercicios de entrenamiento",
             "que fortalecían grupos musculares específicos"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "developed",
             "training exercises",
             "that strengthened specific muscle groups"
@@ -16160,13 +16161,13 @@ const translationData = [
           "spanish": [
             "usando",
             "ventajas ambientales",
-            "tigress creó",
+            "Tigress creó",
             "tácticas efectivas de emboscada"
           ],
           "english": [
             "using",
             "environmental advantages",
-            "tigress created",
+            "Tigress created",
             "effective ambush tactics"
           ]
         }
@@ -16176,13 +16177,13 @@ const translationData = [
         "spanish": "Tigress organizó misiones de rescate para aldeas durante desastres naturales.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "organizó",
             "misiones de rescate",
             "para aldeas durante desastres naturales"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "organized",
             "rescue missions",
             "for villages during natural disasters"
@@ -16196,13 +16197,13 @@ const translationData = [
           "spanish": [
             "mediante",
             "autorreflexión",
-            "tigress superó",
+            "Tigress superó",
             "barreras psicológicas para el trabajo en equipo"
           ],
           "english": [
             "through",
             "self-reflection",
-            "tigress overcame",
+            "Tigress overcame",
             "psychological barriers to teamwork"
           ]
         }
@@ -16212,13 +16213,13 @@ const translationData = [
         "spanish": "Tigress estableció protocolos de comunicación para coordinar grandes fuerzas defensivas.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "estableció",
             "protocolos de comunicación",
             "para coordinar grandes fuerzas defensivas"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "established",
             "communication protocols",
             "for coordinating large defense forces"
@@ -16231,13 +16232,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con paciencia",
-            "tigress ayudó",
+            "Tigress ayudó",
             "a estudiantes frustrados",
             "a dominar técnicas difíciles"
           ],
           "english": [
             "with patience",
-            "tigress helped",
+            "Tigress helped",
             "frustrated students",
             "master difficult techniques"
           ]
@@ -16248,13 +16249,13 @@ const translationData = [
         "spanish": "Tigress inventó métodos de entrenamiento para mejorar capacidades de visión nocturna.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "inventó",
             "métodos de entrenamiento",
             "para mejorar capacidades de visión nocturna"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "invented",
             "training methods",
             "to improve night vision capabilities"
@@ -16268,13 +16269,13 @@ const translationData = [
           "spanish": [
             "usando",
             "medicina tradicional",
-            "tigress desarrolló",
+            "Tigress desarrolló",
             "tratamientos para lesiones de entrenamiento"
           ],
           "english": [
             "using",
             "traditional medicine",
-            "tigress developed",
+            "Tigress developed",
             "treatments for training injuries"
           ]
         }
@@ -16284,13 +16285,13 @@ const translationData = [
         "spanish": "Tigress creó equipo protector para estudiantes practicando técnicas peligrosas.",
         "segments": {
           "spanish": [
-            "tigress creó",
+            "Tigress creó",
             "equipo protector",
             "para estudiantes",
             "practicando técnicas peligrosas"
           ],
           "english": [
-            "tigress created",
+            "Tigress created",
             "protective gear",
             "for students",
             "practicing dangerous techniques"
@@ -16303,13 +16304,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante perseverancia",
-            "tigress dominó",
+            "Tigress dominó",
             "técnicas meditativas",
             "para claridad mental"
           ],
           "english": [
             "through perseverance",
-            "tigress mastered",
+            "Tigress mastered",
             "meditative techniques",
             "for mental clarity"
           ]
@@ -16320,13 +16321,13 @@ const translationData = [
         "spanish": "Tigress construyó circuitos de obstáculos que simulaban escenarios reales de combate.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "construyó",
             "circuitos de obstáculos",
             "que simulaban escenarios reales de combate"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "built",
             "obstacle courses",
             "that simulated real combat scenarios"
@@ -16339,13 +16340,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con empatía",
-            "tigress guió",
+            "Tigress guió",
             "a estudiantes",
             "a través de sus miedos"
           ],
           "english": [
             "with empathy",
-            "tigress guided",
+            "Tigress guided",
             "students",
             "through their fears"
           ]
@@ -16356,13 +16357,13 @@ const translationData = [
         "spanish": "Tigress desarrolló armadura ligera que mantenía completo rango de movimiento.",
         "segments": {
           "spanish": [
-            "tigress",
+            "Tigress",
             "desarrolló",
             "armadura ligera",
             "que mantenía completo rango de movimiento"
           ],
           "english": [
-            "tigress",
+            "Tigress",
             "developed",
             "lightweight armor",
             "that maintained full range of motion"
@@ -16376,13 +16377,13 @@ const translationData = [
           "spanish": [
             "usando",
             "análisis táctico",
-            "tigress identificó patrones",
+            "Tigress identificó patrones",
             "que mantenía completo rango de movimiento"
           ],
           "english": [
             "using",
             "tactical analysis",
-            "tigress identified patterns",
+            "Tigress identified patterns",
             "en formaciones de ataque enemigas"
           ]
         }
@@ -16397,13 +16398,13 @@ const translationData = [
         "spanish": "Pequeño Erizo resolvía problemas haciendo buenas preguntas.",
         "segments": {
           "spanish": [
-            "pequeño erizo",
+            "pequeño Erizo",
             "resolvía problemas",
             "haciendo",
             "buenas preguntas"
           ],
           "english": [
-            "little hedgehog",
+            "Little Hedgehog",
             "solved problems",
             "by asking",
             "good questions"
@@ -16415,7 +16416,7 @@ const translationData = [
         "spanish": "La Sra. Jams desestimó la propuesta del puente arcoíris de los erizos jóvenes secamente.",
         "segments": {
           "spanish": [
-            "la sra jams desestimó",
+            "la Sra. Jams desestimó",
             "la propuesta del puente",
             "arcoíris de los",
             "erizos jóvenes secamente"
@@ -16433,13 +16434,13 @@ const translationData = [
         "spanish": "¡La Sra. Swindletooth anuncia dramáticamente que la magnífica extravagancia de pintura de bellotas comienza mañana!",
         "segments": {
           "spanish": [
-            "la sra swindletooth anuncia",
+            "la Sra. Swindletooth anuncia",
             "dramáticamente que la",
             "magnífica extravagancia de",
             "pintura de bellotas comienza mañana"
           ],
           "english": [
-            "ms swindletooth announces",
+            "ms Swindletooth announces",
             "dramatically that the",
             "magnificent extravaganza of",
             "acorn painting begins tomorrow"
@@ -16451,15 +16452,15 @@ const translationData = [
         "spanish": "¿Bebe preguntó si creer en el Big Bang sin Dios no era mágico?",
         "segments": {
           "spanish": [
-            "bebe preguntó si",
+            "Bebe preguntó si",
             "creer en el",
-            "big bang sin dios",
+            "Big Bang sin Dios",
             "no era mágico"
           ],
           "english": [
-            "bebe asked if",
+            "Bebe asked if",
             "believing in the",
-            "big bang without god",
+            "Big Bang without God",
             "wasn't magical"
           ]
         }
@@ -16469,13 +16470,13 @@ const translationData = [
         "spanish": "Bebe observó que la elegancia matemática sugiere una mente cósmica detrás de la física.",
         "segments": {
           "spanish": [
-            "bebe observó que",
+            "Bebe observó que",
             "la elegancia matemática",
             "sugiere una mente",
             "cósmica detrás de la física"
           ],
           "english": [
-            "bebe noted that",
+            "Bebe noted that",
             "mathematical elegance",
             "suggests a mind",
             "cosmic behind physics"
@@ -16487,16 +16488,16 @@ const translationData = [
         "spanish": "Bebe observó que el bebé Jesús en el pesebre donde comen los animales prefigura el Verbo hecho Carne.",
         "segments": {
           "spanish": [
-            "bebe observó que",
-            "el bebé jesús",
+            "Bebe observó que",
+            "el bebé Jesús",
             "en el pesebre donde comen los animales",
-            "prefigura el verbo hecho carne"
+            "prefigura el Verbo hecho carne"
           ],
           "english": [
-            "bebe noted that",
-            "baby jesus",
+            "Bebe noted that",
+            "baby Jesus",
             "in the manger where animals eat",
-            "foreshadows the word made flesh"
+            "foreshadows the Word made flesh"
           ]
         }
       },
@@ -16505,15 +16506,15 @@ const translationData = [
         "spanish": "Bebe señaló cómo la escalera de Jacob simboliza a Cristo uniendo el cielo y la tierra.",
         "segments": {
           "spanish": [
-            "bebe señaló cómo",
+            "Bebe señaló cómo",
             "la escalera de",
-            "jacob simboliza a",
-            "cristo uniendo el cielo y la tierra"
+            "Jacob simboliza a",
+            "Cristo uniendo el cielo y la tierra"
           ],
           "english": [
-            "bebe pointed out how",
-            "jacob's ladder",
-            "symbolizes christ",
+            "Bebe pointed out how",
+            "Jacob's ladder",
+            "symbolizes Christ",
             "bridging heaven and earth"
           ]
         }
@@ -16523,16 +16524,16 @@ const translationData = [
         "spanish": "Bebe se maravilló de que el maná del cielo presagiara a Cristo como pan vivo.",
         "segments": {
           "spanish": [
-            "bebe se maravilló",
+            "Bebe se maravilló",
             "de que el",
             "maná del cielo",
-            "presagiara a cristo como pan vivo"
+            "presagiara a Cristo como pan vivo"
           ],
           "english": [
-            "bebe marveled",
+            "Bebe marveled",
             "that the",
             "manna from heaven",
-            "presaged christ as living bread"
+            "presaged Christ as living bread"
           ]
         }
       },
@@ -16541,16 +16542,16 @@ const translationData = [
         "spanish": "Bebe observó cómo Moisés levantando la serpiente Serafín prefigura la crucifixión de Cristo.",
         "segments": {
           "spanish": [
-            "bebe observó cómo",
-            "moisés levantando la",
-            "serpiente serafín prefigura",
-            "la crucifixión de cristo"
+            "Bebe observó cómo",
+            "Moisés levantando la",
+            "serpiente Serafín prefigura",
+            "la crucifixión de Cristo"
           ],
           "english": [
-            "bebe observed how",
-            "moses lifting the",
-            "seraph serpent foreshadows",
-            "christ's crucifixion"
+            "Bebe observed how",
+            "Moses lifting the",
+            "Seraph serpent foreshadows",
+            "Christ's crucifixion"
           ]
         }
       },
@@ -16829,13 +16830,13 @@ const translationData = [
         "spanish": "¡La Sra. Swindletooth canta sobre las criaturas del bosque uniéndose al baile musical de hongos!",
         "segments": {
           "spanish": [
-            "la sra swindletooth canta",
+            "la Sra. Swindletooth canta",
             "sobre las criaturas",
             "del bosque uniéndose",
             "al baile musical de hongos"
           ],
           "english": [
-            "ms swindletooth sings",
+            "ms Swindletooth sings",
             "about the creatures",
             "of the forest joining",
             "the musical mushroom dance"
@@ -16847,13 +16848,13 @@ const translationData = [
         "spanish": "¡La Sra. Swindletooth proclama melodiosamente el espectacular desfile de disfraces de mariposas esta tarde!",
         "segments": {
           "spanish": [
-            "la sra swindletooth proclama",
+            "la Sra. Swindletooth proclama",
             "melodiosamente el espectacular",
             "desfile de disfraces",
             "de mariposas esta tarde"
           ],
           "english": [
-            "ms swindletooth proclaims",
+            "ms Swindletooth proclaims",
             "melodiously the spectacular",
             "costume parade",
             "of butterflies this afternoon"
@@ -16865,13 +16866,13 @@ const translationData = [
         "spanish": "¡La Sra. Swindletooth invita teatralmente a las ardillas jóvenes al círculo encantado de cuentos!",
         "segments": {
           "spanish": [
-            "la sra swindletooth invita",
+            "la Sra. Swindletooth invita",
             "teatralmente a las",
             "ardillas jóvenes al",
             "círculo encantado de cuentos"
           ],
           "english": [
-            "ms swindletooth invites",
+            "ms Swindletooth invites",
             "theatrically to the",
             "young squirrels to the",
             "enchanted story circle"
@@ -16883,13 +16884,13 @@ const translationData = [
         "spanish": "¡La Sra. Swindletooth hace crescendo sobre el glorioso taller de tejido de cintas arcoíris mañana!",
         "segments": {
           "spanish": [
-            "la sra swindletooth hace",
+            "la Sra. Swindletooth hace",
             "crescendo sobre el",
             "glorioso taller de",
             "tejido de cintas arcoíris mañana"
           ],
           "english": [
-            "ms swindletooth makes",
+            "ms Swindletooth makes",
             "crescendo about the",
             "glorious workshop of",
             "rainbow ribbon weaving tomorrow"
@@ -16901,13 +16902,13 @@ const translationData = [
         "spanish": "¡La Sra. Swindletooth armoniza sobre los amigos del bosque creando obras maestras mágicas de coronas de flores!",
         "segments": {
           "spanish": [
-            "la sra swindletooth armoniza",
+            "la Sra. Swindletooth armoniza",
             "sobre los amigos",
             "del bosque creando",
             "obras maestras mágicas de coronas de flores"
           ],
           "english": [
-            "ms swindletooth harmonizes",
+            "ms Swindletooth harmonizes",
             "about the friends",
             "of the forest creating",
             "magical flower crown masterpieces"
@@ -16919,13 +16920,13 @@ const translationData = [
         "spanish": "¡La Sra. Swindletooth trina emocionadamente sobre la fantástica expedición de aventura recolectora de plumas de hoy!",
         "segments": {
           "spanish": [
-            "la sra swindletooth trina",
+            "la Sra. Swindletooth trina",
             "emocionadamente sobre la",
             "fantástica expedición de",
             "aventura recolectora de plumas de hoy"
           ],
           "english": [
-            "ms swindletooth trills",
+            "ms Swindletooth trills",
             "excitedly about the",
             "fantastic expedition of",
             "feather collecting adventure today"
@@ -16937,13 +16938,13 @@ const translationData = [
         "spanish": "¡La Sra. Swindletooth canta a todo pulmón anuncios sobre el maravilloso canto grupal de acampada a la luz de la luna!",
         "segments": {
           "spanish": [
-            "la sra swindletooth canta",
+            "la Sra. Swindletooth canta",
             "a todo pulmón",
             "anuncios sobre el",
             "maravilloso canto grupal de acampada a la luz de la luna"
           ],
           "english": [
-            "ms swindletooth sings",
+            "ms Swindletooth sings",
             "at full volume",
             "announcements about the",
             "marvelous moonlight camping sing-along"
@@ -16955,13 +16956,13 @@ const translationData = [
         "spanish": "¡La Sra. Swindletooth gorjea sobre los conejos jóvenes actuando en la ópera encantada del jardín!",
         "segments": {
           "spanish": [
-            "la sra swindletooth gorjea",
+            "la Sra. Swindletooth gorjea",
             "sobre los conejos",
             "jóvenes actuando en",
             "la ópera encantada del jardín"
           ],
           "english": [
-            "ms swindletooth warbles",
+            "ms Swindletooth warbles",
             "about the rabbits",
             "young performing in",
             "the enchanted garden opera"
@@ -16973,13 +16974,13 @@ const translationData = [
         "spanish": "¡La Sra. Swindletooth declara dramáticamente el estupendo espectáculo de narración de cuentos bajo las estrellas esta noche!",
         "segments": {
           "spanish": [
-            "la sra swindletooth declara",
+            "la Sra. Swindletooth declara",
             "dramáticamente el estupendo",
             "espectáculo de narración",
             "de cuentos bajo las estrellas esta noche"
           ],
           "english": [
-            "ms swindletooth declares",
+            "ms Swindletooth declares",
             "dramatically the stupendous",
             "storytelling spectacular",
             "under the stars this evening"
@@ -16991,15 +16992,15 @@ const translationData = [
         "spanish": "¡La Sra. Swindletooth hace serenata sobre los zorros pequeños creando magníficas esculturas de pasteles de barro!",
         "segments": {
           "spanish": [
-            "la sra swindletooth hace",
+            "la Sra. Swindletooth hace",
             "serenata sobre los",
             "zorros pequeños creando",
             "magníficas esculturas de pasteles de barro"
           ],
           "english": [
-            "ms swindletooth makes",
+            "ms Swindletooth makes",
             "serenade about the",
-            "little foxes creating",
+            "Little foxes creating",
             "magnificent mud pie sculptures"
           ]
         }
@@ -17009,13 +17010,13 @@ const translationData = [
         "spanish": "¡La Sra. Swindletooth anuncia con vibrato el sensacional picnic de sol con coros de criaturas del bosque!",
         "segments": {
           "spanish": [
-            "la sra swindletooth anuncia",
+            "la Sra. Swindletooth anuncia",
             "con vibrato el",
             "sensacional picnic de sol",
             "con coros de criaturas del bosque"
           ],
           "english": [
-            "ms swindletooth announces",
+            "ms Swindletooth announces",
             "with vibrato the",
             "sensational sunshine picnic",
             "with woodland creature choirs"
@@ -17027,13 +17028,13 @@ const translationData = [
         "spanish": "¡La Sra. Swindletooth invita operísticamente a los ciervos jóvenes a la deslumbrante caminata de descubrimiento de gotas de rocío!",
         "segments": {
           "spanish": [
-            "la sra swindletooth invita",
+            "la Sra. Swindletooth invita",
             "operísticamente a los",
             "ciervos jóvenes a la",
             "deslumbrante caminata de descubrimiento de gotas de rocío"
           ],
           "english": [
-            "ms swindletooth invites",
+            "ms Swindletooth invites",
             "operatically to the",
             "young deer to the",
             "dazzling dewdrop discovery walk"
@@ -17045,13 +17046,13 @@ const translationData = [
         "spanish": "¡La Sra. Swindletooth motiva musicalmente a los estudiantes del bosque para el tremendo torneo de escalada de árboles!",
         "segments": {
           "spanish": [
-            "la sra swindletooth motiva",
+            "la Sra. Swindletooth motiva",
             "musicalmente a los",
             "estudiantes del bosque",
             "para el tremendo torneo de escalada de árboles"
           ],
           "english": [
-            "ms swindletooth motivates",
+            "ms Swindletooth motivates",
             "musically to the",
             "woodland students",
             "for the tremendous tree climbing tournament"
@@ -17063,13 +17064,13 @@ const translationData = [
         "spanish": "¡La Sra. Swindletooth anuncia grandiosamente que los búhos jóvenes presentan su increíble espectáculo de astronomía esta noche!",
         "segments": {
           "spanish": [
-            "la sra swindletooth anuncia",
+            "la Sra. Swindletooth anuncia",
             "grandiosamente que los",
             "búhos jóvenes presentan",
             "su increíble espectáculo de astronomía esta noche"
           ],
           "english": [
-            "ms swindletooth announces",
+            "ms Swindletooth announces",
             "grandly that the",
             "young owls present",
             "their amazing astronomy show tonight"
@@ -17081,7 +17082,7 @@ const translationData = [
         "spanish": "La Sra. Jams les dijo a los erizos jóvenes que los castillos flotantes desafían la física.",
         "segments": {
           "spanish": [
-            "la sra jams les dijo",
+            "la Sra. Jams les dijo",
             "a los erizos jóvenes",
             "que los castillos flotantes",
             "desafían la física"
@@ -17099,7 +17100,7 @@ const translationData = [
         "spanish": "La Sra. Jams informó a los erizos jóvenes que las casas de dulces no son estructuralmente sólidas.",
         "segments": {
           "spanish": [
-            "la sra jams informó",
+            "la Sra. Jams informó",
             "a los erizos jóvenes",
             "que las casas de dulces",
             "no son estructuralmente sólidas"
@@ -17117,7 +17118,7 @@ const translationData = [
         "spanish": "La Sra. Jams explicó a los erizos jóvenes por qué los trampolines subterráneos no funcionarán.",
         "segments": {
           "spanish": [
-            "la sra jams explicó",
+            "la Sra. Jams explicó",
             "a los erizos jóvenes",
             "por qué los trampolines",
             "subterráneos no funcionarán"
@@ -17135,7 +17136,7 @@ const translationData = [
         "spanish": "La Sra. Jams rechazó fríamente la idea de la torre de oficinas giratoria de los erizos jóvenes.",
         "segments": {
           "spanish": [
-            "la sra jams rechazó",
+            "la Sra. Jams rechazó",
             "fríamente la idea",
             "de la torre giratoria",
             "de los erizos jóvenes"
@@ -17153,7 +17154,7 @@ const translationData = [
         "spanish": "La Sra. Jams resopló desdeñosamente ante el concepto del ascensor de nubes de los erizos jóvenes.",
         "segments": {
           "spanish": [
-            "la sra jams resopló",
+            "la Sra. Jams resopló",
             "desdeñosamente ante el",
             "concepto del ascensor",
             "de nubes de los erizos jóvenes"
@@ -17171,7 +17172,7 @@ const translationData = [
         "spanish": "La Sra. Jams declinó cortésmente la solicitud de biblioteca invisible de los erizos jóvenes hoy.",
         "segments": {
           "spanish": [
-            "la sra jams declinó",
+            "la Sra. Jams declinó",
             "cortésmente la solicitud",
             "de biblioteca invisible",
             "de los erizos jóvenes hoy"
@@ -17189,7 +17190,7 @@ const translationData = [
         "spanish": "La Sra. Jams informó secamente a los erizos jóvenes que los edificios de burbujas no son viables.",
         "segments": {
           "spanish": [
-            "la sra jams informó",
+            "la Sra. Jams informó",
             "secamente a los",
             "erizos jóvenes que",
             "los edificios de burbujas no son viables"
@@ -17207,7 +17208,7 @@ const translationData = [
         "spanish": "La Sra. Jams desestimó enérgicamente el plan del centro comercial al revés de los erizos jóvenes.",
         "segments": {
           "spanish": [
-            "la sra jams desestimó",
+            "la Sra. Jams desestimó",
             "enérgicamente el plan",
             "del centro comercial",
             "al revés de los erizos jóvenes"
@@ -17225,7 +17226,7 @@ const translationData = [
         "spanish": "La Sra. Jams explicó lacónicamente por qué las escaleras espirales de los erizos jóvenes desafían la gravedad.",
         "segments": {
           "spanish": [
-            "la sra jams explicó",
+            "la Sra. Jams explicó",
             "lacónicamente por qué",
             "las escaleras espirales",
             "de los erizos jóvenes desafían la gravedad"
@@ -17243,7 +17244,7 @@ const translationData = [
         "spanish": "La Sra. Jams observó secamente que la casa del árbol de los erizos jóvenes carece de permisos adecuados.",
         "segments": {
           "spanish": [
-            "la sra jams observó",
+            "la Sra. Jams observó",
             "secamente que la",
             "casa del árbol",
             "de los erizos jóvenes carece de permisos adecuados"
@@ -17261,7 +17262,7 @@ const translationData = [
         "spanish": "La Sra. Jams rechazó rotundamente la propuesta de acera saltarina de los erizos jóvenes completamente.",
         "segments": {
           "spanish": [
-            "la sra jams rechazó",
+            "la Sra. Jams rechazó",
             "rotundamente la propuesta",
             "de acera saltarina",
             "de los erizos jóvenes completamente"
@@ -17279,7 +17280,7 @@ const translationData = [
         "spanish": "La Sra. Jams informó fríamente a los erizos jóvenes que las fuentes de chocolate requieren mantenimiento.",
         "segments": {
           "spanish": [
-            "la sra jams informó",
+            "la Sra. Jams informó",
             "fríamente a los",
             "erizos jóvenes que",
             "las fuentes de chocolate requieren mantenimiento"
@@ -17297,7 +17298,7 @@ const translationData = [
         "spanish": "La Sra. Jams dijo objetivamente a los erizos jóvenes por qué las camas con energía eólica no funcionarán.",
         "segments": {
           "spanish": [
-            "la sra jams dijo",
+            "la Sra. Jams dijo",
             "objetivamente a los",
             "erizos jóvenes por qué",
             "las camas con energía eólica no funcionarán"
@@ -17315,7 +17316,7 @@ const translationData = [
         "spanish": "La Sra. Jams declaró bruscamente que los toboganes con propulsión a cohete de los erizos jóvenes violan los códigos de seguridad.",
         "segments": {
           "spanish": [
-            "la sra jams declaró",
+            "la Sra. Jams declaró",
             "bruscamente que los",
             "toboganes con propulsión",
             "a cohete de los erizos jóvenes violan los códigos de seguridad"
@@ -17334,13 +17335,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "juntos",
-            "la pequeña erizo y bebe",
+            "la pequeña Erizo y Bebe",
             "exploraban el bosque",
             "y superaban obstáculos"
           ],
           "english": [
             "together",
-            "little hedgehog and bebe",
+            "Little Hedgehog and Bebe",
             "explored the forest",
             "and overcame obstacles"
           ]
@@ -17351,13 +17352,13 @@ const translationData = [
         "spanish": "Pequeño Erizo aprendió que el trabajo en equipo resuelve problemas difíciles.",
         "segments": {
           "spanish": [
-            "pequeño erizo",
+            "pequeño Erizo",
             "aprendió que",
             "el trabajo en equipo",
             "resuelve problemas difíciles"
           ],
           "english": [
-            "little hedgehog",
+            "Little Hedgehog",
             "learned that",
             "teamwork",
             "solves difficult problems"
@@ -17369,16 +17370,16 @@ const translationData = [
         "spanish": "La Pequeña Erizo imaginó una balsa de globos para cruzar el río.",
         "segments": {
           "spanish": [
-            "la pequeña erizo",
+            "la pequeña Erizo",
             "imaginó",
             "una balsa de globos",
             "para cruzar el río"
           ],
           "english": [
-            "little hedgehog",
+            "Little Hedgehog",
             "imagined",
             "a balloon raft",
-            "to cross the river"
+            "to cross the River"
           ]
         }
       },
@@ -17388,14 +17389,14 @@ const translationData = [
         "segments": {
           "spanish": [
             "with grounding from",
-            "rigurosos cálculos de bebe",
-            "la salvaje invención de pequeño erizo",
+            "rigurosos cálculos de Bebe",
+            "la salvaje invención de pequeño Erizo",
             "realmente funcionó"
           ],
           "english": [
             "gracias a los",
-            "bebe's calculations",
-            "little hedgehog's wild invention",
+            "Bebe's calculations",
+            "Little Hedgehog's wild invention",
             "actually worked"
           ]
         }
@@ -17405,13 +17406,13 @@ const translationData = [
         "spanish": "Pequeña Erizo creó disfraces de hojas y flores silvestres.",
         "segments": {
           "spanish": [
-            "pequeña erizo",
+            "pequeña Erizo",
             "creó disfraces",
             "de hojas",
             "y flores silvestres"
           ],
           "english": [
-            "little hedgehog",
+            "Little Hedgehog",
             "created costumes",
             "from leaves",
             "and wildflowers"
@@ -17423,14 +17424,14 @@ const translationData = [
         "spanish": "Bebe enseñó a Pequeña Erizo cómo leer señales climáticas.",
         "segments": {
           "spanish": [
-            "bebe",
-            "enseñó a pequeña erizo",
+            "Bebe",
+            "enseñó a pequeña Erizo",
             "cómo leer",
             "señales climáticas"
           ],
           "english": [
-            "bebe",
-            "taught little hedgehog",
+            "Bebe",
+            "taught Little Hedgehog",
             "how to read",
             "weather signs"
           ]
@@ -17441,13 +17442,13 @@ const translationData = [
         "spanish": "El optimismo de Pequeña Erizo inspiró soluciones durante desafíos difíciles.",
         "segments": {
           "spanish": [
-            "de pequeña erizo",
+            "de pequeña Erizo",
             "el optimismo",
             "inspiró soluciones",
             "durante desafíos difíciles"
           ],
           "english": [
-            "little hedgehog's",
+            "Little Hedgehog's",
             "optimism",
             "inspired solutions",
             "during difficult challenges"
@@ -17459,13 +17460,13 @@ const translationData = [
         "spanish": "Pequeña Erizo y Bebe construyeron un laboratorio en un árbol para experimentos forestales.",
         "segments": {
           "spanish": [
-            "pequeña erizo y bebe",
+            "pequeña Erizo y Bebe",
             "construyeron",
             "un laboratorio en un árbol",
             "para experimentos forestales"
           ],
           "english": [
-            "little hedgehog and bebe",
+            "Little Hedgehog and Bebe",
             "built",
             "a treehouse laboratory",
             "for forest experiments"
@@ -17477,16 +17478,16 @@ const translationData = [
         "spanish": "Pequeña Erizo diseñó artefactos fantásticos mientras Bebe añadía practicidad.",
         "segments": {
           "spanish": [
-            "pequeña erizo",
+            "pequeña Erizo",
             "diseñó artefactos",
             "fantásticos",
-            "mientras bebe añadía practicidad"
+            "mientras Bebe añadía practicidad"
           ],
           "english": [
-            "little hedgehog",
+            "Little Hedgehog",
             "designed",
             "fantastic contraptions",
-            "while bebe added practicality"
+            "while Bebe added practicality"
           ]
         }
       },
@@ -17496,13 +17497,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "los mapas",
-            "de bebe y la imaginación",
-            "de pequeña erizo",
+            "de Bebe y la imaginación",
+            "de pequeña Erizo",
             "crearon rutas perfectas de aventura"
           ],
           "english": [
-            "bebe's maps",
-            "and little hedgehog's imagination",
+            "Bebe's maps",
+            "and Little Hedgehog's imagination",
             "created",
             "perfect adventure routes"
           ]
@@ -17513,15 +17514,15 @@ const translationData = [
         "spanish": "Pequeña Erizo consolaba animales perdidos mientras Bebe encontraba sus hogares.",
         "segments": {
           "spanish": [
-            "pequeña erizo",
+            "pequeña Erizo",
             "consolaba animales perdidos",
-            "mientras bebe",
+            "mientras Bebe",
             "encontraba sus hogares"
           ],
           "english": [
-            "little hedgehog",
+            "Little Hedgehog",
             "comforted lost animals",
-            "while bebe",
+            "while Bebe",
             "found their homes"
           ]
         }
@@ -17550,15 +17551,15 @@ const translationData = [
         "segments": {
           "spanish": [
             "las ideas locas",
-            "de pequeña erizo",
+            "de pequeña Erizo",
             "frecuentemente inspiraban",
-            "soluciones prácticas de bebe"
+            "soluciones prácticas de Bebe"
           ],
           "english": [
             "wild ideas",
-            "little hedgehog's",
+            "Little Hedgehog's",
             "often sparked",
-            "bebe's practical solutions"
+            "Bebe's practical solutions"
           ]
         }
       },
@@ -17567,15 +17568,15 @@ const translationData = [
         "spanish": "Bebe hizo preparativos calculados mientras Pequeña Erizo imaginaba misiones imposibles de rescate.",
         "segments": {
           "spanish": [
-            "bebe hizo preparativos calculados",
+            "Bebe hizo preparativos calculados",
             "mientras",
-            "pequeña erizo imaginaba",
+            "pequeña Erizo imaginaba",
             "misiones imposibles de rescate"
           ],
           "english": [
-            "bebe made calculated preparations",
+            "Bebe made calculated preparations",
             "while",
-            "little hedgehog dreamed up",
+            "Little Hedgehog dreamed up",
             "impossible rescue missions"
           ]
         }
@@ -17586,13 +17587,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "la empatía",
-            "de pequeña erizo",
+            "de pequeña Erizo",
             "les ayudó a entender",
             "problemas inusuales de otros"
           ],
           "english": [
             "empathy",
-            "little hedgehog's",
+            "Little Hedgehog's",
             "helped them understand",
             "others' unusual problems"
           ]
@@ -17603,13 +17604,13 @@ const translationData = [
         "spanish": "Pequeña Erizo y Bebe crearon un sistema de mensajes usando flores coloridas.",
         "segments": {
           "spanish": [
-            "pequeña erizo y bebe",
+            "pequeña Erizo y Bebe",
             "crearon",
             "un sistema de mensajes",
             "usando flores coloridas"
           ],
           "english": [
-            "little hedgehog and bebe",
+            "Little Hedgehog and Bebe",
             "created",
             "a message system",
             "using colorful flowers"
@@ -17621,13 +17622,13 @@ const translationData = [
         "spanish": "Pequeña Erizo veía posibilidades donde otros solo veían obstáculos.",
         "segments": {
           "spanish": [
-            "pequeña erizo",
+            "pequeña Erizo",
             "veía posibilidades",
             "donde",
             "otros solo veían obstáculos"
           ],
           "english": [
-            "little hedgehog",
+            "Little Hedgehog",
             "saw possibilities",
             "where",
             "others only saw obstacles"
@@ -17639,16 +17640,16 @@ const translationData = [
         "spanish": "El conocimiento de plantas de Bebe complementaba las recetas curativas de Pequeña Erizo.",
         "segments": {
           "spanish": [
-            "el conocimiento de bebe",
+            "el conocimiento de Bebe",
             "de plantas",
             "complementaba",
-            "las recetas curativas de pequeña erizo"
+            "las recetas curativas de pequeña Erizo"
           ],
           "english": [
-            "bebe's knowledge",
+            "Bebe's knowledge",
             "of plants",
             "complemented",
-            "little hedgehog's healing recipes"
+            "Little Hedgehog's healing recipes"
           ]
         }
       },
@@ -17657,13 +17658,13 @@ const translationData = [
         "spanish": "Pequeña Erizo convenció a animales tímidos de unirse a sus proyectos comunitarios.",
         "segments": {
           "spanish": [
-            "pequeña erizo",
+            "pequeña Erizo",
             "convenció a animales tímidos",
             "de unirse a",
             "sus proyectos comunitarios"
           ],
           "english": [
-            "little hedgehog",
+            "Little Hedgehog",
             "convinced shy animals",
             "to join",
             "their community projects"
@@ -17677,14 +17678,14 @@ const translationData = [
           "spanish": [
             "con",
             "observación científica",
-            "bebe mejoró",
-            "el ambicioso jardín de pequeña erizo"
+            "Bebe mejoró",
+            "el ambicioso jardín de pequeña Erizo"
           ],
           "english": [
             "with",
             "scientific observation",
-            "bebe improved",
-            "little hedgehog's ambitious garden"
+            "Bebe improved",
+            "Little Hedgehog's ambitious garden"
           ]
         }
       },
@@ -17693,13 +17694,13 @@ const translationData = [
         "spanish": "La bondad de Pequeña Erizo transformó antiguos enemigos en valiosos amigos.",
         "segments": {
           "spanish": [
-            "de pequeña erizo",
+            "de pequeña Erizo",
             "la bondad",
             "transformó",
             "antiguos enemigos en valiosos amigos"
           ],
           "english": [
-            "little hedgehog's",
+            "Little Hedgehog's",
             "kindness",
             "transformed",
             "former enemies into valuable friends"
@@ -17711,13 +17712,13 @@ const translationData = [
         "spanish": "Pequeña Erizo inventó instrumentos musicales de ramas huecas del bosque.",
         "segments": {
           "spanish": [
-            "pequeña erizo",
+            "pequeña Erizo",
             "inventó",
             "instrumentos musicales",
             "de ramas huecas del bosque"
           ],
           "english": [
-            "little hedgehog",
+            "Little Hedgehog",
             "invented",
             "musical instruments",
             "from hollow forest branches"
@@ -17729,16 +17730,16 @@ const translationData = [
         "spanish": "Bebe diseñó sistemas de riego mientras Pequeña Erizo los decoraba.",
         "segments": {
           "spanish": [
-            "bebe",
+            "Bebe",
             "diseñó sistemas",
             "de riego",
-            "mientras pequeña erizo los decoraba"
+            "mientras pequeña Erizo los decoraba"
           ],
           "english": [
-            "bebe",
+            "Bebe",
             "engineered systems",
             "irrigation",
-            "while little hedgehog decorated them"
+            "while Little Hedgehog decorated them"
           ]
         }
       },
@@ -17748,13 +17749,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el entusiasmo",
-            "de pequeña erizo",
+            "de pequeña Erizo",
             "convenció a animales reticentes",
             "a probar nuevas soluciones"
           ],
           "english": [
             "enthusiasm",
-            "little hedgehog's",
+            "Little Hedgehog's",
             "convinced reluctant animals",
             "to try new solutions"
           ]
@@ -17767,14 +17768,14 @@ const translationData = [
           "spanish": [
             "con",
             "pruebas metódicas",
-            "bebe perfeccionó",
-            "la receta de mermelada de pequeña erizo"
+            "Bebe perfeccionó",
+            "la receta de mermelada de pequeña Erizo"
           ],
           "english": [
             "with",
             "methodical testing",
-            "bebe perfected",
-            "little hedgehog's berry jam recipe"
+            "Bebe perfected",
+            "Little Hedgehog's berry jam recipe"
           ]
         }
       },
@@ -17783,16 +17784,16 @@ const translationData = [
         "spanish": "Pequeña Erizo soñó con máquinas voladoras que Bebe hizo posibles.",
         "segments": {
           "spanish": [
-            "pequeña erizo",
+            "pequeña Erizo",
             "soñó con",
             "máquinas voladoras",
-            "que bebe hizo posibles"
+            "que Bebe hizo posibles"
           ],
           "english": [
-            "little hedgehog",
+            "Little Hedgehog",
             "dreamed up",
-            "flying machines",
-            "that bebe made possible"
+            "Flying machines",
+            "that Bebe made possible"
           ]
         }
       },
@@ -17801,13 +17802,13 @@ const translationData = [
         "spanish": "Pequeña Erizo y Bebe crearon tintes naturales de plantas inesperadas del bosque.",
         "segments": {
           "spanish": [
-            "pequeña erizo y bebe",
+            "pequeña Erizo y Bebe",
             "crearon",
             "tintes naturales",
             "de plantas inesperadas del bosque"
           ],
           "english": [
-            "little hedgehog and bebe",
+            "Little Hedgehog and Bebe",
             "created",
             "natural dyes",
             "from unexpected forest plants"
@@ -17820,15 +17821,15 @@ const translationData = [
         "segments": {
           "spanish": [
             "las habilidades narrativas",
-            "de pequeña erizo",
+            "de pequeña Erizo",
             "ayudaron a explicar",
-            "descubrimientos científicos de bebe"
+            "descubrimientos científicos de Bebe"
           ],
           "english": [
-            "little hedgehog's",
+            "Little Hedgehog's",
             "storytelling skills",
             "helped explain",
-            "bebe's scientific discoveries"
+            "Bebe's scientific discoveries"
           ]
         }
       },
@@ -17837,16 +17838,16 @@ const translationData = [
         "spanish": "Bebe calculó rutas seguras a través de los mundos imaginarios de Pequeña Erizo.",
         "segments": {
           "spanish": [
-            "bebe",
+            "Bebe",
             "calculó rutas seguras",
             "a través de",
-            "los mundos imaginarios de pequeña erizo"
+            "los mundos imaginarios de pequeña Erizo"
           ],
           "english": [
-            "bebe",
+            "Bebe",
             "calculated safe routes",
             "through",
-            "little hedgehog's imaginary wonderlands"
+            "Little Hedgehog's imaginary wonderlands"
           ]
         }
       },
@@ -17855,16 +17856,16 @@ const translationData = [
         "spanish": "Pequeña Erizo hizo amistad con depredadores mientras Bebe establecía límites seguros.",
         "segments": {
           "spanish": [
-            "pequeña erizo",
+            "pequeña Erizo",
             "hizo amistad",
             "con depredadores",
-            "mientras bebe establecía límites seguros"
+            "mientras Bebe establecía límites seguros"
           ],
           "english": [
-            "little hedgehog",
+            "Little Hedgehog",
             "befriended",
             "predators",
-            "while bebe established safe boundaries"
+            "while Bebe established safe boundaries"
           ]
         }
       },
@@ -17892,14 +17893,14 @@ const translationData = [
         "segments": {
           "spanish": [
             "la confianza",
-            "de pequeña erizo",
-            "inspiró a bebe",
+            "de pequeña Erizo",
+            "inspiró a Bebe",
             "a intentar desafíos imposibles"
           ],
           "english": [
-            "little hedgehog's",
+            "Little Hedgehog's",
             "confidence",
-            "inspired bebe",
+            "inspired Bebe",
             "to attempt impossible challenges"
           ]
         }
@@ -17910,15 +17911,15 @@ const translationData = [
         "segments": {
           "spanish": [
             "las habilidades de supervivencia",
-            "de bebe",
+            "de Bebe",
             "complementaban perfectamente",
-            "el espíritu aventurero de pequeña erizo"
+            "el espíritu aventurero de pequeña Erizo"
           ],
           "english": [
             "survival skills",
-            "bebe's",
+            "Bebe's",
             "perfectly complemented",
-            "little hedgehog's adventurous spirit"
+            "Little Hedgehog's adventurous spirit"
           ]
         }
       },
@@ -17927,16 +17928,16 @@ const translationData = [
         "spanish": "Pequeña Erizo organizó festivales forestales mientras Bebe garantizaba la seguridad de todos.",
         "segments": {
           "spanish": [
-            "pequeña erizo",
+            "pequeña Erizo",
             "organizó",
             "festivales forestales",
-            "mientras bebe garantizaba la seguridad de todos"
+            "mientras Bebe garantizaba la seguridad de todos"
           ],
           "english": [
-            "little hedgehog",
+            "Little Hedgehog",
             "organized",
             "forest festivals",
-            "while bebe ensured everyone's safety"
+            "while Bebe ensured everyone's safety"
           ]
         }
       },
@@ -17946,13 +17947,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "mediante experimentación",
-            "pequeña erizo y bebe",
+            "pequeña Erizo y Bebe",
             "descubrieron nuevos usos",
             "para hojas caídas"
           ],
           "english": [
             "through experimentation",
-            "little hedgehog and bebe",
+            "Little Hedgehog and Bebe",
             "discovered new uses",
             "for fallen leaves"
           ]
@@ -17964,15 +17965,15 @@ const translationData = [
         "segments": {
           "spanish": [
             "las soluciones imaginativas",
-            "de pequeña erizo",
+            "de pequeña Erizo",
             "frecuentemente necesitaban",
-            "ajustes prácticos de bebe"
+            "ajustes prácticos de Bebe"
           ],
           "english": [
             "imaginative solutions",
-            "little hedgehog's",
+            "Little Hedgehog's",
             "often needed",
-            "bebe's practical adjustments"
+            "Bebe's practical adjustments"
           ]
         }
       },
@@ -17981,16 +17982,16 @@ const translationData = [
         "spanish": "Bebe documentó sus aventuras mientras Pequeña Erizo embellecía las historias.",
         "segments": {
           "spanish": [
-            "bebe",
+            "Bebe",
             "documentó sus aventuras",
             "mientras",
-            "pequeña erizo embellecía las historias"
+            "pequeña Erizo embellecía las historias"
           ],
           "english": [
-            "bebe",
+            "Bebe",
             "documented their adventures",
             "while",
-            "little hedgehog embellished the tales"
+            "Little Hedgehog embellished the tales"
           ]
         }
       },
@@ -17999,16 +18000,16 @@ const translationData = [
         "spanish": "Pequeña Erizo diseñó hogares únicos que Bebe hizo estructuralmente sólidos.",
         "segments": {
           "spanish": [
-            "pequeña erizo",
+            "pequeña Erizo",
             "diseñó",
             "hogares únicos",
-            "que bebe hizo estructuralmente sólidos"
+            "que Bebe hizo estructuralmente sólidos"
           ],
           "english": [
-            "little hedgehog",
+            "Little Hedgehog",
             "designed",
             "unique homes",
-            "that bebe made structurally sound"
+            "that Bebe made structurally sound"
           ]
         }
       },
@@ -18035,13 +18036,13 @@ const translationData = [
         "spanish": "Pequeña Erizo inspiró creaciones artísticas con materiales cotidianos del bosque.",
         "segments": {
           "spanish": [
-            "pequeña erizo",
+            "pequeña Erizo",
             "inspiró",
             "creaciones artísticas",
             "con materiales cotidianos del bosque"
           ],
           "english": [
-            "little hedgehog",
+            "Little Hedgehog",
             "inspired",
             "artistic creations",
             "from everyday forest materials"
@@ -18053,16 +18054,16 @@ const translationData = [
         "spanish": "Pequeña Erizo y Bebe resolvieron el misterio del agua desaparecida del río.",
         "segments": {
           "spanish": [
-            "pequeña erizo y bebe",
+            "pequeña Erizo y Bebe",
             "resolvieron",
             "el misterio",
             "del agua desaparecida del río"
           ],
           "english": [
-            "little hedgehog and bebe",
+            "Little Hedgehog and Bebe",
             "solved",
             "the mystery",
-            "of disappearing river water"
+            "of disappearing River water"
           ]
         }
       },
@@ -18071,13 +18072,13 @@ const translationData = [
         "spanish": "Pequeña Erizo y Bebe crearon refugios climáticos que eran prácticos y hermosos.",
         "segments": {
           "spanish": [
-            "pequeña erizo y bebe",
+            "pequeña Erizo y Bebe",
             "crearon",
             "refugios climáticos",
             "que eran prácticos y hermosos"
           ],
           "english": [
-            "little hedgehog and bebe",
+            "Little Hedgehog and Bebe",
             "created",
             "weather shelters",
             "that were practical and beautiful"
@@ -18094,13 +18095,13 @@ const translationData = [
         "spanish": "Dick y Julian exploraban cuevas para encontrar tesoros escondidos.",
         "segments": {
           "spanish": [
-            "dick y julian",
+            "dick y Julian",
             "exploraban",
             "cuevas",
             "para encontrar tesoros escondidos"
           ],
           "english": [
-            "dick and julian",
+            "dick and Julian",
             "explored",
             "caves",
             "to find hidden treasures"
@@ -18184,14 +18185,14 @@ const translationData = [
         "spanish": "George enseñó a Timmy trucos inteligentes para resolver misterios.",
         "segments": {
           "spanish": [
-            "george",
-            "enseñó a timmy",
+            "George",
+            "enseñó a Timmy",
             "trucos inteligentes",
             "para resolver misterios"
           ],
           "english": [
-            "george",
-            "taught timmy",
+            "George",
+            "taught Timmy",
             "clever tricks",
             "to help solve mysteries"
           ]
@@ -18220,13 +18221,13 @@ const translationData = [
         "spanish": "Timmy el perro encontraba pistas importantes con su nariz.",
         "segments": {
           "spanish": [
-            "timmy el perro",
+            "Timmy el perro",
             "encontraba",
             "pistas importantes",
             "con su nariz"
           ],
           "english": [
-            "timmy the dog",
+            "Timmy the dog",
             "found",
             "important clues",
             "with his nose"
@@ -18238,13 +18239,13 @@ const translationData = [
         "spanish": "Julian usó conocimientos de astronomía para navegar por el páramo neblinoso.",
         "segments": {
           "spanish": [
-            "julian",
+            "Julian",
             "usó conocimientos de astronomía",
             "para navegar",
             "por el páramo neblinoso"
           ],
           "english": [
-            "julian",
+            "Julian",
             "used knowledge of astronomy",
             "to navigate",
             "through the foggy moor"
@@ -18292,13 +18293,13 @@ const translationData = [
         "spanish": "George diseñó una balsa para explorar la isla cercana.",
         "segments": {
           "spanish": [
-            "george",
+            "George",
             "diseñó",
             "una balsa",
             "para explorar la isla cercana"
           ],
           "english": [
-            "george",
+            "George",
             "designed",
             "a raft",
             "to explore the offshore island"
@@ -18310,13 +18311,13 @@ const translationData = [
         "spanish": "Timmy rastreó a los niños perdidos por el denso bosque.",
         "segments": {
           "spanish": [
-            "timmy",
+            "Timmy",
             "rastreó",
             "a los niños perdidos",
             "por el denso bosque"
           ],
           "english": [
-            "timmy",
+            "Timmy",
             "tracked",
             "the missing children",
             "through the dense forest"
@@ -18346,13 +18347,13 @@ const translationData = [
         "spanish": "Julian decodificó el mapa antiguo usando patrones matemáticos.",
         "segments": {
           "spanish": [
-            "julian",
+            "Julian",
             "decodificó",
             "el mapa antiguo",
             "usando patrones matemáticos"
           ],
           "english": [
-            "julian",
+            "Julian",
             "decoded",
             "the ancient map",
             "using mathematical patterns"
@@ -18400,13 +18401,13 @@ const translationData = [
         "spanish": "George navegó aguas costeras traicioneras durante la tormenta.",
         "segments": {
           "spanish": [
-            "george",
+            "George",
             "navegó",
             "aguas costeras traicioneras",
             "durante la tormenta"
           ],
           "english": [
-            "george",
+            "George",
             "navigated",
             "treacherous coast waters",
             "during the storm"
@@ -18418,13 +18419,13 @@ const translationData = [
         "spanish": "Timmy les alertó de entradas ocultas a cuevas mediante olfato.",
         "segments": {
           "spanish": [
-            "timmy",
+            "Timmy",
             "les alertó",
             "de entradas ocultas a cuevas",
             "mediante olfato"
           ],
           "english": [
-            "timmy",
+            "Timmy",
             "alerted them",
             "to hidden cave entrances",
             "using smell"
@@ -18454,13 +18455,13 @@ const translationData = [
         "spanish": "Julian calculó la llegada de contrabandistas usando tablas de mareas.",
         "segments": {
           "spanish": [
-            "julian",
+            "Julian",
             "calculó",
             "la llegada de contrabandistas",
             "usando tablas de mareas"
           ],
           "english": [
-            "julian",
+            "Julian",
             "calculated",
             "the smugglers' arrival",
             "using tide tables"
@@ -18508,13 +18509,13 @@ const translationData = [
         "spanish": "George encontró rutas alternativas a través de acantilados aparentemente impasables.",
         "segments": {
           "spanish": [
-            "george",
+            "George",
             "encontró",
             "rutas alternativas",
             "a través de acantilados aparentemente impasables"
           ],
           "english": [
-            "george",
+            "George",
             "found",
             "alternative routes",
             "through seemingly impassable cliffs"
@@ -18544,13 +18545,13 @@ const translationData = [
         "spanish": "Julian estableció un sistema de vigilancia alrededor de su campamento.",
         "segments": {
           "spanish": [
-            "julian",
+            "Julian",
             "estableció",
             "un sistema de vigilancia",
             "alrededor de su campamento"
           ],
           "english": [
-            "julian",
+            "Julian",
             "established",
             "a lookout system",
             "around their camp"
@@ -18598,13 +18599,13 @@ const translationData = [
         "spanish": "Julian enseñó a niños locales cómo construir filtros simples de agua.",
         "segments": {
           "spanish": [
-            "julian",
+            "Julian",
             "enseñó a niños locales",
             "cómo construir",
             "filtros simples de agua"
           ],
           "english": [
-            "julian",
+            "Julian",
             "taught local children",
             "how to build",
             "simple water filters"
@@ -18652,13 +18653,13 @@ const translationData = [
         "spanish": "George estableció un sistema de alerta temprana para tormentas costeras.",
         "segments": {
           "spanish": [
-            "george",
+            "George",
             "estableció",
             "un sistema de alerta temprana",
             "para tormentas costeras"
           ],
           "english": [
-            "george",
+            "George",
             "established",
             "an early warning system",
             "for coastal storms"
@@ -18670,13 +18671,13 @@ const translationData = [
         "spanish": "Timmy descubrió un manantial oculto de agua dulce durante la sequía.",
         "segments": {
           "spanish": [
-            "timmy",
+            "Timmy",
             "descubrió",
             "un manantial oculto de agua dulce",
             "durante la sequía"
           ],
           "english": [
-            "timmy",
+            "Timmy",
             "discovered",
             "a hidden freshwater spring",
             "during the drought"
@@ -18706,13 +18707,13 @@ const translationData = [
         "spanish": "Julian mapeó las estrellas para determinar su posición exacta.",
         "segments": {
           "spanish": [
-            "julian",
+            "Julian",
             "mapeó",
             "las estrellas",
             "para determinar su posición exacta"
           ],
           "english": [
-            "julian",
+            "Julian",
             "mapped",
             "the stars",
             "to determine their exact position"
@@ -18760,13 +18761,13 @@ const translationData = [
         "spanish": "George ideó dispositivos de flotación de emergencia con barriles vacíos.",
         "segments": {
           "spanish": [
-            "george",
+            "George",
             "ideó",
             "dispositivos de flotación de emergencia",
             "con barriles vacíos"
           ],
           "english": [
-            "george",
+            "George",
             "devised",
             "emergency flotation devices",
             "from empty barrels"
@@ -18779,13 +18780,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con paciencia",
-            "timmy les guió",
+            "Timmy les guió",
             "con seguridad",
             "a través de la densa niebla"
           ],
           "english": [
             "with patience",
-            "timmy led them",
+            "Timmy led them",
             "safely",
             "through the dense fog"
           ]
@@ -18814,13 +18815,13 @@ const translationData = [
         "spanish": "Julian identificó hongos comestibles para complementar sus suministros alimenticios.",
         "segments": {
           "spanish": [
-            "julian",
+            "Julian",
             "identificó",
             "hongos comestibles",
             "para complementar sus suministros alimenticios"
           ],
           "english": [
-            "julian",
+            "Julian",
             "identified",
             "edible mushrooms",
             "to supplement their food supplies"
@@ -18868,13 +18869,13 @@ const translationData = [
         "spanish": "George entrenó a pescadores locales en técnicas más seguras de navegación.",
         "segments": {
           "spanish": [
-            "george",
+            "George",
             "entrenó",
             "a pescadores locales",
             "en técnicas más seguras de navegación"
           ],
           "english": [
-            "george",
+            "George",
             "trained",
             "local fishermen",
             "in safer navigation techniques"
@@ -18886,13 +18887,13 @@ const translationData = [
         "spanish": "Timmy detectó fugas peligrosas de gas en la mina abandonada.",
         "segments": {
           "spanish": [
-            "timmy",
+            "Timmy",
             "detectó",
             "fugas peligrosas de gas",
             "en la mina abandonada"
           ],
           "english": [
-            "timmy",
+            "Timmy",
             "detected",
             "dangerous gas leaks",
             "in the abandoned mine"
@@ -19000,13 +19001,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "maya diseñó",
-            "un robot",
+            "un Robot",
             "para limpiar",
             "el jardín escolar"
           ],
           "english": [
             "maya designed",
-            "a robot",
+            "a Robot",
             "to clean",
             "the school garden"
           ]
@@ -20611,16 +20612,16 @@ const translationData = [
         "spanish": "Mirabel vio cada don Madrigal sirviendo a la familia como cuerpo de Cristo.",
         "segments": {
           "spanish": [
-            "mirabel vio",
-            "cada don madrigal",
+            "Mirabel vio",
+            "cada don Madrigal",
             "sirviendo a la familia",
-            "como cuerpo de cristo"
+            "como cuerpo de Cristo"
           ],
           "english": [
-            "mirabel saw",
-            "each madrigal gift",
+            "Mirabel saw",
+            "each Madrigal gift",
             "serving the family",
-            "like christ's body"
+            "like Christ's body"
           ]
         }
       },
@@ -20629,16 +20630,16 @@ const translationData = [
         "spanish": "Mirabel entendió su papel fundamental en ver grietas ocultas de Casita.",
         "segments": {
           "spanish": [
-            "mirabel entendió",
+            "Mirabel entendió",
             "su papel fundamental",
             "en ver",
-            "grietas ocultas de casita"
+            "grietas ocultas de Casita"
           ],
           "english": [
-            "mirabel understood",
+            "Mirabel understood",
             "her cornerstone role",
             "in seeing",
-            "casita's hidden cracks"
+            "Casita's hidden cracks"
           ]
         }
       },
@@ -20647,13 +20648,13 @@ const translationData = [
         "spanish": "Mirabel veía a su familia como piedras vivas construyendo su hogar mágico.",
         "segments": {
           "spanish": [
-            "mirabel veía",
+            "Mirabel veía",
             "a su familia",
             "como piedras vivas",
             "construyendo su hogar mágico"
           ],
           "english": [
-            "mirabel viewed",
+            "Mirabel viewed",
             "her family",
             "as living stones",
             "building their magical home"
@@ -20665,13 +20666,13 @@ const translationData = [
         "spanish": "Mirabel reconoció la vela de Abuela como luz sagrada para su comunidad.",
         "segments": {
           "spanish": [
-            "mirabel reconoció",
+            "Mirabel reconoció",
             "la vela de abuela",
             "como luz sagrada",
             "para su comunidad"
           ],
           "english": [
-            "mirabel recognized",
+            "Mirabel recognized",
             "abuela's candle",
             "as sacred light",
             "for their community"
@@ -20683,13 +20684,13 @@ const translationData = [
         "spanish": "Mirabel buscó reconstruir el milagro familiar como ruinas antiguas restauradas.",
         "segments": {
           "spanish": [
-            "mirabel buscó",
+            "Mirabel buscó",
             "reconstruir",
             "el milagro familiar",
             "como ruinas antiguas restauradas"
           ],
           "english": [
-            "mirabel sought",
+            "Mirabel sought",
             "to rebuild",
             "her family's miracle",
             "like ancient ruins restored"
@@ -20702,12 +20703,12 @@ const translationData = [
         "segments": {
           "spanish": [
             "los pequeños actos",
-            "sanadores de mirabel",
+            "sanadores de Mirabel",
             "crecieron",
             "como semilla celestial de mostaza"
           ],
           "english": [
-            "mirabel's small acts",
+            "Mirabel's small acts",
             "of healing",
             "grew",
             "like heaven's mustard seed"
@@ -20719,16 +20720,16 @@ const translationData = [
         "spanish": "Mirabel unió a su familia para reconstruir Casita como muros de Jerusalén.",
         "segments": {
           "spanish": [
-            "mirabel unió",
+            "Mirabel unió",
             "a su familia",
-            "para reconstruir casita",
-            "como muros de jerusalén"
+            "para reconstruir Casita",
+            "como muros de Jerusalén"
           ],
           "english": [
-            "mirabel united",
+            "Mirabel united",
             "her family",
-            "to rebuild casita",
-            "like jerusalem's walls"
+            "to rebuild Casita",
+            "like Jerusalem's walls"
           ]
         }
       },
@@ -20737,14 +20738,14 @@ const translationData = [
         "spanish": "Mirabel vio Casita como su arca, conteniendo su pacto sagrado.",
         "segments": {
           "spanish": [
-            "mirabel vio",
-            "casita",
+            "Mirabel vio",
+            "Casita",
             "como su arca",
             "conteniendo su pacto sagrado"
           ],
           "english": [
-            "mirabel saw",
-            "casita",
+            "Mirabel saw",
+            "Casita",
             "as their ark",
             "holding their sacred covenant"
           ]
@@ -20755,13 +20756,13 @@ const translationData = [
         "spanish": "Mirabel reunió fragmentos familiares como pan partido que alimenta multitudes.",
         "segments": {
           "spanish": [
-            "mirabel reunió",
+            "Mirabel reunió",
             "fragmentos familiares",
             "como",
             "pan partido que alimenta multitudes"
           ],
           "english": [
-            "mirabel gathered",
+            "Mirabel gathered",
             "family fragments",
             "like",
             "broken bread that feeds multitudes"
@@ -20773,13 +20774,13 @@ const translationData = [
         "spanish": "Mirabel personificó al pastor buscando un miembro familiar perdido.",
         "segments": {
           "spanish": [
-            "mirabel personificó",
+            "Mirabel personificó",
             "al pastor",
             "buscando",
             "un miembro familiar perdido"
           ],
           "english": [
-            "mirabel embodied",
+            "Mirabel embodied",
             "the shepherd",
             "seeking",
             "one lost family member"
@@ -20791,15 +20792,15 @@ const translationData = [
         "spanish": "Mirabel unió familia dividida como Cristo reconciliando creyentes diversos.",
         "segments": {
           "spanish": [
-            "mirabel unió",
+            "Mirabel unió",
             "familia dividida",
-            "como cristo",
+            "como Cristo",
             "reconciliando creyentes diversos"
           ],
           "english": [
-            "mirabel bridged",
+            "Mirabel bridged",
             "divided family",
-            "like christ",
+            "like Christ",
             "reconciling diverse believers"
           ]
         }
@@ -20809,15 +20810,15 @@ const translationData = [
         "spanish": "Mirabel cuidó lazos familiares como Salomón atendía detalles del templo.",
         "segments": {
           "spanish": [
-            "mirabel cuidó",
+            "Mirabel cuidó",
             "lazos familiares",
-            "como salomón",
+            "como Salomón",
             "atendía detalles del templo"
           ],
           "english": [
-            "mirabel tended",
+            "Mirabel tended",
             "family bonds",
-            "like solomon",
+            "like Solomon",
             "cared for temple details"
           ]
         }
@@ -20827,13 +20828,13 @@ const translationData = [
         "spanish": "Mirabel construyó cimientos familiares sobre amor en vez de presión.",
         "segments": {
           "spanish": [
-            "mirabel construyó",
+            "Mirabel construyó",
             "cimientos familiares",
             "sobre amor",
             "en vez de presión"
           ],
           "english": [
-            "mirabel built",
+            "Mirabel built",
             "family foundations",
             "on love",
             "rather than performance pressure"
@@ -20845,13 +20846,13 @@ const translationData = [
         "spanish": "Mirabel mostró cómo amor edifica mientras enfoque en dones divide.",
         "segments": {
           "spanish": [
-            "mirabel mostró",
+            "Mirabel mostró",
             "cómo amor edifica",
             "mientras",
             "enfoque en dones divide"
           ],
           "english": [
-            "mirabel showed",
+            "Mirabel showed",
             "how love builds up",
             "while",
             "gift-focus divides"
@@ -20863,13 +20864,13 @@ const translationData = [
         "spanish": "Mirabel sabía que casa dividida no resistiría mientras grietas avanzaban.",
         "segments": {
           "spanish": [
-            "mirabel sabía",
+            "Mirabel sabía",
             "que casa dividida",
             "no resistiría",
             "mientras grietas avanzaban"
           ],
           "english": [
-            "mirabel knew",
+            "Mirabel knew",
             "a house divided",
             "couldn't stand",
             "as cracks spread"
@@ -20882,12 +20883,12 @@ const translationData = [
         "segments": {
           "spanish": [
             "el amor perfecto",
-            "de mirabel",
+            "de Mirabel",
             "ayudó a vencer",
             "temor de perder dones"
           ],
           "english": [
-            "mirabel's perfect love",
+            "Mirabel's perfect love",
             "helped",
             "family overcome",
             "fear of losing gifts"
@@ -20899,13 +20900,13 @@ const translationData = [
         "spanish": "Mirabel reavivó conexiones familiares como llama perdurable de menorá.",
         "segments": {
           "spanish": [
-            "mirabel reavivó",
+            "Mirabel reavivó",
             "conexiones familiares",
             "como",
             "llama perdurable de menorá"
           ],
           "english": [
-            "mirabel rekindled",
+            "Mirabel rekindled",
             "family connections",
             "like",
             "a menorah's enduring flame"
@@ -20917,13 +20918,13 @@ const translationData = [
         "spanish": "Mirabel ayudó a priorizar amor por encima del desempeño de dones.",
         "segments": {
           "spanish": [
-            "mirabel ayudó",
+            "Mirabel ayudó",
             "a priorizar amor",
             "por encima",
             "del desempeño de dones"
           ],
           "english": [
-            "mirabel helped",
+            "Mirabel helped",
             "family prioritize love",
             "above",
             "gift performance"
@@ -20995,13 +20996,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "isabella colaboró",
-            "con mirabel",
+            "con Mirabel",
             "para diseñar",
             "hermosos espacios comunitarios"
           ],
           "english": [
             "isabella collaborated",
-            "with mirabel",
+            "with Mirabel",
             "to design",
             "beautiful community spaces"
           ]
@@ -21337,13 +21338,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "isabella trabajó",
-            "con antonio",
+            "con Antonio",
             "para entender",
             "relaciones entre plantas y animales"
           ],
           "english": [
             "isabella worked",
-            "with antonio",
+            "with Antonio",
             "to understand",
             "plant-animal relationships"
           ]
@@ -21413,13 +21414,13 @@ const translationData = [
         "spanish": "Santa María mostró paciencia al enfrentar desafíos difíciles.",
         "segments": {
           "spanish": [
-            "santa maría",
+            "Santa María",
             "mostró paciencia",
             "al enfrentar",
             "desafíos difíciles"
           ],
           "english": [
-            "mother mary",
+            "Mother Mary",
             "showed patience",
             "when facing",
             "difficult challenges"
@@ -21432,13 +21433,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el amor",
-            "de santa maría",
+            "de Santa María",
             "guió sus decisiones",
             "para ayudar a otros"
           ],
           "english": [
             "the love",
-            "of mother mary",
+            "of Mother Mary",
             "guided her decisions",
             "in helping others"
           ]
@@ -21450,13 +21451,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "la paz",
-            "de santa maría",
+            "de Santa María",
             "trajo consuelo",
             "durante tiempos difíciles"
           ],
           "english": [
             "the peace",
-            "of mother mary",
+            "of Mother Mary",
             "brought comfort",
             "during troubled times"
           ]
@@ -21467,13 +21468,13 @@ const translationData = [
         "spanish": "Santa María resolvió problemas con guía gentil y fiel.",
         "segments": {
           "spanish": [
-            "santa maría",
+            "Santa María",
             "resolvió problemas",
             "con guía",
             "gentil y fiel"
           ],
           "english": [
-            "mother mary",
+            "Mother Mary",
             "solved problems",
             "with guidance",
             "gentle and faithful"
@@ -21486,13 +21487,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "la bondad",
-            "de santa maría",
+            "de Santa María",
             "inspiró a otros",
             "a servir a su comunidad"
           ],
           "english": [
             "the goodness",
-            "of mother mary",
+            "of Mother Mary",
             "inspired others",
             "to serve their community"
           ]
@@ -21503,13 +21504,13 @@ const translationData = [
         "spanish": "Santa María abordó conflictos con mansedumbre y comprensión.",
         "segments": {
           "spanish": [
-            "santa maría",
+            "Santa María",
             "abordó conflictos",
             "con mansedumbre",
             "y comprensión"
           ],
           "english": [
-            "mother mary",
+            "Mother Mary",
             "approached conflict",
             "with gentleness",
             "and understanding"
@@ -21521,13 +21522,13 @@ const translationData = [
         "spanish": "Santa María mostró autocontrol cuando enfrentó injusticias.",
         "segments": {
           "spanish": [
-            "santa maría",
+            "Santa María",
             "mostró autocontrol",
             "cuando enfrentó",
             "injusticias"
           ],
           "english": [
-            "mother mary",
+            "Mother Mary",
             "displayed self-control",
             "when faced with",
             "injustice"
@@ -21540,13 +21541,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "la alegría",
-            "de santa maría",
+            "de Santa María",
             "alentó a quienes",
             "experimentaban tiempos difíciles"
           ],
           "english": [
             "the joy",
-            "of mother mary",
+            "of Mother Mary",
             "encouraged those",
             "experiencing difficult times"
           ]
@@ -21557,13 +21558,13 @@ const translationData = [
         "spanish": "Santa María abordó desafíos con fidelidad y devoción.",
         "segments": {
           "spanish": [
-            "santa maría",
+            "Santa María",
             "abordó desafíos",
             "con fidelidad",
             "y devoción"
           ],
           "english": [
-            "mother mary",
+            "Mother Mary",
             "approached challenges",
             "with faithfulness",
             "and devotion"
@@ -21575,13 +21576,13 @@ const translationData = [
         "spanish": "Santa María resolvió problemas comunitarios mediante bondad colaborativa.",
         "segments": {
           "spanish": [
-            "santa maría",
+            "Santa María",
             "resolvió problemas comunitarios",
             "mediante",
             "bondad colaborativa"
           ],
           "english": [
-            "mother mary",
+            "Mother Mary",
             "solved community problems",
             "through",
             "collaborative kindness"
@@ -21594,13 +21595,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "la escucha paciente",
-            "de santa maría",
+            "de Santa María",
             "ayudó a resolver",
             "malentendidos"
           ],
           "english": [
             "the patient listening",
-            "of mother mary",
+            "of Mother Mary",
             "helped resolve",
             "misunderstandings"
           ]
@@ -21611,13 +21612,13 @@ const translationData = [
         "spanish": "Santa María trajo paz a conflictos mediante palabras gentiles.",
         "segments": {
           "spanish": [
-            "santa maría",
+            "Santa María",
             "trajo paz",
             "a conflictos",
             "mediante palabras gentiles"
           ],
           "english": [
-            "mother mary",
+            "Mother Mary",
             "brought peace",
             "to conflicts",
             "through gentle words"
@@ -21630,13 +21631,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "la bondad",
-            "de santa maría",
+            "de Santa María",
             "creó soluciones",
             "para necesitados"
           ],
           "english": [
             "the goodness",
-            "of mother mary",
+            "of Mother Mary",
             "created solutions",
             "for those in need"
           ]
@@ -21647,13 +21648,13 @@ const translationData = [
         "spanish": "Santa María demostró perseverancia fiel durante desafíos difíciles.",
         "segments": {
           "spanish": [
-            "santa maría",
+            "Santa María",
             "demostró perseverancia",
             "fiel",
             "durante desafíos difíciles"
           ],
           "english": [
-            "mother mary",
+            "Mother Mary",
             "demonstrated perseverance",
             "faithful",
             "during difficult challenges"
@@ -21666,13 +21667,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el amor",
-            "de santa maría",
+            "de Santa María",
             "transformó situaciones difíciles",
             "en oportunidades"
           ],
           "english": [
             "the love",
-            "of mother mary",
+            "of Mother Mary",
             "transformed difficult situations",
             "into opportunities"
           ]
@@ -21683,13 +21684,13 @@ const translationData = [
         "spanish": "Santa María abordó problemas con espíritu alegre y esperanzado.",
         "segments": {
           "spanish": [
-            "santa maría",
+            "Santa María",
             "abordó problemas",
             "con espíritu",
             "alegre y esperanzado"
           ],
           "english": [
-            "mother mary",
+            "Mother Mary",
             "approached problems",
             "with spirit",
             "joyful and hopeful"
@@ -21701,13 +21702,13 @@ const translationData = [
         "spanish": "Santa María mostró liderazgo gentil al guiar a su comunidad.",
         "segments": {
           "spanish": [
-            "santa maría mostró",
+            "Santa María mostró",
             "liderazgo gentil",
             "al guiar",
             "a su comunidad"
           ],
           "english": [
-            "mother mary showed",
+            "Mother Mary showed",
             "gentle leadership",
             "when guiding",
             "her community"
@@ -21719,13 +21720,13 @@ const translationData = [
         "spanish": "Santa María practicó autocontrol al responder a situaciones desafiantes.",
         "segments": {
           "spanish": [
-            "santa maría practicó",
+            "Santa María practicó",
             "autocontrol",
             "al responder",
             "a situaciones desafiantes"
           ],
           "english": [
-            "mother mary practiced",
+            "Mother Mary practiced",
             "self-control",
             "when responding",
             "to challenging situations"
@@ -21738,13 +21739,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "la bondad",
-            "de santa maría",
+            "de Santa María",
             "ayudó a sanar",
             "divisiones entre personas"
           ],
           "english": [
             "the kindness",
-            "of mother mary",
+            "of Mother Mary",
             "helped heal",
             "divisions among people"
           ]
@@ -21755,13 +21756,13 @@ const translationData = [
         "spanish": "Santa María demostró bondad hacia aquellos que estaban sufriendo.",
         "segments": {
           "spanish": [
-            "santa maría",
+            "Santa María",
             "demostró bondad",
             "hacia aquellos",
             "que estaban sufriendo"
           ],
           "english": [
-            "mother mary",
+            "Mother Mary",
             "demonstrated kindness",
             "to those",
             "who were suffering"
@@ -21778,13 +21779,13 @@ const translationData = [
         "spanish": "Santa Kateri recolectó plantas medicinales para sanar su aldea.",
         "segments": {
           "spanish": [
-            "santa kateri recolectó",
+            "Santa Kateri recolectó",
             "plantas medicinales",
             "para sanar",
             "su aldea"
           ],
           "english": [
-            "st kateri gathered",
+            "st Kateri gathered",
             "medicinal plants",
             "to heal",
             "her village"
@@ -21796,13 +21797,13 @@ const translationData = [
         "spanish": "Santa Kateri adoptó valientemente una nueva fe a pesar de oposición.",
         "segments": {
           "spanish": [
-            "santa kateri adoptó",
+            "Santa Kateri adoptó",
             "valientemente",
             "una nueva fe",
             "a pesar de oposición"
           ],
           "english": [
-            "st kateri embraced",
+            "st Kateri embraced",
             "bravely",
             "a new faith",
             "despite opposition"
@@ -21814,13 +21815,13 @@ const translationData = [
         "spanish": "Santa Kateri colaboró con misioneros para ayudar a su comunidad.",
         "segments": {
           "spanish": [
-            "santa kateri colaboró",
+            "Santa Kateri colaboró",
             "con misioneros",
             "para ayudar",
             "a su comunidad"
           ],
           "english": [
-            "st kateri collaborated",
+            "st Kateri collaborated",
             "with missionaries",
             "to help",
             "her community"
@@ -21832,13 +21833,13 @@ const translationData = [
         "spanish": "Santa Kateri usó conocimiento tradicional para resolver problemas cotidianos.",
         "segments": {
           "spanish": [
-            "santa kateri usó",
+            "Santa Kateri usó",
             "conocimiento tradicional",
             "para resolver",
             "problemas cotidianos"
           ],
           "english": [
-            "st kateri used",
+            "st Kateri used",
             "traditional knowledge",
             "to solve",
             "everyday problems"
@@ -21850,13 +21851,13 @@ const translationData = [
         "spanish": "Santa Kateri encontró formas creativas de expresar su devoción.",
         "segments": {
           "spanish": [
-            "santa kateri encontró",
+            "Santa Kateri encontró",
             "formas creativas",
             "de expresar",
             "su devoción"
           ],
           "english": [
-            "st kateri found",
+            "st Kateri found",
             "creative ways",
             "to express",
             "her devotion"
@@ -21868,13 +21869,13 @@ const translationData = [
         "spanish": "Santa Kateri mostró bondad hacia aquellos que estaban sufriendo.",
         "segments": {
           "spanish": [
-            "santa kateri mostró",
+            "Santa Kateri mostró",
             "bondad",
             "hacia aquellos",
             "que estaban sufriendo"
           ],
           "english": [
-            "st kateri showed",
+            "st Kateri showed",
             "kindness",
             "toward those",
             "who were suffering"
@@ -21886,13 +21887,13 @@ const translationData = [
         "spanish": "Santa Kateri creó hermosas artesanías usando técnicas tradicionales.",
         "segments": {
           "spanish": [
-            "santa kateri creó",
+            "Santa Kateri creó",
             "hermosas artesanías",
             "usando",
             "técnicas tradicionales"
           ],
           "english": [
-            "st kateri created",
+            "st Kateri created",
             "beautiful crafts",
             "using",
             "traditional techniques"
@@ -21904,13 +21905,13 @@ const translationData = [
         "spanish": "Santa Kateri combinó sabiduría indígena con nuevas prácticas curativas.",
         "segments": {
           "spanish": [
-            "santa kateri combinó",
+            "Santa Kateri combinó",
             "sabiduría indígena",
             "con nuevas",
             "prácticas curativas"
           ],
           "english": [
-            "st kateri combined",
+            "st Kateri combined",
             "indigenous wisdom",
             "with new",
             "healing practices"
@@ -21922,13 +21923,13 @@ const translationData = [
         "spanish": "Santa Kateri ayudó a unir dos mundos culturales diferentes.",
         "segments": {
           "spanish": [
-            "santa kateri ayudó",
+            "Santa Kateri ayudó",
             "a unir",
             "dos mundos culturales",
             "diferentes"
           ],
           "english": [
-            "st kateri helped",
+            "st Kateri helped",
             "bridge",
             "two cultural worlds",
             "different"
@@ -21940,13 +21941,13 @@ const translationData = [
         "spanish": "Santa Kateri perseveró a través de enfermedades con notable valentía.",
         "segments": {
           "spanish": [
-            "santa kateri perseveró",
+            "Santa Kateri perseveró",
             "a través de enfermedades",
             "con notable",
             "valentía"
           ],
           "english": [
-            "st kateri persevered",
+            "st Kateri persevered",
             "through illness",
             "with remarkable",
             "courage"
@@ -21958,13 +21959,13 @@ const translationData = [
         "spanish": "Santa Kateri recorrió caminos difíciles para seguir sus creencias.",
         "segments": {
           "spanish": [
-            "santa kateri recorrió",
+            "Santa Kateri recorrió",
             "caminos difíciles",
             "para seguir",
             "sus creencias"
           ],
           "english": [
-            "st kateri traveled",
+            "st Kateri traveled",
             "difficult paths",
             "to pursue",
             "her beliefs"
@@ -21976,13 +21977,13 @@ const translationData = [
         "spanish": "Santa Kateri demostró paciencia al enseñar habilidades tradicionales a niños.",
         "segments": {
           "spanish": [
-            "santa kateri demostró",
+            "Santa Kateri demostró",
             "paciencia",
             "al enseñar habilidades tradicionales",
             "a niños"
           ],
           "english": [
-            "st kateri demonstrated",
+            "st Kateri demonstrated",
             "patience",
             "when teaching traditional skills",
             "to children"
@@ -21994,13 +21995,13 @@ const translationData = [
         "spanish": "Santa Kateri creó soluciones a pesar de recursos limitados disponibles.",
         "segments": {
           "spanish": [
-            "santa kateri creó",
+            "Santa Kateri creó",
             "soluciones",
             "a pesar de",
             "recursos limitados disponibles"
           ],
           "english": [
-            "st kateri created",
+            "st Kateri created",
             "solutions",
             "despite",
             "limited resources available"
@@ -22012,13 +22013,13 @@ const translationData = [
         "spanish": "Santa Kateri compartió su conocimiento de métodos naturales de curación.",
         "segments": {
           "spanish": [
-            "santa kateri compartió",
+            "Santa Kateri compartió",
             "su conocimiento",
             "de métodos naturales",
             "de curación"
           ],
           "english": [
-            "st kateri shared",
+            "st Kateri shared",
             "her knowledge",
             "of natural methods",
             "of healing"
@@ -22030,13 +22031,13 @@ const translationData = [
         "spanish": "Santa Kateri encontró armonía entre tradiciones y nuevas creencias.",
         "segments": {
           "spanish": [
-            "santa kateri encontró",
+            "Santa Kateri encontró",
             "armonía",
             "entre tradiciones",
             "y nuevas creencias"
           ],
           "english": [
-            "st kateri found",
+            "st Kateri found",
             "harmony",
             "between traditional ways",
             "and new beliefs"
@@ -22048,13 +22049,13 @@ const translationData = [
         "spanish": "Santa Kateri usó narrativa para preservar importante conocimiento cultural.",
         "segments": {
           "spanish": [
-            "santa kateri usó",
+            "Santa Kateri usó",
             "narrativa",
             "para preservar",
             "importante conocimiento cultural"
           ],
           "english": [
-            "st kateri used",
+            "st Kateri used",
             "storytelling",
             "to preserve",
             "important cultural knowledge"
@@ -22066,13 +22067,13 @@ const translationData = [
         "spanish": "Santa Kateri ayudó a otros a navegar transiciones culturales desafiantes.",
         "segments": {
           "spanish": [
-            "santa kateri ayudó",
+            "Santa Kateri ayudó",
             "a otros",
             "a navegar",
             "transiciones culturales desafiantes"
           ],
           "english": [
-            "st kateri helped",
+            "st Kateri helped",
             "others",
             "navigate",
             "challenging cultural transitions"
@@ -22084,13 +22085,13 @@ const translationData = [
         "spanish": "Santa Kateri demostró resiliencia frente a la discriminación.",
         "segments": {
           "spanish": [
-            "santa kateri demostró",
+            "Santa Kateri demostró",
             "resiliencia",
             "frente a",
             "la discriminación"
           ],
           "english": [
-            "st kateri demonstrated",
+            "st Kateri demonstrated",
             "resilience",
             "in the face of",
             "discrimination"
@@ -22102,16 +22103,16 @@ const translationData = [
         "spanish": "Santa Kateri construyó comunidad a través de oración y trabajo compartidos.",
         "segments": {
           "spanish": [
-            "santa kateri construyó",
+            "Santa Kateri construyó",
             "comunidad",
             "a través de",
             "oración y trabajo compartidos"
           ],
           "english": [
-            "st kateri built",
+            "st Kateri built",
             "community",
             "through",
-            "shared prayer and work"
+            "shared Prayer and work"
           ]
         }
       },
@@ -22120,13 +22121,13 @@ const translationData = [
         "spanish": "Santa Kateri adaptó conocimiento indígena de plantas para supervivencia comunitaria.",
         "segments": {
           "spanish": [
-            "santa kateri adaptó",
+            "Santa Kateri adaptó",
             "conocimiento indígena",
             "de plantas",
             "para supervivencia comunitaria"
           ],
           "english": [
-            "st kateri adapted",
+            "st Kateri adapted",
             "indigenous knowledge",
             "of plants",
             "for community survival"
@@ -22144,13 +22145,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina construyó",
-            "un robot solar",
+            "un Robot solar",
             "con la ayuda",
             "de papá"
           ],
           "english": [
             "seraphina built",
-            "a solar-powered robot",
+            "a solar-powered Robot",
             "with the help",
             "of daddy"
           ]
@@ -22200,13 +22201,13 @@ const translationData = [
             "seraphina creó",
             "historias interactivas",
             "usando bloques",
-            "de programación scratch"
+            "de programación Scratch"
           ],
           "english": [
             "seraphina created",
             "interactive stories",
             "using blocks",
-            "of scratch programming"
+            "of Scratch programming"
           ]
         }
       },
@@ -22236,13 +22237,13 @@ const translationData = [
             "seraphina diseñó",
             "personajes animados",
             "para sus proyectos",
-            "de scratch"
+            "de Scratch"
           ],
           "english": [
             "seraphina designed",
             "animated characters",
             "for her projects",
-            "of scratch"
+            "of Scratch"
           ]
         }
       },
@@ -22324,13 +22325,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina jugó",
-            "tortugas robot",
+            "Tortugas Robot",
             "para aprender",
             "conceptos básicos de programación"
           ],
           "english": [
             "seraphina played",
-            "robot turtles",
+            "Robot Turtles",
             "to learn",
             "basic programming concepts"
           ]
@@ -22380,13 +22381,13 @@ const translationData = [
             "seraphina programó",
             "una mascota virtual",
             "en su proyecto",
-            "de scratch"
+            "de Scratch"
           ],
           "english": [
             "seraphina programmed",
             "a virtual pet",
             "in her project",
-            "of scratch"
+            "of Scratch"
           ]
         }
       },
@@ -22416,13 +22417,13 @@ const translationData = [
             "seraphina programó",
             "patrones musicales",
             "usando bloques de sonido",
-            "en scratch"
+            "en Scratch"
           ],
           "english": [
             "seraphina coded",
             "musical patterns",
             "using sound blocks",
-            "in scratch"
+            "in Scratch"
           ]
         }
       },
@@ -22758,13 +22759,13 @@ const translationData = [
             "seraphina usó",
             "bloques de eventos",
             "para crear",
-            "historias interactivas en scratch"
+            "historias interactivas en Scratch"
           ],
           "english": [
             "seraphina used",
             "event blocks",
             "to make",
-            "interactive scratch stories"
+            "interactive Scratch stories"
           ]
         }
       },
@@ -22908,7 +22909,7 @@ const translationData = [
             "seraphina played chess",
             "with friends",
             "after school",
-            "on thursdays"
+            "on Thursdays"
           ]
         }
       },
@@ -23333,13 +23334,13 @@ const translationData = [
           "spanish": [
             "seraphina escuchó",
             "atentamente",
-            "mientras sensei explicaba",
+            "mientras Sensei explicaba",
             "nuevos movimientos"
           ],
           "english": [
             "seraphina listened",
             "attentively",
-            "as sensei explained",
+            "as Sensei explained",
             "new movements"
           ]
         }
@@ -23406,13 +23407,13 @@ const translationData = [
             "seraphina se inclinó",
             "respetuosamente",
             "antes de entrar",
-            "al dojo de aikido"
+            "al dojo de Aikido"
           ],
           "english": [
             "seraphina bowed",
             "respectfully",
             "before entering",
-            "the aikido dojo"
+            "the Aikido dojo"
           ]
         }
       },
@@ -23478,13 +23479,13 @@ const translationData = [
             "seraphina llegó",
             "temprano",
             "para prepararse",
-            "para cada clase de aikido"
+            "para cada clase de Aikido"
           ],
           "english": [
             "seraphina arrived",
             "early",
             "to prepare",
-            "for each aikido class"
+            "for each Aikido class"
           ]
         }
       },
@@ -23514,13 +23515,13 @@ const translationData = [
             "seraphina celebró",
             "pequeñas victorias",
             "en",
-            "su entrenamiento de aikido"
+            "su entrenamiento de Aikido"
           ],
           "english": [
             "seraphina celebrated",
             "small victories",
             "in",
-            "her aikido training"
+            "her Aikido training"
           ]
         }
       },
@@ -23640,13 +23641,13 @@ const translationData = [
             "seraphina hizo",
             "tarjetas bilingües",
             "para",
-            "los estudiantes principiantes de claudia"
+            "los estudiantes principiantes de Claudia"
           ],
           "english": [
             "seraphina made",
             "bilingual flashcards",
             "for",
-            "claudia's beginner spanish students"
+            "Claudia's beginner Spanish students"
           ]
         }
       },
@@ -23656,13 +23657,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina enseñó",
-            "a claudia",
+            "a Claudia",
             "sobre",
             "esfuerzos locales de conservación marina"
           ],
           "english": [
             "seraphina taught",
-            "claudia",
+            "Claudia",
             "about",
             "local marine conservation efforts"
           ]
@@ -23675,13 +23676,13 @@ const translationData = [
           "spanish": [
             "seraphina practicó",
             "dialectos regionales españoles",
-            "con claudia",
+            "con Claudia",
             "después de clases"
           ],
           "english": [
             "seraphina practiced",
-            "regional spanish dialects",
-            "with claudia",
+            "regional Spanish dialects",
+            "with Claudia",
             "after school"
           ]
         }
@@ -23691,13 +23692,13 @@ const translationData = [
         "spanish": "Seraphina y Claudia crearon letreros bilingües para el jardín comunitario.",
         "segments": {
           "spanish": [
-            "seraphina y claudia",
+            "seraphina y Claudia",
             "crearon",
             "letreros bilingües",
             "para el jardín comunitario"
           ],
           "english": [
-            "seraphina and claudia",
+            "seraphina and Claudia",
             "created",
             "bilingual signs",
             "for the community garden"
@@ -23712,13 +23713,13 @@ const translationData = [
             "seraphina grabó",
             "sonidos naturales",
             "para",
-            "actividades auditivas españolas de claudia"
+            "actividades auditivas españolas de Claudia"
           ],
           "english": [
             "seraphina recorded",
             "nature sounds",
             "for",
-            "claudia's spanish listening activities"
+            "Claudia's Spanish listening activities"
           ]
         }
       },
@@ -23728,13 +23729,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina se ofreció",
-            "como asistente de claudia",
+            "como asistente de Claudia",
             "durante",
             "eventos de intercambio cultural"
           ],
           "english": [
             "seraphina volunteered",
-            "as claudia's assistant",
+            "as Claudia's assistant",
             "during",
             "cultural exchange events"
           ]
@@ -23748,13 +23749,13 @@ const translationData = [
             "seraphina dirigió",
             "caminatas naturales",
             "en español",
-            "con la guía de claudia"
+            "con la guía de Claudia"
           ],
           "english": [
             "seraphina led",
             "nature walks",
-            "in spanish",
-            "with claudia's guidance"
+            "in Spanish",
+            "with Claudia's guidance"
           ]
         }
       },
@@ -23766,13 +23767,13 @@ const translationData = [
             "seraphina escribió",
             "guías bilingües",
             "de identificación de plantas",
-            "con claudia"
+            "con Claudia"
           ],
           "english": [
             "seraphina wrote",
             "bilingual guides",
             "for plant identification",
-            "with claudia"
+            "with Claudia"
           ]
         }
       },
@@ -23789,7 +23790,7 @@ const translationData = [
           "english": [
             "seraphina recited",
             "bravely",
-            "spanish poetry",
+            "Spanish poetry",
             "at the community celebration"
           ]
         }
@@ -23800,13 +23801,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina ayudó",
-            "a claudia",
+            "a Claudia",
             "a traducir artículos científicos",
             "sobre cambio climático"
           ],
           "english": [
             "seraphina helped",
-            "claudia",
+            "Claudia",
             "translate scientific articles",
             "about climate change"
           ]
@@ -23820,13 +23821,13 @@ const translationData = [
             "seraphina creó",
             "un mural bilingüe",
             "con",
-            "la clase de español de claudia"
+            "la clase de español de Claudia"
           ],
           "english": [
             "seraphina created",
             "a bilingual mural",
             "with",
-            "claudia's spanish class"
+            "Claudia's Spanish class"
           ]
         }
       },
@@ -23843,7 +23844,7 @@ const translationData = [
           "english": [
             "seraphina interviewed",
             "local elders",
-            "in spanish",
+            "in Spanish",
             "for history project"
           ]
         }
@@ -23860,7 +23861,7 @@ const translationData = [
           ],
           "english": [
             "seraphina demonstrated",
-            "spanish cooking techniques",
+            "Spanish cooking techniques",
             "during",
             "cultural food day"
           ]
@@ -23890,13 +23891,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina ayudó",
-            "a claudia",
+            "a Claudia",
             "a organizar",
             "un día multicultural de conciencia ambiental"
           ],
           "english": [
             "seraphina helped",
-            "claudia",
+            "Claudia",
             "organize",
             "a multicultural environmental awareness day"
           ]
@@ -23914,7 +23915,7 @@ const translationData = [
           ],
           "english": [
             "seraphina taught",
-            "spanish names",
+            "Spanish names",
             "for native plants",
             "during field trips"
           ]
@@ -23928,13 +23929,13 @@ const translationData = [
             "seraphina preparó",
             "presentaciones científicas bilingües",
             "para",
-            "la clase de claudia"
+            "la clase de Claudia"
           ],
           "english": [
             "seraphina prepared",
             "bilingual science presentations",
             "for",
-            "claudia's spanish class"
+            "Claudia's Spanish class"
           ]
         }
       },
@@ -23944,13 +23945,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina colaboró",
-            "con claudia",
+            "con Claudia",
             "para escribir",
             "canciones sobre conservación ambiental"
           ],
           "english": [
             "seraphina collaborated",
-            "with claudia",
+            "with Claudia",
             "to write",
             "environmental conservation songs"
           ]
@@ -23981,13 +23982,13 @@ const translationData = [
           "spanish": [
             "seraphina practicó",
             "conversaciones en español",
-            "con claudia",
+            "con Claudia",
             "durante los descansos"
           ],
           "english": [
             "seraphina practiced",
-            "spanish conversations",
-            "with claudia",
+            "Spanish conversations",
+            "with Claudia",
             "during lunch breaks"
           ]
         }
@@ -23998,13 +23999,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina ayudó",
-            "a claudia",
+            "a Claudia",
             "a organizar",
             "un programa de intercambio cultural"
           ],
           "english": [
             "seraphina helped",
-            "claudia",
+            "Claudia",
             "organize",
             "a cultural exchange program"
           ]
@@ -24018,13 +24019,13 @@ const translationData = [
             "seraphina tradujo",
             "folletos ambientales",
             "con",
-            "la guía de claudia"
+            "la guía de Claudia"
           ],
           "english": [
             "seraphina translated",
             "environmental brochures",
             "with",
-            "claudia's guidance"
+            "Claudia's guidance"
           ]
         }
       },
@@ -24036,13 +24037,13 @@ const translationData = [
             "seraphina entrevistó",
             "a hispanohablantes locales",
             "para",
-            "el proyecto de claudia"
+            "el proyecto de Claudia"
           ],
           "english": [
             "seraphina interviewed",
-            "local spanish speakers",
+            "local Spanish speakers",
             "for",
-            "claudia's class project"
+            "Claudia's class project"
           ]
         }
       },
@@ -24078,7 +24079,7 @@ const translationData = [
             "seraphina courageously",
             "gave",
             "a presentation",
-            "entirely in spanish"
+            "entirely in Spanish"
           ]
         }
       },
@@ -24087,16 +24088,16 @@ const translationData = [
         "spanish": "Seraphina y Claudia desarrollaron un programa científico en español.",
         "segments": {
           "spanish": [
-            "seraphina y claudia",
+            "seraphina y Claudia",
             "desarrollaron",
             "un programa científico",
             "en español"
           ],
           "english": [
-            "seraphina and claudia",
+            "seraphina and Claudia",
             "developed",
             "a science program",
-            "in spanish"
+            "in Spanish"
           ]
         }
       },
@@ -24114,7 +24115,7 @@ const translationData = [
             "seraphina helped",
             "younger students",
             "with",
-            "spanish homework"
+            "Spanish homework"
           ]
         }
       },
@@ -24150,7 +24151,7 @@ const translationData = [
             "seraphina organized",
             "a cleanup day",
             "at the beach",
-            "in spanish"
+            "in Spanish"
           ]
         }
       },
@@ -24162,13 +24163,13 @@ const translationData = [
             "seraphina aprendió",
             "recetas tradicionales",
             "durante",
-            "la clase culinaria cultural de claudia"
+            "la clase culinaria cultural de Claudia"
           ],
           "english": [
             "seraphina learned",
             "traditional recipes",
             "during",
-            "claudia's cultural cooking class"
+            "Claudia's cultural cooking class"
           ]
         }
       },
@@ -24184,7 +24185,7 @@ const translationData = [
           ],
           "english": [
             "seraphina created",
-            "a spanish language podcast",
+            "a Spanish language podcast",
             "about",
             "local ecology"
           ]
@@ -24204,7 +24205,7 @@ const translationData = [
             "seraphina kindly",
             "tutored",
             "classmates",
-            "struggling with spanish pronunciation"
+            "struggling with Spanish pronunciation"
           ]
         }
       },
@@ -24214,13 +24215,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina colaboró",
-            "con claudia",
+            "con Claudia",
             "en",
             "un boletín comunitario bilingüe"
           ],
           "english": [
             "seraphina collaborated",
-            "with claudia",
+            "with Claudia",
             "on",
             "a bilingual community newsletter"
           ]
@@ -24240,7 +24241,7 @@ const translationData = [
             "seraphina researched",
             "indigenous plant names",
             "in",
-            "spanish and english"
+            "Spanish and English"
           ]
         }
       },
@@ -24252,13 +24253,13 @@ const translationData = [
             "seraphina actuó",
             "en el festival cultural",
             "en español",
-            "de claudia"
+            "de Claudia"
           ],
           "english": [
             "seraphina performed",
             "in the cultural festival",
-            "in spanish",
-            "of claudia"
+            "in Spanish",
+            "of Claudia"
           ]
         }
       },
@@ -24270,13 +24271,13 @@ const translationData = [
             "seraphina diseñó",
             "juegos educativos bilingües",
             "con",
-            "la guía de claudia"
+            "la guía de Claudia"
           ],
           "english": [
             "seraphina designed",
             "bilingual educational games",
             "with",
-            "claudia's guidance"
+            "Claudia's guidance"
           ]
         }
       },
@@ -24294,7 +24295,7 @@ const translationData = [
             "seraphina helped",
             "translate scientific terms",
             "for",
-            "spanish-speaking community members"
+            "Spanish-speaking community members"
           ]
         }
       },
@@ -24312,7 +24313,7 @@ const translationData = [
             "seraphina documented",
             "local marine life",
             "using",
-            "spanish and english"
+            "Spanish and English"
           ]
         }
       },
@@ -24329,7 +24330,7 @@ const translationData = [
           "english": [
             "seraphina created",
             "beautiful poetry",
-            "in spanish",
+            "in Spanish",
             "about ocean conservation"
           ]
         }
@@ -24342,13 +24343,13 @@ const translationData = [
             "seraphina presentó",
             "su proyecto",
             "de energía renovable",
-            "al sr hanson"
+            "al Sr. Hanson"
           ],
           "english": [
             "seraphina presented",
             "her project",
             "of renewable energy",
-            "to mr hanson"
+            "to Mr. Hanson"
           ]
         }
       },
@@ -24429,15 +24430,15 @@ const translationData = [
         "spanish": "Seraphina y Max construyeron un robot con materiales reciclados.",
         "segments": {
           "spanish": [
-            "seraphina y max",
+            "seraphina y Max",
             "construyeron",
-            "un robot",
+            "un Robot",
             "con materiales reciclados"
           ],
           "english": [
-            "seraphina and max",
+            "seraphina and Max",
             "built",
-            "a robot",
+            "a Robot",
             "from recycled materials"
           ]
         }
@@ -24450,13 +24451,13 @@ const translationData = [
             "seraphina dirigió",
             "un día de limpieza",
             "de playa",
-            "con mary"
+            "con Mary"
           ],
           "english": [
             "seraphina led",
             "a cleanup day",
             "at the beach",
-            "with mary"
+            "with Mary"
           ]
         }
       },
@@ -24466,13 +24467,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina trabajó",
-            "con violet",
+            "con Violet",
             "para monitorear",
             "la calidad del agua local"
           ],
           "english": [
             "seraphina worked",
-            "with violet",
+            "with Violet",
             "to monitor",
             "local water quality"
           ]
@@ -24484,13 +24485,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina enseñó",
-            "a gianna",
+            "a Gianna",
             "sobre",
             "prácticas de jardinería sostenible"
           ],
           "english": [
             "seraphina taught",
-            "gianna",
+            "Gianna",
             "about",
             "sustainable gardening practices"
           ]
@@ -24501,13 +24502,13 @@ const translationData = [
         "spanish": "Seraphina y Gabriel diseñaron una aplicación para rastrear vida silvestre.",
         "segments": {
           "spanish": [
-            "seraphina y gabriel",
+            "seraphina y Gabriel",
             "diseñaron",
             "una aplicación",
             "para rastrear vida silvestre"
           ],
           "english": [
-            "seraphina and gabriel",
+            "seraphina and Gabriel",
             "designed",
             "an app",
             "for tracking wildlife"
@@ -24520,13 +24521,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina mostró",
-            "a teddy",
+            "a Teddy",
             "cómo identificar",
             "especies nativas de aves"
           ],
           "english": [
             "seraphina showed",
-            "teddy",
+            "Teddy",
             "how to identify",
             "native bird species"
           ]
@@ -24537,13 +24538,13 @@ const translationData = [
         "spanish": "Seraphina y Emmett crearon un filtro de agua solar.",
         "segments": {
           "spanish": [
-            "seraphina y emmett",
+            "seraphina y Emmett",
             "crearon",
             "un filtro de agua",
             "solar"
           ],
           "english": [
-            "seraphina and emmett",
+            "seraphina and Emmett",
             "created",
             "a water filter",
             "solar-powered"
@@ -24574,13 +24575,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina ayudó",
-            "a june",
+            "a June",
             "a preparar",
             "su proyecto para la feria científica"
           ],
           "english": [
             "seraphina helped",
-            "june",
+            "June",
             "prepare",
             "her science fair project"
           ]
@@ -24591,13 +24592,13 @@ const translationData = [
         "spanish": "Seraphina y Averie documentaron patrones locales de migración de mariposas.",
         "segments": {
           "spanish": [
-            "seraphina y averie",
+            "seraphina y Averie",
             "documentaron",
             "patrones locales",
             "de migración de mariposas"
           ],
           "english": [
-            "seraphina and averie",
+            "seraphina and Averie",
             "documented",
             "local patterns",
             "of butterfly migration"
@@ -24610,13 +24611,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina enseñó",
-            "a addie",
+            "a Addie",
             "cómo cultivar",
             "vegetales hidropónicamente"
           ],
           "english": [
             "seraphina taught",
-            "addie",
+            "Addie",
             "how to grow",
             "vegetables hydroponically"
           ]
@@ -24627,13 +24628,13 @@ const translationData = [
         "spanish": "Seraphina y Rebekah desarrollaron un programa vecinal de intercambio de semillas.",
         "segments": {
           "spanish": [
-            "seraphina y rebekah",
+            "seraphina y Rebekah",
             "desarrollaron",
             "un programa vecinal",
             "de intercambio de semillas"
           ],
           "english": [
-            "seraphina and rebekah",
+            "seraphina and Rebekah",
             "developed",
             "a neighborhood program",
             "of seed exchange"
@@ -24646,13 +24647,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina ayudó",
-            "a maddox",
+            "a Maddox",
             "a identificar",
             "especies de plantas nativas"
           ],
           "english": [
             "seraphina helped",
-            "maddox",
+            "Maddox",
             "identify",
             "native plant species"
           ]
@@ -24665,13 +24666,13 @@ const translationData = [
           "spanish": [
             "seraphina recibió",
             "orientación",
-            "del sr hanson",
+            "del Sr. Hanson",
             "sobre métodos científicos"
           ],
           "english": [
             "seraphina received",
             "guidance",
-            "from mr hanson",
+            "from Mr. Hanson",
             "on scientific methods"
           ]
         }
@@ -24736,13 +24737,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina enseñó",
-            "a max",
+            "a Max",
             "cómo identificar constelaciones",
             "por la noche"
           ],
           "english": [
             "seraphina taught",
-            "max",
+            "Max",
             "how to identify constellations",
             "at night"
           ]
@@ -24754,13 +24755,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina ayudó",
-            "a mary",
+            "a Mary",
             "a crear",
             "una presentación para la feria científica"
           ],
           "english": [
             "seraphina helped",
-            "mary",
+            "Mary",
             "create",
             "a science fair presentation"
           ]
@@ -24771,13 +24772,13 @@ const translationData = [
         "spanish": "Seraphina y Violet analizaron la calidad del agua en playas locales.",
         "segments": {
           "spanish": [
-            "seraphina y violet",
+            "seraphina y Violet",
             "analizaron",
             "la calidad del agua",
             "en playas locales"
           ],
           "english": [
-            "seraphina and violet",
+            "seraphina and Violet",
             "tested",
             "water quality",
             "at local beaches"
@@ -24790,13 +24791,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina mostró",
-            "a gianna",
+            "a Gianna",
             "cómo cultivar cristales",
             "en casa"
           ],
           "english": [
             "seraphina showed",
-            "gianna",
+            "Gianna",
             "how to grow crystals",
             "at home"
           ]
@@ -24807,13 +24808,13 @@ const translationData = [
         "spanish": "Seraphina y Gabriel programaron un videojuego simple juntos.",
         "segments": {
           "spanish": [
-            "seraphina y gabriel",
+            "seraphina y Gabriel",
             "programaron",
             "un videojuego simple",
             "juntos"
           ],
           "english": [
-            "seraphina and gabriel",
+            "seraphina and Gabriel",
             "programmed",
             "a simple video game",
             "together"
@@ -24826,13 +24827,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina ayudó",
-            "a teddy",
+            "a Teddy",
             "a identificar",
             "diferentes tipos de nubes"
           ],
           "english": [
             "seraphina helped",
-            "teddy",
+            "Teddy",
             "identify",
             "different types of clouds"
           ]
@@ -24843,13 +24844,13 @@ const translationData = [
         "spanish": "Seraphina y Emmett construyeron casas para aves de especies amenazadas.",
         "segments": {
           "spanish": [
-            "seraphina y emmett",
+            "seraphina y Emmett",
             "construyeron",
             "casas para aves",
             "de especies amenazadas"
           ],
           "english": [
-            "seraphina and emmett",
+            "seraphina and Emmett",
             "built",
             "bird houses",
             "for endangered species"
@@ -24879,13 +24880,13 @@ const translationData = [
         "spanish": "Seraphina y June crearon un modelo del sistema solar.",
         "segments": {
           "spanish": [
-            "seraphina y june",
+            "seraphina y June",
             "crearon",
             "un modelo",
             "del sistema solar"
           ],
           "english": [
-            "seraphina and june",
+            "seraphina and June",
             "created",
             "a model",
             "of the solar system"
@@ -24898,13 +24899,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina mostró",
-            "a averie",
+            "a Averie",
             "cómo hacer",
             "tintes naturales"
           ],
           "english": [
             "seraphina showed",
-            "averie",
+            "Averie",
             "how to make",
             "natural dyes"
           ]
@@ -24915,13 +24916,13 @@ const translationData = [
         "spanish": "Seraphina y Addie construyeron un terrario para estudiar ecosistemas.",
         "segments": {
           "spanish": [
-            "seraphina y addie",
+            "seraphina y Addie",
             "construyeron",
             "un terrario",
             "para estudiar ecosistemas"
           ],
           "english": [
-            "seraphina and addie",
+            "seraphina and Addie",
             "built",
             "a terrarium",
             "to study ecosystems"
@@ -24934,13 +24935,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina ayudó",
-            "a rebekah",
+            "a Rebekah",
             "a identificar",
             "especies nativas de mariposas"
           ],
           "english": [
             "seraphina helped",
-            "rebekah",
+            "Rebekah",
             "identify",
             "native butterfly species"
           ]
@@ -25186,13 +25187,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina construyó",
-            "su robot",
+            "su Robot",
             "ensamblando",
             "componentes individuales metódicamente"
           ],
           "english": [
             "seraphina built",
-            "her robot",
+            "her Robot",
             "by assembling",
             "individual components methodically"
           ]
@@ -25311,13 +25312,13 @@ const translationData = [
         "spanish": "Seraphina y Maddox crearon un mapa digital del vecindario.",
         "segments": {
           "spanish": [
-            "seraphina y maddox",
+            "seraphina y Maddox",
             "crearon",
             "un mapa digital",
             "del vecindario"
           ],
           "english": [
-            "seraphina and maddox",
+            "seraphina and Maddox",
             "created",
             "a digital map",
             "of the neighborhood"
@@ -25601,13 +25602,13 @@ const translationData = [
           "spanish": [
             "seraphina se dio cuenta",
             "de que las técnicas de respiración",
-            "del aikido",
+            "del Aikido",
             "mejoraban su interpretación con la flauta"
           ],
           "english": [
             "seraphina realized",
             "that breathing techniques",
-            "from aikido",
+            "from Aikido",
             "improved her flute playing"
           ]
         }
@@ -25618,13 +25619,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina aplicó",
-            "su concentración de aikido",
+            "su concentración de Aikido",
             "para superar",
             "pasajes difíciles de flauta"
           ],
           "english": [
             "seraphina applied",
-            "her aikido focus",
+            "her Aikido focus",
             "to overcome",
             "difficult flute passages"
           ]
@@ -25637,13 +25638,13 @@ const translationData = [
           "spanish": [
             "seraphina descubrió",
             "que los principios de equilibrio",
-            "del aikido",
+            "del Aikido",
             "ayudaban a su postura con la flauta"
           ],
           "english": [
             "seraphina discovered",
             "that balance principles",
-            "from aikido",
+            "from Aikido",
             "helped her flute posture"
           ]
         }
@@ -25655,13 +25656,13 @@ const translationData = [
           "spanish": [
             "seraphina conectó",
             "los movimientos fluidos",
-            "del aikido",
+            "del Aikido",
             "con la melodía fluida de su flauta"
           ],
           "english": [
             "seraphina connected",
             "the fluid movements",
-            "of aikido",
+            "of Aikido",
             "with the flowing melody of her flute"
           ]
         }
@@ -25672,13 +25673,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina encontró",
-            "que la disciplina del aikido",
+            "que la disciplina del Aikido",
             "se transfería perfectamente",
             "a su práctica diaria de flauta"
           ],
           "english": [
             "seraphina found",
-            "that aikido discipline",
+            "that Aikido discipline",
             "transferred perfectly",
             "to her daily flute practice"
           ]
@@ -25691,13 +25692,13 @@ const translationData = [
           "spanish": [
             "seraphina usó",
             "técnicas de atención plena",
-            "del aikido",
+            "del Aikido",
             "para mejorar su ansiedad por tocar la flauta"
           ],
           "english": [
             "seraphina used",
             "mindfulness techniques",
-            "from aikido",
+            "from Aikido",
             "to improve her flute performance anxiety"
           ]
         }
@@ -25708,13 +25709,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina notó",
-            "que tanto el aikido",
+            "que tanto el Aikido",
             "como tocar la flauta",
             "requerían una coordinación armoniosa de su cuerpo"
           ],
           "english": [
             "seraphina noticed",
-            "that both aikido",
+            "that both Aikido",
             "and flute playing",
             "required harmonious coordination of her body"
           ]
@@ -25727,13 +25728,13 @@ const translationData = [
           "spanish": [
             "seraphina aplicó",
             "la filosofía de paciencia",
-            "de su sensei",
+            "de su Sensei",
             "al aprender técnicas difíciles de flauta"
           ],
           "english": [
             "seraphina applied",
             "the patience philosophy",
-            "of her sensei",
+            "of her Sensei",
             "to learning difficult flute techniques"
           ]
         }
@@ -25745,13 +25746,13 @@ const translationData = [
           "spanish": [
             "seraphina reconoció",
             "que la disciplina",
-            "del aikido",
+            "del Aikido",
             "le ayudó a perseverar con la práctica de flauta"
           ],
           "english": [
             "seraphina recognized",
             "that the discipline",
-            "from aikido",
+            "from Aikido",
             "helped her persevere with flute practice"
           ]
         }
@@ -25762,13 +25763,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina observó",
-            "que el énfasis del aikido",
+            "que el énfasis del Aikido",
             "en el ritmo respiratorio",
             "mejoró su fraseo con la flauta"
           ],
           "english": [
             "seraphina observed",
-            "that aikido's emphasis",
+            "that Aikido's emphasis",
             "on breathing rhythm",
             "improved her flute phrasing"
           ]
@@ -25781,13 +25782,13 @@ const translationData = [
           "spanish": [
             "seraphina trazó",
             "paralelos",
-            "entre el flujo de movimientos de aikido",
+            "entre el flujo de movimientos de Aikido",
             "y los pasajes musicales en su flauta"
           ],
           "english": [
             "seraphina drew",
             "parallels",
-            "between the flow of aikido movements",
+            "between the flow of Aikido movements",
             "and musical passages on her flute"
           ]
         }
@@ -25799,13 +25800,13 @@ const translationData = [
           "spanish": [
             "seraphina aplicó",
             "las técnicas de concentración",
-            "de su maestro de aikido",
+            "de su maestro de Aikido",
             "para memorizar piezas complejas de flauta"
           ],
           "english": [
             "seraphina applied",
             "the focus techniques",
-            "of her aikido teacher",
+            "of her Aikido teacher",
             "to memorize complex flute pieces"
           ]
         }
@@ -25817,13 +25818,13 @@ const translationData = [
           "spanish": [
             "seraphina descubrió",
             "que los ejercicios de centrado",
-            "del aikido",
+            "del Aikido",
             "le ayudaban a encontrar el punto dulce de la flauta"
           ],
           "english": [
             "seraphina discovered",
             "that centering exercises",
-            "from aikido",
+            "from Aikido",
             "helped her find the flute's sweet spot"
           ]
         }
@@ -25834,13 +25835,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "seraphina se dio cuenta",
-            "de que tanto el aikido como tocar la flauta",
+            "de que tanto el Aikido como tocar la flauta",
             "requerían encontrar",
             "armonía entre tensión y relajación"
           ],
           "english": [
             "seraphina realized",
-            "both aikido and flute playing",
+            "both Aikido and flute playing",
             "required finding",
             "harmony between tension and relaxation"
           ]
@@ -25853,13 +25854,13 @@ const translationData = [
           "spanish": [
             "seraphina reflexionó",
             "sobre cómo la atención plena",
-            "del aikido",
+            "del Aikido",
             "le ayudó a conectar emocionalmente con la música de flauta"
           ],
           "english": [
             "seraphina reflected",
             "on how mindfulness",
-            "from aikido",
+            "from Aikido",
             "helped her connect emotionally with flute music"
           ]
         }
@@ -25869,14 +25870,14 @@ const translationData = [
         "spanish": "Mulan combinó enfoques chinos y americanos para resolver los desafíos de su tarea de matemáticas.",
         "segments": {
           "spanish": [
-            "mulan combinó",
+            "Mulan combinó",
             "enfoques chinos y americanos",
             "para resolver",
             "los desafíos de su tarea de matemáticas"
           ],
           "english": [
-            "mulan combined",
-            "chinese and american approaches",
+            "Mulan combined",
+            "Chinese and American approaches",
             "to solve",
             "her math homework challenges"
           ]
@@ -25887,15 +25888,15 @@ const translationData = [
         "spanish": "Mulan explicó tradiciones chinas a sus amigos americanos usando referencias culturales familiares.",
         "segments": {
           "spanish": [
-            "mulan explicó",
+            "Mulan explicó",
             "tradiciones chinas",
             "a sus amigos americanos",
             "usando referencias culturales familiares"
           ],
           "english": [
-            "mulan explained",
-            "chinese traditions",
-            "to her american friends",
+            "Mulan explained",
+            "Chinese traditions",
+            "to her American friends",
             "using familiar cultural references"
           ]
         }
@@ -25905,13 +25906,13 @@ const translationData = [
         "spanish": "Mulan entendió las perspectivas de sus compañeros apoyándose en sus experiencias biculturales.",
         "segments": {
           "spanish": [
-            "mulan entendió",
+            "Mulan entendió",
             "las perspectivas de sus compañeros",
             "apoyándose",
             "en sus experiencias biculturales"
           ],
           "english": [
-            "mulan understood",
+            "Mulan understood",
             "her classmates' perspectives",
             "by drawing",
             "from her bicultural experiences"
@@ -25923,13 +25924,13 @@ const translationData = [
         "spanish": "Mulan usó técnicas narrativas de ambas culturas para crear proyectos artísticos únicos.",
         "segments": {
           "spanish": [
-            "mulan usó",
+            "Mulan usó",
             "técnicas narrativas",
             "de ambas culturas",
             "para crear proyectos artísticos únicos"
           ],
           "english": [
-            "mulan used",
+            "Mulan used",
             "storytelling techniques",
             "from both cultures",
             "to create unique art projects"
@@ -25941,16 +25942,16 @@ const translationData = [
         "spanish": "Mulan resolvió conflictos entre amigos aplicando sabiduría de proverbios chinos y psicología americana.",
         "segments": {
           "spanish": [
-            "mulan resolvió",
+            "Mulan resolvió",
             "conflictos entre amigos",
             "aplicando sabiduría",
             "de proverbios chinos y psicología americana"
           ],
           "english": [
-            "mulan resolved",
+            "Mulan resolved",
             "conflict between friends",
             "by applying wisdom",
-            "from chinese proverbs and american psychology"
+            "from Chinese proverbs and American psychology"
           ]
         }
       },
@@ -25959,13 +25960,13 @@ const translationData = [
         "spanish": "Mulan navegó situaciones sociales adaptando estilos de comunicación de ambos contextos culturales.",
         "segments": {
           "spanish": [
-            "mulan navegó",
+            "Mulan navegó",
             "situaciones sociales",
             "adaptando",
             "estilos de comunicación de ambos contextos culturales"
           ],
           "english": [
-            "mulan navigated",
+            "Mulan navigated",
             "social situations",
             "by adapting",
             "communication styles from both cultural backgrounds"
@@ -25977,16 +25978,16 @@ const translationData = [
         "spanish": "Mulan diseñó soluciones innovadoras combinando métodos tradicionales chinos con tecnología americana.",
         "segments": {
           "spanish": [
-            "mulan diseñó",
+            "Mulan diseñó",
             "soluciones innovadoras",
             "combinando",
             "métodos tradicionales chinos con tecnología americana"
           ],
           "english": [
-            "mulan designed",
+            "Mulan designed",
             "innovative solutions",
             "by blending",
-            "traditional chinese methods with american technology"
+            "traditional Chinese methods with American technology"
           ]
         }
       },
@@ -25995,13 +25996,13 @@ const translationData = [
         "spanish": "Mulan construyó puentes entre diferentes grupos de amigos usando empatía adquirida de sus perspectivas duales.",
         "segments": {
           "spanish": [
-            "mulan construyó",
+            "Mulan construyó",
             "puentes entre diferentes grupos de amigos",
             "usando",
             "empatía adquirida de sus perspectivas duales"
           ],
           "english": [
-            "mulan built",
+            "Mulan built",
             "bridges between different friend groups",
             "using",
             "empathy gained from her dual perspectives"
@@ -26013,13 +26014,13 @@ const translationData = [
         "spanish": "Mulan ayudó a su maestra a crear actividades inclusivas en el aula compartiendo perspectivas multiculturales.",
         "segments": {
           "spanish": [
-            "mulan ayudó",
+            "Mulan ayudó",
             "a su maestra",
             "a crear actividades inclusivas en el aula",
             "compartiendo perspectivas multiculturales"
           ],
           "english": [
-            "mulan helped",
+            "Mulan helped",
             "her teacher",
             "create inclusive classroom activities",
             "by sharing multicultural insights"
@@ -26031,13 +26032,13 @@ const translationData = [
         "spanish": "Mulan interpretó dinámicas sociales complejas usando marcos de filosofías orientales y occidentales.",
         "segments": {
           "spanish": [
-            "mulan interpretó",
+            "Mulan interpretó",
             "dinámicas sociales complejas",
             "usando",
             "marcos de filosofías orientales y occidentales"
           ],
           "english": [
-            "mulan interpreted",
+            "Mulan interpreted",
             "complex social dynamics",
             "using",
             "frameworks from eastern and western philosophies"
@@ -26049,16 +26050,16 @@ const translationData = [
         "spanish": "Mulan abordó problemas ambientales con sabiduría combinada de la armonía china y la innovación americana.",
         "segments": {
           "spanish": [
-            "mulan abordó",
+            "Mulan abordó",
             "problemas ambientales",
             "con sabiduría combinada",
             "de la armonía china y la innovación americana"
           ],
           "english": [
-            "mulan approached",
+            "Mulan approached",
             "environmental problems",
             "with combined wisdom",
-            "from chinese harmony and american innovation"
+            "from Chinese harmony and American innovation"
           ]
         }
       },
@@ -26067,13 +26068,13 @@ const translationData = [
         "spanish": "Mulan conectó profundamente con diversos compañeros encontrando puntos comunes culturales y apreciando diferencias.",
         "segments": {
           "spanish": [
-            "mulan conectó profundamente",
+            "Mulan conectó profundamente",
             "con diversos compañeros",
             "encontrando puntos comunes culturales",
             "y apreciando diferencias"
           ],
           "english": [
-            "mulan connected deeply",
+            "Mulan connected deeply",
             "with diverse classmates",
             "by finding cultural commonalities",
             "and appreciating differences"
@@ -26085,13 +26086,13 @@ const translationData = [
         "spanish": "Mulan observó lecciones de historia a través de múltiples lentes culturales mejorando su comprensión de eventos globales.",
         "segments": {
           "spanish": [
-            "mulan observó",
+            "Mulan observó",
             "lecciones de historia",
             "a través de múltiples lentes culturales",
             "mejorando su comprensión de eventos globales"
           ],
           "english": [
-            "mulan viewed",
+            "Mulan viewed",
             "history lessons",
             "through multiple cultural lenses",
             "enhancing her understanding of global events"
@@ -26103,16 +26104,16 @@ const translationData = [
         "spanish": "Mulan creó obras de arte únicas combinando técnicas tradicionales chinas con estilos americanos contemporáneos.",
         "segments": {
           "spanish": [
-            "mulan creó",
+            "Mulan creó",
             "obras de arte únicas",
             "combinando",
             "técnicas tradicionales chinas con estilos americanos contemporáneos"
           ],
           "english": [
-            "mulan created",
+            "Mulan created",
             "unique artwork",
             "by blending",
-            "traditional chinese techniques with contemporary american styles"
+            "traditional Chinese techniques with contemporary American styles"
           ]
         }
       },
@@ -26121,16 +26122,16 @@ const translationData = [
         "spanish": "Mulan desarrolló soluciones creativas viendo problemas simultáneamente a través de marcos culturales chinos y americanos.",
         "segments": {
           "spanish": [
-            "mulan desarrolló",
+            "Mulan desarrolló",
             "soluciones creativas",
             "viendo problemas simultáneamente",
             "a través de marcos culturales chinos y americanos"
           ],
           "english": [
-            "mulan developed",
+            "Mulan developed",
             "creative solutions",
             "by seeing problems simultaneously",
-            "through chinese and american cultural frameworks"
+            "through Chinese and American cultural frameworks"
           ]
         }
       },
@@ -26139,13 +26140,13 @@ const translationData = [
         "spanish": "Mulan reflexionó sobre el carácter 聽 (escuchar), observando cómo combina oreja, corazón y ojos para mostrar la verdadera escucha.",
         "segments": {
           "spanish": [
-            "mulan reflexionó",
+            "Mulan reflexionó",
             "sobre el carácter 聽 (escuchar)",
             "observando cómo combina oreja corazón y ojos",
             "para mostrar la verdadera escucha"
           ],
           "english": [
-            "mulan reflected",
+            "Mulan reflected",
             "on the character 聽 (listen)",
             "seeing how it combines ear heart and eyes",
             "to show true listening"
@@ -26157,13 +26158,13 @@ const translationData = [
         "spanish": "Mulan comprendió 忍 (resistencia), que comprende una espada sobre el corazón, enseñándole sobre la fortaleza interior durante los desafíos.",
         "segments": {
           "spanish": [
-            "mulan comprendió",
+            "Mulan comprendió",
             "忍 (resistencia)",
             "que comprende una espada sobre el corazón",
             "enseñándole sobre la fortaleza interior durante los desafíos"
           ],
           "english": [
-            "mulan understood",
+            "Mulan understood",
             "忍 (endurance)",
             "comprising a blade above the heart",
             "teaching her about inner strength during challenges"
@@ -26175,13 +26176,13 @@ const translationData = [
         "spanish": "Mulan apreció cómo 學 (estudiar) muestra a un niño bajo un techo con las manos levantadas, simbolizando el entusiasmo por aprender.",
         "segments": {
           "spanish": [
-            "mulan apreció",
+            "Mulan apreció",
             "cómo 學 (estudiar)",
             "muestra a un niño bajo un techo con las manos levantadas",
             "simbolizando el entusiasmo por aprender"
           ],
           "english": [
-            "mulan appreciated",
+            "Mulan appreciated",
             "how 學 (study)",
             "shows a child under a roof with hands raised",
             "symbolizing the eagerness to learn"
@@ -26193,13 +26194,13 @@ const translationData = [
         "spanish": "Mulan descubrió en 森 (bosque) cómo tres árboles juntos crean algo mayor que las partes individuales.",
         "segments": {
           "spanish": [
-            "mulan descubrió",
+            "Mulan descubrió",
             "en 森 (bosque)",
             "cómo tres árboles juntos",
             "crean algo mayor que las partes individuales"
           ],
           "english": [
-            "mulan discovered",
+            "Mulan discovered",
             "in 森 (forest)",
             "how three trees together",
             "create something greater than individual parts"
@@ -26211,13 +26212,13 @@ const translationData = [
         "spanish": "Mulan contempló 安 (paz), que muestra a una mujer bajo un techo, ayudándole a valorar el hogar como santuario.",
         "segments": {
           "spanish": [
-            "mulan contempló",
+            "Mulan contempló",
             "安 (paz)",
             "que muestra a una mujer bajo un techo",
             "ayudándole a valorar el hogar como santuario"
           ],
           "english": [
-            "mulan contemplated",
+            "Mulan contemplated",
             "安 (peace)",
             "showing a woman under a roof",
             "helping her value home as a sanctuary"
@@ -26229,13 +26230,13 @@ const translationData = [
         "spanish": "Mulan examinó 好 (bueno) que combina mujer y niño, revelando cómo las relaciones forman la base de la bondad.",
         "segments": {
           "spanish": [
-            "mulan examinó",
+            "Mulan examinó",
             "好 (bueno)",
             "que combina mujer y niño",
             "revelando cómo las relaciones forman la base de la bondad"
           ],
           "english": [
-            "mulan examined",
+            "Mulan examined",
             "好 (good)",
             "combining woman and child",
             "revealing how relationships form the foundation of goodness"
@@ -26247,13 +26248,13 @@ const translationData = [
         "spanish": "Mulan vio en 尖 (afilado) cómo combinar pequeño y grande crea algo puntiagudo, enseñando equilibrio en el contraste.",
         "segments": {
           "spanish": [
-            "mulan vio",
+            "Mulan vio",
             "en 尖 (afilado)",
             "cómo combinar pequeño y grande crea algo puntiagudo",
             "enseñando equilibrio en el contraste"
           ],
           "english": [
-            "mulan saw",
+            "Mulan saw",
             "in 尖 (sharp)",
             "how combining small and big creates something pointed",
             "teaching balance in contrast"
@@ -26265,13 +26266,13 @@ const translationData = [
         "spanish": "Mulan reconoció cómo 明 (brillante) une el sol y la luna, inspirándola a ver cómo los opuestos crean plenitud.",
         "segments": {
           "spanish": [
-            "mulan reconoció",
+            "Mulan reconoció",
             "cómo 明 (brillante)",
             "une el sol y la luna",
             "inspirándola a ver cómo los opuestos crean plenitud"
           ],
           "english": [
-            "mulan recognized",
+            "Mulan recognized",
             "how 明 (bright)",
             "unites sun and moon",
             "inspiring her to see how opposites create completeness"
@@ -26283,13 +26284,13 @@ const translationData = [
         "spanish": "Mulan observó que 信 (confianza) combina persona y palabras, revelando cómo cumplir con la palabra construye integridad.",
         "segments": {
           "spanish": [
-            "mulan observó",
+            "Mulan observó",
             "que 信 (confianza)",
             "combina persona y palabras",
             "revelando cómo cumplir con la palabra construye integridad"
           ],
           "english": [
-            "mulan observed",
+            "Mulan observed",
             "that 信 (trust)",
             "combines person and words",
             "revealing how keeping one's word builds integrity"
@@ -26301,13 +26302,13 @@ const translationData = [
         "spanish": "Mulan se dio cuenta de que 智 (sabiduría) contiene conocimiento, habla y sol, mostrando cómo la verdadera sabiduría requiere comunicación iluminada.",
         "segments": {
           "spanish": [
-            "mulan se dio cuenta",
+            "Mulan se dio cuenta",
             "de que 智 (sabiduría)",
             "contiene conocimiento habla y sol",
             "mostrando cómo la verdadera sabiduría requiere comunicación iluminada"
           ],
           "english": [
-            "mulan realized",
+            "Mulan realized",
             "智 (wisdom)",
             "contains knowledge speech and sun",
             "showing how true wisdom requires illuminated communication"
@@ -26319,13 +26320,13 @@ const translationData = [
         "spanish": "Mulan meditó sobre 愛 (amor) con su corazón en el centro, enseñándole cómo el amor conecta todos los aspectos de la vida.",
         "segments": {
           "spanish": [
-            "mulan meditó",
+            "Mulan meditó",
             "sobre 愛 (amor)",
             "con su corazón en el centro",
             "enseñándole cómo el amor conecta todos los aspectos de la vida"
           ],
           "english": [
-            "mulan pondered",
+            "Mulan pondered",
             "愛 (love)",
             "with its heart at the center",
             "teaching her how love connects all aspects of life"
@@ -26337,13 +26338,13 @@ const translationData = [
         "spanish": "Mulan admiró cómo 謝 (gracias) contiene habla y regalos, mostrando la gratitud como palabras y acciones.",
         "segments": {
           "spanish": [
-            "mulan admiró",
+            "Mulan admiró",
             "cómo 謝 (gracias)",
             "contiene habla y regalos",
             "mostrando la gratitud como palabras y acciones"
           ],
           "english": [
-            "mulan admired",
+            "Mulan admired",
             "how 謝 (thank you)",
             "contains speech and gifts",
             "showing gratitude as both words and actions"
@@ -26355,13 +26356,13 @@ const translationData = [
         "spanish": "Mulan encontró significado en 忠 (lealtad) que muestra un corazón centrado, inspirando su compromiso con amigos y familia.",
         "segments": {
           "spanish": [
-            "mulan encontró significado",
+            "Mulan encontró significado",
             "en 忠 (lealtad)",
             "que muestra un corazón centrado",
             "inspirando su compromiso con amigos y familia"
           ],
           "english": [
-            "mulan found meaning",
+            "Mulan found meaning",
             "in 忠 (loyalty)",
             "showing a centered heart",
             "inspiring her commitment to friends and family"
@@ -26373,13 +26374,13 @@ const translationData = [
         "spanish": "Mulan estudió 家 (hogar) que representa un cerdo bajo un techo, ayudándole a ver el hogar como donde se unen el sustento y el refugio.",
         "segments": {
           "spanish": [
-            "mulan estudió",
+            "Mulan estudió",
             "家 (hogar)",
             "que representa un cerdo bajo un techo",
             "ayudándole a ver el hogar como donde se unen el sustento y el refugio"
           ],
           "english": [
-            "mulan studied",
+            "Mulan studied",
             "家 (home)",
             "depicting a pig under a roof",
             "helping her see home as where sustenance and shelter unite"
@@ -26391,13 +26392,13 @@ const translationData = [
         "spanish": "Mulan conectó con 朋 (amigo) formado por dos caracteres de luna lado a lado, revelando la amistad como viajes compartidos.",
         "segments": {
           "spanish": [
-            "mulan conectó",
+            "Mulan conectó",
             "con 朋 (amigo)",
             "formado por dos caracteres de luna lado a lado",
             "revelando la amistad como viajes compartidos"
           ],
           "english": [
-            "mulan connected",
+            "Mulan connected",
             "with 朋 (friend)",
             "formed by two moon characters side by side",
             "revealing friendship as shared journeys"
@@ -26409,13 +26410,13 @@ const translationData = [
         "spanish": "Mulan exploró 和 (armonía) que combina grano y boca, enseñándole cómo compartir alimentos crea paz.",
         "segments": {
           "spanish": [
-            "mulan exploró",
+            "Mulan exploró",
             "和 (armonía)",
             "que combina grano y boca",
             "enseñándole cómo compartir alimentos crea paz"
           ],
           "english": [
-            "mulan explored",
+            "Mulan explored",
             "和 (harmony)",
             "combining grain and mouth",
             "teaching her how sharing food creates peace"
@@ -26427,13 +26428,13 @@ const translationData = [
         "spanish": "Mulan descubrió en 茶 (té) que contiene hierba, persona y árbol, reflejando cómo la naturaleza y la humanidad se conectan en placeres simples.",
         "segments": {
           "spanish": [
-            "mulan descubrió",
+            "Mulan descubrió",
             "en 茶 (té)",
             "que contiene hierba persona y árbol",
             "reflejando cómo la naturaleza y la humanidad se conectan en placeres simples"
           ],
           "english": [
-            "mulan discovered",
+            "Mulan discovered",
             "in 茶 (tea)",
             "containing grass person and tree",
             "reflecting how nature and humanity connect in simple pleasures"
@@ -26445,13 +26446,13 @@ const translationData = [
         "spanish": "Mulan contempló 岩 (roca) que muestra montaña sobre piedra, ayudándole a entender cómo pequeños elementos construyen fortaleza con el tiempo.",
         "segments": {
           "spanish": [
-            "mulan contempló",
+            "Mulan contempló",
             "岩 (roca)",
             "que muestra montaña sobre piedra",
             "ayudándole a entender cómo pequeños elementos construyen fortaleza con el tiempo"
           ],
           "english": [
-            "mulan contemplated",
+            "Mulan contemplated",
             "岩 (rock)",
             "showing mountain over stone",
             "helping her understand how small elements build strength over time"
@@ -26463,13 +26464,13 @@ const translationData = [
         "spanish": "Mulan apreció 囚 (prisionero) que representa a una persona dentro de una caja, recordándole valorar la libertad y los espacios abiertos.",
         "segments": {
           "spanish": [
-            "mulan apreció",
+            "Mulan apreció",
             "囚 (prisionero)",
             "que representa a una persona dentro de una caja",
             "recordándole valorar la libertad y los espacios abiertos"
           ],
           "english": [
-            "mulan appreciated",
+            "Mulan appreciated",
             "囚 (prisoner)",
             "depicting a person inside a box",
             "reminding her to value freedom and open spaces"
@@ -26481,13 +26482,13 @@ const translationData = [
         "spanish": "Mulan reflexionó sobre 危 (peligro) que muestra a una persona al borde de un precipicio, enseñándole conciencia de situaciones precarias.",
         "segments": {
           "spanish": [
-            "mulan reflexionó",
+            "Mulan reflexionó",
             "sobre 危 (peligro)",
             "que muestra a una persona al borde de un precipicio",
             "enseñándole conciencia de situaciones precarias"
           ],
           "english": [
-            "mulan reflected",
+            "Mulan reflected",
             "on 危 (danger)",
             "showing a person on a cliff edge",
             "teaching her awareness of precarious situations"
@@ -26499,13 +26500,13 @@ const translationData = [
         "spanish": "Mulan estudió 休 (descanso) que combina persona con árbol, inspirándola a encontrar renovación en la naturaleza.",
         "segments": {
           "spanish": [
-            "mulan estudió",
+            "Mulan estudió",
             "休 (descanso)",
             "que combina persona con árbol",
             "inspirándola a encontrar renovación en la naturaleza"
           ],
           "english": [
-            "mulan studied",
+            "Mulan studied",
             "休 (rest)",
             "combining person with tree",
             "inspiring her to find renewal in nature"
@@ -26517,13 +26518,13 @@ const translationData = [
         "spanish": "Mulan consideró 鳴 (cantar/llamar) que muestra un pájaro y boca, recordándole que cada criatura tiene su voz única.",
         "segments": {
           "spanish": [
-            "mulan consideró",
+            "Mulan consideró",
             "鳴 (cantar/llamar)",
             "que muestra un pájaro y boca",
             "recordándole que cada criatura tiene su voz única"
           ],
           "english": [
-            "mulan considered",
+            "Mulan considered",
             "鳴 (sing/call)",
             "showing a bird and mouth",
             "reminding her that each creature has its unique voice"
@@ -26535,13 +26536,13 @@ const translationData = [
         "spanish": "Mulan observó 男 (hombre) construido a partir de campo y fuerza, mostrando cómo el trabajo y el esfuerzo forman la identidad.",
         "segments": {
           "spanish": [
-            "mulan observó",
+            "Mulan observó",
             "男 (hombre)",
             "construido a partir de campo y fuerza",
             "mostrando cómo el trabajo y el esfuerzo forman la identidad"
           ],
           "english": [
-            "mulan observed",
+            "Mulan observed",
             "男 (man)",
             "built from field and strength",
             "showing how work and effort shape identity"
@@ -26553,13 +26554,13 @@ const translationData = [
         "spanish": "Mulan obtuvo perspectiva de 忙 (ocupado) que contiene corazón y muerte, enseñándole que el ajetreo puede matar la alegría del corazón.",
         "segments": {
           "spanish": [
-            "mulan obtuvo perspectiva",
+            "Mulan obtuvo perspectiva",
             "de 忙 (ocupado)",
             "que contiene corazón y muerte",
             "enseñándole que el ajetreo puede matar la alegría del corazón"
           ],
           "english": [
-            "mulan gained insight",
+            "Mulan gained insight",
             "from 忙 (busy)",
             "containing heart and death",
             "teaching her that busyness can kill the heart's joy"
@@ -26571,13 +26572,13 @@ const translationData = [
         "spanish": "Mulan analizó 開 (abrir) que representa dos manos quitando una puerta, mostrando cómo las barreras deben ser activamente desplazadas.",
         "segments": {
           "spanish": [
-            "mulan analizó",
+            "Mulan analizó",
             "開 (abrir)",
             "que representa dos manos quitando una puerta",
             "mostrando cómo las barreras deben ser activamente desplazadas"
           ],
           "english": [
-            "mulan analyzed",
+            "Mulan analyzed",
             "開 (open)",
             "depicting two hands removing a gate",
             "showing how barriers must be actively displaced"
@@ -26589,13 +26590,13 @@ const translationData = [
         "spanish": "Mulan meditó sobre 喜 (felicidad) con sus bocas y corazones apilados, revelando que la alegría se multiplica cuando se comparte.",
         "segments": {
           "spanish": [
-            "mulan meditó",
+            "Mulan meditó",
             "sobre 喜 (felicidad)",
             "con sus bocas y corazones apilados",
             "revelando que la alegría se multiplica cuando se comparte"
           ],
           "english": [
-            "mulan pondered",
+            "Mulan pondered",
             "喜 (happiness)",
             "with its stacked mouths and hearts",
             "revealing joy multiplies when shared"
@@ -26607,13 +26608,13 @@ const translationData = [
         "spanish": "Mulan entendió 春 (primavera) que combina sol y plantas brotando, enseñándole cómo la luz trae renovación.",
         "segments": {
           "spanish": [
-            "mulan entendió",
+            "Mulan entendió",
             "春 (primavera)",
             "que combina sol y plantas brotando",
             "enseñándole cómo la luz trae renovación"
           ],
           "english": [
-            "mulan understood",
+            "Mulan understood",
             "春 (spring)",
             "combining sun and plants sprouting",
             "teaching her how light brings renewal"
@@ -26625,13 +26626,13 @@ const translationData = [
         "spanish": "Mulan reconoció en 門 (puerta) la imagen de dos pilares, viendo cómo los límites tanto protegen como crean pasajes.",
         "segments": {
           "spanish": [
-            "mulan reconoció",
+            "Mulan reconoció",
             "en 門 (puerta)",
             "la imagen de dos pilares",
             "viendo cómo los límites tanto protegen como crean pasajes"
           ],
           "english": [
-            "mulan recognized",
+            "Mulan recognized",
             "in 門 (door)",
             "the image of two gateposts",
             "seeing how boundaries both protect and create passages"
@@ -26643,13 +26644,13 @@ const translationData = [
         "spanish": "Mulan examinó 思 (pensar) que muestra un corazón bajo un campo, revelando cómo la reflexión cultiva un entendimiento más profundo.",
         "segments": {
           "spanish": [
-            "mulan examinó",
+            "Mulan examinó",
             "思 (pensar)",
             "que muestra un corazón bajo un campo",
             "revelando cómo la reflexión cultiva un entendimiento más profundo"
           ],
           "english": [
-            "mulan examined",
+            "Mulan examined",
             "思 (think)",
             "showing a heart under a field",
             "revealing how reflection cultivates deeper understanding"
@@ -26661,13 +26662,13 @@ const translationData = [
         "spanish": "Mulan admiró 聚 (reunir) que representa personas reuniéndose bajo un techo, enseñándole que la comunidad crea refugio.",
         "segments": {
           "spanish": [
-            "mulan admiró",
+            "Mulan admiró",
             "聚 (reunir)",
             "que representa personas reuniéndose bajo un techo",
             "enseñándole que la comunidad crea refugio"
           ],
           "english": [
-            "mulan admired",
+            "Mulan admired",
             "聚 (gather)",
             "depicting people coming together under a roof",
             "teaching her community creates shelter"
@@ -26679,13 +26680,13 @@ const translationData = [
         "spanish": "Mulan descubrió en 淚 (lágrimas) que contiene agua y lluvia, mostrando que las emociones fluyen como elementos naturales.",
         "segments": {
           "spanish": [
-            "mulan descubrió",
+            "Mulan descubrió",
             "en 淚 (lágrimas)",
             "que contiene agua y lluvia",
             "mostrando que las emociones fluyen como elementos naturales"
           ],
           "english": [
-            "mulan discovered",
+            "Mulan discovered",
             "in 淚 (tears)",
             "containing water and rain",
             "showing emotions flow like natural elements"
@@ -26697,13 +26698,13 @@ const translationData = [
         "spanish": "Mulan reflexionó sobre 語 (lenguaje) con su componente de hablar y cinco bocas, revelando la comunicación como intercambio multifacético.",
         "segments": {
           "spanish": [
-            "mulan reflexionó",
+            "Mulan reflexionó",
             "sobre 語 (lenguaje)",
             "con su componente de hablar y cinco bocas",
             "revelando la comunicación como intercambio multifacético"
           ],
           "english": [
-            "mulan reflected",
+            "Mulan reflected",
             "on 語 (language)",
             "with its speaking component and five mouths",
             "revealing communication as multifaceted exchange"
@@ -26715,13 +26716,13 @@ const translationData = [
         "spanish": "Mulan apreció 德 (virtud) que combina corazón, recto y caminar, enseñándole que la bondad requiere alineación de intención y acción.",
         "segments": {
           "spanish": [
-            "mulan apreció",
+            "Mulan apreció",
             "德 (virtud)",
             "que combina corazón recto y caminar",
             "enseñándole que la bondad requiere alineación de intención y acción"
           ],
           "english": [
-            "mulan appreciated",
+            "Mulan appreciated",
             "德 (virtue)",
             "combining heart straight and walking",
             "teaching her that goodness requires alignment of intention and action"
@@ -26733,13 +26734,13 @@ const translationData = [
         "spanish": "Mulan estudió 學 (aprendizaje) que muestra a un niño con manos levantadas bajo un techo, inspirándola a abordar la educación con curiosidad infantil.",
         "segments": {
           "spanish": [
-            "mulan estudió",
+            "Mulan estudió",
             "學 (aprendizaje)",
             "que muestra a un niño con manos levantadas bajo un techo",
             "inspirándola a abordar la educación con curiosidad infantil"
           ],
           "english": [
-            "mulan studied",
+            "Mulan studied",
             "學 (learning)",
             "showing a child with raised hands under a roof",
             "inspiring her to approach education with childlike curiosity"
@@ -26751,13 +26752,13 @@ const translationData = [
         "spanish": "Mulan contempló 靜 (quietud) con sus componentes de azul y lucha, comprendiendo cómo la quietud supera el conflicto.",
         "segments": {
           "spanish": [
-            "mulan contempló",
+            "Mulan contempló",
             "靜 (quietud)",
             "con sus componentes de azul y lucha",
             "comprendiendo cómo la quietud supera el conflicto"
           ],
           "english": [
-            "mulan contemplated",
+            "Mulan contemplated",
             "靜 (quiet)",
             "with its blue and fighting components",
             "understanding how stillness overcomes conflict"
@@ -26769,13 +26770,13 @@ const translationData = [
         "spanish": "Mulan observó 宇 (universo) que representa un techo con vasto espacio debajo, ayudándole a ver cómo el refugio crea espacio para la exploración.",
         "segments": {
           "spanish": [
-            "mulan observó",
+            "Mulan observó",
             "宇 (universo)",
             "que representa un techo con vasto espacio debajo",
             "ayudándole a ver cómo el refugio crea espacio para la exploración"
           ],
           "english": [
-            "mulan observed",
+            "Mulan observed",
             "宇 (universe)",
             "depicting a roof with vast space beneath",
             "helping her see how shelter creates room for exploration"
@@ -26787,13 +26788,13 @@ const translationData = [
         "spanish": "Mulan analizó 福 (fortuna) que contiene bendición, uno, boca y campo, enseñándole que la felicidad implica gratitud por provisiones simples.",
         "segments": {
           "spanish": [
-            "mulan analizó",
+            "Mulan analizó",
             "福 (fortuna)",
             "que contiene bendición uno boca y campo",
             "enseñándole que la felicidad implica gratitud por provisiones simples"
           ],
           "english": [
-            "mulan analyzed",
+            "Mulan analyzed",
             "福 (fortune)",
             "containing blessing one mouth and field",
             "teaching her happiness involves gratitude for simple provisions"
@@ -26805,13 +26806,13 @@ const translationData = [
         "spanish": "Mulan reconoció en 翼 (alas) los componentes simétricos de plumas, mostrando el equilibrio como esencial para emprender el vuelo.",
         "segments": {
           "spanish": [
-            "mulan reconoció",
+            "Mulan reconoció",
             "en 翼 (alas)",
             "los componentes simétricos de plumas",
             "mostrando el equilibrio como esencial para emprender el vuelo"
           ],
           "english": [
-            "mulan recognized",
+            "Mulan recognized",
             "in 翼 (wings)",
             "the symmetrical feather components",
             "showing balance as essential for taking flight"
@@ -26823,13 +26824,13 @@ const translationData = [
         "spanish": "Mulan encontró significado en 道 (camino) que combina cabeza y caminar, inspirándola a unir pensamiento y acción en el viaje de la vida.",
         "segments": {
           "spanish": [
-            "mulan encontró significado",
+            "Mulan encontró significado",
             "en 道 (camino)",
             "que combina cabeza y caminar",
             "inspirándola a unir pensamiento y acción en el viaje de la vida"
           ],
           "english": [
-            "mulan found meaning",
+            "Mulan found meaning",
             "in 道 (way/path)",
             "combining head and walking",
             "inspiring her to unite thought and action in life's journey"
@@ -26841,13 +26842,13 @@ const translationData = [
         "spanish": "Mulan meditó sobre 樂 (música/alegría) con sus elementos de madera, cuerdas y danza, revelando cómo la armonía crea felicidad.",
         "segments": {
           "spanish": [
-            "mulan meditó",
+            "Mulan meditó",
             "sobre 樂 (música/alegría)",
             "con sus elementos de madera cuerdas y danza",
             "revelando cómo la armonía crea felicidad"
           ],
           "english": [
-            "mulan pondered",
+            "Mulan pondered",
             "樂 (music/joy)",
             "with its elements of wood strings and dance",
             "revealing how harmony creates happiness"
@@ -26859,13 +26860,13 @@ const translationData = [
         "spanish": "Mulan consideró 曙 (amanecer) que contiene día y almacenamiento, enseñándole que cada mañana contiene potencial acumulado.",
         "segments": {
           "spanish": [
-            "mulan consideró",
+            "Mulan consideró",
             "曙 (amanecer)",
             "que contiene día y almacenamiento",
             "enseñándole que cada mañana contiene potencial acumulado"
           ],
           "english": [
-            "mulan considered",
+            "Mulan considered",
             "曙 (dawn)",
             "containing day and storage",
             "teaching her that each morning holds accumulated potential"
@@ -26877,13 +26878,13 @@ const translationData = [
         "spanish": "Mulan obtuvo perspectiva de 爭 (competir) que muestra dos manos agarrando, ayudándole a entender tanto los costos como los beneficios de la competencia.",
         "segments": {
           "spanish": [
-            "mulan obtuvo perspectiva",
+            "Mulan obtuvo perspectiva",
             "de 爭 (competir)",
             "que muestra dos manos agarrando",
             "ayudándole a entender tanto los costos como los beneficios de la competencia"
           ],
           "english": [
-            "mulan gained insight",
+            "Mulan gained insight",
             "from 爭 (compete)",
             "showing two hands grabbing",
             "helping her understand both the costs and benefits of competition"
@@ -26895,13 +26896,13 @@ const translationData = [
         "spanish": "Mulan exploró 美 (belleza) que combina oveja y grande, revelando cómo la gentileza crea magnificencia.",
         "segments": {
           "spanish": [
-            "mulan exploró",
+            "Mulan exploró",
             "美 (belleza)",
             "que combina oveja y grande",
             "revelando cómo la gentileza crea magnificencia"
           ],
           "english": [
-            "mulan explored",
+            "Mulan explored",
             "美 (beauty)",
             "combining sheep and big",
             "revealing how gentleness creates magnificence"
@@ -26913,13 +26914,13 @@ const translationData = [
         "spanish": "Mulan entendió 創 (crear) con sus componentes de cuchillo y comienzo, viendo cómo la innovación requiere cortar a través de patrones establecidos.",
         "segments": {
           "spanish": [
-            "mulan entendió",
+            "Mulan entendió",
             "創 (crear)",
             "con sus componentes de cuchillo y comienzo",
             "viendo cómo la innovación requiere cortar a través de patrones establecidos"
           ],
           "english": [
-            "mulan understood",
+            "Mulan understood",
             "創 (create)",
             "with its knife and beginning components",
             "seeing how innovation requires cutting through established patterns"
@@ -26931,13 +26932,13 @@ const translationData = [
         "spanish": "Mulan admiró 舞 (danza) que muestra elementos de movimiento y ritual, enseñándole cómo la estructura y la libertad crean movimiento expresivo.",
         "segments": {
           "spanish": [
-            "mulan admiró",
+            "Mulan admiró",
             "舞 (danza)",
             "que muestra elementos de movimiento y ritual",
             "enseñándole cómo la estructura y la libertad crean movimiento expresivo"
           ],
           "english": [
-            "mulan admired",
+            "Mulan admired",
             "舞 (dance)",
             "showing motion and ritual elements",
             "teaching her how structure and freedom create expressive movement"
@@ -26967,13 +26968,13 @@ const translationData = [
         "spanish": "Seraphina y Max crearon un programa de reciclaje vecinal.",
         "segments": {
           "spanish": [
-            "seraphina y max",
+            "seraphina y Max",
             "crearon",
             "un programa",
             "de reciclaje vecinal"
           ],
           "english": [
-            "seraphina and max",
+            "seraphina and Max",
             "created",
             "a program",
             "of neighborhood recycling"
@@ -26990,13 +26991,13 @@ const translationData = [
         "spanish": "Flo, Faye y Franny resolvían misterios como un equipo.",
         "segments": {
           "spanish": [
-            "flo faye y franny",
+            "Flo Faye y Franny",
             "resolvían misterios",
             "como",
             "un equipo"
           ],
           "english": [
-            "flo faye and franny",
+            "Flo Faye and Franny",
             "solved mysteries",
             "as",
             "a team"
@@ -27008,15 +27009,15 @@ const translationData = [
         "spanish": "Las Hermanas Flamencos Voladores usaban sus habilidades de vuelo para superar desafíos.",
         "segments": {
           "spanish": [
-            "las hermanas flamencos voladores",
+            "las hermanas Flamencos Voladores",
             "usaban",
             "sus habilidades de vuelo",
             "para superar desafíos"
           ],
           "english": [
-            "the flying flamingo sisters",
+            "the Flying Flamingo sisters",
             "used",
-            "their flying skills",
+            "their Flying skills",
             "to overcome challenges"
           ]
         }
@@ -27027,13 +27028,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el pensamiento rápido",
-            "de flo",
+            "de Flo",
             "les ayudó a escapar",
             "de situaciones peligrosas"
           ],
           "english": [
             "quick thinking",
-            "flo's",
+            "Flo's",
             "helped them escape",
             "dangerous situations"
           ]
@@ -27044,13 +27045,13 @@ const translationData = [
         "spanish": "Faye usaba su conocimiento para resolver acertijos complicados.",
         "segments": {
           "spanish": [
-            "faye",
+            "Faye",
             "usaba su conocimiento",
             "para resolver",
             "acertijos complicados"
           ],
           "english": [
-            "faye",
+            "Faye",
             "used her knowledge",
             "to solve",
             "complicated puzzles"
@@ -27062,13 +27063,13 @@ const translationData = [
         "spanish": "Flo inventó un transmisor de radio usando solo piezas sobrantes de avión.",
         "segments": {
           "spanish": [
-            "flo",
+            "Flo",
             "inventó",
             "un transmisor de radio",
             "usando solo piezas sobrantes de avión"
           ],
           "english": [
-            "flo",
+            "Flo",
             "invented",
             "a radio transmitter",
             "using just spare airplane parts"
@@ -27081,13 +27082,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "los cálculos de navegación",
-            "de faye",
+            "de Faye",
             "les salvaron",
             "durante la tormenta desértica"
           ],
           "english": [
             "navigational calculations",
-            "faye's",
+            "Faye's",
             "saved them",
             "during the desert sandstorm"
           ]
@@ -27098,13 +27099,13 @@ const translationData = [
         "spanish": "Franny creó filtros de agua de emergencia con fibras de plantas tropicales.",
         "segments": {
           "spanish": [
-            "franny",
+            "Franny",
             "creó",
             "filtros de agua de emergencia",
             "con fibras de plantas tropicales"
           ],
           "english": [
-            "franny",
+            "Franny",
             "created",
             "emergency water filters",
             "from tropical plant fibers"
@@ -27134,13 +27135,13 @@ const translationData = [
         "spanish": "Flo decodificó el mapa misterioso usando conocimientos antiguos de astronomía.",
         "segments": {
           "spanish": [
-            "flo",
+            "Flo",
             "decodificó",
             "el mapa misterioso",
             "usando conocimientos antiguos de astronomía"
           ],
           "english": [
-            "flo",
+            "Flo",
             "decoded",
             "the mysterious map",
             "using ancient astronomy knowledge"
@@ -27152,13 +27153,13 @@ const translationData = [
         "spanish": "Faye diseñó un sistema de poleas para rescatar a exploradores.",
         "segments": {
           "spanish": [
-            "faye",
+            "Faye",
             "diseñó un sistema",
             "de poleas",
             "para rescatar a exploradores"
           ],
           "english": [
-            "faye",
+            "Faye",
             "engineered a system",
             "for pulleys",
             "to rescue explorers"
@@ -27171,12 +27172,12 @@ const translationData = [
         "segments": {
           "spanish": [
             "las habilidades diplomáticas",
-            "de franny",
+            "de Franny",
             "evitaron conflictos",
             "con la tribu local"
           ],
           "english": [
-            "franny's",
+            "Franny's",
             "diplomatic skills",
             "prevented conflict",
             "with the local tribe"
@@ -27188,16 +27189,16 @@ const translationData = [
         "spanish": "Franny construyeron un puente improvisado sobre el río embravecido.",
         "segments": {
           "spanish": [
-            "franny",
+            "Franny",
             "construyeron",
             "un puente improvisado",
             "sobre el río embravecido"
           ],
           "english": [
-            "franny",
+            "Franny",
             "built",
             "a makeshift bridge",
-            "across the raging river"
+            "across the raging River"
           ]
         }
       },
@@ -27206,13 +27207,13 @@ const translationData = [
         "spanish": "Flo creó instrumentos de predicción meteorológica con bambú y tela.",
         "segments": {
           "spanish": [
-            "flo",
+            "Flo",
             "creó instrumentos",
             "de predicción meteorológica",
             "con bambú y tela"
           ],
           "english": [
-            "flo",
+            "Flo",
             "created instruments",
             "for weather prediction",
             "from bamboo and cloth"
@@ -27225,12 +27226,12 @@ const translationData = [
         "segments": {
           "spanish": [
             "el genio matemático",
-            "de faye",
+            "de Faye",
             "resolvió",
             "los acertijos del templo antiguo"
           ],
           "english": [
-            "faye's",
+            "Faye's",
             "mathematical genius",
             "solved",
             "the ancient temple's puzzles"
@@ -27242,13 +27243,13 @@ const translationData = [
         "spanish": "Franny desarrolló un lenguaje de señas para comunicarse con tribus aisladas.",
         "segments": {
           "spanish": [
-            "franny",
+            "Franny",
             "desarrolló",
             "un lenguaje de señas",
             "para comunicarse con tribus aisladas"
           ],
           "english": [
-            "franny",
+            "Franny",
             "developed",
             "a sign language",
             "to communicate with isolated tribes"
@@ -27261,13 +27262,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con valentía",
-            "las hermanas flamencos voladores",
+            "las hermanas Flamencos Voladores",
             "volaron",
             "a través del peligroso paso montañoso"
           ],
           "english": [
             "with courage",
-            "the flying flamingo sisters",
+            "the Flying Flamingo sisters",
             "flew through",
             "the dangerous mountain pass"
           ]
@@ -27278,13 +27279,13 @@ const translationData = [
         "spanish": "Flo enseñó a niños locales a construir juguetes mecánicos simples.",
         "segments": {
           "spanish": [
-            "flo",
+            "Flo",
             "enseñó",
             "a niños locales",
             "a construir juguetes mecánicos simples"
           ],
           "english": [
-            "flo",
+            "Flo",
             "taught",
             "local children",
             "to build simple mechanical toys"
@@ -27296,13 +27297,13 @@ const translationData = [
         "spanish": "Faye creó mapas detallados de regiones selváticas previamente inexploradas.",
         "segments": {
           "spanish": [
-            "faye",
+            "Faye",
             "creó mapas detallados",
             "de regiones selváticas",
             "previamente inexploradas"
           ],
           "english": [
-            "faye",
+            "Faye",
             "created",
             "detailed maps",
             "of previously uncharted jungle regions"
@@ -27314,13 +27315,13 @@ const translationData = [
         "spanish": "El conocimiento médico de Franny salvó al pueblo durante la epidemia.",
         "segments": {
           "spanish": [
-            "de franny",
+            "de Franny",
             "el conocimiento médico",
             "salvó al pueblo",
             "durante la epidemia"
           ],
           "english": [
-            "franny's",
+            "Franny's",
             "medical knowledge",
             "saved the village",
             "during the epidemic"
@@ -27332,13 +27333,13 @@ const translationData = [
         "spanish": "Faye diseñaron un sistema de calentamiento solar de agua.",
         "segments": {
           "spanish": [
-            "faye",
+            "Faye",
             "diseñó",
             "un sistema de calentamiento solar",
             "de agua"
           ],
           "english": [
-            "faye",
+            "Faye",
             "designed",
             "a solar heating system",
             "for water"
@@ -27350,13 +27351,13 @@ const translationData = [
         "spanish": "Flo readaptó piezas de aeronaves para crear sistemas de riego.",
         "segments": {
           "spanish": [
-            "flo",
+            "Flo",
             "readaptó piezas",
             "de aeronaves",
             "para crear sistemas de riego"
           ],
           "english": [
-            "flo",
+            "Flo",
             "repurposed",
             "aircraft parts",
             "to create irrigation systems"
@@ -27368,13 +27369,13 @@ const translationData = [
         "spanish": "Faye enseñó técnicas de navegación astronómica a marineros locales.",
         "segments": {
           "spanish": [
-            "faye",
+            "Faye",
             "enseñó técnicas",
             "de navegación astronómica",
             "a marineros locales"
           ],
           "english": [
-            "faye",
+            "Faye",
             "taught techniques",
             "for astronomical navigation",
             "to local sailors"
@@ -27386,13 +27387,13 @@ const translationData = [
         "spanish": "Franny estableció redes de comunicación de emergencia entre tres islas.",
         "segments": {
           "spanish": [
-            "franny",
+            "Franny",
             "estableció",
             "redes de comunicación de emergencia",
             "entre tres islas"
           ],
           "english": [
-            "franny",
+            "Franny",
             "established",
             "emergency communication networks",
             "across three islands"
@@ -27405,13 +27406,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con ingenio",
-            "las hermanas flamencos voladores",
+            "las hermanas Flamencos Voladores",
             "burlaron",
             "a los infames piratas del cielo"
           ],
           "english": [
             "with ingenuity",
-            "the flying flamingo sisters",
+            "the Flying Flamingo sisters",
             "outsmarted",
             "the infamous sky pirates"
           ]
@@ -27422,13 +27423,13 @@ const translationData = [
         "spanish": "Flo construyó una radio de onda corta con piezas recuperadas de automóvil.",
         "segments": {
           "spanish": [
-            "flo",
+            "Flo",
             "construyó",
             "una radio de onda corta",
             "con piezas recuperadas de automóvil"
           ],
           "english": [
-            "flo",
+            "Flo",
             "constructed",
             "a shortwave radio",
             "from salvaged automobile parts"
@@ -27440,13 +27441,13 @@ const translationData = [
         "spanish": "Faye calculó mejoras de eficiencia de combustible para su atrevido viaje.",
         "segments": {
           "spanish": [
-            "faye",
+            "Faye",
             "calculó",
             "mejoras de eficiencia de combustible",
             "para su atrevido viaje"
           ],
           "english": [
-            "faye",
+            "Faye",
             "calculated",
             "fuel efficiency improvements",
             "for their daring journey"
@@ -27458,13 +27459,13 @@ const translationData = [
         "spanish": "Faye desarrolló correcciones de brújula para regiones con anomalías magnéticas.",
         "segments": {
           "spanish": [
-            "faye",
+            "Faye",
             "desarrolló correcciones",
             "de brújula",
             "para regiones con anomalías magnéticas"
           ],
           "english": [
-            "faye",
+            "Faye",
             "developed corrections",
             "compass",
             "for regions with magnetic anomalies"
@@ -27476,13 +27477,13 @@ const translationData = [
         "spanish": "Franny creó medicinas naturales usando conocimiento de plantas indígenas.",
         "segments": {
           "spanish": [
-            "franny creó",
+            "Franny creó",
             "medicinas naturales",
             "usando conocimiento",
             "de plantas indígenas"
           ],
           "english": [
-            "franny created",
+            "Franny created",
             "natural medicines",
             "using knowledge",
             "of indigenous plant"
@@ -27495,13 +27496,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "con pensamiento rápido",
-            "las hermanas flamencos voladores",
+            "las hermanas Flamencos Voladores",
             "neutralizaron",
             "la amenaza de gases volcánicos"
           ],
           "english": [
             "with quick thinking",
-            "the flying flamingo sisters",
+            "the Flying Flamingo sisters",
             "neutralized",
             "the volcanic gas threat"
           ]
@@ -27513,13 +27514,13 @@ const translationData = [
         "segments": {
           "spanish": [
             "el valor",
-            "de franny",
+            "de Franny",
             "inspiraba a sus hermanas",
             "en tiempos difíciles"
           ],
           "english": [
             "bravery",
-            "franny's",
+            "Franny's",
             "inspired her sisters",
             "during tough times"
           ]

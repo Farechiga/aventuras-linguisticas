@@ -1266,10 +1266,23 @@ function narrateSentence(sentence, callback) {
 // Try to play a pre-generated OpenAI TTS file for `text`.
 // Returns true if playback started, false if no file is available.
 let _currentTtsAudio = null;
+
+// Normalize a lookup key to the same canonical form used by the additive
+// manifest re-key (audio-manifest.js). Decouples display capitalization
+// and punctuation from audio routing: any display variant ("Belle compartió",
+// "belle compartió", "Belle compartió.") collapses to the same key.
+function normalizeAudioKey(s) {
+    return (s || "")
+        .toLowerCase()
+        .replace(/[.,;:!?¡¿“”‘’]/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
 function playPregeneratedAudio(text, callback) {
   const manifest = window.AUDIO_MANIFEST || {};
-  const key = (text || "").trim();
-  const filename = manifest[key];
+  // Try a normalized lookup first; fall back to the raw key for safety.
+  const filename = manifest[normalizeAudioKey(text)] || manifest[(text || "").trim()];
   if (!filename) return false;
 
   if (_currentTtsAudio) {
